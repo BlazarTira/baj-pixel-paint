@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bjsp40jwmmfm"]
+
+[ext_resource type="Script" uid="uid://cctxnl0n08g58" path="res://Scripts/canvas.gd" id="1_omcc7"]
+
+[node name="Canvas" type="Control" unique_id=139781993]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_omcc7")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1331878230]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=496298889]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=395502124]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VSplitContainer" type="VSplitContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=1420054466]
+layout_mode = 2
+
+[node name="Drawing" type="HSplitContainer" parent="CenterContainer/PanelContainer/MarginContainer/VSplitContainer" unique_id=493731180]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/PanelContainer/MarginContainer/VSplitContainer/Drawing" unique_id=775476306]
+layout_mode = 2
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="CenterContainer/PanelContainer/MarginContainer/VSplitContainer/Drawing" unique_id=2104140466]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = " "
+
+[node name="Actions" type="HSplitContainer" parent="CenterContainer/PanelContainer/MarginContainer/VSplitContainer" unique_id=441673231]
+layout_mode = 2
+
+[node name="Reset" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VSplitContainer/Actions" unique_id=1258647910]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "RESET"
+
+[node name="SaveClose" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VSplitContainer/Actions" unique_id=933066005]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SAVE & CLOSE"
+
+[connection signal="color_changed" from="CenterContainer/PanelContainer/MarginContainer/VSplitContainer/Drawing/ColorPickerButton" to="." method="_on_color_picker_button_color_changed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VSplitContainer/Actions/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VSplitContainer/Actions/SaveClose" to="." method="_on_save_close_pressed"]
