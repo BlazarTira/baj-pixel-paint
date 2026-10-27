@@ -18,7 +18,7 @@ func _run():
 	for i in GRID_SIZE * GRID_SIZE:
 		var cell = TextureButton.new()
 		cell.name = "Cell%d" % i
-		cell.custom_minimum_size = Vector2(16, 16)
+		cell.custom_minimum_size = Vector2(20, 20)
 		cell.stretch_mode = TextureButton.STRETCH_SCALE
 		cell.ignore_texture_size = true
 		cell.texture_normal = tex

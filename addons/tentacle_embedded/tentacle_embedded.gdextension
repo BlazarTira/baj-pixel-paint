@@ -1,0 +1,16 @@
+; The Godot addon's optional GDExtension: Tentacle's core, run inside the game for
+; the addon's Embedded mode. It goes in res://addons/tentacle_embedded/ beside the
+; library it names, which `just godot::native` builds and installs with this file.
+;
+; The addon reaches it only through ClassDB, so a project without it still opens,
+; runs, and exports.
+
+[configuration]
+entry_symbol = "gdext_rust_init"
+compatibility_minimum = 4.4
+reloadable = false
+
+[libraries]
+windows.x86_64 = "res://addons/tentacle_embedded/bin/tentacle_godot.dll"
+macos = "res://addons/tentacle_embedded/bin/libtentacle_godot.dylib"
+linux.x86_64 = "res://addons/tentacle_embedded/bin/libtentacle_godot.so"

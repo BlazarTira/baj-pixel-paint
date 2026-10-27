@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://chxg65sbm2pps"]
 
 [ext_resource type="PackedScene" uid="uid://d4c6sfghjp5vk" path="res://Scenes/painting.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://cu0vdpit0aqt4" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://bjsp40jwmmfm" path="res://Scenes/canvas.tscn" id="2_qxrlw"]
 
 [node name="Game" type="Node2D" unique_id=1258641203]
+script = ExtResource("1_wrm1d")
 
 [node name="Painting" parent="." unique_id=1061483286 instance=ExtResource("1_ebmjs")]
 
@@ -14,3 +16,7 @@ zoom = Vector2(8, 8)
 
 [node name="Canvas" parent="CanvasLayer" unique_id=139781993 instance=ExtResource("2_qxrlw")]
 unique_name_in_owner = true
+
+[node name="Erase_Cooldown" type="Timer" parent="." unique_id=1081213463]
+wait_time = 0.5
+one_shot = true

@@ -1,14 +1,18 @@
 extends Control
 
 const GRID_SIZE = 26
+const MAX_LOG_ENTRIES = 50
+
 var active_color: Color = Color(1, 0, 0) #RED DEFAULT
 var is_painting = false #Tracking mouse movement to paint
 var is_erasing = false #Tracking mouse movement to erase
 
 var cells: Dictionary = {}
 
-@onready var grid = $CenterContainer/PanelContainer/MarginContainer/VSplitContainer/Drawing/GridContainer
+@onready var grid = %DrawingGrid
 @onready var painting: Node2D = $"../../Painting"
+@onready var log_scroll = %LogScroll
+@onready var log_list = %LogList
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +23,7 @@ func build_cell_lookup():
 	cells.clear()
 	var children = grid.get_children()
 	for i in children.size():
-		var coord = char(65 + i % GRID_SIZE) + str(i / GRID_SIZE + 1)
+		var coord = char(65 + i / GRID_SIZE) + str(i % GRID_SIZE + 1)
 		children[i].set_meta("coord", coord)
 		cells[coord] = children[i]
 
@@ -51,10 +55,35 @@ func get_cell_at_mouse_position(mouse_pos: Vector2) -> TextureButton:
 			return cell
 	return null
 
+func erase_cell(coord: String, who: String = "") -> bool:
+	coord = coord.strip_edges().to_upper()
+	if !cells.has(coord):
+		return false
+	var cell = cells[coord]
+	
+	if !cell.modulate.is_equal_approx(Color.WHITE):
+		cell.modulate = Color.WHITE
+		add_log_entry(who, coord)
+	return true
+
+func add_log_entry(who: String, coord: String):
+	var entry = RichTextLabel.new()
+	entry.bbcode_enabled = true
+	entry.fit_content = true
+	entry.scroll_active = false
+	entry.text = "[b]%s[/b] erased %s" % [who.replace("[", "[lb]"), coord]
+	log_list.add_child(entry)
+	
+	if log_list.get_child_count() > MAX_LOG_ENTRIES:
+		log_list.get_child(0).queue_free()
+	
+	await get_tree().process_frame
+	log_scroll.scroll_vertical = int(log_scroll.get_v_scroll_bar().max_value)
+
 
 func _on_reset_pressed():
-	if GameManager.data.painting.colors.size() > 0:
-		GameManager.data.painting.load_to_grid(grid.get_children())
+	for cell in grid.get_children():
+		cell.modulate = Color.WHITE
 
 
 func _on_save_close_pressed():
@@ -84,5 +113,3 @@ func _on_blue_pressed():
 
 func _on_purple_pressed():
 	active_color = Color(0.717, 0.0, 1.0, 1.0)
-
-#yada yada
