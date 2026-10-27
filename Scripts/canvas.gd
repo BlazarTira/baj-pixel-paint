@@ -84,3 +84,5 @@ func _on_blue_pressed():
 
 func _on_purple_pressed():
 	active_color = Color(0.717, 0.0, 1.0, 1.0)
+
+#yada yada
