@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bwnb6w5io5y13"]
+
+[ext_resource type="Texture2D" uid="uid://pnudtb5uqqoj" path="res://Assets/Sprites/Button.png" id="1_1dwbm"]
+
+[resource]
+texture = ExtResource("1_1dwbm")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+expand_margin_left = 12.0
+expand_margin_top = 6.0
+expand_margin_right = 12.0
+expand_margin_bottom = 6.0

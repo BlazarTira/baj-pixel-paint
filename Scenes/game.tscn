@@ -1,16 +1,10 @@
 [gd_scene format=3 uid="uid://chxg65sbm2pps"]
 
-[ext_resource type="PackedScene" uid="uid://d4c6sfghjp5vk" path="res://Scenes/painting.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://cu0vdpit0aqt4" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://bjsp40jwmmfm" path="res://Scenes/canvas.tscn" id="2_qxrlw"]
 
 [node name="Game" type="Node2D" unique_id=1258641203]
 script = ExtResource("1_wrm1d")
-
-[node name="Painting" parent="." unique_id=1061483286 instance=ExtResource("1_ebmjs")]
-
-[node name="Camera2D" type="Camera2D" parent="Painting" unique_id=500110247]
-zoom = Vector2(8, 8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=804259590]
 
