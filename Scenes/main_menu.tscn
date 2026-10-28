@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://dp7jg8cf3atpy"]
+
+[ext_resource type="Script" uid="uid://cbhcdq0umr2fr" path="res://Scripts/main_menu.gd" id="1_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://bnvfl2myy53wr" path="res://Assets/Sprites/ConnectButton.png" id="2_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://la8iqat1t4m4" path="res://Assets/Sprites/ConnectButton_Pressed.png" id="3_trj04"]
+[ext_resource type="Texture2D" uid="uid://cpi80rekrp31u" path="res://Assets/Sprites/ConnectButton_Hover.png" id="4_16hvj"]
+[ext_resource type="Texture2D" uid="uid://h18ty51sjhjx" path="res://Assets/Sprites/DisconnectButton.png" id="5_vr1f0"]
+[ext_resource type="Texture2D" uid="uid://eoeh2v6c400k" path="res://Assets/Sprites/DisconnectButton_Pressed.png" id="6_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://b0m2fh3xjxkfr" path="res://Assets/Sprites/DisconnectButton_Hover.png" id="7_5egv6"]
+[ext_resource type="FontFile" uid="uid://b64grqcnskupa" path="res://Assets/PublicPixel.ttf" id="9_t1dhk"]
+[ext_resource type="StyleBox" uid="uid://bwnb6w5io5y13" path="res://Assets/StyleBoxes/Button_StyleBox.tres" id="10_5egv6"]
+[ext_resource type="StyleBox" uid="uid://duq0vq7fs7ij5" path="res://Assets/StyleBoxes/ButtonPressed_Stylebox.tres" id="11_vtepg"]
+[ext_resource type="StyleBox" uid="uid://cyb8b5bxh6ocw" path="res://Assets/StyleBoxes/ButtonHighlight_Stylebox.tres" id="12_8dnnj"]
+[ext_resource type="Texture2D" uid="uid://duwrps3nru07x" path="res://Assets/Sprites/ConnectionStatus_Sheet.png" id="12_t1dhk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5egv6"]
+atlas = ExtResource("12_t1dhk")
+region = Rect2(0, 28, 71, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtepg"]
+atlas = ExtResource("12_t1dhk")
+region = Rect2(0, 14, 71, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dnnj"]
+atlas = ExtResource("12_t1dhk")
+region = Rect2(71, 14, 71, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3bi6"]
+atlas = ExtResource("12_t1dhk")
+region = Rect2(0, 0, 71, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hgkvf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5egv6")
+}],
+"loop": 1,
+"name": &"Connected",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_vtepg")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_8dnnj")
+}],
+"loop": 1,
+"name": &"Connecting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3bi6")
+}],
+"loop": 1,
+"name": &"Disconnected",
+"speed": 5.0
+}]
+
+[node name="MainMenu" type="Control" unique_id=1231412406]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ce3w2")
+
+[node name="SignInButton" type="TextureButton" parent="." unique_id=1438021806]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 61.0
+offset_right = 1028.0
+offset_bottom = 103.0
+scale = Vector2(2.585, 2.585)
+texture_normal = ExtResource("2_yhxw7")
+texture_pressed = ExtResource("3_trj04")
+texture_hover = ExtResource("4_16hvj")
+texture_disabled = ExtResource("3_trj04")
+stretch_mode = 0
+
+[node name="SignOutButton" type="TextureButton" parent="." unique_id=26182930]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 61.0
+offset_right = 1028.0
+offset_bottom = 103.0
+scale = Vector2(2.585, 2.585)
+texture_normal = ExtResource("5_vr1f0")
+texture_pressed = ExtResource("6_t1dhk")
+texture_hover = ExtResource("7_5egv6")
+stretch_mode = 0
+
+[node name="SignInPanel" type="PanelContainer" parent="." unique_id=977613180]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SignInPanel" unique_id=674832187]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SignInPanel/VBoxContainer" unique_id=803138085]
+layout_mode = 2
+text = "ENTER THIS CODE:"
+
+[node name="TwitchCodeLabel" type="Label" parent="SignInPanel/VBoxContainer" unique_id=254912444]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="." unique_id=229006666]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 249.0
+offset_right = 227.0
+offset_bottom = 342.0
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("9_t1dhk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("10_5egv6")
+theme_override_styles/pressed = ExtResource("11_vtepg")
+theme_override_styles/hover = ExtResource("12_8dnnj")
+text = "PLAY"
+
+[node name="SettingsButton" type="Button" parent="." unique_id=1078396244]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 375.0
+offset_right = 227.0
+offset_bottom = 468.0
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("9_t1dhk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("10_5egv6")
+theme_override_styles/pressed = ExtResource("11_vtepg")
+theme_override_styles/hover = ExtResource("12_8dnnj")
+text = "SETTINGS"
+
+[node name="HowToPlayButton" type="Button" parent="." unique_id=238248655]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 501.77
+offset_right = 355.0
+offset_bottom = 594.77026
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("9_t1dhk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("10_5egv6")
+theme_override_styles/pressed = ExtResource("11_vtepg")
+theme_override_styles/hover = ExtResource("12_8dnnj")
+text = "HOW TO PLAY"
+
+[node name="Title" type="Label" parent="." unique_id=779324884]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 68.0
+offset_right = 435.0
+offset_bottom = 199.0
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("9_t1dhk")
+theme_override_font_sizes/font_size = 64
+text = "CANVAS
+BATTLE"
+
+[node name="ConnectionStatus" type="AnimatedSprite2D" parent="." unique_id=375325554]
+position = Vector2(1056, 38)
+scale = Vector2(2.6399999, 2.6399999)
+sprite_frames = SubResource("SpriteFrames_hgkvf")
+animation = &"Connecting"
+
+[connection signal="pressed" from="SignInButton" to="." method="_on_sign_in_button_pressed"]
+[connection signal="pressed" from="SignOutButton" to="." method="_on_sign_out_button_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

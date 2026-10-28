@@ -2,15 +2,27 @@
 
 [ext_resource type="Script" uid="uid://cu0vdpit0aqt4" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://bjsp40jwmmfm" path="res://Scenes/canvas.tscn" id="2_qxrlw"]
+[ext_resource type="Texture2D" uid="uid://bwgc67mla4h74" path="res://Assets/Sprites/Cooldown_Under.png" id="3_3dryh"]
+[ext_resource type="Texture2D" uid="uid://cdyoi481loxe" path="res://Assets/Sprites/Cooldown_Progress.png" id="4_wowpa"]
 
 [node name="Game" type="Node2D" unique_id=1258641203]
 script = ExtResource("1_wrm1d")
+
+[node name="Erase_Cooldown" type="Timer" parent="." unique_id=1081213463]
+wait_time = 5.0
+one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=804259590]
 
 [node name="Canvas" parent="CanvasLayer" unique_id=139781993 instance=ExtResource("2_qxrlw")]
 unique_name_in_owner = true
 
-[node name="Erase_Cooldown" type="Timer" parent="." unique_id=1081213463]
-wait_time = 0.5
-one_shot = true
+[node name="Cooldown_Bar" type="TextureProgressBar" parent="CanvasLayer" unique_id=945132020]
+offset_left = 24.0
+offset_top = 23.0
+offset_right = 88.0
+offset_bottom = 87.0
+step = 0.1
+fill_mode = 5
+texture_under = ExtResource("3_3dryh")
+texture_progress = ExtResource("4_wowpa")

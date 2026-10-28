@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dikx3jelno26h" path="res://Assets/Sprites/Brush.png" id="7_iajes"]
 [ext_resource type="StyleBox" uid="uid://bwnb6w5io5y13" path="res://Assets/StyleBoxes/Button_StyleBox.tres" id="8_6rlit"]
 [ext_resource type="Texture2D" uid="uid://b5mm6utci0e68" path="res://Assets/Sprites/Eraser.png" id="8_bco6w"]
+[ext_resource type="StyleBox" uid="uid://cubyrovwmiqh1" path="res://Assets/StyleBoxes/ColorPicker_Stylebox.tres" id="8_dlfda"]
 [ext_resource type="Texture2D" uid="uid://cknceb7x8yeqd" path="res://Assets/Sprites/R_Click.png" id="9_6rlit"]
 [ext_resource type="StyleBox" uid="uid://duq0vq7fs7ij5" path="res://Assets/StyleBoxes/ButtonPressed_Stylebox.tres" id="9_rby16"]
 [ext_resource type="StyleBox" uid="uid://cyb8b5bxh6ocw" path="res://Assets/StyleBoxes/ButtonHighlight_Stylebox.tres" id="10_dlfda"]
@@ -18,20 +19,65 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgkvf"]
 bg_color = Color(1, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vugga"]
+bg_color = Color(0.84263474, 3.5616756e-06, 4.813075e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvw1g"]
+bg_color = Color(1, 0.30005085, 0.23680493, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhpci"]
 bg_color = Color(1, 0.5019608, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3i3qe"]
+bg_color = Color(0.81364757, 0.40358058, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kq43"]
+bg_color = Color(0.9999998, 0.5538475, 0.22352692, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oib3e"]
 bg_color = Color(1, 0.8666667, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwy8f"]
+bg_color = Color(0.8743479, 0.7568951, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwmrj"]
+bg_color = Color(1, 0.9124203, 0.49041754, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmc4e"]
 bg_color = Color(0, 1, 0.16470589, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4gby"]
+bg_color = Color(0, 0.83169526, 0.1296559, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkk3y"]
+bg_color = Color(0.55571294, 0.9999998, 0.54401326, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxfy3"]
 bg_color = Color(0, 0.5019608, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ib6gu"]
+bg_color = Color(0, 0.40138564, 0.8095145, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydfpt"]
+bg_color = Color(0.26830184, 0.5880216, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep4jl"]
 bg_color = Color(0.7176471, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xulpc"]
+bg_color = Color(0.57889336, 0.0021989977, 0.8103822, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5phnc"]
+bg_color = Color(0.738417, 0.22801155, 0.99999994, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlfda"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnsis"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3ola"]
+bg_color = Color(0.11119685, 0.11119685, 0.11119678, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iajes"]
 atlas = ExtResource("6_picwg")
@@ -85,6 +131,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_omcc7")
+ROUND_TIME = 10
 templates = Array[Texture2D]([ExtResource("2_jhfc7"), ExtResource("3_oe80x")])
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1331878230]
@@ -165,10 +212,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "A"
@@ -179,10 +226,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "B"
@@ -193,10 +240,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "C"
@@ -207,10 +254,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "D"
@@ -221,10 +268,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "E"
@@ -235,10 +282,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "F"
@@ -249,10 +296,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "G"
@@ -263,10 +310,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "H"
@@ -277,10 +324,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "I"
@@ -291,10 +338,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "J"
@@ -305,10 +352,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "K"
@@ -319,10 +366,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "L"
@@ -333,10 +380,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "M"
@@ -347,10 +394,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "N"
@@ -361,10 +408,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "O"
@@ -375,10 +422,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "P"
@@ -389,10 +436,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "Q"
@@ -403,10 +450,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "R"
@@ -417,10 +464,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "S"
@@ -431,10 +478,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "T"
@@ -445,10 +492,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "U"
@@ -459,10 +506,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "V"
@@ -473,10 +520,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "W"
@@ -487,10 +534,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "X"
@@ -501,10 +548,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "Y"
@@ -515,10 +562,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "Z"
@@ -538,8 +585,9 @@ theme_override_constants/separation = 1
 [node name="Numbers" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=426604364]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "1"
@@ -549,8 +597,9 @@ vertical_alignment = 1
 [node name="Numbers2" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=879860455]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "2"
@@ -560,8 +609,9 @@ vertical_alignment = 1
 [node name="Numbers3" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=711539446]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "3"
@@ -571,8 +621,9 @@ vertical_alignment = 1
 [node name="Numbers4" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=579740656]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "4"
@@ -582,8 +633,9 @@ vertical_alignment = 1
 [node name="Numbers5" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=893426819]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "5"
@@ -593,8 +645,9 @@ vertical_alignment = 1
 [node name="Numbers6" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=1133409248]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "6"
@@ -604,8 +657,9 @@ vertical_alignment = 1
 [node name="Numbers7" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=777986776]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "7"
@@ -615,8 +669,9 @@ vertical_alignment = 1
 [node name="Numbers8" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=1383442807]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "8"
@@ -626,8 +681,9 @@ vertical_alignment = 1
 [node name="Numbers9" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=745381969]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "9"
@@ -637,8 +693,9 @@ vertical_alignment = 1
 [node name="Numbers10" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=986336061]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "10"
@@ -648,8 +705,9 @@ vertical_alignment = 1
 [node name="Numbers11" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=1498199127]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "11"
@@ -659,8 +717,9 @@ vertical_alignment = 1
 [node name="Numbers12" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=2083200264]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "12"
@@ -670,8 +729,9 @@ vertical_alignment = 1
 [node name="Numbers13" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=111015362]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "13"
@@ -681,8 +741,9 @@ vertical_alignment = 1
 [node name="Numbers14" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=1331495543]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "14"
@@ -692,8 +753,9 @@ vertical_alignment = 1
 [node name="Numbers15" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=1356462852]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "15"
@@ -703,8 +765,9 @@ vertical_alignment = 1
 [node name="Numbers16" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=122625815]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "16"
@@ -714,8 +777,9 @@ vertical_alignment = 1
 [node name="Numbers17" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=248234302]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "17"
@@ -725,8 +789,9 @@ vertical_alignment = 1
 [node name="Numbers18" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=2089978056]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "18"
@@ -736,8 +801,9 @@ vertical_alignment = 1
 [node name="Numbers19" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=371123111]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "19"
@@ -747,8 +813,9 @@ vertical_alignment = 1
 [node name="Numbers20" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=646508599]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "20"
@@ -758,8 +825,9 @@ vertical_alignment = 1
 [node name="Numbers21" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=1725093192]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "21"
@@ -769,8 +837,9 @@ vertical_alignment = 1
 [node name="Numbers22" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=1579950153]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "22"
@@ -780,8 +849,9 @@ vertical_alignment = 1
 [node name="Numbers23" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=2017412226]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "23"
@@ -791,8 +861,9 @@ vertical_alignment = 1
 [node name="Numbers24" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=2037843824]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "24"
@@ -802,8 +873,9 @@ vertical_alignment = 1
 [node name="Numbers25" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=2037864680]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "25"
@@ -813,8 +885,9 @@ vertical_alignment = 1
 [node name="Numbers26" type="Label" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/NumberLabels" unique_id=1786942949]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 8
 text = "26"
@@ -5568,41 +5641,103 @@ stretch_mode = 0
 [node name="Tools" type="VBoxContainer" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing" unique_id=880201359]
 layout_mode = 2
 
-[node name="Red" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=371621705]
-custom_minimum_size = Vector2(64, 64)
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=398059218]
+custom_maximum_size = Vector2(80, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("8_dlfda")
+
+[node name="Red" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer" unique_id=371621705]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_hgkvf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vugga")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fvw1g")
 
-[node name="Orange" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=1302312786]
-custom_minimum_size = Vector2(64, 64)
+[node name="PanelContainer2" type="PanelContainer" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=961632714]
+custom_maximum_size = Vector2(80, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("8_dlfda")
+
+[node name="Orange" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer2" unique_id=1302312786]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_hhpci")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3i3qe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kq43")
 
-[node name="Yellow" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=937819874]
-custom_minimum_size = Vector2(64, 64)
+[node name="PanelContainer3" type="PanelContainer" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=460781408]
+custom_maximum_size = Vector2(80, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("8_dlfda")
+
+[node name="Yellow" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer3" unique_id=937819874]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_oib3e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uwy8f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lwmrj")
 
-[node name="Green" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=172606654]
-custom_minimum_size = Vector2(64, 64)
+[node name="PanelContainer4" type="PanelContainer" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=493916980]
+custom_maximum_size = Vector2(80, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("8_dlfda")
+
+[node name="Green" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer4" unique_id=172606654]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_kmc4e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g4gby")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nkk3y")
 
-[node name="Blue" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=902408068]
-custom_minimum_size = Vector2(64, 64)
+[node name="PanelContainer5" type="PanelContainer" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=997443421]
+custom_maximum_size = Vector2(80, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("8_dlfda")
+
+[node name="Blue" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer5" unique_id=902408068]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_uxfy3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ib6gu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ydfpt")
 
-[node name="Purple" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=599049432]
-custom_minimum_size = Vector2(64, 64)
+[node name="PanelContainer6" type="PanelContainer" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=811046162]
+custom_maximum_size = Vector2(80, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("8_dlfda")
+
+[node name="Purple" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer6" unique_id=599049432]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_ep4jl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xulpc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5phnc")
+
+[node name="PanelContainer7" type="PanelContainer" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=1786222146]
+custom_maximum_size = Vector2(80, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("8_dlfda")
+
+[node name="Black" type="Button" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer7" unique_id=1976914212]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_dlfda")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rnsis")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u3ola")
 
 [node name="RoundStuff" type="HSplitContainer" parent="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools" unique_id=441673231]
 layout_mode = 2
@@ -5615,11 +5750,12 @@ one_shot = true
 unique_name_in_owner = true
 custom_minimum_size = Vector2(171.06, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("4_5b2e5")
 theme_override_font_sizes/font_size = 48
 text = "100"
-horizontal_alignment = 2
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GuideOverlay" type="TextureRect" parent="." unique_id=2037688166]
@@ -5722,33 +5858,35 @@ theme_override_font_sizes/font_size = 128
 text = "3"
 
 [node name="LClick" type="AnimatedSprite2D" parent="." unique_id=75199019]
-position = Vector2(946.1599, 559.2399)
+position = Vector2(1084.7599, 80.63991)
 scale = Vector2(2.9599895, 2.9599895)
 sprite_frames = SubResource("SpriteFrames_oib3e")
 autoplay = "default"
 
 [node name="Brush" type="Sprite2D" parent="." unique_id=1533023336]
-position = Vector2(992, 559)
+position = Vector2(1094.0001, 136.76006)
 scale = Vector2(2.9599895, 2.9599895)
 texture = ExtResource("7_iajes")
 
 [node name="RClick" type="AnimatedSprite2D" parent="." unique_id=640168965]
-position = Vector2(1047.7599, 559.6399)
+position = Vector2(1085.0001, 201.76006)
 scale = Vector2(2.9599895, 2.9599895)
 sprite_frames = SubResource("SpriteFrames_kmc4e")
 autoplay = "default"
 
 [node name="Eraser" type="Sprite2D" parent="." unique_id=1348307703]
-position = Vector2(1093.5599, 559.83997)
+position = Vector2(1094, 255.76006)
 scale = Vector2(2.9599895, 2.9599895)
 texture = ExtResource("8_bco6w")
 
-[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/Red" to="." method="_on_red_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/Orange" to="." method="_on_orange_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/Yellow" to="." method="_on_yellow_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/Green" to="." method="_on_green_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/Blue" to="." method="_on_blue_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/Purple" to="." method="_on_purple_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer/Red" to="." method="_on_red_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer2/Orange" to="." method="_on_orange_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer3/Yellow" to="." method="_on_yellow_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer4/Green" to="." method="_on_green_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer5/Blue" to="." method="_on_blue_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer6/Purple" to="." method="_on_purple_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/PanelContainer7/Black" to="." method="_on_black_pressed"]
 [connection signal="timeout" from="CenterContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/Drawing/Tools/RoundStuff/RoundTimer" to="." method="_on_round_timer_timeout"]
 [connection signal="pressed" from="ResultPanel/VBoxContainer/HBoxContainer/NewRoundButton" to="." method="_on_new_round_button_pressed"]
+[connection signal="pressed" from="ResultPanel/VBoxContainer/HBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]

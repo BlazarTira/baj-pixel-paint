@@ -3,7 +3,7 @@ extends Control
 
 enum State {WAITING, DRAWING, RESULTS}
 var state = State.WAITING
-const ROUND_TIME = 10.0
+@export var ROUND_TIME = 100
 
 const GRID_SIZE = 26
 const MAX_LOG_ENTRIES = 50
@@ -186,10 +186,10 @@ func add_log_entry(viewer: String, coord: String):
 	entry.bbcode_enabled = true
 	entry.fit_content = true
 	entry.scroll_active = false
-	entry.add_theme_color_override("default_color", Color.BLACK)
-	entry.add_theme_color_override("font_outline_color", Color.WHITE)
+	entry.add_theme_color_override("default_color", Color.WHITE)
+	entry.add_theme_color_override("font_outline_color", Color.BLACK)
 	entry.add_theme_constant_override("outline_size", 6)
-	entry.text = "[center][b]%s[/b] erased %s[/center]" % [viewer.replace("[", "[lb]"), coord]
+	entry.text = "[right][b]%s[/b] erased %s[/right]" % [viewer.replace("[", "[lb]"), coord]
 	log_list.add_child(entry)
 	
 	if log_list.get_child_count() > MAX_LOG_ENTRIES:
@@ -247,6 +247,9 @@ func _on_blue_pressed():
 func _on_purple_pressed():
 	active_color = Color(0.717, 0.0, 1.0, 1.0)
 
+func _on_black_pressed():
+	active_color = Color(0, 0, 0, 1.0)
+
 
 func _on_round_timer_timeout():
 	state = State.RESULTS
@@ -263,3 +266,7 @@ func _on_new_round_button_pressed():
 func _on_countdown_timer_timeout():
 	count_down_label.hide()
 	start_next_round()
+
+
+func _on_main_menu_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

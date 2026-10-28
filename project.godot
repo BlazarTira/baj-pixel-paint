@@ -11,14 +11,17 @@ config_version=5
 [application]
 
 config/name="BAJ_Pixel_Paint"
-run/main_scene="uid://chxg65sbm2pps"
+run/main_scene="uid://dp7jg8cf3atpy"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*uid://cnruoykplorvb"
 Tentacle="*uid://68tbvdd2pyly"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
@@ -65,3 +68,5 @@ renderer/rendering_method.mobile="gl_compatibility"
 [tentacle]
 
 connection/build_mode=1
+connection/editor_mode=1
+embedded/twitch_client_id="ma52qw84h4diar183cujp4pnq2gnp2"
