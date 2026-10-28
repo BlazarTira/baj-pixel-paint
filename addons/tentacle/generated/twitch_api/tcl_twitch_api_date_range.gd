@@ -6,8 +6,6 @@ class_name TclTwitchApiDateRange
 extends RefCounted
 
 ## A reporting window's start and end, as RFC 3339 dates; empty when no start date was given.
-##
-## Generated from the tentacle-web type [code]TwitchApiDateRange[/code].
 
 
 ## The window's start.

@@ -6,8 +6,6 @@ class_name TclTwitchApiSharedChatParticipant
 extends RefCounted
 
 ## One channel in a shared chat session.
-##
-## Generated from the tentacle-web type [code]TwitchApiSharedChatParticipant[/code].
 
 
 ## The channel's broadcaster's user id.

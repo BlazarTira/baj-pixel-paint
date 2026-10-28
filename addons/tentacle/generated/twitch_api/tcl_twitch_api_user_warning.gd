@@ -6,8 +6,6 @@ class_name TclTwitchApiUserWarning
 extends RefCounted
 
 ## A warning given to a viewer.
-##
-## Generated from the tentacle-web type [code]TwitchApiUserWarning[/code].
 
 
 ## The channel's broadcaster's user id.

@@ -6,8 +6,6 @@ class_name TclTwitchApiGetChannelInformationInput
 extends RefCounted
 
 ## What Twitch's Get Channel Information takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChannelInformationInput[/code].
 
 
 ## The channels to read, up to 100; omit to read the connected broadcaster's.

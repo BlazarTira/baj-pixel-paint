@@ -6,7 +6,7 @@ class_name TclKickBadgeType
 
 ## Known Kick badge types.
 ##
-## Generated from the tentacle-web type [code]KickBadgeType[/code]. Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
+## Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
 
 
 ## The wire values, as an enum.
@@ -82,6 +82,44 @@ static func from_wire(wire: String) -> Value:
 		"vip":
 			return Value.VIP
 	return Value.STAFF
+
+
+## Whether [param wire] is one of the wire values this version knows. A newer
+## Tentacle can send one it predates, which an array or a dictionary leaves out
+## rather than reading as [constant Value.STAFF].
+static func is_known(wire: String) -> bool:
+	match wire:
+		"staff":
+			return true
+		"broadcaster":
+			return true
+		"founder":
+			return true
+		"moderator":
+			return true
+		"og":
+			return true
+		"sidekick":
+			return true
+		"sub_gifter":
+			return true
+		"sub_gifter100":
+			return true
+		"sub_gifter200":
+			return true
+		"sub_gifter25":
+			return true
+		"sub_gifter50":
+			return true
+		"subscriber":
+			return true
+		"trainwreckstv":
+			return true
+		"verified":
+			return true
+		"vip":
+			return true
+	return false
 
 
 ## The wire string for an enum member.

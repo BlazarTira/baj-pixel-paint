@@ -5,9 +5,7 @@
 class_name TclKickApiGetLivestreamsStatsOutput
 extends RefCounted
 
-## What Kick's Get Livestreams Stats answers with.
-##
-## Generated from the tentacle-web type [code]KickApiGetLivestreamsStatsOutput[/code].
+## What Kick's Get Livestreams Stats responds with.
 
 
 ## Counts across Kick's live streams.

@@ -6,8 +6,6 @@ class_name TclTwitchApiContentClassificationLabelInfo
 extends RefCounted
 
 ## One content classification label Twitch has.
-##
-## Generated from the tentacle-web type [code]TwitchApiContentClassificationLabelInfo[/code].
 
 
 ## The label's id, as Modify Channel Information takes it.

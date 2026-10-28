@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetPollsOutput
 extends RefCounted
 
-## What Twitch's Get Polls answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetPollsOutput[/code].
+## What Twitch's Get Polls responds with.
 
 
 ## The polls, newest first or in the order asked for.

@@ -6,8 +6,6 @@ class_name TclTwitchApiChannelViewer
 extends RefCounted
 
 ## One viewer with a role in the channel.
-##
-## Generated from the tentacle-web type [code]TwitchApiChannelViewer[/code].
 
 
 ## The viewer's user id.

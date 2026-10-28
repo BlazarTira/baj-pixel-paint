@@ -6,8 +6,6 @@ class_name TclKickApiRedeemer
 extends RefCounted
 
 ## The viewer who redeemed a channel reward.
-##
-## Generated from the tentacle-web type [code]KickApiRedeemer[/code].
 
 
 ## The viewer's user id.

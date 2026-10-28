@@ -6,8 +6,6 @@ class_name TclTwitchApiGetUserChatColorInput
 extends RefCounted
 
 ## What Twitch's Get User Chat Color takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetUserChatColorInput[/code].
 
 
 ## The viewers whose colors to read, up to 100; omit for the connected account's.

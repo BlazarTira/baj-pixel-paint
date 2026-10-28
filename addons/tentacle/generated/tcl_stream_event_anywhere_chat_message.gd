@@ -6,8 +6,6 @@ class_name TclStreamEvent_Anywhere_ChatMessage
 extends TclStreamEventAnywhereBase
 
 ## Cross-platform "Anywhere" view of ChatMessage events. Carries the $-prefixed normalized fields shared between Twitch and Kick variants.
-##
-## Generated from the tentacle-web type [code]StreamEvent_Anywhere_ChatMessage[/code].
 
 
 ## JSON key [code]$command[/code]. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

@@ -6,8 +6,6 @@ class_name TclTwitchApiGetPollsInput
 extends RefCounted
 
 ## What Twitch's Get Polls takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetPollsInput[/code].
 
 
 ## The polls to read, up to 20.

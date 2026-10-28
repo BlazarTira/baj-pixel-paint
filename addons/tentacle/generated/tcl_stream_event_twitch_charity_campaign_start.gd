@@ -8,8 +8,6 @@ extends TclStreamEvent_Twitch_Base
 ## Twitch charity campaign start event.
 ## Note: charity events carry [code]broadcaster_id[/code] / [code]broadcaster_login[/code] /
 ## [code]broadcaster_name[/code] (no [code]_user_[/code] infix), unlike every other channel event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_CharityCampaignStart[/code].
 
 
 ## JSON key [code]broadcaster_id[/code].

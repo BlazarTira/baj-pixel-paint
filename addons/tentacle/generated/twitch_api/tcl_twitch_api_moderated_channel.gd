@@ -6,8 +6,6 @@ class_name TclTwitchApiModeratedChannel
 extends RefCounted
 
 ## One channel the connected account moderates.
-##
-## Generated from the tentacle-web type [code]TwitchApiModeratedChannel[/code].
 
 
 ## The channel's broadcaster's user id.

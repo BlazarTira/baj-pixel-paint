@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetModeratorsOutput
 extends RefCounted
 
-## What Twitch's Get Moderators answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetModeratorsOutput[/code].
+## What Twitch's Get Moderators responds with.
 
 
 ## The moderators.

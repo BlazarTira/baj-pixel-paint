@@ -6,8 +6,6 @@ class_name TclTwitchApiBannedUser
 extends RefCounted
 
 ## One viewer banned or timed out.
-##
-## Generated from the tentacle-web type [code]TwitchApiBannedUser[/code].
 
 
 ## The viewer's user id.

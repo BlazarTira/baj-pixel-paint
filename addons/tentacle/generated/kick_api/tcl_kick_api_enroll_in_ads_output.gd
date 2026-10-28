@@ -5,9 +5,7 @@
 class_name TclKickApiEnrollInAdsOutput
 extends RefCounted
 
-## What Kick's Enroll in Ads answers with.
-##
-## Generated from the tentacle-web type [code]KickApiEnrollInAdsOutput[/code].
+## What Kick's Enroll in Ads responds with.
 
 
 ## Kick's note about the request.

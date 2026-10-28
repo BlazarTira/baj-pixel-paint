@@ -131,7 +131,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_omcc7")
-ROUND_TIME = 10
+ROUND_TIME = 60
 templates = Array[Texture2D]([ExtResource("2_jhfc7"), ExtResource("3_oe80x")])
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1331878230]

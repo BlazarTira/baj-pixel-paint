@@ -6,8 +6,6 @@ class_name TclTwitchApiStartRaidInput
 extends RefCounted
 
 ## What Twitch's Start a raid takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiStartRaidInput[/code].
 
 
 ## The channel to raid.

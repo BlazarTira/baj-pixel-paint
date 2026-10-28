@@ -6,8 +6,6 @@ class_name TclViewerPropertyRegistry
 extends RefCounted
 
 ## Full viewer-property registry: every collection and definition for the user.
-##
-## Generated from the tentacle-web type [code]ViewerPropertyRegistry[/code].
 
 
 ## JSON key [code]collections[/code].

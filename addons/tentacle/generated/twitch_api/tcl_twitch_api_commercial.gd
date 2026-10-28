@@ -7,9 +7,7 @@ extends RefCounted
 
 ## Twitch's own API requests: one call per endpoint in Twitch's API
 ## reference, named after its title there and shaped exactly as Twitch
-## shapes it, and the types each takes and answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiCommercial[/code].
+## shapes it, and the types each takes and responds with.
 
 
 ## The commercial's length in seconds; a request over 180 runs 180.

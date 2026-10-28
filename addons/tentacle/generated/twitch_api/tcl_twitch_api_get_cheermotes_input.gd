@@ -6,8 +6,6 @@ class_name TclTwitchApiGetCheermotesInput
 extends RefCounted
 
 ## What Twitch's Get Cheermotes takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetCheermotesInput[/code].
 
 
 ## A broadcaster whose own Cheermotes to include; omit for the connected broadcaster's.

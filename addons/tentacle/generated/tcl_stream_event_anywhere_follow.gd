@@ -6,8 +6,6 @@ class_name TclStreamEvent_Anywhere_Follow
 extends TclStreamEventAnywhereBase
 
 ## Cross-platform "Anywhere" view of Follow events. Carries the $-prefixed normalized fields shared between Twitch and Kick variants.
-##
-## Generated from the tentacle-web type [code]StreamEvent_Anywhere_Follow[/code].
 
 
 ## JSON key [code]$followerUserId[/code].

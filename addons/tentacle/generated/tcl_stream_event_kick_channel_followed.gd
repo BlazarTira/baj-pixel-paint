@@ -6,8 +6,6 @@ class_name TclStreamEvent_Kick_ChannelFollowed
 extends TclStreamEvent_Kick_Base
 
 ## Kick channel followed event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Kick_ChannelFollowed[/code].
 
 
 ## JSON key [code]broadcaster[/code].

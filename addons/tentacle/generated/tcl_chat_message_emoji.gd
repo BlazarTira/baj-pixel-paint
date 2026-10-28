@@ -6,8 +6,6 @@ class_name TclChatMessageEmoji
 extends RefCounted
 
 ## Emoji parsed from a chat message.
-##
-## Generated from the tentacle-web type [code]ChatMessageEmoji[/code].
 
 
 ## JSON key [code]code[/code].
@@ -52,7 +50,9 @@ static func parse(json: Variant) -> TclChatMessageEmoji:
 		out.code_points.append(TclJson.as_string(_code_points_item))
 	out.name = TclJson.as_string(TclJson.read_value(object, "name"))
 	for _skin_tones_item in TclJson.read_array(object, "skinTones"):
-		out.skin_tones.append(TclEmojiSkinTone.from_wire(TclJson.as_string(_skin_tones_item)))
+		var _skin_tones_wire := TclJson.as_string(_skin_tones_item)
+		if TclEmojiSkinTone.is_known(_skin_tones_wire):
+			out.skin_tones.append(TclEmojiSkinTone.from_wire(_skin_tones_wire))
 	for _aliases_item in TclJson.read_array(object, "aliases"):
 		out.aliases.append(TclJson.as_string(_aliases_item))
 	for _components_item in TclJson.read_array(object, "components"):

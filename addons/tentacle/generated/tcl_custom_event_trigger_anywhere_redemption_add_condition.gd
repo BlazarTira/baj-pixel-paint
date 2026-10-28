@@ -5,7 +5,7 @@
 class_name TclCustomEventTrigger_Anywhere_RedemptionAdd_Condition
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclCustomEventTrigger_Anywhere_RedemptionAdd_Condition[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]property[/code]. Optional on the wire. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

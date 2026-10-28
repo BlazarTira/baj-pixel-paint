@@ -6,8 +6,6 @@ class_name TclViewerPropertyDefinition
 extends RefCounted
 
 ## Viewer property definition (with computed value from default).
-##
-## Generated from the tentacle-web type [code]ViewerPropertyDefinitionJson[/code].
 
 
 ## JSON key [code]id[/code].

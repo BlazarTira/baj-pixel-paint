@@ -6,8 +6,6 @@ class_name TclTwitchApiBitsLeader
 extends RefCounted
 
 ## One viewer on the Bits leaderboard.
-##
-## Generated from the tentacle-web type [code]TwitchApiBitsLeader[/code].
 
 
 ## The viewer's user id.

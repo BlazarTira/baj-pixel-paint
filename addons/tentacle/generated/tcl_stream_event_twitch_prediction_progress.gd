@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_PredictionProgress
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch prediction progress event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_PredictionProgress[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

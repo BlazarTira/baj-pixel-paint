@@ -6,7 +6,7 @@ class_name TclStreamEventType_Twitch
 
 ## Twitch event type (all supported EventSub types).
 ##
-## Generated from the tentacle-web type [code]StreamEventType_Twitch[/code]. Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
+## Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
 
 
 ## The wire values, as an enum.
@@ -133,6 +133,8 @@ enum Value {
 	USER_UPDATE,
 	## Wire value [code]"user.whisper.message"[/code].
 	USER_WHISPER_MESSAGE,
+	## Wire value [code]"channel.custom_power_up_redemption.add"[/code].
+	CHANNEL_CUSTOM_POWER_UP_REDEMPTION_ADD,
 }
 
 
@@ -265,7 +267,141 @@ static func from_wire(wire: String) -> Value:
 			return Value.USER_UPDATE
 		"user.whisper.message":
 			return Value.USER_WHISPER_MESSAGE
+		"channel.custom_power_up_redemption.add":
+			return Value.CHANNEL_CUSTOM_POWER_UP_REDEMPTION_ADD
 	return Value.CHANNEL_AD_BREAK_BEGIN
+
+
+## Whether [param wire] is one of the wire values this version knows. A newer
+## Tentacle can send one it predates, which an array or a dictionary leaves out
+## rather than reading as [constant Value.CHANNEL_AD_BREAK_BEGIN].
+static func is_known(wire: String) -> bool:
+	match wire:
+		"channel.ad_break.begin":
+			return true
+		"channel.ban":
+			return true
+		"channel.bits.use":
+			return true
+		"channel.channel_points_automatic_reward_redemption.add":
+			return true
+		"channel.channel_points_custom_reward.add":
+			return true
+		"channel.channel_points_custom_reward.remove":
+			return true
+		"channel.channel_points_custom_reward.update":
+			return true
+		"channel.channel_points_custom_reward_redemption.add":
+			return true
+		"channel.channel_points_custom_reward_redemption.update":
+			return true
+		"channel.charity_campaign.donate":
+			return true
+		"channel.charity_campaign.progress":
+			return true
+		"channel.charity_campaign.start":
+			return true
+		"channel.charity_campaign.stop":
+			return true
+		"channel.chat.clear":
+			return true
+		"channel.chat.clear_user_messages":
+			return true
+		"channel.chat.message":
+			return true
+		"channel.chat.message_delete":
+			return true
+		"channel.chat_settings.update":
+			return true
+		"channel.cheer":
+			return true
+		"channel.follow":
+			return true
+		"channel.goal.begin":
+			return true
+		"channel.goal.end":
+			return true
+		"channel.goal.progress":
+			return true
+		"channel.hype_train.begin":
+			return true
+		"channel.hype_train.end":
+			return true
+		"channel.hype_train.progress":
+			return true
+		"channel.moderator.add":
+			return true
+		"channel.moderator.remove":
+			return true
+		"channel.poll.begin":
+			return true
+		"channel.poll.end":
+			return true
+		"channel.poll.progress":
+			return true
+		"channel.prediction.begin":
+			return true
+		"channel.prediction.end":
+			return true
+		"channel.prediction.lock":
+			return true
+		"channel.prediction.progress":
+			return true
+		"channel.raid":
+			return true
+		"channel.shared_chat.begin":
+			return true
+		"channel.shared_chat.end":
+			return true
+		"channel.shared_chat.update":
+			return true
+		"channel.shield_mode.begin":
+			return true
+		"channel.shield_mode.end":
+			return true
+		"channel.shoutout.create":
+			return true
+		"channel.shoutout.receive":
+			return true
+		"channel.subscribe":
+			return true
+		"channel.subscription.end":
+			return true
+		"channel.subscription.gift":
+			return true
+		"channel.subscription.message":
+			return true
+		"channel.suspicious_user.message":
+			return true
+		"channel.suspicious_user.update":
+			return true
+		"channel.unban":
+			return true
+		"channel.unban_request.create":
+			return true
+		"channel.unban_request.resolve":
+			return true
+		"channel.update":
+			return true
+		"channel.vip.add":
+			return true
+		"channel.vip.remove":
+			return true
+		"channel.warning.acknowledge":
+			return true
+		"channel.warning.send":
+			return true
+		"stream.offline":
+			return true
+		"stream.online":
+			return true
+		"user.update":
+			return true
+		"user.whisper.message":
+			return true
+		"channel.custom_power_up_redemption.add":
+			return true
+	return false
 
 
 ## The wire string for an enum member.
@@ -393,4 +529,6 @@ static func to_wire(value: Value) -> String:
 			return "user.update"
 		Value.USER_WHISPER_MESSAGE:
 			return "user.whisper.message"
+		Value.CHANNEL_CUSTOM_POWER_UP_REDEMPTION_ADD:
+			return "channel.custom_power_up_redemption.add"
 	return "channel.ad_break.begin"

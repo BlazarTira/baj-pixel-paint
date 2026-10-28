@@ -6,8 +6,6 @@ class_name TclTwitchApiPinnedChatCheermote
 extends RefCounted
 
 ## The Cheermote a fragment of a pinned message is.
-##
-## Generated from the tentacle-web type [code]TwitchApiPinnedChatCheermote[/code].
 
 
 ## The Cheermote's name.

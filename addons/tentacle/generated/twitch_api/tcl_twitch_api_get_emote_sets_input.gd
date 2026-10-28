@@ -6,8 +6,6 @@ class_name TclTwitchApiGetEmoteSetsInput
 extends RefCounted
 
 ## What Twitch's Get Emote Sets takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetEmoteSetsInput[/code].
 
 
 ## The emote sets to read, up to 25.

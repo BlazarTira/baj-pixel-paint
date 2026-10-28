@@ -5,9 +5,7 @@
 class_name TclKickApiGetKicksLeaderboardOutput
 extends RefCounted
 
-## What Kick's Get KICKs Leaderboard answers with.
-##
-## Generated from the tentacle-web type [code]KickApiGetKicksLeaderboardOutput[/code].
+## What Kick's Get KICKs Leaderboard responds with.
 
 
 ## The channel's top KICKs gifters, over three periods.

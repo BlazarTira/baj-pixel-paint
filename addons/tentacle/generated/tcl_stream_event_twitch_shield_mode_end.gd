@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_ShieldModeEnd
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch shield mode end event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_ShieldModeEnd[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

@@ -6,8 +6,6 @@ class_name TclKickAnonymousUser
 extends RefCounted
 
 ## Kick anonymous user (for gift sub gifters).
-##
-## Generated from the tentacle-web type [code]KickAnonymousUserJson[/code].
 
 
 ## JSON key [code]channel_slug[/code]. Optional on the wire. Either [code]null[/code] or a boolean; GDScript has no nullable form for that type.

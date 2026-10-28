@@ -6,8 +6,6 @@ class_name TclKickApiPostModerationBansInput
 extends RefCounted
 
 ## What Kick's Post Moderation Bans takes.
-##
-## Generated from the tentacle-web type [code]KickApiPostModerationBansInput[/code].
 
 
 ## The channel to ban them in; the connected broadcaster's when left out.

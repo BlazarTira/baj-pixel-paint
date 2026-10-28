@@ -6,8 +6,6 @@ class_name TclCustomControl_Number
 extends TclCustomControl
 
 ## Custom control number input.
-##
-## Generated from the tentacle-web type [code]CustomControlJson_Number[/code].
 
 
 ## JSON key [code]value[/code].

@@ -6,7 +6,7 @@ class_name TclTwitchChatMessageType
 
 ## Twitch chat message kind discriminant (controls UI affordances).
 ##
-## Generated from the tentacle-web type [code]TwitchChatMessageType[/code]. Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
+## Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
 
 
 ## The wire values, as an enum.
@@ -46,6 +46,26 @@ static func from_wire(wire: String) -> Value:
 		"power_ups_gigantified_emote":
 			return Value.POWER_UPS_GIGANTIFIED_EMOTE
 	return Value.TEXT
+
+
+## Whether [param wire] is one of the wire values this version knows. A newer
+## Tentacle can send one it predates, which an array or a dictionary leaves out
+## rather than reading as [constant Value.TEXT].
+static func is_known(wire: String) -> bool:
+	match wire:
+		"text":
+			return true
+		"channel_points_highlighted":
+			return true
+		"channel_points_sub_only":
+			return true
+		"user_intro":
+			return true
+		"power_ups_message_effect":
+			return true
+		"power_ups_gigantified_emote":
+			return true
+	return false
 
 
 ## The wire string for an enum member.

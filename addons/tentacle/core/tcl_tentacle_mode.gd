@@ -11,14 +11,16 @@ class_name TclTentacleMode
 # Tcl dropped for the namespace.
 
 enum Value {
-	## Connect to the Tentacle app running on the same machine, which holds the accounts
+	## Paired with the Tentacle app running on the same machine, which holds the accounts
 	## and everything configured in it.
-	APP,
+	PAIRED = 0,
 	## Run Tentacle inside the game itself, with no app needed: the game signs the player
 	## in to the streaming platforms (see [Tentacle_Connections]) and receives their
 	## events directly. Needs the Tentacle GDExtension in
 	## [code]res://addons/tentacle_embedded/[/code].
-	EMBEDDED,
+	EMBEDDED = 1,
+	## @deprecated: Use [constant PAIRED].
+	APP = 0,
 }
 
 const _ARGUMENT: String = "tentacle-mode="
@@ -27,15 +29,15 @@ const _ARGUMENT: String = "tentacle-mode="
 ## A human-readable name, for logs.
 static func to_text(value: Value) -> String:
 	match value:
-		Value.APP:
-			return "App"
+		Value.PAIRED:
+			return "Paired"
 		Value.EMBEDDED:
 			return "Embedded"
 	return "Unknown"
 
 
 ## Whether Tentacle runs inside the game: [param editor_mode] when the game runs from the
-## editor, [param build_mode] once exported. A [code]--tentacle-mode=app[/code] or
+## editor, [param build_mode] once exported. A [code]--tentacle-mode=paired[/code] or
 ## [code]--tentacle-mode=embedded[/code] argument in [param arguments] (one dash or two)
 ## wins over both, so an exported game can be tested against the app; any other value is
 ## ignored with a warning.
@@ -49,10 +51,11 @@ static func resolves_to_embedded(
 		if not bare.begins_with(_ARGUMENT):
 			continue
 		var value := bare.substr(_ARGUMENT.length()).to_lower()
-		if value == "app":
+		# "app" is what Paired mode was called before 1.2.0-alpha.3.
+		if value == "paired" or value == "app":
 			return false
 		if value == "embedded":
 			return true
-		TentacleLog.warn("ignoring %s; it takes app or embedded" % argument)
+		TentacleLog.warn("ignoring %s; it takes paired or embedded" % argument)
 		break
 	return (editor_mode if in_editor else build_mode) == Value.EMBEDDED

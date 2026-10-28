@@ -24,7 +24,8 @@ enum Value {
 }
 
 
-## A human-readable name, for logs: [code]NotConnected[/code], as Unreal spells it.
+# Spelled as Unreal spells the stage.
+## A human-readable name, for logs, such as [code]NotConnected[/code].
 static func to_text(value: Value) -> String:
 	match value:
 		Value.UNAVAILABLE:

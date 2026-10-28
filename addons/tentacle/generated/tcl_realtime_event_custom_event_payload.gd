@@ -5,7 +5,7 @@
 class_name TclRealtimeEvent_CustomEvent_Payload
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclRealtimeEvent_CustomEvent_Payload[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]id[/code].

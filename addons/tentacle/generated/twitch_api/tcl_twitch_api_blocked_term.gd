@@ -6,8 +6,6 @@ class_name TclTwitchApiBlockedTerm
 extends RefCounted
 
 ## One word or phrase blocked in chat.
-##
-## Generated from the tentacle-web type [code]TwitchApiBlockedTerm[/code].
 
 
 ## The channel's broadcaster's user id.

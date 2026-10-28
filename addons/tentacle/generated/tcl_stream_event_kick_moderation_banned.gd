@@ -6,8 +6,6 @@ class_name TclStreamEvent_Kick_ModerationBanned
 extends TclStreamEvent_Kick_Base
 
 ## Kick moderation banned event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Kick_ModerationBanned[/code].
 
 
 ## JSON key [code]broadcaster[/code].

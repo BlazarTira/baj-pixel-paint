@@ -5,7 +5,7 @@
 class_name TclMsg_ServerToClient_RpcResponse
 extends TclMsg_ServerToClient
 
-## Generated from the tentacle-web type [code]TentacleMsg_ServerToClient_RpcResponse[/code].
+## A message Tentacle sends to the game.
 
 
 ## The id of the Rpc_Request this answers.

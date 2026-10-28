@@ -6,8 +6,6 @@ class_name TclTwitchApiUpdateRedemptionStatusInput
 extends RefCounted
 
 ## What Twitch's Update Redemption Status takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiUpdateRedemptionStatusInput[/code].
 
 
 ## The redemptions to change, up to 50.

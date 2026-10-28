@@ -6,8 +6,6 @@ class_name TclTwitchApiGetTeamsInput
 extends RefCounted
 
 ## What Twitch's Get Teams takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetTeamsInput[/code].
 
 
 ## The team's name; give this or its id.

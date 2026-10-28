@@ -6,8 +6,6 @@ class_name TclTwitchApiWarnChatUserInput
 extends RefCounted
 
 ## What Twitch's Warn Chat User takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiWarnChatUserInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

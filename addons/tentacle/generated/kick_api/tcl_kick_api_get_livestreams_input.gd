@@ -6,8 +6,6 @@ class_name TclKickApiGetLivestreamsInput
 extends RefCounted
 
 ## What Kick's Get Livestreams takes.
-##
-## Generated from the tentacle-web type [code]KickApiGetLivestreamsInput[/code].
 
 
 ## Only streams in these categories, up to 25.

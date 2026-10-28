@@ -6,8 +6,6 @@ class_name TclTwitchApiRemoveChannelVipInput
 extends RefCounted
 
 ## What Twitch's Remove Channel VIP takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiRemoveChannelVipInput[/code].
 
 
 ## The VIP.

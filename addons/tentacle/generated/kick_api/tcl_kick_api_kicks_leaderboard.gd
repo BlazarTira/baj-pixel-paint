@@ -6,8 +6,6 @@ class_name TclKickApiKicksLeaderboard
 extends RefCounted
 
 ## The channel's top KICKs gifters, over three periods.
-##
-## Generated from the tentacle-web type [code]KickApiKicksLeaderboard[/code].
 
 
 ## The top gifters of all time.

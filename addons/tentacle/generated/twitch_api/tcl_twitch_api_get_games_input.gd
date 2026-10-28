@@ -6,8 +6,6 @@ class_name TclTwitchApiGetGamesInput
 extends RefCounted
 
 ## What Twitch's Get Games takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetGamesInput[/code].
 
 
 ## Category ids.

@@ -6,8 +6,6 @@ class_name TclTwitchApiActiveExtension
 extends RefCounted
 
 ## One extension slot on a channel.
-##
-## Generated from the tentacle-web type [code]TwitchApiActiveExtension[/code].
 
 
 ## Whether an extension is active in the slot.

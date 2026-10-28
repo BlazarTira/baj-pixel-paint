@@ -6,8 +6,6 @@ class_name TclTwitchApiChatter
 extends RefCounted
 
 ## One viewer connected to the broadcaster's chat.
-##
-## Generated from the tentacle-web type [code]TwitchApiChatter[/code].
 
 
 ## The viewer's user id.

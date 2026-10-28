@@ -6,8 +6,6 @@ class_name TclTwitchApiUpdateUserExtensionsInput
 extends RefCounted
 
 ## What Twitch's Update User Extensions takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiUpdateUserExtensionsInput[/code].
 
 
 ## The slots to change.

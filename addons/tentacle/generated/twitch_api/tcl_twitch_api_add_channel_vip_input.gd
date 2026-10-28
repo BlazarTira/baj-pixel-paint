@@ -6,8 +6,6 @@ class_name TclTwitchApiAddChannelVipInput
 extends RefCounted
 
 ## What Twitch's Add Channel VIP takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiAddChannelVipInput[/code].
 
 
 ## The viewer.

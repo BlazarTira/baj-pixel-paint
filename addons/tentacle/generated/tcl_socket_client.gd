@@ -51,6 +51,7 @@ const SERVER_MESSAGE_TYPES: Array[String] = [
 	"Connections_Status",
 	"Connections_Prompt",
 	"Connections_Result",
+	"Connections_PermissionNeeded",
 	"Rpc_Response",
 ]
 
@@ -65,6 +66,7 @@ const CLIENT_MESSAGE_TYPES: Array[String] = [
 	"Kick_PostChatMessage",
 	"Connections_Connect",
 	"Connections_CancelConnect",
+	"Connections_DeclinePermissions",
 	"Connections_Disconnect",
 	"Rpc_Request",
 ]
@@ -193,6 +195,11 @@ func send_connections_connect(data: Dictionary) -> Error:
 ## Sends [code]Connections_CancelConnect[/code].
 func send_connections_cancel_connect(data: Dictionary) -> Error:
 	return send_message("Connections_CancelConnect", data)
+
+
+## Sends [code]Connections_DeclinePermissions[/code].
+func send_connections_decline_permissions(data: Dictionary) -> Error:
+	return send_message("Connections_DeclinePermissions", data)
 
 
 ## Sends [code]Connections_Disconnect[/code].

@@ -5,7 +5,7 @@
 class_name TclTwitchChatMessageFragment_Emote
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclTwitchChatMessageFragment_Emote[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]id[/code].

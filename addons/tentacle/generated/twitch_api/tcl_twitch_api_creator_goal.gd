@@ -6,8 +6,6 @@ class_name TclTwitchApiCreatorGoal
 extends RefCounted
 
 ## One of the broadcaster's active goals.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreatorGoal[/code].
 
 
 ## The goal's id.

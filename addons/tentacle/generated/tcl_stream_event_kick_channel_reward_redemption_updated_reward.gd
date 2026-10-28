@@ -5,7 +5,7 @@
 class_name TclStreamEvent_Kick_ChannelRewardRedemptionUpdated_Reward
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclStreamEvent_Kick_ChannelRewardRedemptionUpdated_Reward[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]id[/code].

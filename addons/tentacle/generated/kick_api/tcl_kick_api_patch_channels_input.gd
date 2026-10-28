@@ -6,8 +6,6 @@ class_name TclKickApiPatchChannelsInput
 extends RefCounted
 
 ## What Kick's Patch Channels takes.
-##
-## Generated from the tentacle-web type [code]KickApiPatchChannelsInput[/code].
 
 
 ## The category's id.

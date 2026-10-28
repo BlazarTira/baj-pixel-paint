@@ -6,8 +6,6 @@ class_name TclTwitchApiGetUserEmotesInput
 extends RefCounted
 
 ## What Twitch's Get User Emotes takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetUserEmotesInput[/code].
 
 
 ## The cursor of the page to read, from the previous page's [code]pagination.cursor[/code].

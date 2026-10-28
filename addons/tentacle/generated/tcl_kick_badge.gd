@@ -6,8 +6,6 @@ class_name TclKickBadge
 extends RefCounted
 
 ## Kick badge.
-##
-## Generated from the tentacle-web type [code]KickBadge[/code].
 
 
 ## Display label, e.g. "Subscriber". Optional: Kick's realtime (Pusher)

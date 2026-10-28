@@ -6,8 +6,6 @@ class_name TclTwitchApiAddChannelModeratorInput
 extends RefCounted
 
 ## What Twitch's Add Channel Moderator takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiAddChannelModeratorInput[/code].
 
 
 ## The viewer.

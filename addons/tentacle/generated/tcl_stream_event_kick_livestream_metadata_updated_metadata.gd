@@ -5,7 +5,7 @@
 class_name TclStreamEvent_Kick_LivestreamMetadataUpdated_Metadata
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclStreamEvent_Kick_LivestreamMetadataUpdated_Metadata[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]title[/code].

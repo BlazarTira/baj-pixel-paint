@@ -6,8 +6,6 @@ class_name TclKickUser
 extends RefCounted
 
 ## Kick user (from webhook events, enriched with $platform).
-##
-## Generated from the tentacle-web type [code]KickUserJson[/code].
 
 
 ## JSON key [code]channel_slug[/code]. Optional on the wire. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

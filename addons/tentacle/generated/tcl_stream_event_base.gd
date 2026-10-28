@@ -6,8 +6,6 @@ class_name TclStreamEventBase
 extends RefCounted
 
 ## Base fields shared by all stream events (Twitch and Kick).
-##
-## Generated from the tentacle-web type [code]StreamEventBase[/code].
 
 
 ## JSON key [code]$createdAt[/code].

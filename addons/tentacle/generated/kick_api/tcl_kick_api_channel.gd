@@ -6,8 +6,6 @@ class_name TclKickApiChannel
 extends RefCounted
 
 ## One channel, as Get Channels returns it.
-##
-## Generated from the tentacle-web type [code]KickApiChannel[/code].
 
 
 ## The broadcaster's user id.

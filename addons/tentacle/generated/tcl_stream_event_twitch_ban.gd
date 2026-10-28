@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_Ban
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch ban event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_Ban[/code].
 
 
 ## JSON key [code]user_id[/code].

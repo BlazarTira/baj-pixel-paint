@@ -6,8 +6,6 @@ class_name TclTwitchPollChoice
 extends TclTwitchPollBeginChoice
 
 ## A Twitch poll choice with vote tallies (progress / end events).
-##
-## Generated from the tentacle-web type [code]TwitchPollChoice[/code].
 
 
 ## JSON key [code]bits_votes[/code].

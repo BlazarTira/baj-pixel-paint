@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetExtensionLiveChannelsOutput
 extends RefCounted
 
-## What Twitch's Get Extension Live Channels answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetExtensionLiveChannelsOutput[/code].
+## What Twitch's Get Extension Live Channels responds with.
 
 
 ## The channels.

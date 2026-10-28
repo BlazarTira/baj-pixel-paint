@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_UserUpdate
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch user update event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_UserUpdate[/code].
 
 
 ## JSON key [code]user_id[/code].

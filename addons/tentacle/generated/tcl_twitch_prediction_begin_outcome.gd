@@ -6,8 +6,6 @@ class_name TclTwitchPredictionBeginOutcome
 extends RefCounted
 
 ## A Twitch prediction outcome as carried on channel.prediction.begin (no totals yet).
-##
-## Generated from the tentacle-web type [code]TwitchPredictionBeginOutcome[/code].
 
 
 ## JSON key [code]id[/code].

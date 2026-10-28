@@ -6,8 +6,6 @@ class_name TclTwitchApiGuestStarInvite
 extends RefCounted
 
 ## One viewer invited to a Guest Star session.
-##
-## Generated from the tentacle-web type [code]TwitchApiGuestStarInvite[/code].
 
 
 ## The invited viewer's user id.

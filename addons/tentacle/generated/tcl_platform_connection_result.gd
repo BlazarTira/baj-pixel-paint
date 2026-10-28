@@ -6,8 +6,6 @@ class_name TclPlatformConnectionResult
 extends RefCounted
 
 ## How a sign-in attempt ended.
-##
-## Generated from the tentacle-web type [code]PlatformConnectionResultJson[/code].
 
 
 ## JSON key [code]platform[/code].

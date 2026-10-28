@@ -6,8 +6,6 @@ class_name TclTwitchApiPinnedChatMessage
 extends RefCounted
 
 ## A message pinned in chat.
-##
-## Generated from the tentacle-web type [code]TwitchApiPinnedChatMessage[/code].
 
 
 ## The message's id.

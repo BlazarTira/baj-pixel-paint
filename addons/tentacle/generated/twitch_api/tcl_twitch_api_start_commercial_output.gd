@@ -5,9 +5,7 @@
 class_name TclTwitchApiStartCommercialOutput
 extends RefCounted
 
-## What Twitch's Start Commercial answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiStartCommercialOutput[/code].
+## What Twitch's Start Commercial responds with.
 
 
 ## The commercial started.

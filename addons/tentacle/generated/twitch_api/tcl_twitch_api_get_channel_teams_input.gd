@@ -6,8 +6,6 @@ class_name TclTwitchApiGetChannelTeamsInput
 extends RefCounted
 
 ## What Twitch's Get Channel Teams takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChannelTeamsInput[/code].
 
 
 ## The channel whose teams to read; the connected broadcaster's when left out.

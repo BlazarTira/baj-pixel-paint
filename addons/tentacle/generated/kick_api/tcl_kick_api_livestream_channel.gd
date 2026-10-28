@@ -6,8 +6,6 @@ class_name TclKickApiLivestreamChannel
 extends RefCounted
 
 ## The channel a livestream is on.
-##
-## Generated from the tentacle-web type [code]KickApiLivestreamChannel[/code].
 
 
 ## The channel's slug, as in its URL.

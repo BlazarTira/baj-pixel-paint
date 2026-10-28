@@ -6,8 +6,6 @@ class_name TclStreamEvent_Kick_ChatMessage
 extends TclStreamEvent_Kick_Base
 
 ## Kick chat message event (event form of chat message).
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Kick_ChatMessage[/code].
 
 
 ## JSON key [code]broadcaster[/code].

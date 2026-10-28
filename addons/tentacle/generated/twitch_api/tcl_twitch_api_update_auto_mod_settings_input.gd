@@ -6,8 +6,6 @@ class_name TclTwitchApiUpdateAutoModSettingsInput
 extends RefCounted
 
 ## What Twitch's Update AutoMod Settings takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiUpdateAutoModSettingsInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

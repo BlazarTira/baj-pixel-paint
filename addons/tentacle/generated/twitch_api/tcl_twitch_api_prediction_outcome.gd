@@ -6,8 +6,6 @@ class_name TclTwitchApiPredictionOutcome
 extends RefCounted
 
 ## One outcome of a prediction.
-##
-## Generated from the tentacle-web type [code]TwitchApiPredictionOutcome[/code].
 
 
 ## The outcome's id.

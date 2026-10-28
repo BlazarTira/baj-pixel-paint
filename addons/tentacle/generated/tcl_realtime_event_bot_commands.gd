@@ -7,9 +7,6 @@ extends TclRealtimeEvent
 
 ## Realtime bot commands: every command the streamer configured, sent as the
 ## connection opens and again whenever a command or the bot's settings change.
-## [code]client.bot[/code] keeps the latest one.
-##
-## Generated from the tentacle-web type [code]RealtimeEvent_BotCommands[/code].
 
 
 ## JSON key [code]payload[/code].

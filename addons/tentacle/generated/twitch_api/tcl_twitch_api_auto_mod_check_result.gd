@@ -6,8 +6,6 @@ class_name TclTwitchApiAutoModCheckResult
 extends RefCounted
 
 ## Whether AutoMod would let one message into chat.
-##
-## Generated from the tentacle-web type [code]TwitchApiAutoModCheckResult[/code].
 
 
 ## The caller's id for the message.

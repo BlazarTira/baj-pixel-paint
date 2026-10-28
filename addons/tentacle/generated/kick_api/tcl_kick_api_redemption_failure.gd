@@ -6,8 +6,6 @@ class_name TclKickApiRedemptionFailure
 extends RefCounted
 
 ## A redemption Kick could not accept or reject, and why.
-##
-## Generated from the tentacle-web type [code]KickApiRedemptionFailure[/code].
 
 
 ## The redemption's id.

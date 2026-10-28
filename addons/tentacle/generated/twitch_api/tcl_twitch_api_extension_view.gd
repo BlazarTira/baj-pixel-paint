@@ -6,8 +6,6 @@ class_name TclTwitchApiExtensionView
 extends RefCounted
 
 ## How an extension is shown in one place, such as a panel or the video overlay.
-##
-## Generated from the tentacle-web type [code]TwitchApiExtensionView[/code].
 
 
 ## The HTML file shown there.

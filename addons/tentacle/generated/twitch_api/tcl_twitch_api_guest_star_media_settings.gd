@@ -6,8 +6,6 @@ class_name TclTwitchApiGuestStarMediaSettings
 extends RefCounted
 
 ## Whether a guest's audio or video is on, and who turned it off.
-##
-## Generated from the tentacle-web type [code]TwitchApiGuestStarMediaSettings[/code].
 
 
 ## Whether the host lets it be seen or heard.

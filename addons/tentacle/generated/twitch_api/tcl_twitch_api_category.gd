@@ -6,8 +6,6 @@ class_name TclTwitchApiCategory
 extends RefCounted
 
 ## One category (Twitch calls it a game), as Search Categories returns it.
-##
-## Generated from the tentacle-web type [code]TwitchApiCategory[/code].
 
 
 ## The category's id.

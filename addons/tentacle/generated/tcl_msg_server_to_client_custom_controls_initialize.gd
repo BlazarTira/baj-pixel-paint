@@ -5,7 +5,7 @@
 class_name TclMsg_ServerToClient_CustomControlsInitialize
 extends TclMsg_ServerToClient
 
-## Generated from the tentacle-web type [code]TentacleMsg_ServerToClient_CustomControlsInitialize[/code].
+## A message Tentacle sends to the game.
 
 
 

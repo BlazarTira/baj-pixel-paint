@@ -6,8 +6,6 @@ class_name TclCustomEventTrigger_Kick_Event
 extends TclCustomEventTriggerBase
 
 ## Kick event trigger (non-chat events).
-##
-## Generated from the tentacle-web type [code]CustomEventTrigger_Kick_Event[/code].
 
 
 ## JSON key [code]platform[/code]. Optional on the wire. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

@@ -6,8 +6,6 @@ class_name TclTwitchApiActiveExtensions
 extends RefCounted
 
 ## A channel's extension slots, by type, each keyed by its number from "1".
-##
-## Generated from the tentacle-web type [code]TwitchApiActiveExtensions[/code].
 
 
 ## The panel slots.

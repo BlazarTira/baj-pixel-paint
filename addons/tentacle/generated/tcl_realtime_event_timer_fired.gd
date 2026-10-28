@@ -8,8 +8,6 @@ extends TclRealtimeEvent
 ## Realtime timer fire: one of the timers the streamer defined in Tentacle has
 ## fired, or was fired from the app's Fire button. Sent live only, so a fire
 ## from before the connection opened is never delivered late.
-##
-## Generated from the tentacle-web type [code]RealtimeEvent_TimerFired[/code].
 
 
 ## JSON key [code]payload[/code].

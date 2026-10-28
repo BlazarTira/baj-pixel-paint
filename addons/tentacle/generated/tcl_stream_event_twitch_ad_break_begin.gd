@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_AdBreakBegin
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch ad break begin event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_AdBreakBegin[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

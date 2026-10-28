@@ -6,8 +6,6 @@ class_name TclCustomEventTriggerBase
 extends RefCounted
 
 ## Base fields shared by all custom event triggers.
-##
-## Generated from the tentacle-web type [code]CustomEventTriggerBase[/code].
 
 
 ## JSON key [code]id[/code].

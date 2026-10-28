@@ -8,7 +8,7 @@ extends RefCounted
 ## [code]res://addons/tentacle_embedded/[/code] beside this addon. The first embedded
 ## connection starts it with that connection's [TentacleEmbeddedOptions], and it stops
 ## when the game ends. Without the GDExtension, Embedded mode says so in the output and
-## keeps retrying, and App mode is unaffected.
+## keeps retrying, and Paired mode is unaffected.
 ##
 ## All members are static.
 
@@ -57,10 +57,7 @@ static func version() -> String:
 static func open_connection(options: TentacleEmbeddedOptions) -> Object:
 	var native := _native_core()
 	if native == null:
-		_report(
-			"Embedded mode needs the Tentacle GDExtension in res://addons/tentacle_embedded/, "
-			+ "which this project does not have"
-		)
+		_report(missing_extension_problem(OS.has_feature("editor")))
 		return null
 
 	var config := options.to_config_json()
@@ -83,6 +80,23 @@ static func open_connection(options: TentacleEmbeddedOptions) -> Object:
 	if connection != null:
 		_reported = ""
 	return connection
+
+
+## What Embedded mode reports when the Tentacle GDExtension is missing: from the project
+## when [param in_editor], else from the export, which leaves it out when its Build Mode
+## is Paired.
+static func missing_extension_problem(in_editor: bool) -> String:
+	if in_editor:
+		return (
+			"Embedded mode needs the Tentacle GDExtension in res://addons/tentacle_embedded/, "
+			+ "which this project does not have"
+		)
+	return (
+		"Embedded mode needs the Tentacle GDExtension, which this export does not carry: it "
+		+ "exports from res://addons/tentacle_embedded/, and an export whose Build Mode is "
+		+ "Paired leaves it out unless the Project Setting "
+		+ "tentacle/embedded/include_core_in_paired_builds is on"
+	)
 
 
 ## Stops the core, closing every connection to it. The next embedded connection starts

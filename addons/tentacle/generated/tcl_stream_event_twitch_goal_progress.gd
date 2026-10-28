@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_GoalProgress
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch creator goal progress event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_GoalProgress[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

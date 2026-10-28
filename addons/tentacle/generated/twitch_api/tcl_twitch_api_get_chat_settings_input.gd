@@ -6,8 +6,6 @@ class_name TclTwitchApiGetChatSettingsInput
 extends RefCounted
 
 ## What Twitch's Get Chat Settings takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChatSettingsInput[/code].
 
 
 ## The channel whose settings to read; omit for the connected broadcaster's.

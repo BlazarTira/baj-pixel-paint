@@ -6,8 +6,6 @@ class_name TclTwitchChatBadge
 extends RefCounted
 
 ## A badge attached to a Twitch chatter, in EventSub's array shape.
-##
-## Generated from the tentacle-web type [code]TwitchChatBadge[/code].
 
 
 ## JSON key [code]set_id[/code].

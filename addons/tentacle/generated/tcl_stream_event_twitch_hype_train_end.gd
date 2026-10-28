@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_HypeTrainEnd
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch Hype Train end event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_HypeTrainEnd[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

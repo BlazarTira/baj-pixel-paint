@@ -6,8 +6,6 @@ class_name TclTwitchApiPrediction
 extends RefCounted
 
 ## One Channel Points prediction.
-##
-## Generated from the tentacle-web type [code]TwitchApiPrediction[/code].
 
 
 ## The prediction's id.

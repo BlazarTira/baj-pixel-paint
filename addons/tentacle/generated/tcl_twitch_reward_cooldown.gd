@@ -6,8 +6,6 @@ class_name TclTwitchRewardCooldown
 extends RefCounted
 
 ## Global cooldown setting of a Twitch custom channel point reward.
-##
-## Generated from the tentacle-web type [code]TwitchRewardCooldown[/code].
 
 
 ## JSON key [code]is_enabled[/code].

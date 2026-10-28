@@ -6,8 +6,6 @@ class_name TclTwitchApiModifyChannelInformationInput
 extends RefCounted
 
 ## What Twitch's Modify Channel Information takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiModifyChannelInformationInput[/code].
 
 
 ## The category's id; empty to clear the category.

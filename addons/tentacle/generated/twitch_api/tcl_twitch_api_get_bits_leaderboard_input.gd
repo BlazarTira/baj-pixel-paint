@@ -6,8 +6,6 @@ class_name TclTwitchApiGetBitsLeaderboardInput
 extends RefCounted
 
 ## What Twitch's Get Bits Leaderboard takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetBitsLeaderboardInput[/code].
 
 
 ## How many viewers to return, 1-100; Twitch's default is 10.

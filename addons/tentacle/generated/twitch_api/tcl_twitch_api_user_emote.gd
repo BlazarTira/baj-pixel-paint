@@ -6,8 +6,6 @@ class_name TclTwitchApiUserEmote
 extends RefCounted
 
 ## One emote the connected account can use.
-##
-## Generated from the tentacle-web type [code]TwitchApiUserEmote[/code].
 
 
 ## The emote's id.

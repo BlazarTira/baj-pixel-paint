@@ -5,9 +5,7 @@
 class_name TclTwitchApiEndPredictionOutput
 extends RefCounted
 
-## What Twitch's End Prediction answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiEndPredictionOutput[/code].
+## What Twitch's End Prediction responds with.
 
 
 ## The prediction as it now is.

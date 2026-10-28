@@ -5,12 +5,10 @@
 class_name TclTwitchApiCheckAutoModStatusOutput
 extends RefCounted
 
-## What Twitch's Check AutoMod Status answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiCheckAutoModStatusOutput[/code].
+## What Twitch's Check AutoMod Status responds with.
 
 
-## Each message's answer.
+## Each message's result.
 ##
 ## JSON key [code]data[/code].
 var data: Array[TclTwitchApiAutoModCheckResult] = []

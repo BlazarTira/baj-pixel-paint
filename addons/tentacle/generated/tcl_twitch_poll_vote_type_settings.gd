@@ -6,8 +6,6 @@ class_name TclTwitchPollVoteTypeSettings
 extends RefCounted
 
 ## Per-vote-type settings of a Twitch poll (Bits / Channel Points voting).
-##
-## Generated from the tentacle-web type [code]TwitchPollVoteTypeSettings[/code].
 
 
 ## JSON key [code]is_enabled[/code].

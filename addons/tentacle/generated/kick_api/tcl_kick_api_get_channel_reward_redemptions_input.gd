@@ -6,8 +6,6 @@ class_name TclKickApiGetChannelRewardRedemptionsInput
 extends RefCounted
 
 ## What Kick's Get Channel Reward Redemptions takes.
-##
-## Generated from the tentacle-web type [code]KickApiGetChannelRewardRedemptionsInput[/code].
 
 
 ## Only this reward's redemptions.

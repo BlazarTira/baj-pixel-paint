@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetGuestStarInvitesOutput
 extends RefCounted
 
-## What Twitch's Get Guest Star Invites answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetGuestStarInvitesOutput[/code].
+## What Twitch's Get Guest Star Invites responds with.
 
 
 ## The invites.

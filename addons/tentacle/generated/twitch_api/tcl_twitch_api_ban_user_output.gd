@@ -5,9 +5,7 @@
 class_name TclTwitchApiBanUserOutput
 extends RefCounted
 
-## What Twitch's Ban User answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiBanUserOutput[/code].
+## What Twitch's Ban User responds with.
 
 
 ## The ban or timeout.

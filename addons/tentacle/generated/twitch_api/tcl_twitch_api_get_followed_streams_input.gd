@@ -6,8 +6,6 @@ class_name TclTwitchApiGetFollowedStreamsInput
 extends RefCounted
 
 ## What Twitch's Get Followed Streams takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetFollowedStreamsInput[/code].
 
 
 ## The most items to return per page, 1-100.

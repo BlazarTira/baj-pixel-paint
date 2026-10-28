@@ -6,8 +6,6 @@ class_name TclTwitchChatMessageFragment
 extends RefCounted
 
 ## A typed segment of a Twitch chat message body.
-##
-## Generated from the tentacle-web type [code]TwitchChatMessageFragment[/code].
 
 
 ## JSON key [code]type[/code].

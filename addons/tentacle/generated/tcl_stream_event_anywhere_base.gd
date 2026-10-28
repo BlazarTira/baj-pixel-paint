@@ -6,8 +6,6 @@ class_name TclStreamEventAnywhereBase
 extends RefCounted
 
 ## Common base for cross-platform "Anywhere" event views. Carries the platform discriminator; the shared internal Data payload comes from hasDataMember.
-##
-## Generated from the tentacle-web type [code]StreamEventAnywhereBase[/code].
 
 
 ## JSON key [code]$platform[/code].

@@ -6,8 +6,6 @@ class_name TclKickApiChannelReward
 extends RefCounted
 
 ## One channel reward.
-##
-## Generated from the tentacle-web type [code]KickApiChannelReward[/code].
 
 
 ## The reward's id.

@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_ChatSettingsUpdate
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch chat settings update event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_ChatSettingsUpdate[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

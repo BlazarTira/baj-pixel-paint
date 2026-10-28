@@ -6,8 +6,6 @@ class_name TclStreamEvent_Anywhere_SubscriptionRenewal
 extends TclStreamEventAnywhereBase
 
 ## Cross-platform "Anywhere" view of SubscriptionRenewal events. Carries the $-prefixed normalized fields shared between Twitch and Kick variants.
-##
-## Generated from the tentacle-web type [code]StreamEvent_Anywhere_SubscriptionRenewal[/code].
 
 
 ## JSON key [code]$subscriberUserId[/code].

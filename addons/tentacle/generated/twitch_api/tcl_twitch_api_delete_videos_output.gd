@@ -5,9 +5,7 @@
 class_name TclTwitchApiDeleteVideosOutput
 extends RefCounted
 
-## What Twitch's Delete Videos answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiDeleteVideosOutput[/code].
+## What Twitch's Delete Videos responds with.
 
 
 ## The ids of the videos deleted.

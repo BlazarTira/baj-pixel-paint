@@ -6,8 +6,6 @@ class_name TclCustomControlEvent_Click
 extends TclCustomControlEvent
 
 ## Custom control click event.
-##
-## Generated from the tentacle-web type [code]CustomControlEvent_Click[/code].
 
 
 

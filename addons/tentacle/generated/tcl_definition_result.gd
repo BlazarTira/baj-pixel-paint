@@ -5,15 +5,14 @@
 class_name TclDefinitionResult
 
 ## What a change to the streamer's definitions came to - creating, changing,
-## deleting, starting or firing a timer, say - as every Tentacle plugin reports
-## it:
+## deleting, starting or firing a timer, say:
 ## - [code]"success"[/code]: the change was made.
 ## - [code]"notFound"[/code]: nothing has the name the change named.
 ## - [code]"nameTaken"[/code]: another already has the name the change asked for.
 ## - [code]"failed"[/code]: Tentacle is not running, or refused the change; the reason is
 ##   logged. Worth trying again later.
 ##
-## Generated from the tentacle-web type [code]DefinitionResult[/code]. Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
+## Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
 
 
 ## The wire values, as an enum.
@@ -45,6 +44,22 @@ static func from_wire(wire: String) -> Value:
 		"failed":
 			return Value.FAILED
 	return Value.SUCCESS
+
+
+## Whether [param wire] is one of the wire values this version knows. A newer
+## Tentacle can send one it predates, which an array or a dictionary leaves out
+## rather than reading as [constant Value.SUCCESS].
+static func is_known(wire: String) -> bool:
+	match wire:
+		"success":
+			return true
+		"notFound":
+			return true
+		"nameTaken":
+			return true
+		"failed":
+			return true
+	return false
 
 
 ## The wire string for an enum member.

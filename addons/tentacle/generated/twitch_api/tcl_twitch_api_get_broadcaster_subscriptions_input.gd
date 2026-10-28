@@ -6,8 +6,6 @@ class_name TclTwitchApiGetBroadcasterSubscriptionsInput
 extends RefCounted
 
 ## What Twitch's Get Broadcaster Subscriptions takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetBroadcasterSubscriptionsInput[/code].
 
 
 ## Only these users, up to 100; leave the cursors out with them.

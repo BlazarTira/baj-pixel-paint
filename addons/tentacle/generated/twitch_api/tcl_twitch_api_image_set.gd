@@ -6,8 +6,6 @@ class_name TclTwitchApiImageSet
 extends RefCounted
 
 ## One image in three sizes.
-##
-## Generated from the tentacle-web type [code]TwitchApiImageSet[/code].
 
 
 ## A URL to the small image.

@@ -5,9 +5,7 @@
 class_name TclTwitchApiStartRaidOutput
 extends RefCounted
 
-## What Twitch's Start a raid answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiStartRaidOutput[/code].
+## What Twitch's Start a raid responds with.
 
 
 ## The raid waiting to go.

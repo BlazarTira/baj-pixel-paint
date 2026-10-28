@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_StreamOffline
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch stream offline event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_StreamOffline[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

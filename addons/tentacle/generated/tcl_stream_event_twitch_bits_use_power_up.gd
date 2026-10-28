@@ -5,7 +5,7 @@
 class_name TclStreamEvent_Twitch_BitsUse_Power_Up
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclStreamEvent_Twitch_BitsUse_Power_Up[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]type[/code].

@@ -6,8 +6,6 @@ class_name TclTwitchApiGetExtensionLiveChannelsInput
 extends RefCounted
 
 ## What Twitch's Get Extension Live Channels takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetExtensionLiveChannelsInput[/code].
 
 
 ## The extension.

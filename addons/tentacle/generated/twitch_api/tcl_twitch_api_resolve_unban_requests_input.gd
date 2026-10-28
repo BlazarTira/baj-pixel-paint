@@ -6,8 +6,6 @@ class_name TclTwitchApiResolveUnbanRequestsInput
 extends RefCounted
 
 ## What Twitch's Resolve Unban Requests takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiResolveUnbanRequestsInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

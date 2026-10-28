@@ -6,8 +6,6 @@ class_name TclTwitchApiCreateStreamMarkerInput
 extends RefCounted
 
 ## What Twitch's Create Stream Marker takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreateStreamMarkerInput[/code].
 
 
 ## What the marker is for, up to 140 characters.

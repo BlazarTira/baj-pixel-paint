@@ -1,6 +1,32 @@
+Tentacle for Godot is free to use. Its files, in the addons/tentacle and
+addons/tentacle_embedded folders, are licensed under the MIT License below,
+except:
+
+- Tentacle's core library: tentacle_godot.dll in addons/tentacle_embedded/bin/,
+  and the same library for any other platform, wherever it is in the addon. It
+  runs Tentacle inside your game in Embedded mode, is also free to use, and
+  comes under the Tentacle Core License in the TENTACLE-CORE-LICENSE.md file in
+  addons/tentacle_embedded/. Any product that carries the library, even an
+  export that only uses Paired mode, must include that license and the
+  THIRD-PARTY-NOTICES.txt file beside it, in its credits, documentation, or as
+  text files. If you pass this addon on by itself, other than to people working
+  on your product with you, leave the library out: that license allows it only
+  as part of your own product (a game, app, mod, or streaming tool, not an SDK,
+  engine plugin, template, or starter kit).
+- Those two text files, which are license texts.
+- Any other third-party file with a license of its own.
+
+When the addon is exported into software you distribute for people to run,
+such as a game, mod, app, or plugin for streaming software, rather than passed
+on to other developers as an addon, source code, or library, you don't need to
+include the MIT License's notice.
+
+These licenses grant no rights in the names or logos of Tentacle or Eldritch
+One. In the MIT License below, "the Software" means the files it covers.
+
 MIT License
 
-Copyright (c) 2024 Tentacle
+Copyright (c) 2026 Eldritch One
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

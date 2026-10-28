@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_SuspiciousUserMessage
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch suspicious user message event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_SuspiciousUserMessage[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

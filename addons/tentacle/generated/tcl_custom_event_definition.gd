@@ -6,8 +6,6 @@ class_name TclCustomEventDefinition
 extends RefCounted
 
 ## Custom event definition (the full configuration with triggers).
-##
-## Generated from the tentacle-web type [code]CustomEventDefinitionJson[/code].
 
 
 ## JSON key [code]id[/code].

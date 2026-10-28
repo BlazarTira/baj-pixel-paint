@@ -6,8 +6,6 @@ class_name TclTwitchApiChannelEditor
 extends RefCounted
 
 ## One of the broadcaster's editors, as Get Channel Editors returns them.
-##
-## Generated from the tentacle-web type [code]TwitchApiChannelEditor[/code].
 
 
 ## The editor's user id.

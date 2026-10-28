@@ -5,7 +5,7 @@
 class_name TclStreamEvent_Twitch_WhisperMessage_Whisper
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclStreamEvent_Twitch_WhisperMessage_Whisper[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]text[/code].

@@ -6,8 +6,6 @@ class_name TclTwitchApiGetGuestStarSessionInput
 extends RefCounted
 
 ## What Twitch's Get Guest Star Session takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetGuestStarSessionInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

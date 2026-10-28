@@ -5,9 +5,7 @@
 class_name TclKickApiGetChannelsOutput
 extends RefCounted
 
-## What Kick's Get Channels answers with.
-##
-## Generated from the tentacle-web type [code]KickApiGetChannelsOutput[/code].
+## What Kick's Get Channels responds with.
 
 
 ## The channels found.

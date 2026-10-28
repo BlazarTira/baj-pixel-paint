@@ -6,8 +6,6 @@ class_name TclTwitchApiGetShieldModeStatusInput
 extends RefCounted
 
 ## What Twitch's Get Shield Mode Status takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetShieldModeStatusInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

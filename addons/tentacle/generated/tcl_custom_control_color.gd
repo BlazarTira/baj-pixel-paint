@@ -6,8 +6,6 @@ class_name TclCustomControl_Color
 extends TclCustomControl
 
 ## Custom control color picker.
-##
-## Generated from the tentacle-web type [code]CustomControlJson_Color[/code].
 
 
 ## JSON key [code]value[/code].

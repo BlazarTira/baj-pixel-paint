@@ -6,8 +6,6 @@ class_name TclTwitchApiGlobalEmote
 extends RefCounted
 
 ## One of Twitch's global emotes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGlobalEmote[/code].
 
 
 ## The emote's id.

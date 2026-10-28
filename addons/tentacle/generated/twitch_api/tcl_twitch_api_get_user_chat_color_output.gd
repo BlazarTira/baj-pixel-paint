@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetUserChatColorOutput
 extends RefCounted
 
-## What Twitch's Get User Chat Color answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetUserChatColorOutput[/code].
+## What Twitch's Get User Chat Color responds with.
 
 
 ## The colors.

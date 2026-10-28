@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_RewardRemove
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch custom channel point reward remove event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_RewardRemove[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

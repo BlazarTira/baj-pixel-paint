@@ -6,8 +6,6 @@ class_name TclTwitchApiDeleteGuestStarSlotInput
 extends RefCounted
 
 ## What Twitch's Delete Guest Star Slot takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiDeleteGuestStarSlotInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

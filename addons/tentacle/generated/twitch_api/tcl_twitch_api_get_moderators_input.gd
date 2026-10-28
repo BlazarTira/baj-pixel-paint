@@ -6,8 +6,6 @@ class_name TclTwitchApiGetModeratorsInput
 extends RefCounted
 
 ## What Twitch's Get Moderators takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetModeratorsInput[/code].
 
 
 ## The viewers to check, up to 100; omit for all moderators.

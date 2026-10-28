@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_Base
 extends TclStreamEventBase
 
 ## Base fields for all Twitch events.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_Base[/code].
 
 
 ## JSON key [code]$platform[/code].
@@ -97,6 +95,8 @@ static func parse(json: Variant) -> TclStreamEvent_Twitch_Base:
 			return TclStreamEvent_Twitch_SuspiciousUserUpdate.parse(json)
 		"channel.bits.use":
 			return TclStreamEvent_Twitch_BitsUse.parse(json)
+		"channel.custom_power_up_redemption.add":
+			return TclStreamEvent_Twitch_CustomPowerUpRedemptionAdd.parse(json)
 		"channel.hype_train.begin":
 			return TclStreamEvent_Twitch_HypeTrainBegin.parse(json)
 		"channel.hype_train.progress":

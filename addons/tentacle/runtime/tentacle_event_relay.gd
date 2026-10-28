@@ -1,4 +1,4 @@
-@icon("res://addons/tentacle/icons/event.svg")
+@icon("res://addons/tentacle/icons/tentacle.png")
 class_name TentacleEventRelay
 extends Node
 
@@ -147,6 +147,10 @@ signal OnConnectPrompt(prompt: TclPlatformConnectionPrompt)
 
 ## Connecting ended, in Embedded mode. Relays [signal Tentacle_Connections.OnConnectResult].
 signal OnConnectResult(result: TclPlatformConnectionResult)
+
+## Tentacle refused a request because the account has not allowed a permission it needs.
+## Relays [signal Tentacle_Connections.OnPermissionNeeded].
+signal OnPermissionNeeded(permission_needed: TclPlatformPermissionNeeded)
 
 var _forwarder: TentacleSignalForwarder = null
 

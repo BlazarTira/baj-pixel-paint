@@ -6,8 +6,6 @@ class_name TclTwitchApiSharedChatSession
 extends RefCounted
 
 ## A shared chat session.
-##
-## Generated from the tentacle-web type [code]TwitchApiSharedChatSession[/code].
 
 
 ## The session's id.

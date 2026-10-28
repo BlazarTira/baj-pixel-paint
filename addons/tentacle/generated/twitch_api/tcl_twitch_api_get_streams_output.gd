@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetStreamsOutput
 extends RefCounted
 
-## What Twitch's Get Streams answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetStreamsOutput[/code].
+## What Twitch's Get Streams responds with.
 
 
 ## The live streams found; empty while they are all offline.

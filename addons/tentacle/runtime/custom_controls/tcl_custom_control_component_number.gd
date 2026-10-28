@@ -1,4 +1,4 @@
-@icon("res://addons/tentacle/icons/control.svg")
+@icon("res://addons/tentacle/icons/tentacle.png")
 class_name TclCustomControlComponent_Number
 extends TclCustomControlComponent
 

@@ -6,8 +6,6 @@ class_name TclKickApiDeleteModerationBansInput
 extends RefCounted
 
 ## What Kick's Delete Moderation Bans takes.
-##
-## Generated from the tentacle-web type [code]KickApiDeleteModerationBansInput[/code].
 
 
 ## The channel to lift it in; the connected broadcaster's when left out.

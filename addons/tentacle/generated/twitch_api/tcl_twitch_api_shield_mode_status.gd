@@ -6,8 +6,6 @@ class_name TclTwitchApiShieldModeStatus
 extends RefCounted
 
 ## Whether Shield Mode is on, and who last turned it on.
-##
-## Generated from the tentacle-web type [code]TwitchApiShieldModeStatus[/code].
 
 
 ## Whether Shield Mode is on.

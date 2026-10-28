@@ -6,8 +6,6 @@ class_name TclKickApiRedemption
 extends RefCounted
 
 ## One redemption of a channel reward.
-##
-## Generated from the tentacle-web type [code]KickApiRedemption[/code].
 
 
 ## The redemption's id.

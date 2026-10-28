@@ -6,8 +6,6 @@ class_name TclTwitchApiExtensionViews
 extends RefCounted
 
 ## Every place an extension can be shown, and how.
-##
-## Generated from the tentacle-web type [code]TwitchApiExtensionViews[/code].
 
 
 ## On mobile devices.

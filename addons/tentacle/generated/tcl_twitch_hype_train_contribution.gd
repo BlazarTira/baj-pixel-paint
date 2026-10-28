@@ -6,8 +6,6 @@ class_name TclTwitchHypeTrainContribution
 extends RefCounted
 
 ## A top contribution to a Twitch Hype Train.
-##
-## Generated from the tentacle-web type [code]TwitchHypeTrainContribution[/code].
 
 
 ## JSON key [code]user_id[/code].

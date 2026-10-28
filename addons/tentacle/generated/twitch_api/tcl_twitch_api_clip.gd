@@ -6,8 +6,6 @@ class_name TclTwitchApiClip
 extends RefCounted
 
 ## One clip, as Get Clips returns it.
-##
-## Generated from the tentacle-web type [code]TwitchApiClip[/code].
 
 
 ## The clip's id.

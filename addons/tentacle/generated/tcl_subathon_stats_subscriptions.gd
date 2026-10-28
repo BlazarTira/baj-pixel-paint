@@ -6,8 +6,6 @@ class_name TclSubathonStats_Subscriptions
 extends RefCounted
 
 ## Subathon subscription statistics.
-##
-## Generated from the tentacle-web type [code]SubathonStats_Subscriptions[/code].
 
 
 ## JSON key [code]count[/code].

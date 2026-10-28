@@ -6,8 +6,6 @@ class_name TclCustomControl_Slider
 extends TclCustomControl
 
 ## Custom control slider.
-##
-## Generated from the tentacle-web type [code]CustomControlJson_Slider[/code].
 
 
 ## JSON key [code]value[/code].

@@ -6,8 +6,6 @@ class_name TclTwitchApiRaid
 extends RefCounted
 
 ## A raid waiting to go.
-##
-## Generated from the tentacle-web type [code]TwitchApiRaid[/code].
 
 
 ## When it was asked for, as an RFC 3339 date and time.

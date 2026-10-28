@@ -7,8 +7,6 @@ extends RefCounted
 
 ## Simplified Kick user from redemption events
 ## (different shape from standard event user, no $platform).
-##
-## Generated from the tentacle-web type [code]KickSimpleUser[/code].
 
 
 ## JSON key [code]user_id[/code].

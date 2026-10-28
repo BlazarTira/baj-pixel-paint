@@ -5,7 +5,7 @@
 class_name TclMsg_ServerToClient_StreamChatJoin
 extends TclMsg_ServerToClient
 
-## Generated from the tentacle-web type [code]TentacleMsg_ServerToClient_StreamChatJoin[/code].
+## A message Tentacle sends to the game.
 
 
 ## JSON key [code]viewer[/code].

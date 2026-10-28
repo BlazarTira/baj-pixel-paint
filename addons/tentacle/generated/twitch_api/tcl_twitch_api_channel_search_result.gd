@@ -6,8 +6,6 @@ class_name TclTwitchApiChannelSearchResult
 extends RefCounted
 
 ## One channel, as Search Channels returns it.
-##
-## Generated from the tentacle-web type [code]TwitchApiChannelSearchResult[/code].
 
 
 ## The broadcaster's user id.

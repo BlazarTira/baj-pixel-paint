@@ -6,8 +6,6 @@ class_name TclCustomEventTriggerCondition_Enum
 extends RefCounted
 
 ## Enum trigger condition.
-##
-## Generated from the tentacle-web type [code]CustomEventTriggerCondition_Enum[/code].
 
 
 ## JSON key [code]property[/code]. Optional on the wire. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

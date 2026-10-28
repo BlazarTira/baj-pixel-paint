@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetGamesOutput
 extends RefCounted
 
-## What Twitch's Get Games answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetGamesOutput[/code].
+## What Twitch's Get Games responds with.
 
 
 ## The categories found.

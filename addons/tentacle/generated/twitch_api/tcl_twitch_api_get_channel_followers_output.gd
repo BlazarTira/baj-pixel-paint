@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetChannelFollowersOutput
 extends RefCounted
 
-## What Twitch's Get Channel Followers answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChannelFollowersOutput[/code].
+## What Twitch's Get Channel Followers responds with.
 
 
 ## The followers, most recent first.

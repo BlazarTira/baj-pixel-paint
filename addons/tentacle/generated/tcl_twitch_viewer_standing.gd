@@ -10,8 +10,6 @@ extends RefCounted
 ## and bans from Twitch when it connects, asks about each viewer's follow,
 ## subscription, and bits when it first sees them and once a day after, and
 ## keeps it all current from Twitch's events in between.
-##
-## Generated from the tentacle-web type [code]TwitchViewerStandingJson[/code].
 
 
 ## Whether the viewer is the streamer.

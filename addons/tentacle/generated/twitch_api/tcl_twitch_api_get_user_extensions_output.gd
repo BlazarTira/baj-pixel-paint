@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetUserExtensionsOutput
 extends RefCounted
 
-## What Twitch's Get User Extensions answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetUserExtensionsOutput[/code].
+## What Twitch's Get User Extensions responds with.
 
 
 ## The extensions.

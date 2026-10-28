@@ -1,4 +1,4 @@
-@icon("res://addons/tentacle/icons/group.svg")
+@icon("res://addons/tentacle/icons/tentacle.png")
 class_name TclCustomControlGroupComponent
 extends Node
 

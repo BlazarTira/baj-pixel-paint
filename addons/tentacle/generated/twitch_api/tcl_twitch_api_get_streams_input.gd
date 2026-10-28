@@ -6,8 +6,6 @@ class_name TclTwitchApiGetStreamsInput
 extends RefCounted
 
 ## What Twitch's Get Streams takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetStreamsInput[/code].
 
 
 ## The broadcasters whose streams to read, up to 100.

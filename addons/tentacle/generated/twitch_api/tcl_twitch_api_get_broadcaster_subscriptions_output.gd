@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetBroadcasterSubscriptionsOutput
 extends RefCounted
 
-## What Twitch's Get Broadcaster Subscriptions answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetBroadcasterSubscriptionsOutput[/code].
+## What Twitch's Get Broadcaster Subscriptions responds with.
 
 
 ## The subscriptions.

@@ -6,8 +6,6 @@ class_name TclTwitchHypeTrainSharedParticipant
 extends RefCounted
 
 ## A broadcaster participating in a shared Twitch Hype Train.
-##
-## Generated from the tentacle-web type [code]TwitchHypeTrainSharedParticipant[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

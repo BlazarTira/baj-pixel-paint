@@ -6,8 +6,6 @@ class_name TclPlatformConnectionAccount
 extends RefCounted
 
 ## The platform account a connection signed in as.
-##
-## Generated from the tentacle-web type [code]PlatformConnectionAccountJson[/code].
 
 
 ## The platform's id for the account.

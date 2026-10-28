@@ -5,9 +5,7 @@
 class_name TclKickApiAcceptChannelRewardRedemptionsOutput
 extends RefCounted
 
-## What Kick's Accept Channel Reward Redemptions answers with.
-##
-## Generated from the tentacle-web type [code]KickApiAcceptChannelRewardRedemptionsOutput[/code].
+## What Kick's Accept Channel Reward Redemptions responds with.
 
 
 ## The redemptions that failed; empty when all went through.

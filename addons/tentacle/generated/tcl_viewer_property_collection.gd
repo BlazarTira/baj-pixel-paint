@@ -6,8 +6,6 @@ class_name TclViewerPropertyCollection
 extends RefCounted
 
 ## Viewer property collection.
-##
-## Generated from the tentacle-web type [code]ViewerPropertyCollectionJson[/code].
 
 
 ## JSON key [code]id[/code].

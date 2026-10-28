@@ -20,7 +20,7 @@ func _send_platform_request(_procedure: String, _is_query: bool, _input_json: St
 	on_complete.call(false, 0, "", "nothing carries platform requests")
 
 
-## Makes one request, handing its answer, read by [param parse], to [param on_success], or
+## Makes one request, handing its response, read by [param parse], to [param on_success], or
 ## its failure to [param on_failure].
 func _call_platform(
 	procedure: String,
@@ -57,7 +57,9 @@ func _call_platform(
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#start-commercial]Start Commercial[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiStartCommercialOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Run ads"
+##
+## [param on_success] is called with the [TclTwitchApiStartCommercialOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func start_commercial(options: TclTwitchApiStartCommercialInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.startCommercial", false, options.to_dictionary(), TclTwitchApiStartCommercialOutput.parse, on_success, on_failure)
@@ -67,7 +69,9 @@ func start_commercial(options: TclTwitchApiStartCommercialInput, on_success: Cal
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-ad-schedule]Get Ad Schedule[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetAdScheduleOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Ad breaks"
+##
+## [param on_success] is called with the [TclTwitchApiGetAdScheduleOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_ad_schedule(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getAdSchedule", true, {}, TclTwitchApiGetAdScheduleOutput.parse, on_success, on_failure)
@@ -77,7 +81,9 @@ func get_ad_schedule(on_success: Callable = Callable(), on_failure: Callable = C
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#snooze-next-ad]Snooze Next Ad[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiSnoozeNextAdOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Run ads"
+##
+## [param on_success] is called with the [TclTwitchApiSnoozeNextAdOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func snooze_next_ad(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.snoozeNextAd", false, {}, TclTwitchApiSnoozeNextAdOutput.parse, on_success, on_failure)
@@ -87,7 +93,9 @@ func snooze_next_ad(on_success: Callable = Callable(), on_failure: Callable = Ca
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-bits-leaderboard]Get Bits Leaderboard[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetBitsLeaderboardOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Bits"
+##
+## [param on_success] is called with the [TclTwitchApiGetBitsLeaderboardOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_bits_leaderboard(options: TclTwitchApiGetBitsLeaderboardInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getBitsLeaderboard", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetBitsLeaderboardOutput.parse, on_success, on_failure)
@@ -97,7 +105,7 @@ func get_bits_leaderboard(options: TclTwitchApiGetBitsLeaderboardInput = null, o
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-cheermotes]Get Cheermotes[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetCheermotesOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetCheermotesOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_cheermotes(options: TclTwitchApiGetCheermotesInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getCheermotes", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetCheermotesOutput.parse, on_success, on_failure)
@@ -107,7 +115,9 @@ func get_cheermotes(options: TclTwitchApiGetCheermotesInput = null, on_success: 
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-custom-power-up]Get Custom Power-up[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetCustomPowerUpOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Bits"
+##
+## [param on_success] is called with the [TclTwitchApiGetCustomPowerUpOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_custom_power_up(options: TclTwitchApiGetCustomPowerUpInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getCustomPowerUp", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetCustomPowerUpOutput.parse, on_success, on_failure)
@@ -117,7 +127,7 @@ func get_custom_power_up(options: TclTwitchApiGetCustomPowerUpInput = null, on_s
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-channel-information]Get Channel Information[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetChannelInformationOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetChannelInformationOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_channel_information(options: TclTwitchApiGetChannelInformationInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getChannelInformation", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetChannelInformationOutput.parse, on_success, on_failure)
@@ -127,7 +137,9 @@ func get_channel_information(options: TclTwitchApiGetChannelInformationInput = n
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#modify-channel-information]Modify Channel Information[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Stream info"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func modify_channel_information(options: TclTwitchApiModifyChannelInformationInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.modifyChannelInformation", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -137,7 +149,9 @@ func modify_channel_information(options: TclTwitchApiModifyChannelInformationInp
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-channel-editors]Get Channel Editors[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetChannelEditorsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Channel editors"
+##
+## [param on_success] is called with the [TclTwitchApiGetChannelEditorsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_channel_editors(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getChannelEditors", true, {}, TclTwitchApiGetChannelEditorsOutput.parse, on_success, on_failure)
@@ -147,17 +161,21 @@ func get_channel_editors(on_success: Callable = Callable(), on_failure: Callable
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-followed-channels]Get Followed Channels[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetFollowedChannelsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Channels you follow"
+##
+## [param on_success] is called with the [TclTwitchApiGetFollowedChannelsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_followed_channels(options: TclTwitchApiGetFollowedChannelsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getFollowedChannels", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetFollowedChannelsOutput.parse, on_success, on_failure)
 
 
-## The connected broadcaster's followers, most recent first, or whether one viewer follows them; another channel's answer carries only its follower count.
+## The connected broadcaster's followers, most recent first, or whether one viewer follows them; another channel's response carries only its follower count.
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-channel-followers]Get Channel Followers[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetChannelFollowersOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Follows"
+##
+## [param on_success] is called with the [TclTwitchApiGetChannelFollowersOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_channel_followers(options: TclTwitchApiGetChannelFollowersInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getChannelFollowers", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetChannelFollowersOutput.parse, on_success, on_failure)
@@ -167,7 +185,9 @@ func get_channel_followers(options: TclTwitchApiGetChannelFollowersInput = null,
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#create-custom-rewards]Create Custom Rewards[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiCreateCustomRewardsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Channel Points rewards"
+##
+## [param on_success] is called with the [TclTwitchApiCreateCustomRewardsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func create_custom_rewards(options: TclTwitchApiCreateCustomRewardsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.createCustomRewards", false, options.to_dictionary(), TclTwitchApiCreateCustomRewardsOutput.parse, on_success, on_failure)
@@ -177,7 +197,9 @@ func create_custom_rewards(options: TclTwitchApiCreateCustomRewardsInput, on_suc
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#delete-custom-reward]Delete Custom Reward[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Channel Points rewards"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func delete_custom_reward(options: TclTwitchApiDeleteCustomRewardInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.deleteCustomReward", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -187,7 +209,9 @@ func delete_custom_reward(options: TclTwitchApiDeleteCustomRewardInput, on_succe
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-custom-reward]Get Custom Reward[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetCustomRewardOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permissions required: "Channel Points redemptions" or "Channel Points rewards"
+##
+## [param on_success] is called with the [TclTwitchApiGetCustomRewardOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_custom_reward(options: TclTwitchApiGetCustomRewardInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getCustomReward", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetCustomRewardOutput.parse, on_success, on_failure)
@@ -197,7 +221,9 @@ func get_custom_reward(options: TclTwitchApiGetCustomRewardInput = null, on_succ
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-custom-reward-redemption]Get Custom Reward Redemption[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetCustomRewardRedemptionOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permissions required: "Channel Points redemptions" or "Channel Points rewards"
+##
+## [param on_success] is called with the [TclTwitchApiGetCustomRewardRedemptionOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_custom_reward_redemption(options: TclTwitchApiGetCustomRewardRedemptionInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getCustomRewardRedemption", true, options.to_dictionary(), TclTwitchApiGetCustomRewardRedemptionOutput.parse, on_success, on_failure)
@@ -207,7 +233,9 @@ func get_custom_reward_redemption(options: TclTwitchApiGetCustomRewardRedemption
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-custom-reward]Update Custom Reward[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiUpdateCustomRewardOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Channel Points rewards"
+##
+## [param on_success] is called with the [TclTwitchApiUpdateCustomRewardOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_custom_reward(options: TclTwitchApiUpdateCustomRewardInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateCustomReward", false, options.to_dictionary(), TclTwitchApiUpdateCustomRewardOutput.parse, on_success, on_failure)
@@ -217,7 +245,9 @@ func update_custom_reward(options: TclTwitchApiUpdateCustomRewardInput, on_succe
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-redemption-status]Update Redemption Status[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiUpdateRedemptionStatusOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Channel Points rewards"
+##
+## [param on_success] is called with the [TclTwitchApiUpdateRedemptionStatusOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_redemption_status(options: TclTwitchApiUpdateRedemptionStatusInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateRedemptionStatus", false, options.to_dictionary(), TclTwitchApiUpdateRedemptionStatusOutput.parse, on_success, on_failure)
@@ -227,7 +257,9 @@ func update_redemption_status(options: TclTwitchApiUpdateRedemptionStatusInput, 
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-charity-campaign]Get Charity Campaign[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetCharityCampaignOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Charity"
+##
+## [param on_success] is called with the [TclTwitchApiGetCharityCampaignOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_charity_campaign(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getCharityCampaign", true, {}, TclTwitchApiGetCharityCampaignOutput.parse, on_success, on_failure)
@@ -237,7 +269,9 @@ func get_charity_campaign(on_success: Callable = Callable(), on_failure: Callabl
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-charity-campaign-donations]Get Charity Campaign Donations[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetCharityCampaignDonationsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Charity"
+##
+## [param on_success] is called with the [TclTwitchApiGetCharityCampaignDonationsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_charity_campaign_donations(options: TclTwitchApiGetCharityCampaignDonationsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getCharityCampaignDonations", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetCharityCampaignDonationsOutput.parse, on_success, on_failure)
@@ -247,7 +281,9 @@ func get_charity_campaign_donations(options: TclTwitchApiGetCharityCampaignDonat
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-chatters]Get Chatters[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetChattersOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Who's in chat"
+##
+## [param on_success] is called with the [TclTwitchApiGetChattersOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_chatters(options: TclTwitchApiGetChattersInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getChatters", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetChattersOutput.parse, on_success, on_failure)
@@ -257,7 +293,7 @@ func get_chatters(options: TclTwitchApiGetChattersInput = null, on_success: Call
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-channel-emotes]Get Channel Emotes[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetChannelEmotesOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetChannelEmotesOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_channel_emotes(options: TclTwitchApiGetChannelEmotesInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getChannelEmotes", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetChannelEmotesOutput.parse, on_success, on_failure)
@@ -267,7 +303,7 @@ func get_channel_emotes(options: TclTwitchApiGetChannelEmotesInput = null, on_su
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-global-emotes]Get Global Emotes[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetGlobalEmotesOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetGlobalEmotesOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_global_emotes(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getGlobalEmotes", true, {}, TclTwitchApiGetGlobalEmotesOutput.parse, on_success, on_failure)
@@ -277,7 +313,7 @@ func get_global_emotes(on_success: Callable = Callable(), on_failure: Callable =
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-emote-sets]Get Emote Sets[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetEmoteSetsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetEmoteSetsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_emote_sets(options: TclTwitchApiGetEmoteSetsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getEmoteSets", true, options.to_dictionary(), TclTwitchApiGetEmoteSetsOutput.parse, on_success, on_failure)
@@ -287,7 +323,7 @@ func get_emote_sets(options: TclTwitchApiGetEmoteSetsInput, on_success: Callable
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-channel-chat-badges]Get Channel Chat Badges[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetChannelChatBadgesOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetChannelChatBadgesOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_channel_chat_badges(options: TclTwitchApiGetChannelChatBadgesInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getChannelChatBadges", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetChannelChatBadgesOutput.parse, on_success, on_failure)
@@ -297,7 +333,7 @@ func get_channel_chat_badges(options: TclTwitchApiGetChannelChatBadgesInput = nu
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-global-chat-badges]Get Global Chat Badges[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetGlobalChatBadgesOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetGlobalChatBadgesOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_global_chat_badges(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getGlobalChatBadges", true, {}, TclTwitchApiGetGlobalChatBadgesOutput.parse, on_success, on_failure)
@@ -307,7 +343,7 @@ func get_global_chat_badges(on_success: Callable = Callable(), on_failure: Calla
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-chat-settings]Get Chat Settings[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetChatSettingsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetChatSettingsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_chat_settings(options: TclTwitchApiGetChatSettingsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getChatSettings", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetChatSettingsOutput.parse, on_success, on_failure)
@@ -317,7 +353,7 @@ func get_chat_settings(options: TclTwitchApiGetChatSettingsInput = null, on_succ
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-shared-chat-session]Get Shared Chat Session[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetSharedChatSessionOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetSharedChatSessionOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_shared_chat_session(options: TclTwitchApiGetSharedChatSessionInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getSharedChatSession", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetSharedChatSessionOutput.parse, on_success, on_failure)
@@ -327,7 +363,9 @@ func get_shared_chat_session(options: TclTwitchApiGetSharedChatSessionInput = nu
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-user-emotes]Get User Emotes[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetUserEmotesOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Your emotes"
+##
+## [param on_success] is called with the [TclTwitchApiGetUserEmotesOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_user_emotes(options: TclTwitchApiGetUserEmotesInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getUserEmotes", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetUserEmotesOutput.parse, on_success, on_failure)
@@ -337,7 +375,9 @@ func get_user_emotes(options: TclTwitchApiGetUserEmotesInput = null, on_success:
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-chat-settings]Update Chat Settings[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiUpdateChatSettingsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Chat settings"
+##
+## [param on_success] is called with the [TclTwitchApiUpdateChatSettingsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_chat_settings(options: TclTwitchApiUpdateChatSettingsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateChatSettings", false, options.to_dictionary(), TclTwitchApiUpdateChatSettingsOutput.parse, on_success, on_failure)
@@ -347,7 +387,9 @@ func update_chat_settings(options: TclTwitchApiUpdateChatSettingsInput, on_succe
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#send-chat-announcement]Send Chat Announcement[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Announcements"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func send_chat_announcement(options: TclTwitchApiSendChatAnnouncementInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.sendChatAnnouncement", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -357,7 +399,9 @@ func send_chat_announcement(options: TclTwitchApiSendChatAnnouncementInput, on_s
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#send-a-shoutout]Send a Shoutout[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Send shoutouts"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func send_shoutout(options: TclTwitchApiSendShoutoutInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.sendShoutout", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -367,7 +411,9 @@ func send_shoutout(options: TclTwitchApiSendShoutoutInput, on_success: Callable 
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-pinned-chat-message]Get Pinned Chat Message[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetPinnedChatMessageOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Moderate chat"
+##
+## [param on_success] is called with the [TclTwitchApiGetPinnedChatMessageOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_pinned_chat_message(options: TclTwitchApiGetPinnedChatMessageInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getPinnedChatMessage", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetPinnedChatMessageOutput.parse, on_success, on_failure)
@@ -377,7 +423,9 @@ func get_pinned_chat_message(options: TclTwitchApiGetPinnedChatMessageInput = nu
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#pin-chat-message]Pin Chat Message[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Moderate chat"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func pin_chat_message(options: TclTwitchApiPinChatMessageInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.pinChatMessage", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -387,7 +435,9 @@ func pin_chat_message(options: TclTwitchApiPinChatMessageInput, on_success: Call
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-pinned-chat-message]Update Pinned Chat Message[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Moderate chat"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_pinned_chat_message(options: TclTwitchApiUpdatePinnedChatMessageInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updatePinnedChatMessage", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -397,7 +447,9 @@ func update_pinned_chat_message(options: TclTwitchApiUpdatePinnedChatMessageInpu
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#unpin-chat-message]Unpin Chat Message[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Moderate chat"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func unpin_chat_message(options: TclTwitchApiUnpinChatMessageInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.unpinChatMessage", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -407,7 +459,7 @@ func unpin_chat_message(options: TclTwitchApiUnpinChatMessageInput, on_success: 
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-user-chat-color]Get User Chat Color[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetUserChatColorOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetUserChatColorOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_user_chat_color(options: TclTwitchApiGetUserChatColorInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getUserChatColor", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetUserChatColorOutput.parse, on_success, on_failure)
@@ -417,7 +469,9 @@ func get_user_chat_color(options: TclTwitchApiGetUserChatColorInput = null, on_s
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-user-chat-color]Update User Chat Color[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Chat color"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_user_chat_color(options: TclTwitchApiUpdateUserChatColorInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateUserChatColor", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -427,7 +481,9 @@ func update_user_chat_color(options: TclTwitchApiUpdateUserChatColorInput, on_su
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#create-clip]Create Clip[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiCreateClipOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Clips"
+##
+## [param on_success] is called with the [TclTwitchApiCreateClipOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func create_clip(options: TclTwitchApiCreateClipInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.createClip", false, {} if options == null else options.to_dictionary(), TclTwitchApiCreateClipOutput.parse, on_success, on_failure)
@@ -437,7 +493,9 @@ func create_clip(options: TclTwitchApiCreateClipInput = null, on_success: Callab
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#create-clip-from-vod]Create Clip From VOD[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiCreateClipFromVodOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Clips"
+##
+## [param on_success] is called with the [TclTwitchApiCreateClipFromVodOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func create_clip_from_vod(options: TclTwitchApiCreateClipFromVodInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.createClipFromVod", false, options.to_dictionary(), TclTwitchApiCreateClipFromVodOutput.parse, on_success, on_failure)
@@ -447,7 +505,7 @@ func create_clip_from_vod(options: TclTwitchApiCreateClipFromVodInput, on_succes
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-clips]Get Clips[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetClipsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetClipsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_clips(options: TclTwitchApiGetClipsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getClips", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetClipsOutput.parse, on_success, on_failure)
@@ -457,7 +515,9 @@ func get_clips(options: TclTwitchApiGetClipsInput = null, on_success: Callable =
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-clips-download]Get Clips Download[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetClipsDownloadOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Clips"
+##
+## [param on_success] is called with the [TclTwitchApiGetClipsDownloadOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_clips_download(options: TclTwitchApiGetClipsDownloadInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getClipsDownload", true, options.to_dictionary(), TclTwitchApiGetClipsDownloadOutput.parse, on_success, on_failure)
@@ -467,7 +527,7 @@ func get_clips_download(options: TclTwitchApiGetClipsDownloadInput, on_success: 
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-content-classification-labels]Get Content Classification Labels[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetContentClassificationLabelsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetContentClassificationLabelsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_content_classification_labels(options: TclTwitchApiGetContentClassificationLabelsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getContentClassificationLabels", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetContentClassificationLabelsOutput.parse, on_success, on_failure)
@@ -477,7 +537,7 @@ func get_content_classification_labels(options: TclTwitchApiGetContentClassifica
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-extension-live-channels]Get Extension Live Channels[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetExtensionLiveChannelsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetExtensionLiveChannelsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_extension_live_channels(options: TclTwitchApiGetExtensionLiveChannelsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getExtensionLiveChannels", true, options.to_dictionary(), TclTwitchApiGetExtensionLiveChannelsOutput.parse, on_success, on_failure)
@@ -487,7 +547,7 @@ func get_extension_live_channels(options: TclTwitchApiGetExtensionLiveChannelsIn
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-released-extensions]Get Released Extensions[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetReleasedExtensionsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetReleasedExtensionsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_released_extensions(options: TclTwitchApiGetReleasedExtensionsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getReleasedExtensions", true, options.to_dictionary(), TclTwitchApiGetReleasedExtensionsOutput.parse, on_success, on_failure)
@@ -497,7 +557,7 @@ func get_released_extensions(options: TclTwitchApiGetReleasedExtensionsInput, on
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-top-games]Get Top Games[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetTopGamesOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetTopGamesOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_top_games(options: TclTwitchApiGetTopGamesInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getTopGames", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetTopGamesOutput.parse, on_success, on_failure)
@@ -507,7 +567,7 @@ func get_top_games(options: TclTwitchApiGetTopGamesInput = null, on_success: Cal
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-games]Get Games[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetGamesOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetGamesOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_games(options: TclTwitchApiGetGamesInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getGames", true, options.to_dictionary(), TclTwitchApiGetGamesOutput.parse, on_success, on_failure)
@@ -517,7 +577,9 @@ func get_games(options: TclTwitchApiGetGamesInput, on_success: Callable = Callab
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-creator-goals]Get Creator Goals[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetCreatorGoalsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Goals"
+##
+## [param on_success] is called with the [TclTwitchApiGetCreatorGoalsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_creator_goals(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getCreatorGoals", true, {}, TclTwitchApiGetCreatorGoalsOutput.parse, on_success, on_failure)
@@ -527,7 +589,9 @@ func get_creator_goals(on_success: Callable = Callable(), on_failure: Callable =
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-channel-guest-star-settings]Get Channel Guest Star Settings[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetChannelGuestStarSettingsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Guest Star"
+##
+## [param on_success] is called with the [TclTwitchApiGetChannelGuestStarSettingsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_channel_guest_star_settings(options: TclTwitchApiGetChannelGuestStarSettingsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getChannelGuestStarSettings", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetChannelGuestStarSettingsOutput.parse, on_success, on_failure)
@@ -537,7 +601,9 @@ func get_channel_guest_star_settings(options: TclTwitchApiGetChannelGuestStarSet
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-channel-guest-star-settings]Update Channel Guest Star Settings[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Guest Star"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_channel_guest_star_settings(options: TclTwitchApiUpdateChannelGuestStarSettingsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateChannelGuestStarSettings", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -547,7 +613,9 @@ func update_channel_guest_star_settings(options: TclTwitchApiUpdateChannelGuestS
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-guest-star-session]Get Guest Star Session[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetGuestStarSessionOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Guest Star"
+##
+## [param on_success] is called with the [TclTwitchApiGetGuestStarSessionOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_guest_star_session(options: TclTwitchApiGetGuestStarSessionInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getGuestStarSession", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetGuestStarSessionOutput.parse, on_success, on_failure)
@@ -557,7 +625,9 @@ func get_guest_star_session(options: TclTwitchApiGetGuestStarSessionInput = null
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#create-guest-star-session]Create Guest Star Session[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiCreateGuestStarSessionOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Guest Star"
+##
+## [param on_success] is called with the [TclTwitchApiCreateGuestStarSessionOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func create_guest_star_session(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.createGuestStarSession", false, {}, TclTwitchApiCreateGuestStarSessionOutput.parse, on_success, on_failure)
@@ -567,7 +637,9 @@ func create_guest_star_session(on_success: Callable = Callable(), on_failure: Ca
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#end-guest-star-session]End Guest Star Session[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiEndGuestStarSessionOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Guest Star"
+##
+## [param on_success] is called with the [TclTwitchApiEndGuestStarSessionOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func end_guest_star_session(options: TclTwitchApiEndGuestStarSessionInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.endGuestStarSession", false, options.to_dictionary(), TclTwitchApiEndGuestStarSessionOutput.parse, on_success, on_failure)
@@ -577,7 +649,9 @@ func end_guest_star_session(options: TclTwitchApiEndGuestStarSessionInput, on_su
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-guest-star-invites]Get Guest Star Invites[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetGuestStarInvitesOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Guest Star"
+##
+## [param on_success] is called with the [TclTwitchApiGetGuestStarInvitesOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_guest_star_invites(options: TclTwitchApiGetGuestStarInvitesInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getGuestStarInvites", true, options.to_dictionary(), TclTwitchApiGetGuestStarInvitesOutput.parse, on_success, on_failure)
@@ -587,7 +661,9 @@ func get_guest_star_invites(options: TclTwitchApiGetGuestStarInvitesInput, on_su
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#send-guest-star-invite]Send Guest Star Invite[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Guest Star"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func send_guest_star_invite(options: TclTwitchApiSendGuestStarInviteInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.sendGuestStarInvite", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -597,7 +673,9 @@ func send_guest_star_invite(options: TclTwitchApiSendGuestStarInviteInput, on_su
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#delete-guest-star-invite]Delete Guest Star Invite[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Guest Star"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func delete_guest_star_invite(options: TclTwitchApiDeleteGuestStarInviteInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.deleteGuestStarInvite", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -607,7 +685,9 @@ func delete_guest_star_invite(options: TclTwitchApiDeleteGuestStarInviteInput, o
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#assign-guest-star-slot]Assign Guest Star Slot[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Guest Star"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func assign_guest_star_slot(options: TclTwitchApiAssignGuestStarSlotInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.assignGuestStarSlot", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -617,7 +697,9 @@ func assign_guest_star_slot(options: TclTwitchApiAssignGuestStarSlotInput, on_su
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-guest-star-slot]Update Guest Star Slot[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Guest Star"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_guest_star_slot(options: TclTwitchApiUpdateGuestStarSlotInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateGuestStarSlot", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -627,7 +709,9 @@ func update_guest_star_slot(options: TclTwitchApiUpdateGuestStarSlotInput, on_su
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#delete-guest-star-slot]Delete Guest Star Slot[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Guest Star"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func delete_guest_star_slot(options: TclTwitchApiDeleteGuestStarSlotInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.deleteGuestStarSlot", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -637,7 +721,9 @@ func delete_guest_star_slot(options: TclTwitchApiDeleteGuestStarSlotInput, on_su
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-guest-star-slot-settings]Update Guest Star Slot Settings[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Guest Star"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_guest_star_slot_settings(options: TclTwitchApiUpdateGuestStarSlotSettingsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateGuestStarSlotSettings", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -647,7 +733,9 @@ func update_guest_star_slot_settings(options: TclTwitchApiUpdateGuestStarSlotSet
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-hype-train-status]Get Hype Train Status[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetHypeTrainStatusOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Hype Train"
+##
+## [param on_success] is called with the [TclTwitchApiGetHypeTrainStatusOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_hype_train_status(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getHypeTrainStatus", true, {}, TclTwitchApiGetHypeTrainStatusOutput.parse, on_success, on_failure)
@@ -657,7 +745,9 @@ func get_hype_train_status(on_success: Callable = Callable(), on_failure: Callab
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#check-automod-status]Check AutoMod Status[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiCheckAutoModStatusOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Moderators"
+##
+## [param on_success] is called with the [TclTwitchApiCheckAutoModStatusOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func check_auto_mod_status(options: TclTwitchApiCheckAutoModStatusInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.checkAutoModStatus", false, options.to_dictionary(), TclTwitchApiCheckAutoModStatusOutput.parse, on_success, on_failure)
@@ -667,7 +757,9 @@ func check_auto_mod_status(options: TclTwitchApiCheckAutoModStatusInput, on_succ
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#manage-held-automod-messages]Manage Held AutoMod Messages[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "AutoMod and blocked terms"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func manage_held_auto_mod_messages(options: TclTwitchApiManageHeldAutoModMessagesInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.manageHeldAutoModMessages", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -677,7 +769,9 @@ func manage_held_auto_mod_messages(options: TclTwitchApiManageHeldAutoModMessage
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-automod-settings]Get AutoMod Settings[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetAutoModSettingsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "AutoMod and blocked terms"
+##
+## [param on_success] is called with the [TclTwitchApiGetAutoModSettingsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_auto_mod_settings(options: TclTwitchApiGetAutoModSettingsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getAutoModSettings", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetAutoModSettingsOutput.parse, on_success, on_failure)
@@ -687,7 +781,9 @@ func get_auto_mod_settings(options: TclTwitchApiGetAutoModSettingsInput = null, 
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-automod-settings]Update AutoMod Settings[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiUpdateAutoModSettingsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "AutoMod and blocked terms"
+##
+## [param on_success] is called with the [TclTwitchApiUpdateAutoModSettingsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_auto_mod_settings(options: TclTwitchApiUpdateAutoModSettingsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateAutoModSettings", false, options.to_dictionary(), TclTwitchApiUpdateAutoModSettingsOutput.parse, on_success, on_failure)
@@ -697,7 +793,9 @@ func update_auto_mod_settings(options: TclTwitchApiUpdateAutoModSettingsInput, o
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-banned-users]Get Banned Users[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetBannedUsersOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permissions required: "Moderators" or "Moderate chat"
+##
+## [param on_success] is called with the [TclTwitchApiGetBannedUsersOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_banned_users(options: TclTwitchApiGetBannedUsersInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getBannedUsers", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetBannedUsersOutput.parse, on_success, on_failure)
@@ -707,7 +805,9 @@ func get_banned_users(options: TclTwitchApiGetBannedUsersInput = null, on_succes
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#ban-user]Ban User[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiBanUserOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Moderate chat"
+##
+## [param on_success] is called with the [TclTwitchApiBanUserOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func ban_user(options: TclTwitchApiBanUserInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.banUser", false, options.to_dictionary(), TclTwitchApiBanUserOutput.parse, on_success, on_failure)
@@ -717,7 +817,9 @@ func ban_user(options: TclTwitchApiBanUserInput, on_success: Callable = Callable
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#unban-user]Unban User[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Moderate chat"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func unban_user(options: TclTwitchApiUnbanUserInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.unbanUser", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -727,7 +829,9 @@ func unban_user(options: TclTwitchApiUnbanUserInput, on_success: Callable = Call
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-unban-requests]Get Unban Requests[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetUnbanRequestsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permissions required: "Unban requests" or "Resolve unban requests"
+##
+## [param on_success] is called with the [TclTwitchApiGetUnbanRequestsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_unban_requests(options: TclTwitchApiGetUnbanRequestsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getUnbanRequests", true, options.to_dictionary(), TclTwitchApiGetUnbanRequestsOutput.parse, on_success, on_failure)
@@ -737,7 +841,9 @@ func get_unban_requests(options: TclTwitchApiGetUnbanRequestsInput, on_success: 
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#resolve-unban-requests]Resolve Unban Requests[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiResolveUnbanRequestsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Resolve unban requests"
+##
+## [param on_success] is called with the [TclTwitchApiResolveUnbanRequestsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func resolve_unban_requests(options: TclTwitchApiResolveUnbanRequestsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.resolveUnbanRequests", false, options.to_dictionary(), TclTwitchApiResolveUnbanRequestsOutput.parse, on_success, on_failure)
@@ -747,7 +853,9 @@ func resolve_unban_requests(options: TclTwitchApiResolveUnbanRequestsInput, on_s
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-blocked-terms]Get Blocked Terms[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetBlockedTermsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "AutoMod and blocked terms"
+##
+## [param on_success] is called with the [TclTwitchApiGetBlockedTermsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_blocked_terms(options: TclTwitchApiGetBlockedTermsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getBlockedTerms", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetBlockedTermsOutput.parse, on_success, on_failure)
@@ -757,7 +865,9 @@ func get_blocked_terms(options: TclTwitchApiGetBlockedTermsInput = null, on_succ
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#add-blocked-term]Add Blocked Term[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiAddBlockedTermOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "AutoMod and blocked terms"
+##
+## [param on_success] is called with the [TclTwitchApiAddBlockedTermOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func add_blocked_term(options: TclTwitchApiAddBlockedTermInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.addBlockedTerm", false, options.to_dictionary(), TclTwitchApiAddBlockedTermOutput.parse, on_success, on_failure)
@@ -767,7 +877,9 @@ func add_blocked_term(options: TclTwitchApiAddBlockedTermInput, on_success: Call
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#remove-blocked-term]Remove Blocked Term[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "AutoMod and blocked terms"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func remove_blocked_term(options: TclTwitchApiRemoveBlockedTermInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.removeBlockedTerm", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -777,7 +889,9 @@ func remove_blocked_term(options: TclTwitchApiRemoveBlockedTermInput, on_success
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#delete-chat-messages]Delete Chat Messages[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Moderate chat"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func delete_chat_messages(options: TclTwitchApiDeleteChatMessagesInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.deleteChatMessages", false, {} if options == null else options.to_dictionary(), Callable(), on_success, on_failure)
@@ -787,7 +901,9 @@ func delete_chat_messages(options: TclTwitchApiDeleteChatMessagesInput = null, o
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-moderated-channels]Get Moderated Channels[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetModeratedChannelsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Channels you moderate"
+##
+## [param on_success] is called with the [TclTwitchApiGetModeratedChannelsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_moderated_channels(options: TclTwitchApiGetModeratedChannelsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getModeratedChannels", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetModeratedChannelsOutput.parse, on_success, on_failure)
@@ -797,7 +913,9 @@ func get_moderated_channels(options: TclTwitchApiGetModeratedChannelsInput = nul
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-moderators]Get Moderators[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetModeratorsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permissions required: "Moderators" or "Manage moderators"
+##
+## [param on_success] is called with the [TclTwitchApiGetModeratorsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_moderators(options: TclTwitchApiGetModeratorsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getModerators", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetModeratorsOutput.parse, on_success, on_failure)
@@ -807,7 +925,9 @@ func get_moderators(options: TclTwitchApiGetModeratorsInput = null, on_success: 
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#add-channel-moderator]Add Channel Moderator[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Manage moderators"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func add_channel_moderator(options: TclTwitchApiAddChannelModeratorInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.addChannelModerator", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -817,7 +937,9 @@ func add_channel_moderator(options: TclTwitchApiAddChannelModeratorInput, on_suc
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#remove-channel-moderator]Remove Channel Moderator[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Manage moderators"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func remove_channel_moderator(options: TclTwitchApiRemoveChannelModeratorInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.removeChannelModerator", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -827,7 +949,9 @@ func remove_channel_moderator(options: TclTwitchApiRemoveChannelModeratorInput, 
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-vips]Get VIPs[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetVipsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permissions required: "VIPs" or "Manage VIPs"
+##
+## [param on_success] is called with the [TclTwitchApiGetVipsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_vips(options: TclTwitchApiGetVipsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getVips", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetVipsOutput.parse, on_success, on_failure)
@@ -837,7 +961,9 @@ func get_vips(options: TclTwitchApiGetVipsInput = null, on_success: Callable = C
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#add-channel-vip]Add Channel VIP[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Manage VIPs"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func add_channel_vip(options: TclTwitchApiAddChannelVipInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.addChannelVip", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -847,7 +973,9 @@ func add_channel_vip(options: TclTwitchApiAddChannelVipInput, on_success: Callab
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#remove-channel-vip]Remove Channel VIP[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Manage VIPs"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func remove_channel_vip(options: TclTwitchApiRemoveChannelVipInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.removeChannelVip", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -857,7 +985,9 @@ func remove_channel_vip(options: TclTwitchApiRemoveChannelVipInput, on_success: 
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-shield-mode-status]Update Shield Mode Status[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiUpdateShieldModeStatusOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Switch Shield Mode"
+##
+## [param on_success] is called with the [TclTwitchApiUpdateShieldModeStatusOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_shield_mode_status(options: TclTwitchApiUpdateShieldModeStatusInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateShieldModeStatus", false, options.to_dictionary(), TclTwitchApiUpdateShieldModeStatusOutput.parse, on_success, on_failure)
@@ -867,7 +997,9 @@ func update_shield_mode_status(options: TclTwitchApiUpdateShieldModeStatusInput,
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-shield-mode-status]Get Shield Mode Status[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetShieldModeStatusOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permissions required: "Shield Mode" or "Switch Shield Mode"
+##
+## [param on_success] is called with the [TclTwitchApiGetShieldModeStatusOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_shield_mode_status(options: TclTwitchApiGetShieldModeStatusInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getShieldModeStatus", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetShieldModeStatusOutput.parse, on_success, on_failure)
@@ -877,7 +1009,9 @@ func get_shield_mode_status(options: TclTwitchApiGetShieldModeStatusInput = null
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#warn-chat-user]Warn Chat User[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiWarnChatUserOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Moderate chat"
+##
+## [param on_success] is called with the [TclTwitchApiWarnChatUserOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func warn_chat_user(options: TclTwitchApiWarnChatUserInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.warnChatUser", false, options.to_dictionary(), TclTwitchApiWarnChatUserOutput.parse, on_success, on_failure)
@@ -887,7 +1021,9 @@ func warn_chat_user(options: TclTwitchApiWarnChatUserInput, on_success: Callable
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#add-suspicious-status-to-chat-user]Add Suspicious Status to Chat User[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiAddSuspiciousStatusToChatUserOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Mark suspicious users"
+##
+## [param on_success] is called with the [TclTwitchApiAddSuspiciousStatusToChatUserOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func add_suspicious_status_to_chat_user(options: TclTwitchApiAddSuspiciousStatusToChatUserInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.addSuspiciousStatusToChatUser", false, options.to_dictionary(), TclTwitchApiAddSuspiciousStatusToChatUserOutput.parse, on_success, on_failure)
@@ -897,7 +1033,9 @@ func add_suspicious_status_to_chat_user(options: TclTwitchApiAddSuspiciousStatus
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#remove-suspicious-status-from-chat-user]Remove Suspicious Status From Chat User[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiRemoveSuspiciousStatusFromChatUserOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Mark suspicious users"
+##
+## [param on_success] is called with the [TclTwitchApiRemoveSuspiciousStatusFromChatUserOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func remove_suspicious_status_from_chat_user(options: TclTwitchApiRemoveSuspiciousStatusFromChatUserInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.removeSuspiciousStatusFromChatUser", false, options.to_dictionary(), TclTwitchApiRemoveSuspiciousStatusFromChatUserOutput.parse, on_success, on_failure)
@@ -907,7 +1045,9 @@ func remove_suspicious_status_from_chat_user(options: TclTwitchApiRemoveSuspicio
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-polls]Get Polls[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetPollsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permissions required: "Polls" or "Run polls"
+##
+## [param on_success] is called with the [TclTwitchApiGetPollsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_polls(options: TclTwitchApiGetPollsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getPolls", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetPollsOutput.parse, on_success, on_failure)
@@ -917,7 +1057,9 @@ func get_polls(options: TclTwitchApiGetPollsInput = null, on_success: Callable =
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#create-poll]Create Poll[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiCreatePollOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Run polls"
+##
+## [param on_success] is called with the [TclTwitchApiCreatePollOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func create_poll(options: TclTwitchApiCreatePollInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.createPoll", false, options.to_dictionary(), TclTwitchApiCreatePollOutput.parse, on_success, on_failure)
@@ -927,7 +1069,9 @@ func create_poll(options: TclTwitchApiCreatePollInput, on_success: Callable = Ca
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#end-poll]End Poll[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiEndPollOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Run polls"
+##
+## [param on_success] is called with the [TclTwitchApiEndPollOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func end_poll(options: TclTwitchApiEndPollInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.endPoll", false, options.to_dictionary(), TclTwitchApiEndPollOutput.parse, on_success, on_failure)
@@ -937,7 +1081,9 @@ func end_poll(options: TclTwitchApiEndPollInput, on_success: Callable = Callable
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-predictions]Get Predictions[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetPredictionsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permissions required: "Predictions" or "Run predictions"
+##
+## [param on_success] is called with the [TclTwitchApiGetPredictionsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_predictions(options: TclTwitchApiGetPredictionsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getPredictions", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetPredictionsOutput.parse, on_success, on_failure)
@@ -947,7 +1093,9 @@ func get_predictions(options: TclTwitchApiGetPredictionsInput = null, on_success
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#create-prediction]Create Prediction[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiCreatePredictionOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Run predictions"
+##
+## [param on_success] is called with the [TclTwitchApiCreatePredictionOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func create_prediction(options: TclTwitchApiCreatePredictionInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.createPrediction", false, options.to_dictionary(), TclTwitchApiCreatePredictionOutput.parse, on_success, on_failure)
@@ -957,7 +1105,9 @@ func create_prediction(options: TclTwitchApiCreatePredictionInput, on_success: C
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#end-prediction]End Prediction[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiEndPredictionOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Run predictions"
+##
+## [param on_success] is called with the [TclTwitchApiEndPredictionOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func end_prediction(options: TclTwitchApiEndPredictionInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.endPrediction", false, options.to_dictionary(), TclTwitchApiEndPredictionOutput.parse, on_success, on_failure)
@@ -967,7 +1117,9 @@ func end_prediction(options: TclTwitchApiEndPredictionInput, on_success: Callabl
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#start-a-raid]Start a raid[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiStartRaidOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Start raids"
+##
+## [param on_success] is called with the [TclTwitchApiStartRaidOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func start_raid(options: TclTwitchApiStartRaidInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.startRaid", false, options.to_dictionary(), TclTwitchApiStartRaidOutput.parse, on_success, on_failure)
@@ -977,7 +1129,9 @@ func start_raid(options: TclTwitchApiStartRaidInput, on_success: Callable = Call
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#cancel-a-raid]Cancel a raid[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Start raids"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func cancel_raid(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.cancelRaid", false, {}, Callable(), on_success, on_failure)
@@ -987,7 +1141,7 @@ func cancel_raid(on_success: Callable = Callable(), on_failure: Callable = Calla
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-channel-stream-schedule]Get Channel Stream Schedule[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetChannelStreamScheduleOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetChannelStreamScheduleOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_channel_stream_schedule(options: TclTwitchApiGetChannelStreamScheduleInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getChannelStreamSchedule", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetChannelStreamScheduleOutput.parse, on_success, on_failure)
@@ -997,7 +1151,9 @@ func get_channel_stream_schedule(options: TclTwitchApiGetChannelStreamScheduleIn
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-channel-stream-schedule]Update Channel Stream Schedule[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Schedule"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_channel_stream_schedule(options: TclTwitchApiUpdateChannelStreamScheduleInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateChannelStreamSchedule", false, {} if options == null else options.to_dictionary(), Callable(), on_success, on_failure)
@@ -1007,7 +1163,9 @@ func update_channel_stream_schedule(options: TclTwitchApiUpdateChannelStreamSche
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#create-channel-stream-schedule-segment]Create Channel Stream Schedule Segment[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiCreateChannelStreamScheduleSegmentOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Schedule"
+##
+## [param on_success] is called with the [TclTwitchApiCreateChannelStreamScheduleSegmentOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func create_channel_stream_schedule_segment(options: TclTwitchApiCreateChannelStreamScheduleSegmentInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.createChannelStreamScheduleSegment", false, options.to_dictionary(), TclTwitchApiCreateChannelStreamScheduleSegmentOutput.parse, on_success, on_failure)
@@ -1017,7 +1175,9 @@ func create_channel_stream_schedule_segment(options: TclTwitchApiCreateChannelSt
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-channel-stream-schedule-segment]Update Channel Stream Schedule Segment[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiUpdateChannelStreamScheduleSegmentOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Schedule"
+##
+## [param on_success] is called with the [TclTwitchApiUpdateChannelStreamScheduleSegmentOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_channel_stream_schedule_segment(options: TclTwitchApiUpdateChannelStreamScheduleSegmentInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateChannelStreamScheduleSegment", false, options.to_dictionary(), TclTwitchApiUpdateChannelStreamScheduleSegmentOutput.parse, on_success, on_failure)
@@ -1027,7 +1187,9 @@ func update_channel_stream_schedule_segment(options: TclTwitchApiUpdateChannelSt
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#delete-channel-stream-schedule-segment]Delete Channel Stream Schedule Segment[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Schedule"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func delete_channel_stream_schedule_segment(options: TclTwitchApiDeleteChannelStreamScheduleSegmentInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.deleteChannelStreamScheduleSegment", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -1037,7 +1199,7 @@ func delete_channel_stream_schedule_segment(options: TclTwitchApiDeleteChannelSt
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#search-categories]Search Categories[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiSearchCategoriesOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiSearchCategoriesOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func search_categories(options: TclTwitchApiSearchCategoriesInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.searchCategories", true, options.to_dictionary(), TclTwitchApiSearchCategoriesOutput.parse, on_success, on_failure)
@@ -1047,7 +1209,7 @@ func search_categories(options: TclTwitchApiSearchCategoriesInput, on_success: C
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#search-channels]Search Channels[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiSearchChannelsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiSearchChannelsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func search_channels(options: TclTwitchApiSearchChannelsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.searchChannels", true, options.to_dictionary(), TclTwitchApiSearchChannelsOutput.parse, on_success, on_failure)
@@ -1057,7 +1219,7 @@ func search_channels(options: TclTwitchApiSearchChannelsInput, on_success: Calla
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-streams]Get Streams[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetStreamsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetStreamsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_streams(options: TclTwitchApiGetStreamsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getStreams", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetStreamsOutput.parse, on_success, on_failure)
@@ -1067,7 +1229,9 @@ func get_streams(options: TclTwitchApiGetStreamsInput = null, on_success: Callab
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-followed-streams]Get Followed Streams[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetFollowedStreamsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Channels you follow"
+##
+## [param on_success] is called with the [TclTwitchApiGetFollowedStreamsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_followed_streams(options: TclTwitchApiGetFollowedStreamsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getFollowedStreams", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetFollowedStreamsOutput.parse, on_success, on_failure)
@@ -1077,7 +1241,9 @@ func get_followed_streams(options: TclTwitchApiGetFollowedStreamsInput = null, o
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#create-stream-marker]Create Stream Marker[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiCreateStreamMarkerOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Stream info"
+##
+## [param on_success] is called with the [TclTwitchApiCreateStreamMarkerOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func create_stream_marker(options: TclTwitchApiCreateStreamMarkerInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.createStreamMarker", false, {} if options == null else options.to_dictionary(), TclTwitchApiCreateStreamMarkerOutput.parse, on_success, on_failure)
@@ -1087,7 +1253,9 @@ func create_stream_marker(options: TclTwitchApiCreateStreamMarkerInput = null, o
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-stream-markers]Get Stream Markers[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetStreamMarkersOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Stream info"
+##
+## [param on_success] is called with the [TclTwitchApiGetStreamMarkersOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_stream_markers(options: TclTwitchApiGetStreamMarkersInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getStreamMarkers", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetStreamMarkersOutput.parse, on_success, on_failure)
@@ -1097,17 +1265,21 @@ func get_stream_markers(options: TclTwitchApiGetStreamMarkersInput = null, on_su
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-broadcaster-subscriptions]Get Broadcaster Subscriptions[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetBroadcasterSubscriptionsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Subscriptions"
+##
+## [param on_success] is called with the [TclTwitchApiGetBroadcasterSubscriptionsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_broadcaster_subscriptions(options: TclTwitchApiGetBroadcasterSubscriptionsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getBroadcasterSubscriptions", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetBroadcasterSubscriptionsOutput.parse, on_success, on_failure)
 
 
-## Whether the connected account subscribes to a channel; Twitch answers 404 when it does not.
+## Whether the connected account subscribes to a channel; Twitch responds with 404 when it does not.
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#check-user-subscription]Check User Subscription[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiCheckUserSubscriptionOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Your subscriptions"
+##
+## [param on_success] is called with the [TclTwitchApiCheckUserSubscriptionOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func check_user_subscription(options: TclTwitchApiCheckUserSubscriptionInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.checkUserSubscription", true, options.to_dictionary(), TclTwitchApiCheckUserSubscriptionOutput.parse, on_success, on_failure)
@@ -1117,7 +1289,7 @@ func check_user_subscription(options: TclTwitchApiCheckUserSubscriptionInput, on
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-channel-teams]Get Channel Teams[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetChannelTeamsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetChannelTeamsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_channel_teams(options: TclTwitchApiGetChannelTeamsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getChannelTeams", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetChannelTeamsOutput.parse, on_success, on_failure)
@@ -1127,7 +1299,7 @@ func get_channel_teams(options: TclTwitchApiGetChannelTeamsInput = null, on_succ
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-teams]Get Teams[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetTeamsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetTeamsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_teams(options: TclTwitchApiGetTeamsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getTeams", true, options.to_dictionary(), TclTwitchApiGetTeamsOutput.parse, on_success, on_failure)
@@ -1137,7 +1309,7 @@ func get_teams(options: TclTwitchApiGetTeamsInput, on_success: Callable = Callab
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-users]Get Users[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetUsersOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetUsersOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_users(options: TclTwitchApiGetUsersInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getUsers", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetUsersOutput.parse, on_success, on_failure)
@@ -1147,7 +1319,9 @@ func get_users(options: TclTwitchApiGetUsersInput = null, on_success: Callable =
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-user]Update User[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiUpdateUserOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Profile"
+##
+## [param on_success] is called with the [TclTwitchApiUpdateUserOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_user(options: TclTwitchApiUpdateUserInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateUser", false, options.to_dictionary(), TclTwitchApiUpdateUserOutput.parse, on_success, on_failure)
@@ -1157,7 +1331,9 @@ func update_user(options: TclTwitchApiUpdateUserInput, on_success: Callable = Ca
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-user-block-list]Get User Block List[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetUserBlockListOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Blocked users"
+##
+## [param on_success] is called with the [TclTwitchApiGetUserBlockListOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_user_block_list(options: TclTwitchApiGetUserBlockListInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getUserBlockList", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetUserBlockListOutput.parse, on_success, on_failure)
@@ -1167,7 +1343,9 @@ func get_user_block_list(options: TclTwitchApiGetUserBlockListInput = null, on_s
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#block-user]Block User[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Blocked users"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func block_user(options: TclTwitchApiBlockUserInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.blockUser", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -1177,7 +1355,9 @@ func block_user(options: TclTwitchApiBlockUserInput, on_success: Callable = Call
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#unblock-user]Unblock User[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Blocked users"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func unblock_user(options: TclTwitchApiUnblockUserInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.unblockUser", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -1187,7 +1367,9 @@ func unblock_user(options: TclTwitchApiUnblockUserInput, on_success: Callable = 
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-user-extensions]Get User Extensions[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetUserExtensionsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Extensions"
+##
+## [param on_success] is called with the [TclTwitchApiGetUserExtensionsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_user_extensions(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getUserExtensions", true, {}, TclTwitchApiGetUserExtensionsOutput.parse, on_success, on_failure)
@@ -1197,7 +1379,7 @@ func get_user_extensions(on_success: Callable = Callable(), on_failure: Callable
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-user-active-extensions]Get User Active Extensions[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetUserActiveExtensionsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetUserActiveExtensionsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_user_active_extensions(options: TclTwitchApiGetUserActiveExtensionsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getUserActiveExtensions", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetUserActiveExtensionsOutput.parse, on_success, on_failure)
@@ -1207,7 +1389,9 @@ func get_user_active_extensions(options: TclTwitchApiGetUserActiveExtensionsInpu
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#update-user-extensions]Update User Extensions[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiUpdateUserExtensionsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Extensions"
+##
+## [param on_success] is called with the [TclTwitchApiUpdateUserExtensionsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_user_extensions(options: TclTwitchApiUpdateUserExtensionsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.updateUserExtensions", false, options.to_dictionary(), TclTwitchApiUpdateUserExtensionsOutput.parse, on_success, on_failure)
@@ -1217,7 +1401,7 @@ func update_user_extensions(options: TclTwitchApiUpdateUserExtensionsInput, on_s
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#get-videos]Get Videos[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiGetVideosOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclTwitchApiGetVideosOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_videos(options: TclTwitchApiGetVideosInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.getVideos", true, {} if options == null else options.to_dictionary(), TclTwitchApiGetVideosOutput.parse, on_success, on_failure)
@@ -1227,7 +1411,9 @@ func get_videos(options: TclTwitchApiGetVideosInput = null, on_success: Callable
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#delete-videos]Delete Videos[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclTwitchApiDeleteVideosOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Videos"
+##
+## [param on_success] is called with the [TclTwitchApiDeleteVideosOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func delete_videos(options: TclTwitchApiDeleteVideosInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.deleteVideos", false, options.to_dictionary(), TclTwitchApiDeleteVideosOutput.parse, on_success, on_failure)
@@ -1237,7 +1423,9 @@ func delete_videos(options: TclTwitchApiDeleteVideosInput, on_success: Callable 
 ##
 ## Twitch's [url=https://dev.twitch.tv/docs/api/reference/#send-whisper]Send Whisper[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Send whispers"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func send_whisper(options: TclTwitchApiSendWhisperInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("twitch.sendWhisper", false, options.to_dictionary(), Callable(), on_success, on_failure)

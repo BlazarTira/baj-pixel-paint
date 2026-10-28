@@ -6,8 +6,6 @@ class_name TclTwitchApiGetStreamMarkersInput
 extends RefCounted
 
 ## What Twitch's Get Stream Markers takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetStreamMarkersInput[/code].
 
 
 ## The broadcaster whose most recent video to read, one the connected account is an editor for; the connected broadcaster when neither this nor a video is given.

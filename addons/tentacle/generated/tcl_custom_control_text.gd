@@ -6,8 +6,6 @@ class_name TclCustomControl_Text
 extends TclCustomControl
 
 ## Custom control text input.
-##
-## Generated from the tentacle-web type [code]CustomControlJson_Text[/code].
 
 
 ## JSON key [code]placeholder[/code].

@@ -6,8 +6,6 @@ class_name TclTwitchApiRedeemedReward
 extends RefCounted
 
 ## The reward a viewer redeemed.
-##
-## Generated from the tentacle-web type [code]TwitchApiRedeemedReward[/code].
 
 
 ## The reward's id.

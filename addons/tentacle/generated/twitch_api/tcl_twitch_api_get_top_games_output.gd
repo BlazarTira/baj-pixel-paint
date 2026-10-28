@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetTopGamesOutput
 extends RefCounted
 
-## What Twitch's Get Top Games answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetTopGamesOutput[/code].
+## What Twitch's Get Top Games responds with.
 
 
 ## The categories, most viewers first.

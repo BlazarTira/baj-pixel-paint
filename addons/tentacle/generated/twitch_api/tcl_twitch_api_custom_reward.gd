@@ -6,8 +6,6 @@ class_name TclTwitchApiCustomReward
 extends RefCounted
 
 ## One custom Channel Points reward.
-##
-## Generated from the tentacle-web type [code]TwitchApiCustomReward[/code].
 
 
 ## The broadcaster's user id.

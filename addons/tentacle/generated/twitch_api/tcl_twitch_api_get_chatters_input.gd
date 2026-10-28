@@ -6,8 +6,6 @@ class_name TclTwitchApiGetChattersInput
 extends RefCounted
 
 ## What Twitch's Get Chatters takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChattersInput[/code].
 
 
 ## The most viewers to return per page, 1-1000; Twitch's default is 100.

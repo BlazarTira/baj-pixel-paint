@@ -6,8 +6,6 @@ class_name TclKickApiGetLivestreamsForUsersInput
 extends RefCounted
 
 ## What Kick's Get Livestreams for Users takes.
-##
-## Generated from the tentacle-web type [code]KickApiGetLivestreamsForUsersInput[/code].
 
 
 ## The broadcasters whose streams to read, up to 100; the connected broadcaster when left out.

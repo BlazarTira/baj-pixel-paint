@@ -5,9 +5,7 @@
 class_name TclTwitchApiUpdateUserOutput
 extends RefCounted
 
-## What Twitch's Update User answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiUpdateUserOutput[/code].
+## What Twitch's Update User responds with.
 
 
 ## The user as it now is.

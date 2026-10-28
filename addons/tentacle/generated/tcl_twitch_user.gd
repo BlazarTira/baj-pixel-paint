@@ -6,8 +6,6 @@ class_name TclTwitchUser
 extends RefCounted
 
 ## Twitch user data.
-##
-## Generated from the tentacle-web type [code]TwitchUserJson[/code].
 
 
 ## JSON key [code]broadcaster_type[/code].

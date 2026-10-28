@@ -6,8 +6,6 @@ class_name TclCustomControlEvent_MouseUp
 extends TclCustomControlEvent
 
 ## Custom control mouse up event.
-##
-## Generated from the tentacle-web type [code]CustomControlEvent_MouseUp[/code].
 
 
 

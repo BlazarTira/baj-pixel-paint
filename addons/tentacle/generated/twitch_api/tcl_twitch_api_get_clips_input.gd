@@ -6,8 +6,6 @@ class_name TclTwitchApiGetClipsInput
 extends RefCounted
 
 ## What Twitch's Get Clips takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetClipsInput[/code].
 
 
 ## The broadcaster whose clips to read; omit for the connected broadcaster's.

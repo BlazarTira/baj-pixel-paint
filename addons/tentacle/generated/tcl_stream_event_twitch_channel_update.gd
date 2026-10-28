@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_ChannelUpdate
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch channel update event (stream title / category / language changed).
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_ChannelUpdate[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

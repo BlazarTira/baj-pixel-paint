@@ -5,9 +5,7 @@
 class_name TclKickApiGetUsersOutput
 extends RefCounted
 
-## What Kick's Get Users answers with.
-##
-## Generated from the tentacle-web type [code]KickApiGetUsersOutput[/code].
+## What Kick's Get Users responds with.
 
 
 ## The users.

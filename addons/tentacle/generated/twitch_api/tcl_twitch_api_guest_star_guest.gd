@@ -6,8 +6,6 @@ class_name TclTwitchApiGuestStarGuest
 extends RefCounted
 
 ## One guest in a Guest Star session.
-##
-## Generated from the tentacle-web type [code]TwitchApiGuestStarGuest[/code].
 
 
 ## The guest's slot: "0" for the host, then "1", "2", and so on, or "SCREENSHARE".

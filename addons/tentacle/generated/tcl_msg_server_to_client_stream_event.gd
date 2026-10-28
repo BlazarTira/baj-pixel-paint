@@ -5,7 +5,7 @@
 class_name TclMsg_ServerToClient_StreamEvent
 extends TclMsg_ServerToClient
 
-## Generated from the tentacle-web type [code]TentacleMsg_ServerToClient_StreamEvent[/code].
+## A message Tentacle sends to the game.
 
 
 ## JSON key [code]event[/code].

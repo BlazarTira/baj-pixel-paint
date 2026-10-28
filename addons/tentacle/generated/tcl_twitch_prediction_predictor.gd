@@ -6,8 +6,6 @@ class_name TclTwitchPredictionPredictor
 extends RefCounted
 
 ## A top predictor on a Twitch prediction outcome.
-##
-## Generated from the tentacle-web type [code]TwitchPredictionPredictor[/code].
 
 
 ## JSON key [code]user_name[/code].

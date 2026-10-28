@@ -6,8 +6,6 @@ class_name TclTwitchApiChannelInformation
 extends RefCounted
 
 ## One channel, as Get Channel Information returns it.
-##
-## Generated from the tentacle-web type [code]TwitchApiChannelInformation[/code].
 
 
 ## The broadcaster's user id.

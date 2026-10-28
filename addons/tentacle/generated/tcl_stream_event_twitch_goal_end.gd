@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_GoalEnd
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch creator goal end event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_GoalEnd[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

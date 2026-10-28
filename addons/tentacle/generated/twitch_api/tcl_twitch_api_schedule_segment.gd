@@ -6,8 +6,6 @@ class_name TclTwitchApiScheduleSegment
 extends RefCounted
 
 ## One broadcast in a channel's stream schedule.
-##
-## Generated from the tentacle-web type [code]TwitchApiScheduleSegment[/code].
 
 
 ## The segment's id.

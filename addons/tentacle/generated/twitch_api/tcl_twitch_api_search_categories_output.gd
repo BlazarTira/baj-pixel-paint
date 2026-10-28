@@ -5,9 +5,7 @@
 class_name TclTwitchApiSearchCategoriesOutput
 extends RefCounted
 
-## What Twitch's Search Categories answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiSearchCategoriesOutput[/code].
+## What Twitch's Search Categories responds with.
 
 
 ## The categories found.

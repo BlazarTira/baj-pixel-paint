@@ -6,8 +6,6 @@ class_name TclTwitchApiBlockUserInput
 extends RefCounted
 
 ## What Twitch's Block User takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiBlockUserInput[/code].
 
 
 ## The user to block.

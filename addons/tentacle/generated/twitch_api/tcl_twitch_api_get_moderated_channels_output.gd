@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetModeratedChannelsOutput
 extends RefCounted
 
-## What Twitch's Get Moderated Channels answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetModeratedChannelsOutput[/code].
+## What Twitch's Get Moderated Channels responds with.
 
 
 ## The channels.

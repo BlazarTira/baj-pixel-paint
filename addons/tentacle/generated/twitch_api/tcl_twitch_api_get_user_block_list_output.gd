@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetUserBlockListOutput
 extends RefCounted
 
-## What Twitch's Get User Block List answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetUserBlockListOutput[/code].
+## What Twitch's Get User Block List responds with.
 
 
 ## The blocked users.

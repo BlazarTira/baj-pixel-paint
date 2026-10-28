@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetUnbanRequestsOutput
 extends RefCounted
 
-## What Twitch's Get Unban Requests answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetUnbanRequestsOutput[/code].
+## What Twitch's Get Unban Requests responds with.
 
 
 ## The requests.

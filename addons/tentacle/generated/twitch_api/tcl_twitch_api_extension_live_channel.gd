@@ -6,8 +6,6 @@ class_name TclTwitchApiExtensionLiveChannel
 extends RefCounted
 
 ## A live channel that has an extension installed or active.
-##
-## Generated from the tentacle-web type [code]TwitchApiExtensionLiveChannel[/code].
 
 
 ## The broadcaster's user id.

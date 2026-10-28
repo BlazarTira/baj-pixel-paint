@@ -6,8 +6,6 @@ class_name TclTwitchApiPinnedChatFragment
 extends RefCounted
 
 ## One fragment of a pinned message: text, an emote, a Cheermote, or a mention.
-##
-## Generated from the tentacle-web type [code]TwitchApiPinnedChatFragment[/code].
 
 
 ## "text", "emote", "cheermote", or "mention".

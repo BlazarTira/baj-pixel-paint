@@ -6,8 +6,6 @@ class_name TclChatMessageEmote
 extends RefCounted
 
 ## Emote parsed from a chat message.
-##
-## Generated from the tentacle-web type [code]ChatMessageEmote[/code].
 
 
 ## JSON key [code]id[/code].

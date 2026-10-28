@@ -6,8 +6,6 @@ class_name TclTwitchApiCreateClipFromVodInput
 extends RefCounted
 
 ## What Twitch's Create Clip From VOD takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreateClipFromVodInput[/code].
 
 
 ## The channel whose video to clip; omit for the connected broadcaster's, or name one the connected account edits.

@@ -7,8 +7,6 @@ extends RefCounted
 
 ## Every bot command the streamer configured, with the bot-wide settings that
 ## decide whether any of them answer.
-##
-## Generated from the tentacle-web type [code]BotCommandsJson[/code].
 
 
 ## Whether the bot answers in chat at all. When false, no command answers.

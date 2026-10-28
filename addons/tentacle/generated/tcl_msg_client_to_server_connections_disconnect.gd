@@ -5,7 +5,7 @@
 class_name TclMsg_ClientToServer_ConnectionsDisconnect
 extends TclMsg_ClientToServer
 
-## Generated from the tentacle-web type [code]TentacleMsg_ClientToServer_ConnectionsDisconnect[/code].
+## A message the game sends to Tentacle.
 
 
 ## JSON key [code]platform[/code].

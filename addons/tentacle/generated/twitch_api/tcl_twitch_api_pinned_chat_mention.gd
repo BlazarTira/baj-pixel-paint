@@ -6,8 +6,6 @@ class_name TclTwitchApiPinnedChatMention
 extends RefCounted
 
 ## The viewer a fragment of a pinned message mentions.
-##
-## Generated from the tentacle-web type [code]TwitchApiPinnedChatMention[/code].
 
 
 ## The viewer's user id.

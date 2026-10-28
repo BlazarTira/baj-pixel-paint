@@ -6,11 +6,9 @@ class_name TclTwitchApiAutoModCheck
 extends RefCounted
 
 ## One message to check against AutoMod.
-##
-## Generated from the tentacle-web type [code]TwitchApiAutoModCheck[/code].
 
 
-## An id of the caller's own, to find the message in the answer.
+## An id of the caller's own, to find the message in the response.
 ##
 ## JSON key [code]msg_id[/code].
 var msg_id: String = ""

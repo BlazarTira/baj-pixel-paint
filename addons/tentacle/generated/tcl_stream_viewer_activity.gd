@@ -6,8 +6,6 @@ class_name TclStreamViewerActivity
 extends RefCounted
 
 ## Stream viewer activity record.
-##
-## Generated from the tentacle-web type [code]StreamViewerActivityJson[/code].
 
 
 ## JSON key [code]createdAt[/code].

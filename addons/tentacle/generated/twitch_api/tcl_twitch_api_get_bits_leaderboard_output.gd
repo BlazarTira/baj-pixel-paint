@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetBitsLeaderboardOutput
 extends RefCounted
 
-## What Twitch's Get Bits Leaderboard answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetBitsLeaderboardOutput[/code].
+## What Twitch's Get Bits Leaderboard responds with.
 
 
 ## The leaders, in rank order; empty when nobody has cheered.

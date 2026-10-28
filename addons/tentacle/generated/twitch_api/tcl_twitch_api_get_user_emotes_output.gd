@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetUserEmotesOutput
 extends RefCounted
 
-## What Twitch's Get User Emotes answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetUserEmotesOutput[/code].
+## What Twitch's Get User Emotes responds with.
 
 
 ## The emotes.

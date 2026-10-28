@@ -6,8 +6,6 @@ class_name TclCustomEventTrigger_Twitch_ChatMessage
 extends TclCustomEventTriggerBase
 
 ## Twitch chat message trigger.
-##
-## Generated from the tentacle-web type [code]CustomEventTrigger_Twitch_ChatMessage[/code].
 
 
 ## JSON key [code]platform[/code]. Optional on the wire. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

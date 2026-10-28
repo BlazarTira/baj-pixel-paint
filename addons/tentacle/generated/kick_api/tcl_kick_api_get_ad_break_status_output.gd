@@ -5,9 +5,7 @@
 class_name TclKickApiGetAdBreakStatusOutput
 extends RefCounted
 
-## What Kick's Get Ad Break Status answers with.
-##
-## Generated from the tentacle-web type [code]KickApiGetAdBreakStatusOutput[/code].
+## What Kick's Get Ad Break Status responds with.
 
 
 ## The channel's ads: whether it can run them, and its breaks.

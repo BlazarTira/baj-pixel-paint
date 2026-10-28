@@ -6,8 +6,6 @@ class_name TclTwitchApiPredictionOutcomeRequest
 extends RefCounted
 
 ## One outcome for a new prediction.
-##
-## Generated from the tentacle-web type [code]TwitchApiPredictionOutcomeRequest[/code].
 
 
 ## The outcome, up to 25 characters.

@@ -5,7 +5,7 @@
 class_name TclMsg_ClientToServer_ObsCall
 extends TclMsg_ClientToServer
 
-## Generated from the tentacle-web type [code]TentacleMsg_ClientToServer_ObsCall[/code].
+## A message the game sends to Tentacle.
 
 
 ## JSON key [code]requestType[/code].

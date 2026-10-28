@@ -6,8 +6,6 @@ class_name TclTwitchApiSendShoutoutInput
 extends RefCounted
 
 ## What Twitch's Send a Shoutout takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiSendShoutoutInput[/code].
 
 
 ## The broadcaster to give the Shoutout to.

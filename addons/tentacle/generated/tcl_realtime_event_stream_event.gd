@@ -9,8 +9,6 @@ extends TclRealtimeEvent
 ## Chat messages flow through this kind as well: they appear with
 ## [code]payload.$type === "channel.chat.message"[/code] (Twitch) or [code]"chat.message.sent"[/code]
 ## (Kick) and the chat-specific [code]$[/code]-prefixed fields baked onto the payload.
-##
-## Generated from the tentacle-web type [code]RealtimeEvent_StreamEvent[/code].
 
 
 ## JSON key [code]payload[/code].

@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetChatSettingsOutput
 extends RefCounted
 
-## What Twitch's Get Chat Settings answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChatSettingsOutput[/code].
+## What Twitch's Get Chat Settings responds with.
 
 
 ## The settings.

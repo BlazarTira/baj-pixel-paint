@@ -5,9 +5,7 @@
 class_name TclTwitchApiSearchChannelsOutput
 extends RefCounted
 
-## What Twitch's Search Channels answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiSearchChannelsOutput[/code].
+## What Twitch's Search Channels responds with.
 
 
 ## The channels found.

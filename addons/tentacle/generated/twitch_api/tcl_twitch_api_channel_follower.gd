@@ -6,8 +6,6 @@ class_name TclTwitchApiChannelFollower
 extends RefCounted
 
 ## One viewer who follows the channel.
-##
-## Generated from the tentacle-web type [code]TwitchApiChannelFollower[/code].
 
 
 ## When the follow began, as an RFC 3339 date and time.

@@ -6,8 +6,6 @@ class_name TclTwitchApiCheckAutoModStatusInput
 extends RefCounted
 
 ## What Twitch's Check AutoMod Status takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiCheckAutoModStatusInput[/code].
 
 
 ## The messages to check, 1-100.

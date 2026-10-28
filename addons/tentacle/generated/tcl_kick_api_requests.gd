@@ -20,7 +20,7 @@ func _send_platform_request(_procedure: String, _is_query: bool, _input_json: St
 	on_complete.call(false, 0, "", "nothing carries platform requests")
 
 
-## Makes one request, handing its answer, read by [param parse], to [param on_success], or
+## Makes one request, handing its response, read by [param parse], to [param on_success], or
 ## its failure to [param on_failure].
 func _call_platform(
 	procedure: String,
@@ -57,7 +57,9 @@ func _call_platform(
 ##
 ## Kick's [url=https://docs.kick.com/apis/ads#create-ad-break]Create Ad Break[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiCreateAdBreakOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Run ads"
+##
+## [param on_success] is called with the [TclKickApiCreateAdBreakOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func create_ad_break(options: TclKickApiCreateAdBreakInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.createAdBreak", false, options.to_dictionary(), TclKickApiCreateAdBreakOutput.parse, on_success, on_failure)
@@ -67,7 +69,9 @@ func create_ad_break(options: TclKickApiCreateAdBreakInput, on_success: Callable
 ##
 ## Kick's [url=https://docs.kick.com/apis/ads#get-ad-break-status]Get Ad Break Status[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiGetAdBreakStatusOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Ad breaks"
+##
+## [param on_success] is called with the [TclKickApiGetAdBreakStatusOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_ad_break_status(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.getAdBreakStatus", true, {}, TclKickApiGetAdBreakStatusOutput.parse, on_success, on_failure)
@@ -77,7 +81,9 @@ func get_ad_break_status(on_success: Callable = Callable(), on_failure: Callable
 ##
 ## Kick's [url=https://docs.kick.com/apis/ads#enroll-in-ads]Enroll in Ads[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiEnrollInAdsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Run ads"
+##
+## [param on_success] is called with the [TclKickApiEnrollInAdsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func enroll_in_ads(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.enrollInAds", false, {}, TclKickApiEnrollInAdsOutput.parse, on_success, on_failure)
@@ -87,7 +93,7 @@ func enroll_in_ads(on_success: Callable = Callable(), on_failure: Callable = Cal
 ##
 ## Kick's [url=https://docs.kick.com/apis/categories#get-categories]Get Categories[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiGetCategoriesOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclKickApiGetCategoriesOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_categories(options: TclKickApiGetCategoriesInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.getCategories", true, {} if options == null else options.to_dictionary(), TclKickApiGetCategoriesOutput.parse, on_success, on_failure)
@@ -97,7 +103,9 @@ func get_categories(options: TclKickApiGetCategoriesInput = null, on_success: Ca
 ##
 ## Kick's [url=https://docs.kick.com/apis/channel-rewards#get-channel-rewards]Get Channel Rewards[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiGetChannelRewardsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permissions required: "Channel rewards" or "Manage channel rewards"
+##
+## [param on_success] is called with the [TclKickApiGetChannelRewardsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_channel_rewards(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.getChannelRewards", true, {}, TclKickApiGetChannelRewardsOutput.parse, on_success, on_failure)
@@ -107,7 +115,9 @@ func get_channel_rewards(on_success: Callable = Callable(), on_failure: Callable
 ##
 ## Kick's [url=https://docs.kick.com/apis/channel-rewards#create-channel-reward]Create Channel Reward[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiCreateChannelRewardOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Manage channel rewards"
+##
+## [param on_success] is called with the [TclKickApiCreateChannelRewardOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func create_channel_reward(options: TclKickApiCreateChannelRewardInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.createChannelReward", false, options.to_dictionary(), TclKickApiCreateChannelRewardOutput.parse, on_success, on_failure)
@@ -117,7 +127,9 @@ func create_channel_reward(options: TclKickApiCreateChannelRewardInput, on_succe
 ##
 ## Kick's [url=https://docs.kick.com/apis/channel-rewards#update-channel-reward]Update Channel Reward[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiUpdateChannelRewardOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Manage channel rewards"
+##
+## [param on_success] is called with the [TclKickApiUpdateChannelRewardOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func update_channel_reward(options: TclKickApiUpdateChannelRewardInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.updateChannelReward", false, options.to_dictionary(), TclKickApiUpdateChannelRewardOutput.parse, on_success, on_failure)
@@ -127,7 +139,9 @@ func update_channel_reward(options: TclKickApiUpdateChannelRewardInput, on_succe
 ##
 ## Kick's [url=https://docs.kick.com/apis/channel-rewards#delete-channel-reward]Delete Channel Reward[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Manage channel rewards"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func delete_channel_reward(options: TclKickApiDeleteChannelRewardInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.deleteChannelReward", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -137,27 +151,33 @@ func delete_channel_reward(options: TclKickApiDeleteChannelRewardInput, on_succe
 ##
 ## Kick's [url=https://docs.kick.com/apis/channel-rewards#get-channel-reward-redemptions]Get Channel Reward Redemptions[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiGetChannelRewardRedemptionsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permissions required: "Channel rewards" or "Manage channel rewards"
+##
+## [param on_success] is called with the [TclKickApiGetChannelRewardRedemptionsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_channel_reward_redemptions(options: TclKickApiGetChannelRewardRedemptionsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.getChannelRewardRedemptions", true, {} if options == null else options.to_dictionary(), TclKickApiGetChannelRewardRedemptionsOutput.parse, on_success, on_failure)
 
 
-## Accepts pending redemptions of the connected broadcaster's rewards, answering with the ones that failed.
+## Accepts pending redemptions of the connected broadcaster's rewards, responding with the ones that failed.
 ##
 ## Kick's [url=https://docs.kick.com/apis/channel-rewards#accept-channel-reward-redemptions]Accept Channel Reward Redemptions[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiAcceptChannelRewardRedemptionsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Manage channel rewards"
+##
+## [param on_success] is called with the [TclKickApiAcceptChannelRewardRedemptionsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func accept_channel_reward_redemptions(options: TclKickApiAcceptChannelRewardRedemptionsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.acceptChannelRewardRedemptions", false, options.to_dictionary(), TclKickApiAcceptChannelRewardRedemptionsOutput.parse, on_success, on_failure)
 
 
-## Rejects pending redemptions of the connected broadcaster's rewards, refunding them, and answers with the ones that failed.
+## Rejects pending redemptions of the connected broadcaster's rewards, refunding them, and responds with the ones that failed.
 ##
 ## Kick's [url=https://docs.kick.com/apis/channel-rewards#reject-channel-reward-redemptions]Reject Channel Reward Redemptions[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiRejectChannelRewardRedemptionsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Manage channel rewards"
+##
+## [param on_success] is called with the [TclKickApiRejectChannelRewardRedemptionsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func reject_channel_reward_redemptions(options: TclKickApiRejectChannelRewardRedemptionsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.rejectChannelRewardRedemptions", false, options.to_dictionary(), TclKickApiRejectChannelRewardRedemptionsOutput.parse, on_success, on_failure)
@@ -167,7 +187,7 @@ func reject_channel_reward_redemptions(options: TclKickApiRejectChannelRewardRed
 ##
 ## Kick's [url=https://docs.kick.com/apis/channels#get-channels]Get Channels[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiGetChannelsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclKickApiGetChannelsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_channels(options: TclKickApiGetChannelsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.getChannels", true, {} if options == null else options.to_dictionary(), TclKickApiGetChannelsOutput.parse, on_success, on_failure)
@@ -177,7 +197,9 @@ func get_channels(options: TclKickApiGetChannelsInput = null, on_success: Callab
 ##
 ## Kick's [url=https://docs.kick.com/apis/channels#patch-channels]Patch Channels[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Stream info"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func patch_channels(options: TclKickApiPatchChannelsInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.patchChannels", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -187,7 +209,9 @@ func patch_channels(options: TclKickApiPatchChannelsInput, on_success: Callable 
 ##
 ## Kick's [url=https://docs.kick.com/apis/chat#delete-chat-message]Delete Chat Message[/url], which describes every field.
 ##
-## [param on_success] is called with no arguments, since the platform answers with nothing; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Moderate chat"
+##
+## [param on_success] is called with no arguments, since the platform responds with nothing; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func delete_chat_message(options: TclKickApiDeleteChatMessageInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.deleteChatMessage", false, options.to_dictionary(), Callable(), on_success, on_failure)
@@ -197,7 +221,9 @@ func delete_chat_message(options: TclKickApiDeleteChatMessageInput, on_success: 
 ##
 ## Kick's [url=https://docs.kick.com/apis/kicks#get-kicks-leaderboard]Get KICKs Leaderboard[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiGetKicksLeaderboardOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Kicks leaderboard"
+##
+## [param on_success] is called with the [TclKickApiGetKicksLeaderboardOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_kicks_leaderboard(options: TclKickApiGetKicksLeaderboardInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.getKicksLeaderboard", true, {} if options == null else options.to_dictionary(), TclKickApiGetKicksLeaderboardOutput.parse, on_success, on_failure)
@@ -207,7 +233,7 @@ func get_kicks_leaderboard(options: TclKickApiGetKicksLeaderboardInput = null, o
 ##
 ## Kick's [url=https://docs.kick.com/apis/livestreams#get-livestreams]Get Livestreams[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiGetLivestreamsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclKickApiGetLivestreamsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_livestreams(options: TclKickApiGetLivestreamsInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.getLivestreams", true, {} if options == null else options.to_dictionary(), TclKickApiGetLivestreamsOutput.parse, on_success, on_failure)
@@ -217,7 +243,7 @@ func get_livestreams(options: TclKickApiGetLivestreamsInput = null, on_success: 
 ##
 ## Kick's [url=https://docs.kick.com/apis/livestreams#get-livestreams-for-users]Get Livestreams for Users[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiGetLivestreamsForUsersOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclKickApiGetLivestreamsForUsersOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_livestreams_for_users(options: TclKickApiGetLivestreamsForUsersInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.getLivestreamsForUsers", true, {} if options == null else options.to_dictionary(), TclKickApiGetLivestreamsForUsersOutput.parse, on_success, on_failure)
@@ -227,7 +253,7 @@ func get_livestreams_for_users(options: TclKickApiGetLivestreamsForUsersInput = 
 ##
 ## Kick's [url=https://docs.kick.com/apis/livestreams#get-livestreams-stats]Get Livestreams Stats[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiGetLivestreamsStatsOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclKickApiGetLivestreamsStatsOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_livestreams_stats(on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.getLivestreamsStats", true, {}, TclKickApiGetLivestreamsStatsOutput.parse, on_success, on_failure)
@@ -237,7 +263,9 @@ func get_livestreams_stats(on_success: Callable = Callable(), on_failure: Callab
 ##
 ## Kick's [url=https://docs.kick.com/apis/moderation#post-moderation-bans]Post Moderation Bans[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiPostModerationBansOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Moderate chat"
+##
+## [param on_success] is called with the [TclKickApiPostModerationBansOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func post_moderation_bans(options: TclKickApiPostModerationBansInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.postModerationBans", false, options.to_dictionary(), TclKickApiPostModerationBansOutput.parse, on_success, on_failure)
@@ -247,7 +275,9 @@ func post_moderation_bans(options: TclKickApiPostModerationBansInput, on_success
 ##
 ## Kick's [url=https://docs.kick.com/apis/moderation#delete-moderation-bans]Delete Moderation Bans[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiDeleteModerationBansOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## Permission required: "Moderate chat"
+##
+## [param on_success] is called with the [TclKickApiDeleteModerationBansOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func delete_moderation_bans(options: TclKickApiDeleteModerationBansInput, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.deleteModerationBans", false, options.to_dictionary(), TclKickApiDeleteModerationBansOutput.parse, on_success, on_failure)
@@ -257,7 +287,7 @@ func delete_moderation_bans(options: TclKickApiDeleteModerationBansInput, on_suc
 ##
 ## Kick's [url=https://docs.kick.com/apis/users#get-users]Get Users[/url], which describes every field.
 ##
-## [param on_success] is called with the [TclKickApiGetUsersOutput] the platform answered with; [param on_failure], with the status Tentacle answered (0 when it was not
+## [param on_success] is called with the [TclKickApiGetUsersOutput] the platform responded with; [param on_failure], with the status Tentacle responded with (0 when it was not
 ## reached) and a message safe to show a user. A failure with no [param on_failure] is logged.
 func get_users(options: TclKickApiGetUsersInput = null, on_success: Callable = Callable(), on_failure: Callable = Callable()) -> void:
 	_call_platform("kick.getUsers", true, {} if options == null else options.to_dictionary(), TclKickApiGetUsersOutput.parse, on_success, on_failure)

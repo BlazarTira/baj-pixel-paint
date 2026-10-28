@@ -6,8 +6,6 @@ class_name TclTwitchApiCustomRewardRedemption
 extends RefCounted
 
 ## One redemption of a custom reward.
-##
-## Generated from the tentacle-web type [code]TwitchApiCustomRewardRedemption[/code].
 
 
 ## The broadcaster's user id.

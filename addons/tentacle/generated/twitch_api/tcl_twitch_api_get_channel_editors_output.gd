@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetChannelEditorsOutput
 extends RefCounted
 
-## What Twitch's Get Channel Editors answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChannelEditorsOutput[/code].
+## What Twitch's Get Channel Editors responds with.
 
 
 ## The editors; empty when the broadcaster has none.

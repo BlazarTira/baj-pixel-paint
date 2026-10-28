@@ -6,8 +6,6 @@ class_name TclTwitchApiGetPredictionsInput
 extends RefCounted
 
 ## What Twitch's Get Predictions takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetPredictionsInput[/code].
 
 
 ## The predictions to read, up to 25.

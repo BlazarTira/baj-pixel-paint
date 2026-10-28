@@ -7,12 +7,10 @@ extends TclRealtimeEvent
 
 ## Realtime custom event: one of the named events the streamer configured in
 ## Tentacle, fired by a stream event or by the app's own Test button.
-## Subscribers match on [code]name[/code], which is what the streamer types and what every
-## Tentacle plugin subscribes by; [code]id[/code] identifies the definition, and is the
-## only stable handle when two definitions share a name. [code]viewer[/code] is absent for
+## Subscribers match on [code]name[/code], which is what the streamer types; [code]id[/code]
+## identifies the definition, and is the only stable handle when two
+## definitions share a name. [code]viewer[/code] is absent for
 ## a custom event that is about nobody.
-##
-## Generated from the tentacle-web type [code]RealtimeEvent_CustomEvent[/code].
 
 
 ## JSON key [code]payload[/code].

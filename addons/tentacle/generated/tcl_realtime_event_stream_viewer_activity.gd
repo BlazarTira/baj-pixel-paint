@@ -6,8 +6,6 @@ class_name TclRealtimeEvent_StreamViewerActivity
 extends TclRealtimeEvent
 
 ## Realtime viewer activity event.
-##
-## Generated from the tentacle-web type [code]RealtimeEvent_StreamViewerActivity[/code].
 
 
 ## JSON key [code]payload[/code].

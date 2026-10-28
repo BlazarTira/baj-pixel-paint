@@ -6,11 +6,9 @@ class_name TclTwitchApiGetFollowedChannelsInput
 extends RefCounted
 
 ## What Twitch's Get Followed Channels takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetFollowedChannelsInput[/code].
 
 
-## A channel to check for; the answer holds it only if it is followed.
+## A channel to check for; the response holds it only if it is followed.
 ##
 ## JSON key [code]broadcaster_id[/code]. Optional on the wire. Either [code]null[/code] or a string; GDScript has no nullable form for that type.
 var broadcaster_id: Variant = null

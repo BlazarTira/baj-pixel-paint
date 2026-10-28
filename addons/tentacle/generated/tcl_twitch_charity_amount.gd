@@ -6,8 +6,6 @@ class_name TclTwitchCharityAmount
 extends RefCounted
 
 ## Monetary amount attached to Twitch charity events.
-##
-## Generated from the tentacle-web type [code]TwitchCharityAmount[/code].
 
 
 ## JSON key [code]value[/code].

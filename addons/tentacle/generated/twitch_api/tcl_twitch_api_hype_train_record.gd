@@ -6,8 +6,6 @@ class_name TclTwitchApiHypeTrainRecord
 extends RefCounted
 
 ## The channel's best Hype Train.
-##
-## Generated from the tentacle-web type [code]TwitchApiHypeTrainRecord[/code].
 
 
 ## The level it reached.

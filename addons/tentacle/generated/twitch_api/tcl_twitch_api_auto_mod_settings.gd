@@ -6,8 +6,6 @@ class_name TclTwitchApiAutoModSettings
 extends RefCounted
 
 ## A channel's AutoMod levels, each 0 (off) to 4 (strictest).
-##
-## Generated from the tentacle-web type [code]TwitchApiAutoModSettings[/code].
 
 
 ## The broadcaster's user id.

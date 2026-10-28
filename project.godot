@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Tentacle="*uid://68tbvdd2pyly"
+Tentacle="*res://addons/tentacle/runtime/tentacle_runtime.gd"
 
 [display]
 
@@ -70,3 +70,5 @@ renderer/rendering_method.mobile="gl_compatibility"
 connection/build_mode=1
 connection/editor_mode=1
 embedded/twitch_client_id="ma52qw84h4diar183cujp4pnq2gnp2"
+embedded/custom_permissions=true
+embedded/twitch_required_permissions=[0]

@@ -6,8 +6,6 @@ class_name TclTwitchViewerSubscription
 extends RefCounted
 
 ## A viewer's subscription to the streamer's Twitch channel.
-##
-## Generated from the tentacle-web type [code]TwitchViewerSubscriptionJson[/code].
 
 
 ## The subscription tier: "1000", "2000", or "3000" for Tier 1, 2, or 3 (Prime counts as Tier 1).

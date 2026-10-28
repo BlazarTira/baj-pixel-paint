@@ -5,9 +5,7 @@
 class_name TclKickApiCreateAdBreakOutput
 extends RefCounted
 
-## What Kick's Create Ad Break answers with.
-##
-## Generated from the tentacle-web type [code]KickApiCreateAdBreakOutput[/code].
+## What Kick's Create Ad Break responds with.
 
 
 ## The ad break Kick accepted.

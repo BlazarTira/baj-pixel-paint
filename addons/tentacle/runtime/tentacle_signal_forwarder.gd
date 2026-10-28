@@ -39,6 +39,13 @@ func forward_every_signal_of(source: Object) -> void:
 		_connections.append([source, signal_name, forward])
 
 
+## Whether anything listens to the target's [param signal_name], which is what makes this
+## forwarder's connection to a source a listener when the Twitch account keeps the signal
+## quiet ([TentacleQuietEvents]).
+func relays_to_a_listener(signal_name: String) -> bool:
+	return _target != null and TentacleQuietEvents.is_listened(_target, signal_name)
+
+
 ## Disconnects everything [method forward_every_signal_of] connected.
 func release() -> void:
 	for connection in _connections:

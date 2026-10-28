@@ -6,7 +6,7 @@ class_name TclTwitchGoalType
 
 ## Twitch creator goal kind.
 ##
-## Generated from the tentacle-web type [code]TwitchGoalType[/code]. Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
+## Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
 
 
 ## The wire values, as an enum.
@@ -42,6 +42,24 @@ static func from_wire(wire: String) -> Value:
 		"new_subscription_count":
 			return Value.NEW_SUBSCRIPTION_COUNT
 	return Value.FOLLOW
+
+
+## Whether [param wire] is one of the wire values this version knows. A newer
+## Tentacle can send one it predates, which an array or a dictionary leaves out
+## rather than reading as [constant Value.FOLLOW].
+static func is_known(wire: String) -> bool:
+	match wire:
+		"follow":
+			return true
+		"subscription":
+			return true
+		"subscription_count":
+			return true
+		"new_subscription":
+			return true
+		"new_subscription_count":
+			return true
+	return false
 
 
 ## The wire string for an enum member.

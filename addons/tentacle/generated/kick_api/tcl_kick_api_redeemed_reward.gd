@@ -6,8 +6,6 @@ class_name TclKickApiRedeemedReward
 extends RefCounted
 
 ## The reward a group of redemptions is for.
-##
-## Generated from the tentacle-web type [code]KickApiRedeemedReward[/code].
 
 
 ## The reward's id.

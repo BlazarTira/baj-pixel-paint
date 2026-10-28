@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetFollowedStreamsOutput
 extends RefCounted
 
-## What Twitch's Get Followed Streams answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetFollowedStreamsOutput[/code].
+## What Twitch's Get Followed Streams responds with.
 
 
 ## The live streams, most watched first.

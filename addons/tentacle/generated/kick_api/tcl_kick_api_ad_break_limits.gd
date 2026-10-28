@@ -6,8 +6,6 @@ class_name TclKickApiAdBreakLimits
 extends RefCounted
 
 ## How many ad breaks a channel may run, and over what period.
-##
-## Generated from the tentacle-web type [code]KickApiAdBreakLimits[/code].
 
 
 ## The most ad breaks in one period.

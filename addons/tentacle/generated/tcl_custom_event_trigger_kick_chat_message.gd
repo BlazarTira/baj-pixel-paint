@@ -6,8 +6,6 @@ class_name TclCustomEventTrigger_Kick_ChatMessage
 extends TclCustomEventTriggerBase
 
 ## Kick chat message trigger.
-##
-## Generated from the tentacle-web type [code]CustomEventTrigger_Kick_ChatMessage[/code].
 
 
 ## JSON key [code]platform[/code]. Optional on the wire. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

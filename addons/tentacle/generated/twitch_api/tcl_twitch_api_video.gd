@@ -6,8 +6,6 @@ class_name TclTwitchApiVideo
 extends RefCounted
 
 ## One published video.
-##
-## Generated from the tentacle-web type [code]TwitchApiVideo[/code].
 
 
 ## The video's id.

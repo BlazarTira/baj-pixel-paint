@@ -6,8 +6,6 @@ class_name TclTwitchRewardMaxPerStream
 extends RefCounted
 
 ## Max-per-stream limit setting of a Twitch custom channel point reward.
-##
-## Generated from the tentacle-web type [code]TwitchRewardMaxPerStream[/code].
 
 
 ## JSON key [code]is_enabled[/code].

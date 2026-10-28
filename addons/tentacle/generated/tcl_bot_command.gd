@@ -7,8 +7,6 @@ extends RefCounted
 
 ## One bot command as the streamer configured it: what triggers it, who may use
 ## it and where, how often, and what it does.
-##
-## Generated from the tentacle-web type [code]BotCommandJson[/code].
 
 
 ## JSON key [code]id[/code].
@@ -94,7 +92,9 @@ static func parse(json: Variant) -> TclBotCommand:
 			out.actions.append(_actions_parsed)
 	out.permission = TclBotCommandPermission.from_wire(TclJson.as_string(TclJson.read_value(object, "permission")))
 	for _platforms_item in TclJson.read_array(object, "platforms"):
-		out.platforms.append(TclStreamPlatform.from_wire(TclJson.as_string(_platforms_item)))
+		var _platforms_wire := TclJson.as_string(_platforms_item)
+		if TclStreamPlatform.is_known(_platforms_wire):
+			out.platforms.append(TclStreamPlatform.from_wire(_platforms_wire))
 	out.user_cooldown_seconds = TclJson.as_int(TclJson.read_value(object, "userCooldownSeconds"))
 	out.global_cooldown_seconds = TclJson.as_int(TclJson.read_value(object, "globalCooldownSeconds"))
 	out.ignore_first_time_chatters = TclJson.as_bool(TclJson.read_value(object, "ignoreFirstTimeChatters"))

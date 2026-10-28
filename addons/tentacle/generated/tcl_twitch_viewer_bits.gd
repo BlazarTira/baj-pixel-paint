@@ -6,8 +6,6 @@ class_name TclTwitchViewerBits
 extends RefCounted
 
 ## The bits a viewer has cheered in the streamer's Twitch channel, all time.
-##
-## Generated from the tentacle-web type [code]TwitchViewerBitsJson[/code].
 
 
 ## How many bits they have cheered in the channel, all time: Twitch's total

@@ -6,8 +6,6 @@ class_name TclTwitchApiUpdateChannelStreamScheduleInput
 extends RefCounted
 
 ## What Twitch's Update Channel Stream Schedule takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiUpdateChannelStreamScheduleInput[/code].
 
 
 ## True to schedule a vacation, false to cancel one.

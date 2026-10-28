@@ -6,8 +6,6 @@ class_name TclBotCommandAction_Timeout
 extends TclBotCommandAction
 
 ## Times out the viewer who used the command.
-##
-## Generated from the tentacle-web type [code]BotCommandAction_Timeout[/code].
 
 
 ## How long the timeout lasts, in seconds.

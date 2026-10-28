@@ -5,9 +5,7 @@
 class_name TclTwitchApiUpdateAutoModSettingsOutput
 extends RefCounted
 
-## What Twitch's Update AutoMod Settings answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiUpdateAutoModSettingsOutput[/code].
+## What Twitch's Update AutoMod Settings responds with.
 
 
 ## The settings as they now are.

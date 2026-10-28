@@ -6,8 +6,6 @@ class_name TclKickApiKicksLeaderboardEntry
 extends RefCounted
 
 ## One place on the KICKs leaderboard.
-##
-## Generated from the tentacle-web type [code]KickApiKicksLeaderboardEntry[/code].
 
 
 ## The place, from 1.

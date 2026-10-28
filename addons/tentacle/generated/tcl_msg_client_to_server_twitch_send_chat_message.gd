@@ -5,7 +5,7 @@
 class_name TclMsg_ClientToServer_TwitchSendChatMessage
 extends TclMsg_ClientToServer
 
-## Generated from the tentacle-web type [code]TentacleMsg_ClientToServer_TwitchSendChatMessage[/code].
+## A message the game sends to Tentacle.
 
 
 ## 1-500 characters.

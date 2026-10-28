@@ -6,8 +6,6 @@ class_name TclTwitchApiUpdateChannelGuestStarSettingsInput
 extends RefCounted
 
 ## What Twitch's Update Channel Guest Star Settings takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiUpdateChannelGuestStarSettingsInput[/code].
 
 
 ## Whether moderators may control whether a guest is live.

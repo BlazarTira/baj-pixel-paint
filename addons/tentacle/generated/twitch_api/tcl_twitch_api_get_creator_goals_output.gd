@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetCreatorGoalsOutput
 extends RefCounted
 
-## What Twitch's Get Creator Goals answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetCreatorGoalsOutput[/code].
+## What Twitch's Get Creator Goals responds with.
 
 
 ## The goals; empty when there are none.

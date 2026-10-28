@@ -6,8 +6,6 @@ class_name TclKickApiLivestream
 extends RefCounted
 
 ## One livestream.
-##
-## Generated from the tentacle-web type [code]KickApiLivestream[/code].
 
 
 ## The livestream's id.

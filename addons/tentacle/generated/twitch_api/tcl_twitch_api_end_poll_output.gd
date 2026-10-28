@@ -5,9 +5,7 @@
 class_name TclTwitchApiEndPollOutput
 extends RefCounted
 
-## What Twitch's End Poll answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiEndPollOutput[/code].
+## What Twitch's End Poll responds with.
 
 
 ## The poll as it ended.

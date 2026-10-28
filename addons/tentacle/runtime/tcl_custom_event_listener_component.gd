@@ -1,4 +1,4 @@
-@icon("res://addons/tentacle/icons/event.svg")
+@icon("res://addons/tentacle/icons/tentacle.png")
 class_name TclCustomEventListenerComponent
 extends Node
 

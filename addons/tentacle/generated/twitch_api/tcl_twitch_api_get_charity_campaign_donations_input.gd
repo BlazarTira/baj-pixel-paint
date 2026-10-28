@@ -6,8 +6,6 @@ class_name TclTwitchApiGetCharityCampaignDonationsInput
 extends RefCounted
 
 ## What Twitch's Get Charity Campaign Donations takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetCharityCampaignDonationsInput[/code].
 
 
 ## The most items to return per page, 1-100.

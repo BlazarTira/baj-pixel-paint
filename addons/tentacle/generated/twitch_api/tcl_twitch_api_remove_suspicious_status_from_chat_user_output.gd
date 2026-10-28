@@ -5,9 +5,7 @@
 class_name TclTwitchApiRemoveSuspiciousStatusFromChatUserOutput
 extends RefCounted
 
-## What Twitch's Remove Suspicious Status From Chat User answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiRemoveSuspiciousStatusFromChatUserOutput[/code].
+## What Twitch's Remove Suspicious Status From Chat User responds with.
 
 
 ## The viewer's status.

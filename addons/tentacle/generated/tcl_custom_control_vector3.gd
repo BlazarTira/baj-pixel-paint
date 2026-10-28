@@ -6,8 +6,6 @@ class_name TclCustomControl_Vector3
 extends TclCustomControl
 
 ## Custom control Vector3 input.
-##
-## Generated from the tentacle-web type [code]CustomControlJson_Vector3[/code].
 
 
 ## JSON key [code]value[/code].

@@ -6,8 +6,6 @@ class_name TclTwitchChatMessageReply
 extends RefCounted
 
 ## Reply / thread metadata when a Twitch chat message is a reply.
-##
-## Generated from the tentacle-web type [code]TwitchChatMessageReply[/code].
 
 
 ## JSON key [code]parent_message_id[/code].

@@ -6,8 +6,6 @@ class_name TclTwitchApiClipDownload
 extends RefCounted
 
 ## Where to download one clip's video.
-##
-## Generated from the tentacle-web type [code]TwitchApiClipDownload[/code].
 
 
 ## The clip's id.

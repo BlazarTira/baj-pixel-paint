@@ -6,8 +6,6 @@ class_name TclTwitchApiExtensionSlots
 extends RefCounted
 
 ## The extension slots to change, by type, each keyed by its number from "1".
-##
-## Generated from the tentacle-web type [code]TwitchApiExtensionSlots[/code].
 
 
 ## The panel slots to change.

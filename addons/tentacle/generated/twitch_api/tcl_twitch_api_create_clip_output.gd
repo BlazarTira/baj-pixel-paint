@@ -5,9 +5,7 @@
 class_name TclTwitchApiCreateClipOutput
 extends RefCounted
 
-## What Twitch's Create Clip answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreateClipOutput[/code].
+## What Twitch's Create Clip responds with.
 
 
 ## The clip being created.

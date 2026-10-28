@@ -6,8 +6,6 @@ class_name TclKickApiDeleteChatMessageInput
 extends RefCounted
 
 ## What Kick's Delete Chat Message takes.
-##
-## Generated from the tentacle-web type [code]KickApiDeleteChatMessageInput[/code].
 
 
 ## The message to delete.

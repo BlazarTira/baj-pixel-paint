@@ -6,8 +6,6 @@ class_name TclCustomEventTrigger_Anywhere_Follow
 extends RefCounted
 
 ## Anywhere follow trigger.
-##
-## Generated from the tentacle-web type [code]CustomEventTrigger_Anywhere_Follow[/code].
 
 
 ## JSON key [code]platform[/code]. Optional on the wire. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_ChatClear
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch chat clear event (entire chat cleared).
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_ChatClear[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

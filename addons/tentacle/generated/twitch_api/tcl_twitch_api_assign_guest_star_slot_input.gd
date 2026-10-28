@@ -6,8 +6,6 @@ class_name TclTwitchApiAssignGuestStarSlotInput
 extends RefCounted
 
 ## What Twitch's Assign Guest Star Slot takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiAssignGuestStarSlotInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

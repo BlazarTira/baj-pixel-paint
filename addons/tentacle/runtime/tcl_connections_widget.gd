@@ -1,4 +1,4 @@
-@icon("res://addons/tentacle/icons/control.svg")
+@icon("res://addons/tentacle/icons/tentacle.png")
 class_name TclConnectionsWidget
 extends VBoxContainer
 
@@ -8,7 +8,7 @@ extends VBoxContainer
 ## Put one in a menu scene and the player can connect their Twitch or Kick channel with
 ## no code of yours. While signing in, it opens the sign-in page in the player's browser,
 ## shows Twitch's code and how long it has left, and offers to open the page again or
-## cancel; afterwards it says why a sign-in that did not connect failed. In App mode it
+## cancel; afterwards it says why a sign-in that did not connect failed. In Paired mode it
 ## shows one line saying the Tentacle app connects the platforms instead.
 ##
 ## It takes the look of the project's [Theme] like any other control. For a sign-in

@@ -5,7 +5,7 @@
 class_name TclSubathonStats_GiftedSubscriptions_Unlocks_Item
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclSubathonStats_GiftedSubscriptions_Unlocks_Item[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]giftedSubs[/code].

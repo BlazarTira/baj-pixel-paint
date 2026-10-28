@@ -6,8 +6,6 @@ class_name TclKickApiAdBreakStatusItem
 extends RefCounted
 
 ## One ad break on the channel.
-##
-## Generated from the tentacle-web type [code]KickApiAdBreakStatusItem[/code].
 
 
 ## The ad break's id.

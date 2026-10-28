@@ -6,8 +6,6 @@ class_name TclKickApiGetChannelsInput
 extends RefCounted
 
 ## What Kick's Get Channels takes.
-##
-## Generated from the tentacle-web type [code]KickApiGetChannelsInput[/code].
 
 
 ## The broadcasters whose channels to read, up to 50.

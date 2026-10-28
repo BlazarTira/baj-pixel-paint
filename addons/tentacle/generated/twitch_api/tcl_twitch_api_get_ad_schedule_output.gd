@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetAdScheduleOutput
 extends RefCounted
 
-## What Twitch's Get Ad Schedule answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetAdScheduleOutput[/code].
+## What Twitch's Get Ad Schedule responds with.
 
 
 ## The schedule.

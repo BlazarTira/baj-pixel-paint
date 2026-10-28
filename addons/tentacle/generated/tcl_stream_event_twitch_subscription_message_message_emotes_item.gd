@@ -5,7 +5,7 @@
 class_name TclStreamEvent_Twitch_SubscriptionMessage_Message_Emotes_Item
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclStreamEvent_Twitch_SubscriptionMessage_Message_Emotes_Item[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]begin[/code].

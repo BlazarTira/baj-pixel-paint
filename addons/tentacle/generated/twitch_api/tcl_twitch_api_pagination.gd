@@ -6,8 +6,6 @@ class_name TclTwitchApiPagination
 extends RefCounted
 
 ## Twitch's page cursor; empty on the last page.
-##
-## Generated from the tentacle-web type [code]TwitchApiPagination[/code].
 
 
 ## The cursor for the next page, as [code]after[/code]; absent on the last page.

@@ -6,8 +6,6 @@ class_name TclTwitchApiPollChoiceRequest
 extends RefCounted
 
 ## One choice for a new poll.
-##
-## Generated from the tentacle-web type [code]TwitchApiPollChoiceRequest[/code].
 
 
 ## The choice, up to 25 characters.

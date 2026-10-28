@@ -6,8 +6,6 @@ class_name TclTwitchApiBanUserRequest
 extends RefCounted
 
 ## Who to ban or time out, and for how long.
-##
-## Generated from the tentacle-web type [code]TwitchApiBanUserRequest[/code].
 
 
 ## The viewer.

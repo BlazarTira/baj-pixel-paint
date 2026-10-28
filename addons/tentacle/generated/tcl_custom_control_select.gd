@@ -6,8 +6,6 @@ class_name TclCustomControl_Select
 extends TclCustomControl
 
 ## Custom control select dropdown.
-##
-## Generated from the tentacle-web type [code]CustomControlJson_Select[/code].
 
 
 ## JSON key [code]placeholder[/code].

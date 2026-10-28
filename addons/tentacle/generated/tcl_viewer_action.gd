@@ -6,8 +6,6 @@ class_name TclViewerAction
 extends RefCounted
 
 ## Viewer action record.
-##
-## Generated from the tentacle-web type [code]ViewerActionJson[/code].
 
 
 ## JSON key [code]collectionId[/code].

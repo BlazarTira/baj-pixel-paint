@@ -6,8 +6,6 @@ class_name TclTwitchApiUserSubscription
 extends RefCounted
 
 ## The connected account's subscription to a channel.
-##
-## Generated from the tentacle-web type [code]TwitchApiUserSubscription[/code].
 
 
 ## The broadcaster's user id.

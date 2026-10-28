@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetGuestStarSessionOutput
 extends RefCounted
 
-## What Twitch's Get Guest Star Session answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetGuestStarSessionOutput[/code].
+## What Twitch's Get Guest Star Session responds with.
 
 
 ## The session; empty when none is running.

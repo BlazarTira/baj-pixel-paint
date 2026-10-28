@@ -76,6 +76,7 @@ signal OnStreamEvent(event: TclStreamEventBase, viewer: TclViewer)
 ## A viewer joined chat. Only Twitch reports joins: Tentacle checks who is in the
 ## Twitch chat every 30 seconds, so a join arrives up to 30 seconds after it happens,
 ## and viewers already in chat when Tentacle connects to Twitch raise none.
+## Permission required on Twitch: "Who's in chat"
 signal OnChatJoin(viewer: TclViewer)
 
 ## A chat message that is **not** a command, on either platform.
@@ -98,6 +99,7 @@ signal OnChatMessageWithEmojis(chat_message: TclStreamEvent_Anywhere_ChatMessage
 signal OnChatMessageWithEmotes(chat_message: TclStreamEvent_Anywhere_ChatMessage, viewer: TclViewer)
 
 ## A viewer was banned or timed out, on either platform.
+## Permission required on Twitch: "Bans and timeouts"
 signal OnBan(event: TclStreamEvent_Anywhere_Ban, viewer: TclViewer)
 
 ## The channel's title, category, or similar changed, on either platform.
@@ -106,21 +108,27 @@ signal OnBan(event: TclStreamEvent_Anywhere_Ban, viewer: TclViewer)
 signal OnChannelUpdate(event: TclStreamEvent_Anywhere_ChannelUpdate)
 
 ## A donation, on either platform: a Twitch cheer, for one.
+## Permission required on Twitch: "Bits"
 signal OnDonation(event: TclStreamEvent_Anywhere_Donation, viewer: TclViewer)
 
 ## A new follower, on either platform.
+## Permission required on Twitch: "Follows"
 signal OnFollow(event: TclStreamEvent_Anywhere_Follow, viewer: TclViewer)
 
 ## A channel-points or reward redemption, on either platform.
+## Permissions required on Twitch: "Channel Points redemptions" or "Channel Points rewards"
 signal OnRedemption(event: TclStreamEvent_Anywhere_Redemption, viewer: TclViewer)
 
 ## A new subscription, on either platform.
+## Permission required on Twitch: "Subscriptions"
 signal OnSubscription(event: TclStreamEvent_Anywhere_Subscription, viewer: TclViewer)
 
 ## A gifted subscription, on either platform.
+## Permission required on Twitch: "Subscriptions"
 signal OnSubscriptionGift(event: TclStreamEvent_Anywhere_SubscriptionGift, viewer: TclViewer)
 
 ## A renewed subscription, on either platform.
+## Permission required on Twitch: "Subscriptions"
 signal OnSubscriptionRenewal(event: TclStreamEvent_Anywhere_SubscriptionRenewal, viewer: TclViewer)
 
 # The surfaces, plus connection state, are reached through these.
@@ -274,23 +282,25 @@ var endpoints: TentacleEndpoints:
 		_assigned[&"connection_password"] = true
 		_apply_connection_password()
 
-## Where Tentacle runs when the game runs from the editor: the app on this machine, or
-## Embedded, Tentacle's core running inside the game (which needs the Tentacle
-## GDExtension). A [code]--tentacle-mode=app[/code] or [code]--tentacle-mode=embedded[/code]
+# The Inspector lists the modes by hand so it leaves out APP, PAIRED's old name.
+## Where Tentacle runs when the game runs from the editor: Paired, with the Tentacle app on
+## this machine, or Embedded, Tentacle's core running inside the game (which needs the Tentacle
+## GDExtension). A [code]--tentacle-mode=paired[/code] or [code]--tentacle-mode=embedded[/code]
 ## argument on the command line wins over it. Read once, as the node becomes ready. The
 ## autoload reads this from the [code]tentacle/connection/editor_mode[/code] Project
 ## Setting.
-@export var editor_mode: TclTentacleMode.Value = TclTentacleMode.Value.APP:
+@export_custom(PROPERTY_HINT_ENUM, "Paired:0,Embedded:1") var editor_mode: TclTentacleMode.Value = TclTentacleMode.Value.PAIRED:
 	set(value):
 		editor_mode = value
 		_assigned[&"editor_mode"] = true
 
-## Where Tentacle runs in an exported game: the app on the player's machine, or Embedded,
+## Where Tentacle runs in an exported game: Paired, with the Tentacle app on the player's
+## machine, or Embedded,
 ## Tentacle's core running inside the game, so players need no app. A
-## [code]--tentacle-mode=app[/code] or [code]--tentacle-mode=embedded[/code] argument on
+## [code]--tentacle-mode=paired[/code] or [code]--tentacle-mode=embedded[/code] argument on
 ## the command line wins over it. Read once, as the node becomes ready. The autoload
 ## reads this from the [code]tentacle/connection/build_mode[/code] Project Setting.
-@export var build_mode: TclTentacleMode.Value = TclTentacleMode.Value.APP:
+@export_custom(PROPERTY_HINT_ENUM, "Paired:0,Embedded:1") var build_mode: TclTentacleMode.Value = TclTentacleMode.Value.PAIRED:
 	set(value):
 		build_mode = value
 		_assigned[&"build_mode"] = true
@@ -311,6 +321,25 @@ var endpoints: TentacleEndpoints:
 		twitch_client_id = value
 		_assigned[&"twitch_client_id"] = true
 
+## In Embedded mode, the client ID of your own Kick app to sign players in with, so its
+## name is the one on Kick's consent page. Kick finishes a sign-in only with the app's
+## client secret, so set [member kick_sign_in_server_url] too: one without the other
+## refuses Kick sign-ins. Empty uses Tentacle's. The autoload reads this from the
+## [code]tentacle/embedded/kick_client_id[/code] Project Setting.
+@export var kick_client_id: String = "":
+	set(value):
+		kick_client_id = value
+		_assigned[&"kick_client_id"] = true
+
+## In Embedded mode, the address of your Kick sign-in server, which holds your Kick app's
+## client secret and finishes and renews sign-ins with it. Empty uses Tentacle's. The
+## autoload reads this from the [code]tentacle/embedded/kick_sign_in_server_url[/code]
+## Project Setting.
+@export var kick_sign_in_server_url: String = "":
+	set(value):
+		kick_sign_in_server_url = value
+		_assigned[&"kick_sign_in_server_url"] = true
+
 ## In Embedded mode, the folder the game's config files are read from: the timers, custom
 ## events, viewer properties, and bot commands the Tentacle app's Data > Export writes
 ## there. Every [code].json[/code] file in it is applied each time Tentacle starts: what the
@@ -322,6 +351,47 @@ var endpoints: TentacleEndpoints:
 	set(value):
 		config_directory = value
 		_assigned[&"config_directory"] = true
+
+## In Embedded mode, ask Twitch and Kick only for the permissions in the four lists below,
+## rather than for everything Tentacle can use, with the player choosing what to turn
+## off. Chat is always asked for. The autoload reads this from the
+## [code]tentacle/embedded/custom_permissions[/code] Project Setting.
+@export var custom_permissions: bool = false:
+	set(value):
+		custom_permissions = value
+		_assigned[&"custom_permissions"] = true
+
+## What every Twitch sign-in asks for besides chat, when [member custom_permissions] is
+## on. The autoload reads this from the
+## [code]tentacle/embedded/twitch_required_permissions[/code] Project Setting.
+@export var twitch_required_permissions: Array[TclPlatformPermission.Value] = []:
+	set(value):
+		twitch_required_permissions = value
+		_assigned[&"twitch_required_permissions"] = true
+
+## What a Twitch sign-in may also ask for, unless the player turns it off, when
+## [member custom_permissions] is on. The autoload reads this from the
+## [code]tentacle/embedded/twitch_optional_permissions[/code] Project Setting.
+@export var twitch_optional_permissions: Array[TclPlatformPermission.Value] = []:
+	set(value):
+		twitch_optional_permissions = value
+		_assigned[&"twitch_optional_permissions"] = true
+
+## What every Kick sign-in asks for besides chat, when [member custom_permissions] is on.
+## The autoload reads this from the [code]tentacle/embedded/kick_required_permissions[/code]
+## Project Setting.
+@export var kick_required_permissions: Array[TclPlatformPermission.Value] = []:
+	set(value):
+		kick_required_permissions = value
+		_assigned[&"kick_required_permissions"] = true
+
+## What a Kick sign-in may also ask for, unless the player turns it off, when
+## [member custom_permissions] is on. The autoload reads this from the
+## [code]tentacle/embedded/kick_optional_permissions[/code] Project Setting.
+@export var kick_optional_permissions: Array[TclPlatformPermission.Value] = []:
+	set(value):
+		kick_optional_permissions = value
+		_assigned[&"kick_optional_permissions"] = true
 
 ## Seconds before the first retry.
 @export_range(0.25, 60.0, 0.05, "or_greater", "suffix:s") var reconnect_initial_delay: float = 1.0:
@@ -378,6 +448,8 @@ var _displaced: TentacleRuntime = null
 var _client: TentacleClient = null
 ## Raises the client's stream signals as this node's own.
 var _client_signals: TentacleSignalForwarder = null
+## Warns about this node's cross-platform signals the Twitch account keeps quiet.
+var _quiet_events: TentacleQuietEvents = TentacleQuietEvents.new()
 var _http: TclHttpClient = null
 ## The procedures' transport: over HTTP to the app, or over the session in Embedded mode.
 var _rpc: TentacleRpc = null
@@ -421,6 +493,7 @@ func _init() -> void:
 		func(new_id: String) -> void: OnSessionOpened.emit(new_id)
 	)
 	_client.session.url_provider = _resolve_engine_url
+	_client.connections.OnConnectionChanged.connect(_warn_about_quiet_events)
 
 
 func _ready() -> void:
@@ -523,6 +596,12 @@ func send_chat_message_to_viewer(viewer: TclViewer, message: String, is_bot: boo
 
 ## Re-resolves the engine socket URL, called fresh on every attempt.
 ##
+## Warns in the log about each cross-platform signal a game listens to here that
+## [param connection]'s Twitch account keeps quiet.
+func _warn_about_quiet_events(connection: TclPlatformConnection) -> void:
+	_quiet_events.check(connection, self, TclTwitchPlatformEvents.CROSS_PLATFORM_EVENT_PERMISSIONS, "Tentacle.", true)
+
+
 ## Tentacle may have started, or restarted onto a different port, since the last
 ## one, so the endpoints are read again rather than remembered. The HTTP base URL is
 ## updated at the same time for the same reason.
@@ -547,7 +626,7 @@ func _apply_connection_password() -> void:
 
 
 ## The core's settings, from this node's: the data folder (made if missing), the Twitch
-## client ID, and the text of each config file in the config folder.
+## and Kick apps, and the text of each config file in the config folder.
 func _build_embedded_options() -> TentacleEmbeddedOptions:
 	var options := TentacleEmbeddedOptions.new()
 	var folder := embedded_data_directory.strip_edges()
@@ -563,8 +642,15 @@ func _build_embedded_options() -> TentacleEmbeddedOptions:
 		)
 		options.data_directory = ""
 	options.twitch_client_id = twitch_client_id.strip_edges()
+	options.kick_client_id = kick_client_id.strip_edges()
+	options.kick_sign_in_server_url = kick_sign_in_server_url.strip_edges()
 	var configs := config_directory.strip_edges()
 	options.config_files = TclConfigFiles.read(DEFAULT_CONFIG_DIRECTORY if configs.is_empty() else configs)
+	options.custom_permissions = custom_permissions
+	options.twitch_required_permissions = twitch_required_permissions
+	options.twitch_optional_permissions = twitch_optional_permissions
+	options.kick_required_permissions = kick_required_permissions
+	options.kick_optional_permissions = kick_optional_permissions
 	return options
 
 

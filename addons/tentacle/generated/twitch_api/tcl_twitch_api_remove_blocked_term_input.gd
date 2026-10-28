@@ -6,8 +6,6 @@ class_name TclTwitchApiRemoveBlockedTermInput
 extends RefCounted
 
 ## What Twitch's Remove Blocked Term takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiRemoveBlockedTermInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

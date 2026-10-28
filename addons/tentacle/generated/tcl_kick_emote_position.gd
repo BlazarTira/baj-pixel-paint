@@ -6,8 +6,6 @@ class_name TclKickEmotePosition
 extends RefCounted
 
 ## Kick emote position.
-##
-## Generated from the tentacle-web type [code]KickEmotePosition[/code].
 
 
 ## JSON key [code]s[/code].

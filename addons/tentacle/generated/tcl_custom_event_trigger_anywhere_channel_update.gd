@@ -6,8 +6,6 @@ class_name TclCustomEventTrigger_Anywhere_ChannelUpdate
 extends RefCounted
 
 ## Anywhere channel update trigger (Twitch channel.update / Kick livestream.metadata.updated).
-##
-## Generated from the tentacle-web type [code]CustomEventTrigger_Anywhere_ChannelUpdate[/code].
 
 
 ## JSON key [code]platform[/code]. Optional on the wire. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

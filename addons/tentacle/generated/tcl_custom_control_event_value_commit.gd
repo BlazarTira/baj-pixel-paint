@@ -10,8 +10,6 @@ extends TclCustomControlEvent
 ## Enter, moving focus away from a text/number input, or releasing the
 ## thumb after dragging a slider. Use this to trigger one-shot
 ## "user finalized this value" actions.
-##
-## Generated from the tentacle-web type [code]CustomControlEvent_ValueCommit[/code].
 
 
 ## JSON key [code]value[/code]. The wire type is unconstrained.

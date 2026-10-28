@@ -6,8 +6,6 @@ class_name TclStreamEvent_Kick_Base
 extends TclStreamEventBase
 
 ## Base fields for all Kick events.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Kick_Base[/code].
 
 
 ## JSON key [code]$platform[/code].

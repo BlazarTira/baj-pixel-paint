@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetTeamsOutput
 extends RefCounted
 
-## What Twitch's Get Teams answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetTeamsOutput[/code].
+## What Twitch's Get Teams responds with.
 
 
 ## The team.

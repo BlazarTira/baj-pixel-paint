@@ -6,8 +6,6 @@ class_name TclStreamEvent_Anywhere_Redemption
 extends TclStreamEventAnywhereBase
 
 ## Cross-platform "Anywhere" view of Redemption events. Carries the $-prefixed normalized fields shared between Twitch and Kick variants.
-##
-## Generated from the tentacle-web type [code]StreamEvent_Anywhere_Redemption[/code].
 
 
 ## JSON key [code]$redeemerUserId[/code].

@@ -6,8 +6,6 @@ class_name TclTwitchApiGetContentClassificationLabelsInput
 extends RefCounted
 
 ## What Twitch's Get Content Classification Labels takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetContentClassificationLabelsInput[/code].
 
 
 ## The locale to describe them in, such as "en-US", Twitch's default.

@@ -10,8 +10,6 @@ extends TclStreamEvent_Twitch_Base
 ## signals (is_first, is_returning_chatter, hype-chat fields, the flat
 ## user_info object, emote_offsets) are not represented here because
 ## EventSub does not expose them.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_ChatMessage[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

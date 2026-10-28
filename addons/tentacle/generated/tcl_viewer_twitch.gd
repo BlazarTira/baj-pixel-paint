@@ -6,8 +6,6 @@ class_name TclViewerTwitch
 extends RefCounted
 
 ## Viewer Twitch profile data (as embedded in ViewerMinimalJson).
-##
-## Generated from the tentacle-web type [code]ViewerTwitchJson[/code].
 
 
 ## The badges the viewer last wore in the streamer's Twitch chat: each chat

@@ -6,8 +6,6 @@ class_name TclTwitchApiEndGuestStarSessionInput
 extends RefCounted
 
 ## What Twitch's End Guest Star Session takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiEndGuestStarSessionInput[/code].
 
 
 ## The session to end.

@@ -6,8 +6,6 @@ class_name TclKickApiDeleteChannelRewardInput
 extends RefCounted
 
 ## What Kick's Delete Channel Reward takes.
-##
-## Generated from the tentacle-web type [code]KickApiDeleteChannelRewardInput[/code].
 
 
 ## The reward to delete.

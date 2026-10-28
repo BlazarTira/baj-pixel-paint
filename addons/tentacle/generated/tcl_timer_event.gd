@@ -6,8 +6,6 @@ class_name TclTimerEvent
 extends RefCounted
 
 ## One fire of a timer.
-##
-## Generated from the tentacle-web type [code]TimerEventJson[/code].
 
 
 ## JSON key [code]id[/code].

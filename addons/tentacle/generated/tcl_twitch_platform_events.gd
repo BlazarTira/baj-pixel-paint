@@ -16,15 +16,96 @@ extends TclTwitchApiRequests
 # Named and typed as the Unreal plugin's UTentacle_Twitch delegates; a
 # generator test holds the list to Unreal's Tentacle_Twitch.h.
 
+## The Twitch permissions each signal here needs, any one of them enough, by the signal's
+## name: its permissions' ids ([code]permissions[/code]) and the names Tentacle shows them by
+## ([code]names[/code]). Connecting warns in the log about one a game listens to that the
+## account hasn't allowed.
+const EVENT_PERMISSIONS: Dictionary[String, Dictionary] = {
+	"OnChannelAdBreakBegin": {"permissions": ["ads"], "names": ["Ad breaks"]},
+	"OnChannelBan": {"permissions": ["bans"], "names": ["Bans and timeouts"]},
+	"OnChannelBitsUse": {"permissions": ["bits"], "names": ["Bits"]},
+	"OnChannelChatClear": {"permissions": ["chat"], "names": ["Chat"]},
+	"OnChannelChatClearUserMessages": {"permissions": ["chat"], "names": ["Chat"]},
+	"OnChannelChatMessage": {"permissions": ["chat"], "names": ["Chat"]},
+	"OnChannelChatMessageDelete": {"permissions": ["chat"], "names": ["Chat"]},
+	"OnChannelChatSettingsUpdate": {"permissions": ["chat"], "names": ["Chat"]},
+	"OnChannelCheer": {"permissions": ["bits"], "names": ["Bits"]},
+	"OnChannelCustomPowerUpRedemptionAdd": {"permissions": ["bits"], "names": ["Bits"]},
+	"OnChannelFollow": {"permissions": ["follows"], "names": ["Follows"]},
+	"OnChannelModeratorAdd": {"permissions": ["moderators"], "names": ["Moderators"]},
+	"OnChannelModeratorRemove": {"permissions": ["moderators"], "names": ["Moderators"]},
+	"OnChannelPointsAutomaticRewardRedemptionAdd": {"permissions": ["channel_points", "channel_points_manage"], "names": ["Channel Points redemptions", "Channel Points rewards"]},
+	"OnChannelPointsCustomRewardAdd": {"permissions": ["channel_points", "channel_points_manage"], "names": ["Channel Points redemptions", "Channel Points rewards"]},
+	"OnChannelPointsCustomRewardRedemptionAdd": {"permissions": ["channel_points", "channel_points_manage"], "names": ["Channel Points redemptions", "Channel Points rewards"]},
+	"OnChannelPointsCustomRewardRedemptionUpdate": {"permissions": ["channel_points", "channel_points_manage"], "names": ["Channel Points redemptions", "Channel Points rewards"]},
+	"OnChannelPointsCustomRewardRemove": {"permissions": ["channel_points", "channel_points_manage"], "names": ["Channel Points redemptions", "Channel Points rewards"]},
+	"OnChannelPointsCustomRewardUpdate": {"permissions": ["channel_points", "channel_points_manage"], "names": ["Channel Points redemptions", "Channel Points rewards"]},
+	"OnChannelPollBegin": {"permissions": ["polls", "polls_manage"], "names": ["Polls", "Run polls"]},
+	"OnChannelPollEnd": {"permissions": ["polls", "polls_manage"], "names": ["Polls", "Run polls"]},
+	"OnChannelPollProgress": {"permissions": ["polls", "polls_manage"], "names": ["Polls", "Run polls"]},
+	"OnChannelPredictionBegin": {"permissions": ["predictions", "predictions_manage"], "names": ["Predictions", "Run predictions"]},
+	"OnChannelPredictionEnd": {"permissions": ["predictions", "predictions_manage"], "names": ["Predictions", "Run predictions"]},
+	"OnChannelPredictionLock": {"permissions": ["predictions", "predictions_manage"], "names": ["Predictions", "Run predictions"]},
+	"OnChannelPredictionProgress": {"permissions": ["predictions", "predictions_manage"], "names": ["Predictions", "Run predictions"]},
+	"OnChannelSubscribe": {"permissions": ["subscriptions"], "names": ["Subscriptions"]},
+	"OnChannelSubscriptionEnd": {"permissions": ["subscriptions"], "names": ["Subscriptions"]},
+	"OnChannelSubscriptionGift": {"permissions": ["subscriptions"], "names": ["Subscriptions"]},
+	"OnChannelSubscriptionMessage": {"permissions": ["subscriptions"], "names": ["Subscriptions"]},
+	"OnChannelSuspiciousUserMessage": {"permissions": ["suspicious_users", "suspicious_users_manage"], "names": ["Suspicious users", "Mark suspicious users"]},
+	"OnChannelSuspiciousUserUpdate": {"permissions": ["suspicious_users", "suspicious_users_manage"], "names": ["Suspicious users", "Mark suspicious users"]},
+	"OnChannelUnban": {"permissions": ["bans"], "names": ["Bans and timeouts"]},
+	"OnChannelUnbanRequestCreate": {"permissions": ["unban_requests", "unban_requests_manage"], "names": ["Unban requests", "Resolve unban requests"]},
+	"OnChannelUnbanRequestResolve": {"permissions": ["unban_requests", "unban_requests_manage"], "names": ["Unban requests", "Resolve unban requests"]},
+	"OnChannelVipAdd": {"permissions": ["vips", "vips_manage"], "names": ["VIPs", "Manage VIPs"]},
+	"OnChannelVipRemove": {"permissions": ["vips", "vips_manage"], "names": ["VIPs", "Manage VIPs"]},
+	"OnChannelWarningAcknowledgement": {"permissions": ["warnings", "moderate_chat"], "names": ["Warnings", "Moderate chat"]},
+	"OnChannelWarningSend": {"permissions": ["warnings", "moderate_chat"], "names": ["Warnings", "Moderate chat"]},
+	"OnCharityCampaignProgress": {"permissions": ["charity"], "names": ["Charity"]},
+	"OnCharityCampaignStart": {"permissions": ["charity"], "names": ["Charity"]},
+	"OnCharityCampaignStop": {"permissions": ["charity"], "names": ["Charity"]},
+	"OnCharityDonation": {"permissions": ["charity"], "names": ["Charity"]},
+	"OnGoalBegin": {"permissions": ["goals"], "names": ["Goals"]},
+	"OnGoalEnd": {"permissions": ["goals"], "names": ["Goals"]},
+	"OnGoalProgress": {"permissions": ["goals"], "names": ["Goals"]},
+	"OnHypeTrainBegin": {"permissions": ["hype_train"], "names": ["Hype Train"]},
+	"OnHypeTrainEnd": {"permissions": ["hype_train"], "names": ["Hype Train"]},
+	"OnHypeTrainProgress": {"permissions": ["hype_train"], "names": ["Hype Train"]},
+	"OnShieldModeBegin": {"permissions": ["shield_mode", "shield_mode_manage"], "names": ["Shield Mode", "Switch Shield Mode"]},
+	"OnShieldModeEnd": {"permissions": ["shield_mode", "shield_mode_manage"], "names": ["Shield Mode", "Switch Shield Mode"]},
+	"OnShoutoutCreate": {"permissions": ["shoutouts", "shoutouts_manage"], "names": ["Shoutouts", "Send shoutouts"]},
+	"OnShoutoutReceived": {"permissions": ["shoutouts", "shoutouts_manage"], "names": ["Shoutouts", "Send shoutouts"]},
+	"OnWhisperReceived": {"permissions": ["whispers", "whispers_manage"], "names": ["Whispers", "Send whispers"]},
+}
+
+## The same for the entry point's cross-platform signals, by name, for what they need on Twitch;
+## Kick's side of each needs none.
+const CROSS_PLATFORM_EVENT_PERMISSIONS: Dictionary[String, Dictionary] = {
+	"OnChatJoin": {"permissions": ["chatters"], "names": ["Who's in chat"]},
+	"OnChatCommand": {"permissions": ["chat"], "names": ["Chat"]},
+	"OnChatMessageWithEmojis": {"permissions": ["chat"], "names": ["Chat"]},
+	"OnChatMessageWithEmotes": {"permissions": ["chat"], "names": ["Chat"]},
+	"OnChatMessage": {"permissions": ["chat"], "names": ["Chat"]},
+	"OnBan": {"permissions": ["bans"], "names": ["Bans and timeouts"]},
+	"OnDonation": {"permissions": ["bits"], "names": ["Bits"]},
+	"OnFollow": {"permissions": ["follows"], "names": ["Follows"]},
+	"OnSubscription": {"permissions": ["subscriptions"], "names": ["Subscriptions"]},
+	"OnSubscriptionRenewal": {"permissions": ["subscriptions"], "names": ["Subscriptions"]},
+	"OnSubscriptionGift": {"permissions": ["subscriptions"], "names": ["Subscriptions"]},
+	"OnRedemption": {"permissions": ["channel_points", "channel_points_manage"], "names": ["Channel Points redemptions", "Channel Points rewards"]},
+}
+
 ## Twitch ad break begin event.
+## Permission required: "Ad breaks"
 ## Carries the viewer the event concerns.
 signal OnChannelAdBreakBegin(event: TclStreamEvent_Twitch_AdBreakBegin, viewer: TclViewer)
 
 ## Twitch ban event.
+## Permission required: "Bans and timeouts"
 ## Carries the viewer the event concerns.
 signal OnChannelBan(event: TclStreamEvent_Twitch_Ban, viewer: TclViewer)
 
-## Twitch bits use event (cheer, power-up, or combo).
+## Twitch bits use event (a cheer, a Power-up, or a custom Power-up).
+## Permission required: "Bits"
 ## Carries the viewer the event concerns.
 signal OnChannelBitsUse(event: TclStreamEvent_Twitch_BitsUse, viewer: TclViewer)
 
@@ -53,70 +134,92 @@ signal OnChannelChatMessageDelete(event: TclStreamEvent_Twitch_ChatMessageDelete
 signal OnChannelChatSettingsUpdate(event: TclStreamEvent_Twitch_ChatSettingsUpdate)
 
 ## Twitch cheer event.
+## Permission required: "Bits"
 ## Carries the viewer the event concerns.
 signal OnChannelCheer(event: TclStreamEvent_Twitch_Cheer, viewer: TclViewer)
 
+## Twitch custom Power-up redemption event (a viewer redeemed one of the channel's custom Power-ups).
+## Permission required: "Bits"
+## Carries the viewer the event concerns.
+signal OnChannelCustomPowerUpRedemptionAdd(event: TclStreamEvent_Twitch_CustomPowerUpRedemptionAdd, viewer: TclViewer)
+
 ## Twitch follow event.
+## Permission required: "Follows"
 ## Carries the viewer the event concerns.
 signal OnChannelFollow(event: TclStreamEvent_Twitch_Follow, viewer: TclViewer)
 
 ## Twitch moderator add event.
+## Permission required: "Moderators"
 ## Carries the viewer the event concerns.
 signal OnChannelModeratorAdd(event: TclStreamEvent_Twitch_ModeratorAdd, viewer: TclViewer)
 
 ## Twitch moderator remove event.
+## Permission required: "Moderators"
 ## Carries the viewer the event concerns.
 signal OnChannelModeratorRemove(event: TclStreamEvent_Twitch_ModeratorRemove, viewer: TclViewer)
 
 ## Twitch automatic channel point reward redemption event.
+## Permissions required: "Channel Points redemptions" or "Channel Points rewards"
 ## Carries the viewer the event concerns.
 signal OnChannelPointsAutomaticRewardRedemptionAdd(event: TclStreamEvent_Twitch_AutomaticRewardRedemptionAdd, viewer: TclViewer)
 
 ## Twitch custom channel point reward add event.
+## Permissions required: "Channel Points redemptions" or "Channel Points rewards"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnChannelPointsCustomRewardAdd(event: TclStreamEvent_Twitch_RewardAdd)
 
 ## Twitch channel point redemption event.
+## Permissions required: "Channel Points redemptions" or "Channel Points rewards"
 ## Carries the viewer the event concerns.
 signal OnChannelPointsCustomRewardRedemptionAdd(event: TclStreamEvent_Twitch_RedemptionAdd, viewer: TclViewer)
 
 ## Twitch channel point redemption update event (fired when status changes to fulfilled or canceled).
+## Permissions required: "Channel Points redemptions" or "Channel Points rewards"
 ## Carries the viewer the event concerns.
 signal OnChannelPointsCustomRewardRedemptionUpdate(event: TclStreamEvent_Twitch_RedemptionUpdate, viewer: TclViewer)
 
 ## Twitch custom channel point reward remove event.
+## Permissions required: "Channel Points redemptions" or "Channel Points rewards"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnChannelPointsCustomRewardRemove(event: TclStreamEvent_Twitch_RewardRemove)
 
 ## Twitch custom channel point reward update event.
+## Permissions required: "Channel Points redemptions" or "Channel Points rewards"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnChannelPointsCustomRewardUpdate(event: TclStreamEvent_Twitch_RewardUpdate)
 
 ## Twitch poll begin event.
+## Permissions required: "Polls" or "Run polls"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnChannelPollBegin(event: TclStreamEvent_Twitch_PollBegin)
 
 ## Twitch poll end event.
+## Permissions required: "Polls" or "Run polls"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnChannelPollEnd(event: TclStreamEvent_Twitch_PollEnd)
 
 ## Twitch poll progress event.
+## Permissions required: "Polls" or "Run polls"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnChannelPollProgress(event: TclStreamEvent_Twitch_PollProgress)
 
 ## Twitch prediction begin event.
+## Permissions required: "Predictions" or "Run predictions"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnChannelPredictionBegin(event: TclStreamEvent_Twitch_PredictionBegin)
 
 ## Twitch prediction end event.
+## Permissions required: "Predictions" or "Run predictions"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnChannelPredictionEnd(event: TclStreamEvent_Twitch_PredictionEnd)
 
 ## Twitch prediction lock event.
+## Permissions required: "Predictions" or "Run predictions"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnChannelPredictionLock(event: TclStreamEvent_Twitch_PredictionLock)
 
 ## Twitch prediction progress event.
+## Permissions required: "Predictions" or "Run predictions"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnChannelPredictionProgress(event: TclStreamEvent_Twitch_PredictionProgress)
 
@@ -137,38 +240,47 @@ signal OnChannelSharedChatSessionEnd(event: TclStreamEvent_Twitch_SharedChatEnd)
 signal OnChannelSharedChatSessionUpdate(event: TclStreamEvent_Twitch_SharedChatUpdate)
 
 ## Twitch subscription event.
+## Permission required: "Subscriptions"
 ## Carries the viewer the event concerns.
 signal OnChannelSubscribe(event: TclStreamEvent_Twitch_Subscription, viewer: TclViewer)
 
 ## Twitch subscription end event.
+## Permission required: "Subscriptions"
 ## Carries the viewer the event concerns.
 signal OnChannelSubscriptionEnd(event: TclStreamEvent_Twitch_SubscriptionEnd, viewer: TclViewer)
 
 ## Twitch gift subscription event.
+## Permission required: "Subscriptions"
 ## Carries the viewer the event concerns.
 signal OnChannelSubscriptionGift(event: TclStreamEvent_Twitch_SubscriptionGift, viewer: TclViewer)
 
 ## Twitch subscription message event.
+## Permission required: "Subscriptions"
 ## Carries the viewer the event concerns.
 signal OnChannelSubscriptionMessage(event: TclStreamEvent_Twitch_SubscriptionMessage, viewer: TclViewer)
 
 ## Twitch suspicious user message event.
+## Permissions required: "Suspicious users" or "Mark suspicious users"
 ## Carries the viewer the event concerns.
 signal OnChannelSuspiciousUserMessage(event: TclStreamEvent_Twitch_SuspiciousUserMessage, viewer: TclViewer)
 
 ## Twitch suspicious user update event.
+## Permissions required: "Suspicious users" or "Mark suspicious users"
 ## Carries the viewer the event concerns.
 signal OnChannelSuspiciousUserUpdate(event: TclStreamEvent_Twitch_SuspiciousUserUpdate, viewer: TclViewer)
 
 ## Twitch unban event.
+## Permission required: "Bans and timeouts"
 ## Carries the viewer the event concerns.
 signal OnChannelUnban(event: TclStreamEvent_Twitch_Unban, viewer: TclViewer)
 
 ## Twitch unban request create event.
+## Permissions required: "Unban requests" or "Resolve unban requests"
 ## Carries the viewer the event concerns.
 signal OnChannelUnbanRequestCreate(event: TclStreamEvent_Twitch_UnbanRequestCreate, viewer: TclViewer)
 
 ## Twitch unban request resolve event.
+## Permissions required: "Unban requests" or "Resolve unban requests"
 ## Carries the viewer the event concerns.
 signal OnChannelUnbanRequestResolve(event: TclStreamEvent_Twitch_UnbanRequestResolve, viewer: TclViewer)
 
@@ -177,76 +289,94 @@ signal OnChannelUnbanRequestResolve(event: TclStreamEvent_Twitch_UnbanRequestRes
 signal OnChannelUpdate(event: TclStreamEvent_Twitch_ChannelUpdate)
 
 ## Twitch VIP add event.
+## Permissions required: "VIPs" or "Manage VIPs"
 ## Carries the viewer the event concerns.
 signal OnChannelVipAdd(event: TclStreamEvent_Twitch_VipAdd, viewer: TclViewer)
 
 ## Twitch VIP remove event.
+## Permissions required: "VIPs" or "Manage VIPs"
 ## Carries the viewer the event concerns.
 signal OnChannelVipRemove(event: TclStreamEvent_Twitch_VipRemove, viewer: TclViewer)
 
 ## Twitch warning acknowledge event.
+## Permissions required: "Warnings" or "Moderate chat"
 ## Carries the viewer the event concerns.
 signal OnChannelWarningAcknowledgement(event: TclStreamEvent_Twitch_WarningAcknowledge, viewer: TclViewer)
 
 ## Twitch warning send event.
+## Permissions required: "Warnings" or "Moderate chat"
 ## Carries the viewer the event concerns.
 signal OnChannelWarningSend(event: TclStreamEvent_Twitch_WarningSend, viewer: TclViewer)
 
 ## Twitch charity campaign progress event.
+## Permission required: "Charity"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnCharityCampaignProgress(event: TclStreamEvent_Twitch_CharityCampaignProgress)
 
 ## Twitch charity campaign start event.
 ## Note: charity events carry [code]broadcaster_id[/code] / [code]broadcaster_login[/code] /
 ## [code]broadcaster_name[/code] (no [code]_user_[/code] infix), unlike every other channel event.
+## Permission required: "Charity"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnCharityCampaignStart(event: TclStreamEvent_Twitch_CharityCampaignStart)
 
 ## Twitch charity campaign stop event.
+## Permission required: "Charity"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnCharityCampaignStop(event: TclStreamEvent_Twitch_CharityCampaignStop)
 
 ## Twitch charity donation event.
+## Permission required: "Charity"
 ## Carries the viewer the event concerns.
 signal OnCharityDonation(event: TclStreamEvent_Twitch_CharityDonation, viewer: TclViewer)
 
 ## Twitch creator goal begin event.
+## Permission required: "Goals"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnGoalBegin(event: TclStreamEvent_Twitch_GoalBegin)
 
 ## Twitch creator goal end event.
+## Permission required: "Goals"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnGoalEnd(event: TclStreamEvent_Twitch_GoalEnd)
 
 ## Twitch creator goal progress event.
+## Permission required: "Goals"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnGoalProgress(event: TclStreamEvent_Twitch_GoalProgress)
 
 ## Twitch Hype Train begin event.
+## Permission required: "Hype Train"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnHypeTrainBegin(event: TclStreamEvent_Twitch_HypeTrainBegin)
 
 ## Twitch Hype Train end event.
+## Permission required: "Hype Train"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnHypeTrainEnd(event: TclStreamEvent_Twitch_HypeTrainEnd)
 
 ## Twitch Hype Train progress event.
+## Permission required: "Hype Train"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnHypeTrainProgress(event: TclStreamEvent_Twitch_HypeTrainProgress)
 
 ## Twitch shield mode begin event.
+## Permissions required: "Shield Mode" or "Switch Shield Mode"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnShieldModeBegin(event: TclStreamEvent_Twitch_ShieldModeBegin)
 
 ## Twitch shield mode end event.
+## Permissions required: "Shield Mode" or "Switch Shield Mode"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnShieldModeEnd(event: TclStreamEvent_Twitch_ShieldModeEnd)
 
 ## Twitch shoutout create event (this channel shouted out another).
+## Permissions required: "Shoutouts" or "Send shoutouts"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnShoutoutCreate(event: TclStreamEvent_Twitch_ShoutoutCreate)
 
 ## Twitch shoutout receive event.
+## Permissions required: "Shoutouts" or "Send shoutouts"
 ## Carries no viewer; anyone the event names is on the event itself.
 signal OnShoutoutReceived(event: TclStreamEvent_Twitch_ShoutoutReceive)
 
@@ -263,6 +393,7 @@ signal OnStreamOnline(event: TclStreamEvent_Twitch_StreamOnline)
 signal OnUserUpdate(event: TclStreamEvent_Twitch_UserUpdate)
 
 ## Twitch whisper message event.
+## Permissions required: "Whispers" or "Send whispers"
 ## Carries the viewer the event concerns.
 signal OnWhisperReceived(event: TclStreamEvent_Twitch_WhisperMessage, viewer: TclViewer)
 
@@ -295,6 +426,9 @@ func _emit_platform_event(event: TclStreamEventBase, viewer: TclViewer) -> bool:
 		return true
 	if event is TclStreamEvent_Twitch_Cheer:
 		OnChannelCheer.emit(event as TclStreamEvent_Twitch_Cheer, viewer)
+		return true
+	if event is TclStreamEvent_Twitch_CustomPowerUpRedemptionAdd:
+		OnChannelCustomPowerUpRedemptionAdd.emit(event as TclStreamEvent_Twitch_CustomPowerUpRedemptionAdd, viewer)
 		return true
 	if event is TclStreamEvent_Twitch_Follow:
 		OnChannelFollow.emit(event as TclStreamEvent_Twitch_Follow, viewer)

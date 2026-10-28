@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetVideosOutput
 extends RefCounted
 
-## What Twitch's Get Videos answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetVideosOutput[/code].
+## What Twitch's Get Videos responds with.
 
 
 ## The videos.

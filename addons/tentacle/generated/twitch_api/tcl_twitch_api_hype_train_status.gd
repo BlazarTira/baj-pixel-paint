@@ -6,8 +6,6 @@ class_name TclTwitchApiHypeTrainStatus
 extends RefCounted
 
 ## A channel's Hype Train, if one is running, and its records.
-##
-## Generated from the tentacle-web type [code]TwitchApiHypeTrainStatus[/code].
 
 
 ## The Hype Train running; null when none is.

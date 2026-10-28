@@ -6,8 +6,6 @@ class_name TclTwitchApiGetChannelStreamScheduleInput
 extends RefCounted
 
 ## What Twitch's Get Channel Stream Schedule takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChannelStreamScheduleInput[/code].
 
 
 ## The channel whose schedule to read; the connected broadcaster's when left out.

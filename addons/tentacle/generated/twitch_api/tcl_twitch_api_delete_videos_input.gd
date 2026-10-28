@@ -6,8 +6,6 @@ class_name TclTwitchApiDeleteVideosInput
 extends RefCounted
 
 ## What Twitch's Delete Videos takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiDeleteVideosInput[/code].
 
 
 ## The videos to delete, up to 5.

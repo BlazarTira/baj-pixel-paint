@@ -6,8 +6,6 @@ class_name TclTwitchApiChatBadgeSet
 extends RefCounted
 
 ## A set of chat badges and its versions.
-##
-## Generated from the tentacle-web type [code]TwitchApiChatBadgeSet[/code].
 
 
 ## The set's id, such as "bits" or "subscriber".

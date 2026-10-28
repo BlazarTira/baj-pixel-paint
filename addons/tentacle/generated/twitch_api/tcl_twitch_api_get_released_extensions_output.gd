@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetReleasedExtensionsOutput
 extends RefCounted
 
-## What Twitch's Get Released Extensions answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetReleasedExtensionsOutput[/code].
+## What Twitch's Get Released Extensions responds with.
 
 
 ## The extension.

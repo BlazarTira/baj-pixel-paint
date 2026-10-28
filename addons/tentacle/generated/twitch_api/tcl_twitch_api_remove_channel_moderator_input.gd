@@ -6,8 +6,6 @@ class_name TclTwitchApiRemoveChannelModeratorInput
 extends RefCounted
 
 ## What Twitch's Remove Channel Moderator takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiRemoveChannelModeratorInput[/code].
 
 
 ## The moderator.

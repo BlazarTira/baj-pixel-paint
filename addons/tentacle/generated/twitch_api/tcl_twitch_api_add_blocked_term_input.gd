@@ -6,8 +6,6 @@ class_name TclTwitchApiAddBlockedTermInput
 extends RefCounted
 
 ## What Twitch's Add Blocked Term takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiAddBlockedTermInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetChannelEmotesOutput
 extends RefCounted
 
-## What Twitch's Get Channel Emotes answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChannelEmotesOutput[/code].
+## What Twitch's Get Channel Emotes responds with.
 
 
 ## The emotes; empty when the broadcaster has none.

@@ -5,7 +5,7 @@
 class_name TclStreamEvent_Twitch_SuspiciousUserMessage_Message
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclStreamEvent_Twitch_SuspiciousUserMessage_Message[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]message_id[/code].

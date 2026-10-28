@@ -6,8 +6,6 @@ class_name TclStreamEvent_Kick_ChannelSubscriptionRenewal
 extends TclStreamEvent_Kick_Base
 
 ## Kick channel subscription renewal event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Kick_ChannelSubscriptionRenewal[/code].
 
 
 ## JSON key [code]broadcaster[/code].

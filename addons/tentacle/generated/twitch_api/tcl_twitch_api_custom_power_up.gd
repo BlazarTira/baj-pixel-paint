@@ -6,8 +6,6 @@ class_name TclTwitchApiCustomPowerUp
 extends RefCounted
 
 ## One custom Power-up, as Get Custom Power-up returns it.
-##
-## Generated from the tentacle-web type [code]TwitchApiCustomPowerUp[/code].
 
 
 ## The broadcaster's user id.

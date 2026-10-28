@@ -6,8 +6,6 @@ class_name TclTwitchApiCreatedClip
 extends RefCounted
 
 ## A clip Twitch began creating.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreatedClip[/code].
 
 
 ## The clip's id.

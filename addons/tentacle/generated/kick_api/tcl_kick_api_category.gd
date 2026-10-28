@@ -6,8 +6,6 @@ class_name TclKickApiCategory
 extends RefCounted
 
 ## One category, as Get Categories returns it.
-##
-## Generated from the tentacle-web type [code]KickApiCategory[/code].
 
 
 ## The category's id.

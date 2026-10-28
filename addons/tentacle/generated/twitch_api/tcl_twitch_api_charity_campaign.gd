@@ -6,8 +6,6 @@ class_name TclTwitchApiCharityCampaign
 extends RefCounted
 
 ## A charity campaign the broadcaster is running.
-##
-## Generated from the tentacle-web type [code]TwitchApiCharityCampaign[/code].
 
 
 ## The campaign's id.

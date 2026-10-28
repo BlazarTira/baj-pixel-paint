@@ -6,8 +6,6 @@ class_name TclTwitchApiSendWhisperInput
 extends RefCounted
 
 ## What Twitch's Send Whisper takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiSendWhisperInput[/code].
 
 
 ## The user to whisper.

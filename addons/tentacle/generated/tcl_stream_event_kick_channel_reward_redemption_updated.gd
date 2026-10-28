@@ -6,8 +6,6 @@ class_name TclStreamEvent_Kick_ChannelRewardRedemptionUpdated
 extends TclStreamEvent_Kick_Base
 
 ## Kick channel reward redemption updated event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Kick_ChannelRewardRedemptionUpdated[/code].
 
 
 ## JSON key [code]user_input[/code].

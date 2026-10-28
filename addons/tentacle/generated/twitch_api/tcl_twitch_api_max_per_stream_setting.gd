@@ -6,8 +6,6 @@ class_name TclTwitchApiMaxPerStreamSetting
 extends RefCounted
 
 ## Whether a reward caps its redemptions per stream, and at how many.
-##
-## Generated from the tentacle-web type [code]TwitchApiMaxPerStreamSetting[/code].
 
 
 ## Whether the cap applies.

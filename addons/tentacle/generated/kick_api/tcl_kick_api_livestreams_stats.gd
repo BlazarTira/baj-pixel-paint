@@ -6,8 +6,6 @@ class_name TclKickApiLivestreamsStats
 extends RefCounted
 
 ## Counts across Kick's live streams.
-##
-## Generated from the tentacle-web type [code]KickApiLivestreamsStats[/code].
 
 
 ## How many streams are live on Kick.

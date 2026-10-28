@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetCustomPowerUpOutput
 extends RefCounted
 
-## What Twitch's Get Custom Power-up answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetCustomPowerUpOutput[/code].
+## What Twitch's Get Custom Power-up responds with.
 
 
 ## The Power-ups, by id.

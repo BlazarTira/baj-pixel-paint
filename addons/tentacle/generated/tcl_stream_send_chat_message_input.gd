@@ -11,8 +11,6 @@ extends RefCounted
 ## on Twitch the message is sent from the broadcaster account. [code]viewerId[/code]
 ## targets a viewer by mentioning them ([code]@name message[/code]) using their
 ## per-platform name.
-##
-## Generated from the tentacle-web type [code]StreamSendChatMessageInput[/code].
 
 
 ## JSON key [code]message[/code].

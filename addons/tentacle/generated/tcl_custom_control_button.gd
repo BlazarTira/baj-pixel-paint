@@ -6,8 +6,6 @@ class_name TclCustomControl_Button
 extends TclCustomControl
 
 ## Custom control button (no value).
-##
-## Generated from the tentacle-web type [code]CustomControlJson_Button[/code].
 
 
 

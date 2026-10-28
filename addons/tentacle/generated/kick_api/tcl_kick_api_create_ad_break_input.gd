@@ -6,8 +6,6 @@ class_name TclKickApiCreateAdBreakInput
 extends RefCounted
 
 ## What Kick's Create Ad Break takes.
-##
-## Generated from the tentacle-web type [code]KickApiCreateAdBreakInput[/code].
 
 
 ## How long the break runs, 7-90 seconds.

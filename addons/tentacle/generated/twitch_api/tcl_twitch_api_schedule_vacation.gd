@@ -6,8 +6,6 @@ class_name TclTwitchApiScheduleVacation
 extends RefCounted
 
 ## When a broadcaster is on vacation from streaming.
-##
-## Generated from the tentacle-web type [code]TwitchApiScheduleVacation[/code].
 
 
 ## When the vacation starts, as an RFC 3339 date and time.

@@ -6,8 +6,6 @@ class_name TclTwitchApiGetPinnedChatMessageInput
 extends RefCounted
 
 ## What Twitch's Get Pinned Chat Message takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetPinnedChatMessageInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

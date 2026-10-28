@@ -6,8 +6,6 @@ class_name TclTwitchApiCheermoteTier
 extends RefCounted
 
 ## One tier of a Cheermote: the Bits it starts at and its images.
-##
-## Generated from the tentacle-web type [code]TwitchApiCheermoteTier[/code].
 
 
 ## The fewest Bits this tier takes.

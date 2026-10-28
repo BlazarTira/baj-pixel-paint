@@ -6,8 +6,6 @@ class_name TclTwitchApiPoll
 extends RefCounted
 
 ## One poll.
-##
-## Generated from the tentacle-web type [code]TwitchApiPoll[/code].
 
 
 ## The poll's id.

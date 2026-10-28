@@ -7,7 +7,8 @@ extends RefCounted
 ## Enabling the addon adds them under [b]Project > Project Settings > General >
 ## Tentacle[/b], and the [code]Tentacle[/code] autoload reads them when it is ready,
 ## before it first connects. Each setting is named after the [TentacleRuntime] property
-## it sets and starts at that property's default.
+## it sets and starts at that property's default, apart from the ones an export reads
+## (see [method export_definitions]).
 ##
 ## A value a script assigns to the autoload before it is ready wins over the setting,
 ## and a [TentacleRuntime] a scene instances itself ignores these and keeps what its own
@@ -54,8 +55,39 @@ const EMBEDDED_DATA_DIRECTORY: String = "tentacle/embedded/embedded_data_directo
 ## In Embedded mode, your own Twitch app's client ID. Empty uses Tentacle's.
 const TWITCH_CLIENT_ID: String = "tentacle/embedded/twitch_client_id"
 
+## In Embedded mode, your own Kick app's client ID, set with
+## [constant KICK_SIGN_IN_SERVER_URL]. Empty uses Tentacle's.
+const KICK_CLIENT_ID: String = "tentacle/embedded/kick_client_id"
+
+## In Embedded mode, the address of the Kick sign-in server holding your Kick app's client
+## secret. Empty uses Tentacle's.
+const KICK_SIGN_IN_SERVER_URL: String = "tentacle/embedded/kick_sign_in_server_url"
+
 ## In Embedded mode, the folder the game's config files are read from.
 const CONFIG_DIRECTORY: String = "tentacle/embedded/config_directory"
+
+## Whether an export whose Build Mode is Paired still carries Tentacle's core, so it can
+## be run with [code]--tentacle-mode=embedded[/code]. Off, such an export leaves the core
+## out (see [TentacleExportPlugin]).
+const INCLUDE_CORE_IN_PAIRED_BUILDS: String = "tentacle/embedded/include_core_in_paired_builds"
+
+## In Embedded mode, ask only for the permissions in the four lists below.
+const CUSTOM_PERMISSIONS: String = "tentacle/embedded/custom_permissions"
+
+## What every Twitch sign-in asks for besides chat, with custom permissions on.
+const TWITCH_REQUIRED_PERMISSIONS: String = "tentacle/embedded/twitch_required_permissions"
+
+## What a Twitch sign-in may also ask for, with custom permissions on.
+const TWITCH_OPTIONAL_PERMISSIONS: String = "tentacle/embedded/twitch_optional_permissions"
+
+## What every Kick sign-in asks for besides chat, with custom permissions on.
+const KICK_REQUIRED_PERMISSIONS: String = "tentacle/embedded/kick_required_permissions"
+
+## What a Kick sign-in may also ask for, with custom permissions on.
+const KICK_OPTIONAL_PERMISSIONS: String = "tentacle/embedded/kick_optional_permissions"
+
+# Loaded by path rather than named, for the same reason the runtime is typed as Node below.
+const _PERMISSION_SCRIPT: String = "res://addons/tentacle/generated/tcl_platform_permission.gd"
 
 ## How many recent event ids are remembered, so an event that arrives twice is delivered once.
 const STREAM_DEDUPLICATION_WINDOW: String = "tentacle/stream/stream_deduplication_window"
@@ -92,24 +124,51 @@ static func definitions() -> Array[Setting]:
 		),
 		Setting.make(REFRESH_REGISTRY_ON_CONNECT, "refresh_registry_on_connect", TYPE_BOOL, true),
 		# The modes' hint lists TclTentacleMode.Value's members in order.
-		Setting.make(EDITOR_MODE, "editor_mode", TYPE_INT, 0, PROPERTY_HINT_ENUM, "App,Embedded"),
-		Setting.make(BUILD_MODE, "build_mode", TYPE_INT, 0, PROPERTY_HINT_ENUM, "App,Embedded"),
+		Setting.make(EDITOR_MODE, "editor_mode", TYPE_INT, 0, PROPERTY_HINT_ENUM, "Paired,Embedded"),
+		Setting.make(BUILD_MODE, "build_mode", TYPE_INT, 0, PROPERTY_HINT_ENUM, "Paired,Embedded"),
 		Setting.make(
 			EMBEDDED_DATA_DIRECTORY, "embedded_data_directory", TYPE_STRING, "",
 			PROPERTY_HINT_GLOBAL_DIR,
 		),
 		Setting.make(TWITCH_CLIENT_ID, "twitch_client_id", TYPE_STRING, ""),
+		Setting.make(KICK_CLIENT_ID, "kick_client_id", TYPE_STRING, ""),
+		Setting.make(KICK_SIGN_IN_SERVER_URL, "kick_sign_in_server_url", TYPE_STRING, ""),
 		Setting.make(
 			CONFIG_DIRECTORY, "config_directory", TYPE_STRING, "res://tentacle",
 			PROPERTY_HINT_DIR,
 		),
+		Setting.make(CUSTOM_PERMISSIONS, "custom_permissions", TYPE_BOOL, false),
+		_permissions(TWITCH_REQUIRED_PERMISSIONS, "twitch_required_permissions"),
+		_permissions(TWITCH_OPTIONAL_PERMISSIONS, "twitch_optional_permissions"),
+		_permissions(KICK_REQUIRED_PERMISSIONS, "kick_required_permissions"),
+		_permissions(KICK_OPTIONAL_PERMISSIONS, "kick_optional_permissions"),
 	]
+
+
+## The settings an export reads rather than the runtime, so they set no runtime property.
+static func export_definitions() -> Array[Setting]:
+	return [
+		Setting.make(INCLUDE_CORE_IN_PAIRED_BUILDS, "", TYPE_BOOL, false),
+	]
+
+
+## A list of permissions, shown in the editor as a list of the permissions' names.
+static func _permissions(setting_name: String, setting_property: String) -> Setting:
+	var permission_script: GDScript = load(_PERMISSION_SCRIPT)
+	var names: PackedStringArray = []
+	# The enum's members in order, which is their values' order.
+	for member: String in permission_script.get_script_constant_map()["Value"].keys():
+		names.append(member.capitalize())
+	return Setting.make(
+		setting_name, setting_property, TYPE_ARRAY, [],
+		PROPERTY_HINT_TYPE_STRING, "%d/%d:%s" % [TYPE_INT, PROPERTY_HINT_ENUM, ",".join(names)],
+	)
 
 
 ## Adds every setting to Project Settings, with its default and editor hint, keeping any
 ## value already set. The addon's editor plugin calls this whenever the addon loads.
 static func register() -> void:
-	for setting in definitions():
+	for setting in definitions() + export_definitions():
 		if not ProjectSettings.has_setting(setting.name):
 			ProjectSettings.set_setting(setting.name, setting.default)
 		# The initial value is what Project Settings reverts to and what it leaves out of
@@ -135,7 +194,13 @@ static func apply_to(runtime: Node, keep: Dictionary[StringName, bool]) -> void:
 			continue
 		# Read with the default, because an exported game carries only the settings that
 		# differ from it.
-		runtime.set(setting.property, ProjectSettings.get_setting(setting.name, setting.default))
+		var value: Variant = ProjectSettings.get_setting(setting.name, setting.default)
+		if setting.type == TYPE_ARRAY:
+			# Project Settings keep an untyped array, which a typed one is filled from.
+			var typed: Array = runtime.get(setting.property)
+			typed.assign(value)
+		else:
+			runtime.set(setting.property, value)
 
 
 ## One setting: where it lives in Project Settings, the runtime property it sets, and how

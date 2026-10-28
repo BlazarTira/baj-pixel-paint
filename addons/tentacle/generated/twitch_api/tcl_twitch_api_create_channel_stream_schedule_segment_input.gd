@@ -6,8 +6,6 @@ class_name TclTwitchApiCreateChannelStreamScheduleSegmentInput
 extends RefCounted
 
 ## What Twitch's Create Channel Stream Schedule Segment takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreateChannelStreamScheduleSegmentInput[/code].
 
 
 ## When it starts, as an RFC 3339 date and time.

@@ -5,9 +5,7 @@
 class_name TclRealtimeEvent
 extends RefCounted
 
-## Union of all realtime events the tentacle-web package exposes to consumers.
-##
-## Generated from the tentacle-web type [code]RealtimeEvent[/code].
+## Every kind of realtime event Tentacle hands a client.
 
 
 

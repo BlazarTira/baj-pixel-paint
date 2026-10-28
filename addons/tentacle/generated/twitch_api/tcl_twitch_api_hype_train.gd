@@ -6,8 +6,6 @@ class_name TclTwitchApiHypeTrain
 extends RefCounted
 
 ## A Hype Train running on the channel.
-##
-## Generated from the tentacle-web type [code]TwitchApiHypeTrain[/code].
 
 
 ## The Hype Train's id.

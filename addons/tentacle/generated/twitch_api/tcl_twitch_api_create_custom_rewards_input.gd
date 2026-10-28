@@ -6,8 +6,6 @@ class_name TclTwitchApiCreateCustomRewardsInput
 extends RefCounted
 
 ## What Twitch's Create Custom Rewards takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreateCustomRewardsInput[/code].
 
 
 ## The reward's title, up to 45 characters, unique among the broadcaster's rewards.

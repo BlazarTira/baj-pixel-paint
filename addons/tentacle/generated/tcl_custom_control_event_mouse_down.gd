@@ -6,8 +6,6 @@ class_name TclCustomControlEvent_MouseDown
 extends TclCustomControlEvent
 
 ## Custom control mouse down event.
-##
-## Generated from the tentacle-web type [code]CustomControlEvent_MouseDown[/code].
 
 
 

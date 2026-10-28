@@ -6,8 +6,6 @@ class_name TclStreamEvent_Kick_ChannelSubscriptionGifts
 extends TclStreamEvent_Kick_Base
 
 ## Kick channel subscription gifts event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Kick_ChannelSubscriptionGifts[/code].
 
 
 ## JSON key [code]broadcaster[/code].

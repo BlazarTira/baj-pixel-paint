@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetSharedChatSessionOutput
 extends RefCounted
 
-## What Twitch's Get Shared Chat Session answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetSharedChatSessionOutput[/code].
+## What Twitch's Get Shared Chat Session responds with.
 
 
 ## The session; empty when the channel is in none.

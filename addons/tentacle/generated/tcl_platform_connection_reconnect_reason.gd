@@ -6,7 +6,7 @@ class_name TclPlatformConnectionReconnectReason
 
 ## Why a connected account has to sign in again.
 ##
-## Generated from the tentacle-web type [code]PlatformConnectionReconnectReason[/code]. Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
+## Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
 
 
 ## The wire values, as an enum.
@@ -30,6 +30,18 @@ static func from_wire(wire: String) -> Value:
 		"refresh_failed":
 			return Value.REFRESH_FAILED
 	return Value.EXPIRED
+
+
+## Whether [param wire] is one of the wire values this version knows. A newer
+## Tentacle can send one it predates, which an array or a dictionary leaves out
+## rather than reading as [constant Value.EXPIRED].
+static func is_known(wire: String) -> bool:
+	match wire:
+		"expired":
+			return true
+		"refresh_failed":
+			return true
+	return false
 
 
 ## The wire string for an enum member.

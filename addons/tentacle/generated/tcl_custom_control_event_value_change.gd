@@ -9,8 +9,6 @@ extends TclCustomControlEvent
 ## Fires continuously while the user is interactively adjusting a value
 ## (drag, spinner, wheel, etc.). For typed text/number input, intermediate
 ## keystrokes do not fire this; the final value arrives via ValueCommit.
-##
-## Generated from the tentacle-web type [code]CustomControlEvent_ValueChange[/code].
 
 
 ## JSON key [code]value[/code]. The wire type is unconstrained.

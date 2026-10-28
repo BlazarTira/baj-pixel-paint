@@ -5,12 +5,10 @@
 class_name TclKickApiDeleteModerationBansOutput
 extends RefCounted
 
-## What Kick's Delete Moderation Bans answers with.
-##
-## Generated from the tentacle-web type [code]KickApiDeleteModerationBansOutput[/code].
+## What Kick's Delete Moderation Bans responds with.
 
 
-## Kick's answer.
+## Kick's response.
 ##
 ## JSON key [code]data[/code]. Optional on the wire. Either [code]null[/code] or a unknown; GDScript has no nullable form for that type.
 var data: Variant = null

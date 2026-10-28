@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_ShoutoutReceive
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch shoutout receive event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_ShoutoutReceive[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

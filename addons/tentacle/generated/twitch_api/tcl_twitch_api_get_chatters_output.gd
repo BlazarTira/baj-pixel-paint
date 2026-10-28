@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetChattersOutput
 extends RefCounted
 
-## What Twitch's Get Chatters answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChattersOutput[/code].
+## What Twitch's Get Chatters responds with.
 
 
 ## The viewers in chat.

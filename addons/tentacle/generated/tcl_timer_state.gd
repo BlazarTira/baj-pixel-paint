@@ -9,7 +9,7 @@ class_name TclTimerState
 ## running timer that only runs while live holds its countdown while the stream
 ## is offline and stays [code]"running"[/code].
 ##
-## Generated from the tentacle-web type [code]TimerState[/code]. Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
+## Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
 
 
 ## The wire values, as an enum.
@@ -37,6 +37,20 @@ static func from_wire(wire: String) -> Value:
 		"paused":
 			return Value.PAUSED
 	return Value.STOPPED
+
+
+## Whether [param wire] is one of the wire values this version knows. A newer
+## Tentacle can send one it predates, which an array or a dictionary leaves out
+## rather than reading as [constant Value.STOPPED].
+static func is_known(wire: String) -> bool:
+	match wire:
+		"stopped":
+			return true
+		"running":
+			return true
+		"paused":
+			return true
+	return false
 
 
 ## The wire string for an enum member.

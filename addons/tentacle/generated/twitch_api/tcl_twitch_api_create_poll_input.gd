@@ -6,8 +6,6 @@ class_name TclTwitchApiCreatePollInput
 extends RefCounted
 
 ## What Twitch's Create Poll takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreatePollInput[/code].
 
 
 ## The question, up to 60 characters.

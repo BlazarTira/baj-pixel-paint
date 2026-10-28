@@ -6,8 +6,6 @@ class_name TclStreamEvent_Anywhere_ChannelUpdate
 extends TclStreamEventAnywhereBase
 
 ## Cross-platform "Anywhere" view of ChannelUpdate events. Carries the $-prefixed normalized fields shared between Twitch and Kick variants.
-##
-## Generated from the tentacle-web type [code]StreamEvent_Anywhere_ChannelUpdate[/code].
 
 
 ## JSON key [code]$streamTitle[/code]. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

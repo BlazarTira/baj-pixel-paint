@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_SubscriptionGift
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch gift subscription event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_SubscriptionGift[/code].
 
 
 ## JSON key [code]user_id[/code]. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

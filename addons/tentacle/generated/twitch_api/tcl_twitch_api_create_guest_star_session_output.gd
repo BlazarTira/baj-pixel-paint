@@ -5,9 +5,7 @@
 class_name TclTwitchApiCreateGuestStarSessionOutput
 extends RefCounted
 
-## What Twitch's Create Guest Star Session answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreateGuestStarSessionOutput[/code].
+## What Twitch's Create Guest Star Session responds with.
 
 
 ## The session, with the broadcaster as its one guest.

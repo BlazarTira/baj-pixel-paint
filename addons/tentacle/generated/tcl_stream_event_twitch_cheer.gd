@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_Cheer
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch cheer event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_Cheer[/code].
 
 
 ## JSON key [code]is_anonymous[/code].

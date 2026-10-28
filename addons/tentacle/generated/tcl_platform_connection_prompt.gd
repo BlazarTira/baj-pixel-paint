@@ -6,8 +6,6 @@ class_name TclPlatformConnectionPrompt
 extends RefCounted
 
 ## What the player has to do in a browser to finish signing in.
-##
-## Generated from the tentacle-web type [code]PlatformConnectionPromptJson[/code].
 
 
 ## JSON key [code]platform[/code].

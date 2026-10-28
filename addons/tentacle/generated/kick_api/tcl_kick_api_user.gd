@@ -6,8 +6,6 @@ class_name TclKickApiUser
 extends RefCounted
 
 ## One Kick user.
-##
-## Generated from the tentacle-web type [code]KickApiUser[/code].
 
 
 ## The user's id.

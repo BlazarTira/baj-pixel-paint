@@ -6,8 +6,6 @@ class_name TclTwitchApiGetUserBlockListInput
 extends RefCounted
 
 ## What Twitch's Get User Block List takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetUserBlockListInput[/code].
 
 
 ## The most items to return per page, 1-100.

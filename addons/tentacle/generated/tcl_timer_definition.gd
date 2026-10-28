@@ -6,8 +6,6 @@ class_name TclTimerDefinition
 extends RefCounted
 
 ## A timer the streamer defined in Tentacle: its configuration and whether it is counting down.
-##
-## Generated from the tentacle-web type [code]TimerDefinitionJson[/code].
 
 
 ## JSON key [code]id[/code].

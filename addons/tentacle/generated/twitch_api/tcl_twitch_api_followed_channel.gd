@@ -6,8 +6,6 @@ class_name TclTwitchApiFollowedChannel
 extends RefCounted
 
 ## One channel the connected broadcaster follows.
-##
-## Generated from the tentacle-web type [code]TwitchApiFollowedChannel[/code].
 
 
 ## The followed broadcaster's user id.

@@ -6,8 +6,6 @@ class_name TclMsg_ClientToServer
 extends RefCounted
 
 ## Message from game client to Tentacle server.
-##
-## Generated from the tentacle-web type [code]TentacleMsg_ClientToServer[/code].
 
 
 
@@ -45,6 +43,8 @@ static func parse(json: Variant) -> TclMsg_ClientToServer:
 			return TclMsg_ClientToServer_ConnectionsConnect.parse(json)
 		"Connections_CancelConnect":
 			return TclMsg_ClientToServer_ConnectionsCancelConnect.parse(json)
+		"Connections_DeclinePermissions":
+			return TclMsg_ClientToServer_ConnectionsDeclinePermissions.parse(json)
 		"Connections_Disconnect":
 			return TclMsg_ClientToServer_ConnectionsDisconnect.parse(json)
 		"Rpc_Request":

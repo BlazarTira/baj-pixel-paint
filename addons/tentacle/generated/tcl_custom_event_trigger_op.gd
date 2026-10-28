@@ -6,7 +6,7 @@ class_name TclCustomEventTriggerOp
 
 ## Custom event trigger operator (union of all operator types).
 ##
-## Generated from the tentacle-web type [code]CustomEventTriggerOp[/code]. Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
+## Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
 
 
 ## The wire values, as an enum.
@@ -66,6 +66,36 @@ static func from_wire(wire: String) -> Value:
 		"<=":
 			return Value.LESS_THAN_OR_EQUAL
 	return Value.IS_TRUE
+
+
+## Whether [param wire] is one of the wire values this version knows. A newer
+## Tentacle can send one it predates, which an array or a dictionary leaves out
+## rather than reading as [constant Value.IS_TRUE].
+static func is_known(wire: String) -> bool:
+	match wire:
+		"true":
+			return true
+		"false":
+			return true
+		"=":
+			return true
+		"!=":
+			return true
+		"contains":
+			return true
+		"startsWith":
+			return true
+		"endsWith":
+			return true
+		">":
+			return true
+		"<":
+			return true
+		">=":
+			return true
+		"<=":
+			return true
+	return false
 
 
 ## The wire string for an enum member.

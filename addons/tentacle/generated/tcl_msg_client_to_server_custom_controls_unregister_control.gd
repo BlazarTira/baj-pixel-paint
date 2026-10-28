@@ -5,7 +5,7 @@
 class_name TclMsg_ClientToServer_CustomControlsUnregisterControl
 extends TclMsg_ClientToServer
 
-## Generated from the tentacle-web type [code]TentacleMsg_ClientToServer_CustomControlsUnregisterControl[/code].
+## A message the game sends to Tentacle.
 
 
 ## JSON key [code]control[/code].

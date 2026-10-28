@@ -5,11 +5,18 @@
 class_name TclMsg_ClientToServer_ConnectionsConnect
 extends TclMsg_ClientToServer
 
-## Generated from the tentacle-web type [code]TentacleMsg_ClientToServer_ConnectionsConnect[/code].
+## A message the game sends to Tentacle.
 
 
 ## JSON key [code]platform[/code].
 var platform: TclStreamPlatform.Value = TclStreamPlatform.Value.TWITCH
+
+## What to ask the platform for besides the permissions the game requires.
+## Omit to ask for what the player chose last time, or for everything the
+## game may ask for.
+##
+## JSON key [code]permissions[/code]. Optional on the wire. Either [code]null[/code] or a array; GDScript has no nullable form for that type.
+var permissions: Variant = null
 
 
 ## Parses [TclMsg_ClientToServer_ConnectionsConnect] from an already-parsed JSON value.
@@ -24,6 +31,8 @@ static func parse(json: Variant) -> TclMsg_ClientToServer_ConnectionsConnect:
 	var out := TclMsg_ClientToServer_ConnectionsConnect.new()
 	var payload := TclJson.read_object(object, "data")
 	out.platform = TclStreamPlatform.from_wire(TclJson.as_string(TclJson.read_value(payload, "platform")))
+	if TclJson.has_value(payload, "permissions"):
+		out.permissions = payload["permissions"]
 	return out
 
 
@@ -44,5 +53,7 @@ func to_dictionary() -> Dictionary:
 	out["type"] = "Connections_Connect"
 	var _payload: Dictionary = {}
 	_payload["platform"] = TclStreamPlatform.to_wire(platform)
+	if permissions != null:
+		_payload["permissions"] = permissions
 	out["data"] = _payload
 	return out

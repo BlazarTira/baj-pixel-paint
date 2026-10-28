@@ -6,8 +6,6 @@ class_name TclTwitchApiChannelEmote
 extends RefCounted
 
 ## One of a broadcaster's own emotes.
-##
-## Generated from the tentacle-web type [code]TwitchApiChannelEmote[/code].
 
 
 ## The emote's id.

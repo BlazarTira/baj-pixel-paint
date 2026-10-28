@@ -6,8 +6,6 @@ class_name TclTwitchApiGetTopGamesInput
 extends RefCounted
 
 ## What Twitch's Get Top Games takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetTopGamesInput[/code].
 
 
 ## The most items to return per page, 1-100.

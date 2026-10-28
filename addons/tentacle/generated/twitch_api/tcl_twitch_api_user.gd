@@ -6,8 +6,6 @@ class_name TclTwitchApiUser
 extends RefCounted
 
 ## One Twitch user.
-##
-## Generated from the tentacle-web type [code]TwitchApiUser[/code].
 
 
 ## The user's id.

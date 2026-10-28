@@ -6,8 +6,6 @@ class_name TclTwitchApiStreamMarkers
 extends RefCounted
 
 ## The markers one user added, by video.
-##
-## Generated from the tentacle-web type [code]TwitchApiStreamMarkers[/code].
 
 
 ## The user's id.

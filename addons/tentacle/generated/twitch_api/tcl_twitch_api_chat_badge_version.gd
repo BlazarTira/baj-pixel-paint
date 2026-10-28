@@ -6,8 +6,6 @@ class_name TclTwitchApiChatBadgeVersion
 extends RefCounted
 
 ## One version of a chat badge, such as one Bits tier.
-##
-## Generated from the tentacle-web type [code]TwitchApiChatBadgeVersion[/code].
 
 
 ## The version's id, such as a Bits tier.

@@ -5,9 +5,7 @@
 class_name TclTwitchApiCheckUserSubscriptionOutput
 extends RefCounted
 
-## What Twitch's Check User Subscription answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiCheckUserSubscriptionOutput[/code].
+## What Twitch's Check User Subscription responds with.
 
 
 ## The subscription.

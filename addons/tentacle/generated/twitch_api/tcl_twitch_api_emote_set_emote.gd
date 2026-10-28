@@ -6,8 +6,6 @@ class_name TclTwitchApiEmoteSetEmote
 extends RefCounted
 
 ## One emote in an emote set.
-##
-## Generated from the tentacle-web type [code]TwitchApiEmoteSetEmote[/code].
 
 
 ## The emote's id.

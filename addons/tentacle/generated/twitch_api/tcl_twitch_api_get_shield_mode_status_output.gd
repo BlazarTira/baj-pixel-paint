@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetShieldModeStatusOutput
 extends RefCounted
 
-## What Twitch's Get Shield Mode Status answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetShieldModeStatusOutput[/code].
+## What Twitch's Get Shield Mode Status responds with.
 
 
 ## Shield Mode's status.

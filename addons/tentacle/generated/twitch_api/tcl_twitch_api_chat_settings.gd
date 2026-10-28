@@ -6,8 +6,6 @@ class_name TclTwitchApiChatSettings
 extends RefCounted
 
 ## A chat's settings, as Get Chat Settings returns them.
-##
-## Generated from the tentacle-web type [code]TwitchApiChatSettings[/code].
 
 
 ## The broadcaster's user id.

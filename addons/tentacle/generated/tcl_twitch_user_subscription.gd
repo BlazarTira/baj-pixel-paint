@@ -5,7 +5,7 @@
 class_name TclTwitchUser_Subscription
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclTwitchUser_Subscription[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]gifter_id[/code]. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

@@ -8,8 +8,6 @@ extends RefCounted
 ## A single fragment of a Twitch automatic-reward-redemption message body.
 ## Mirrors the wire shape (like TwitchChatMessageFragment): the emote subfield
 ## is null for text fragments.
-##
-## Generated from the tentacle-web type [code]TwitchAutomaticRewardRedemptionMessageFragment[/code].
 
 
 ## JSON key [code]type[/code].

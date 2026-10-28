@@ -6,8 +6,6 @@ class_name TclTwitchApiCharityAmount
 extends RefCounted
 
 ## An amount of money, in the currency's minor unit.
-##
-## Generated from the tentacle-web type [code]TwitchApiCharityAmount[/code].
 
 
 ## The amount in the currency's minor unit: 550 is $5.50.

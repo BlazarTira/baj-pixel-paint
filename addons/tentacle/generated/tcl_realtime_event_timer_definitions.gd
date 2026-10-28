@@ -7,10 +7,7 @@ extends TclRealtimeEvent
 
 ## Realtime timer definitions: every timer the streamer defined, sent as the
 ## connection opens and again whenever one is created, changed, removed,
-## started, paused, or stops after firing once. [code]client.timers[/code] keeps the latest
-## one.
-##
-## Generated from the tentacle-web type [code]RealtimeEvent_TimerDefinitions[/code].
+## started, paused, or stops after firing once.
 
 
 ## JSON key [code]payload[/code].

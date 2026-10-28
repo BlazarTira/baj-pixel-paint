@@ -6,8 +6,6 @@ class_name TclTwitchViewerBan
 extends RefCounted
 
 ## A ban or timeout in force on a viewer in the streamer's Twitch channel.
-##
-## Generated from the tentacle-web type [code]TwitchViewerBanJson[/code].
 
 
 ## When the ban or timeout began, when Twitch has said.

@@ -6,8 +6,6 @@ class_name TclStreamSendChatMessageOutput
 extends RefCounted
 
 ## Result of sending a chat message: the platforms the message reached.
-##
-## Generated from the tentacle-web type [code]StreamSendChatMessageOutput[/code].
 
 
 ## JSON key [code]sentTo[/code].
@@ -25,7 +23,9 @@ static func parse(json: Variant) -> TclStreamSendChatMessageOutput:
 
 	var out := TclStreamSendChatMessageOutput.new()
 	for _sent_to_item in TclJson.read_array(object, "sentTo"):
-		out.sent_to.append(TclStreamPlatform.from_wire(TclJson.as_string(_sent_to_item)))
+		var _sent_to_wire := TclJson.as_string(_sent_to_item)
+		if TclStreamPlatform.is_known(_sent_to_wire):
+			out.sent_to.append(TclStreamPlatform.from_wire(_sent_to_wire))
 	return out
 
 

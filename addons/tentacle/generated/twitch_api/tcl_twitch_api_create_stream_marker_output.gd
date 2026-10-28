@@ -5,9 +5,7 @@
 class_name TclTwitchApiCreateStreamMarkerOutput
 extends RefCounted
 
-## What Twitch's Create Stream Marker answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreateStreamMarkerOutput[/code].
+## What Twitch's Create Stream Marker responds with.
 
 
 ## The marker.

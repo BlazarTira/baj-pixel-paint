@@ -6,8 +6,6 @@ class_name TclTwitchApiSuspiciousUser
 extends RefCounted
 
 ## A viewer's suspicious status.
-##
-## Generated from the tentacle-web type [code]TwitchApiSuspiciousUser[/code].
 
 
 ## The viewer's user id.

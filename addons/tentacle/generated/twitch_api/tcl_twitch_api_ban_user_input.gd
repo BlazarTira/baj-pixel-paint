@@ -6,8 +6,6 @@ class_name TclTwitchApiBanUserInput
 extends RefCounted
 
 ## What Twitch's Ban User takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiBanUserInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

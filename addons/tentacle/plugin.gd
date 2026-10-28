@@ -7,7 +7,8 @@ extends EditorPlugin
 ## [code]Tentacle[/code] to the project's autoloads, and disabling it removes it. The
 ## autoload's settings - Auto Connect, Session Label and the rest - appear under
 ## [b]Project > Project Settings > General > Tentacle[/b] (see
-## [TentacleProjectSettings]).
+## [TentacleProjectSettings]). While the addon is enabled, every export also carries the
+## Tentacle core's license files when it carries the core (see [TentacleExportPlugin]).
 ##
 ## The autoload is the one node the addon installs. Everything else is reached through
 ## it, and the scene-authored nodes find it through
@@ -36,16 +37,26 @@ const RUNTIME_SCRIPT: String = "res://addons/tentacle/runtime/tentacle_runtime.g
 # and a class name would not resolve yet.
 const PROJECT_SETTINGS: GDScript = preload("res://addons/tentacle/runtime/tentacle_project_settings.gd")
 
+# Ships the core's license files with every export that carries it (see
+# TentacleExportPlugin); preloaded by path for the same reason.
+const EXPORT_PLUGIN: GDScript = preload("res://addons/tentacle/runtime/tentacle_export_plugin.gd")
+
+var _export_plugin: EditorExportPlugin = null
+
 
 func _enter_tree() -> void:
 	PROJECT_SETTINGS.register()
 	# add_autoload_singleton takes a script path directly, so no wrapper scene is
 	# needed - the script's class is instantiated as the autoload's root node.
 	add_autoload_singleton(AUTOLOAD_NAME, RUNTIME_SCRIPT)
+	_export_plugin = EXPORT_PLUGIN.new()
+	add_export_plugin(_export_plugin)
 
 
 func _exit_tree() -> void:
 	remove_autoload_singleton(AUTOLOAD_NAME)
+	remove_export_plugin(_export_plugin)
+	_export_plugin = null
 
 
 func _get_plugin_name() -> String:

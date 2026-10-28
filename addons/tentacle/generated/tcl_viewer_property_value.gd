@@ -12,8 +12,6 @@ extends RefCounted
 ## registry ([code]api.viewerProperty.getRegistry[/code]) via the collection id and
 ## definition id this value is nested under, so it is never duplicated per
 ## viewer.
-##
-## Generated from the tentacle-web type [code]ViewerPropertyValueJson[/code].
 
 
 ## JSON key [code]value[/code]. The wire type is unconstrained.

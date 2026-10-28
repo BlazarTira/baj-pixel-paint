@@ -6,8 +6,6 @@ class_name TclStreamEvent_Anywhere_Donation
 extends TclStreamEventAnywhereBase
 
 ## Cross-platform "Anywhere" view of Donation events. Carries the $-prefixed normalized fields shared between Twitch and Kick variants.
-##
-## Generated from the tentacle-web type [code]StreamEvent_Anywhere_Donation[/code].
 
 
 ## JSON key [code]$donorUserId[/code]. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

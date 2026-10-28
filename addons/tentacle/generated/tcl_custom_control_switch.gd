@@ -6,8 +6,6 @@ class_name TclCustomControl_Switch
 extends TclCustomControl
 
 ## Custom control switch (boolean toggle).
-##
-## Generated from the tentacle-web type [code]CustomControlJson_Switch[/code].
 
 
 ## JSON key [code]value[/code].

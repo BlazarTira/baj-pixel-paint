@@ -6,8 +6,6 @@ class_name TclTwitchApiUserBan
 extends RefCounted
 
 ## A ban or timeout that took effect.
-##
-## Generated from the tentacle-web type [code]TwitchApiUserBan[/code].
 
 
 ## The channel's broadcaster's user id.

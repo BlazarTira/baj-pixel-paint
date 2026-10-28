@@ -6,8 +6,6 @@ class_name TclTwitchApiGetSharedChatSessionInput
 extends RefCounted
 
 ## What Twitch's Get Shared Chat Session takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetSharedChatSessionInput[/code].
 
 
 ## The channel whose session to read; omit for the connected broadcaster's.

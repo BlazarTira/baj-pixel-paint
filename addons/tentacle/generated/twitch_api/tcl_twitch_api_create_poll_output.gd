@@ -5,9 +5,7 @@
 class_name TclTwitchApiCreatePollOutput
 extends RefCounted
 
-## What Twitch's Create Poll answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreatePollOutput[/code].
+## What Twitch's Create Poll responds with.
 
 
 ## The poll.

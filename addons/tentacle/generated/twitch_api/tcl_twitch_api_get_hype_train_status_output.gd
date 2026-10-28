@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetHypeTrainStatusOutput
 extends RefCounted
 
-## What Twitch's Get Hype Train Status answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetHypeTrainStatusOutput[/code].
+## What Twitch's Get Hype Train Status responds with.
 
 
 ## The status.

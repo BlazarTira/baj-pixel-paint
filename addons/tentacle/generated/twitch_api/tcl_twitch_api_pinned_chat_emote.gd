@@ -6,8 +6,6 @@ class_name TclTwitchApiPinnedChatEmote
 extends RefCounted
 
 ## The emote a fragment of a pinned message is.
-##
-## Generated from the tentacle-web type [code]TwitchApiPinnedChatEmote[/code].
 
 
 ## The emote's id.

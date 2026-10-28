@@ -6,8 +6,6 @@ class_name TclTwitchPredictionOutcome
 extends TclTwitchPredictionBeginOutcome
 
 ## A Twitch prediction outcome with totals (progress / lock / end events).
-##
-## Generated from the tentacle-web type [code]TwitchPredictionOutcome[/code].
 
 
 ## JSON key [code]users[/code].

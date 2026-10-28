@@ -6,8 +6,6 @@ class_name TclKickUserIdentity
 extends RefCounted
 
 ## Kick user identity data (badges and color).
-##
-## Generated from the tentacle-web type [code]KickUserIdentity[/code].
 
 
 ## JSON key [code]username_color[/code].

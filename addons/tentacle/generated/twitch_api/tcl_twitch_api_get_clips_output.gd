@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetClipsOutput
 extends RefCounted
 
-## What Twitch's Get Clips answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetClipsOutput[/code].
+## What Twitch's Get Clips responds with.
 
 
 ## The clips: most viewed first, or in the order of the ids asked for.

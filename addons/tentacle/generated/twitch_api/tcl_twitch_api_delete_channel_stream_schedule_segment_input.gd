@@ -6,8 +6,6 @@ class_name TclTwitchApiDeleteChannelStreamScheduleSegmentInput
 extends RefCounted
 
 ## What Twitch's Delete Channel Stream Schedule Segment takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiDeleteChannelStreamScheduleSegmentInput[/code].
 
 
 ## The broadcast to remove.

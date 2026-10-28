@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetChannelInformationOutput
 extends RefCounted
 
-## What Twitch's Get Channel Information answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChannelInformationOutput[/code].
+## What Twitch's Get Channel Information responds with.
 
 
 ## The channels found.

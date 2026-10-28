@@ -6,8 +6,6 @@ class_name TclTwitchApiWarnUserRequest
 extends RefCounted
 
 ## Who to warn, and why.
-##
-## Generated from the tentacle-web type [code]TwitchApiWarnUserRequest[/code].
 
 
 ## The viewer.

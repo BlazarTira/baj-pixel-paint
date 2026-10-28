@@ -7,8 +7,6 @@ extends RefCounted
 
 ## One platform's connection in a Tentacle that runs inside the game: its live
 ## status, and the account behind it.
-##
-## Generated from the tentacle-web type [code]PlatformConnectionJson[/code].
 
 
 ## JSON key [code]platform[/code].
@@ -32,13 +30,19 @@ var needs_reconnect: bool = false
 ## JSON key [code]reconnectReason[/code]. Optional on the wire. Either [code]null[/code] or a [enum TclPlatformConnectionReconnectReason.Value]; GDScript has no nullable form for that type.
 var reconnect_reason: Variant = null
 
-## Whether the account signed in before this version of Tentacle asked the
-## platform for some of its permissions. Unlike [code]needsReconnect[/code], the
-## connection keeps working; signing in again grants the rest, which only
-## some of the platform's API requests need.
+## Whether signing in again would grant something: a permission the account
+## chose or must allow that its token lacks ([code]permissions.missing[/code]), or one
+## an update added that it was never offered ([code]permissions.added[/code]). Unlike
+## [code]needsReconnect[/code], the connection keeps working; only the requests and
+## events of those permissions need them.
 ##
 ## JSON key [code]missingPermissions[/code].
 var missing_permissions: bool = false
+
+## What the account lets Tentacle do; absent while no account is signed in.
+##
+## JSON key [code]permissions[/code]. Optional on the wire.
+var permissions: TclPlatformConnectionPermissions = null
 
 
 ## Parses [TclPlatformConnection] from an already-parsed JSON value.
@@ -58,6 +62,7 @@ static func parse(json: Variant) -> TclPlatformConnection:
 	if TclJson.has_value(object, "reconnectReason"):
 		out.reconnect_reason = TclPlatformConnectionReconnectReason.from_wire(TclJson.as_string(object["reconnectReason"]))
 	out.missing_permissions = TclJson.as_bool(TclJson.read_value(object, "missingPermissions"))
+	out.permissions = TclPlatformConnectionPermissions.parse(TclJson.read_value(object, "permissions"))
 	return out
 
 
@@ -80,4 +85,6 @@ func to_dictionary() -> Dictionary:
 	if reconnect_reason != null:
 		out["reconnectReason"] = (null if reconnect_reason == null else TclPlatformConnectionReconnectReason.to_wire(reconnect_reason))
 	out["missingPermissions"] = missing_permissions
+	if permissions != null:
+		out["permissions"] = TclJson.class_to_dictionary(permissions)
 	return out

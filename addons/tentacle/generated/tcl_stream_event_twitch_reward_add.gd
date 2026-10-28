@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_RewardAdd
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch custom channel point reward add event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_RewardAdd[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

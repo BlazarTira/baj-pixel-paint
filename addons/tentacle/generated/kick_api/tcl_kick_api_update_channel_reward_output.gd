@@ -5,9 +5,7 @@
 class_name TclKickApiUpdateChannelRewardOutput
 extends RefCounted
 
-## What Kick's Update Channel Reward answers with.
-##
-## Generated from the tentacle-web type [code]KickApiUpdateChannelRewardOutput[/code].
+## What Kick's Update Channel Reward responds with.
 
 
 ## The reward as it now is.

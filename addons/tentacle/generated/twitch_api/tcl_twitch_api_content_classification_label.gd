@@ -6,8 +6,6 @@ class_name TclTwitchApiContentClassificationLabel
 extends RefCounted
 
 ## One content classification label to apply or remove.
-##
-## Generated from the tentacle-web type [code]TwitchApiContentClassificationLabel[/code].
 
 
 ## The label's id, such as "Gambling" or "MatureGame".

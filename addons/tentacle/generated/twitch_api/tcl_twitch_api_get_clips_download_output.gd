@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetClipsDownloadOutput
 extends RefCounted
 
-## What Twitch's Get Clips Download answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetClipsDownloadOutput[/code].
+## What Twitch's Get Clips Download responds with.
 
 
 ## Where to download each clip.

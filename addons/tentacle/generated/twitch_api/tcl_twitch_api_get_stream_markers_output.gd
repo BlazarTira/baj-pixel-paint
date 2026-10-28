@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetStreamMarkersOutput
 extends RefCounted
 
-## What Twitch's Get Stream Markers answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetStreamMarkersOutput[/code].
+## What Twitch's Get Stream Markers responds with.
 
 
 ## The markers, by the user who added them.

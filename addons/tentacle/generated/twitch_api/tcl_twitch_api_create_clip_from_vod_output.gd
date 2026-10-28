@@ -5,9 +5,7 @@
 class_name TclTwitchApiCreateClipFromVodOutput
 extends RefCounted
 
-## What Twitch's Create Clip From VOD answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreateClipFromVodOutput[/code].
+## What Twitch's Create Clip From VOD responds with.
 
 
 ## The clip being created.

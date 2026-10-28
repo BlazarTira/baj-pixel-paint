@@ -12,7 +12,9 @@ func _ready():
 	Tentacle.connections.OnConnectPrompt.connect(_on_connect_prompt)
 	Tentacle.connections.OnConnectResult.connect(_on_connect_result)
 	Tentacle.connections.OnConnectionChanged.connect(_on_connection_changed)
-	update_button(TclPlatformConnectionStatus)
+	
+	var connection = Tentacle.connections.get_connection(TclStreamPlatform.Value.TWITCH)
+	update_button(connection)
 
 func _on_sign_in_button_pressed():
 	sign_in_to_twitch()
@@ -43,7 +45,7 @@ func _on_connection_changed(connection: TclPlatformConnection) -> void:
 	if connection.account != null:
 		sign_in_panel.hide()
 		account = connection.account.display_name
-	update_button(connection.status)
+	update_button(connection)
 	print("%s: %s, signed in as %s" % [
 		TclStreamPlatform.to_wire(connection.platform),
 		TclPlatformConnectionStatus.to_wire(connection.status),
@@ -56,7 +58,11 @@ func sign_out_of_twitch() -> void:
 func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/game.tscn")
 
-func update_button(status):
+func update_button(connection: TclPlatformConnection):
+	var status = TclPlatformConnectionStatus.Value.DISCONNECTED
+	if connection != null:
+		status = connection.status
+	
 	match status:
 		TclPlatformConnectionStatus.Value.DISCONNECTED:
 			sign_in_button.show()

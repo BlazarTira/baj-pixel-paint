@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_PollBegin
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch poll begin event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_PollBegin[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

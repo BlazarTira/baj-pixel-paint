@@ -6,8 +6,6 @@ class_name TclTwitchApiPinnedChatMessageContent
 extends RefCounted
 
 ## A pinned message's text and fragments.
-##
-## Generated from the tentacle-web type [code]TwitchApiPinnedChatMessageContent[/code].
 
 
 ## The message's plain text.

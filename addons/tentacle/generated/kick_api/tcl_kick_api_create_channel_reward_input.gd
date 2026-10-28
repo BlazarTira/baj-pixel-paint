@@ -6,8 +6,6 @@ class_name TclKickApiCreateChannelRewardInput
 extends RefCounted
 
 ## What Kick's Create Channel Reward takes.
-##
-## Generated from the tentacle-web type [code]KickApiCreateChannelRewardInput[/code].
 
 
 ## The reward's title, up to 50 characters.

@@ -6,8 +6,6 @@ class_name TclTwitchApiGetModeratedChannelsInput
 extends RefCounted
 
 ## What Twitch's Get Moderated Channels takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetModeratedChannelsInput[/code].
 
 
 ## The most items to return per page, 1-100.

@@ -6,8 +6,6 @@ class_name TclKickApiChannelCategory
 extends RefCounted
 
 ## A channel's category, as Get Channels returns it.
-##
-## Generated from the tentacle-web type [code]KickApiChannelCategory[/code].
 
 
 ## The category's id.

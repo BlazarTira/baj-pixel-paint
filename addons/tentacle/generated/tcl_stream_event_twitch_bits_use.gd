@@ -5,9 +5,7 @@
 class_name TclStreamEvent_Twitch_BitsUse
 extends TclStreamEvent_Twitch_Base
 
-## Twitch bits use event (cheer, power-up, or combo).
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_BitsUse[/code].
+## Twitch bits use event (a cheer, a Power-up, or a custom Power-up).
 
 
 ## JSON key [code]user_id[/code].
@@ -36,6 +34,11 @@ var native_type: String = ""
 
 ## JSON key [code]power_up[/code].
 var power_up: TclStreamEvent_Twitch_BitsUse_Power_Up = null
+
+## The custom Power-up the viewer used, when [code]type[/code] is [code]"custom_power_up"[/code].
+##
+## JSON key [code]custom_power_up[/code]. Optional on the wire.
+var custom_power_up: TclStreamEvent_Twitch_BitsUse_Custom_Power_Up = null
 
 ## JSON key [code]message[/code].
 var message: TclStreamEvent_Twitch_BitsUse_Message = null
@@ -68,6 +71,7 @@ static func parse(json: Variant) -> TclStreamEvent_Twitch_BitsUse:
 	out.bits = TclJson.as_int(TclJson.read_value(object, "bits"))
 	out.native_type = TclJson.as_string(TclJson.read_value(object, "type"))
 	out.power_up = TclStreamEvent_Twitch_BitsUse_Power_Up.parse(TclJson.read_value(object, "power_up"))
+	out.custom_power_up = TclStreamEvent_Twitch_BitsUse_Custom_Power_Up.parse(TclJson.read_value(object, "custom_power_up"))
 	out.message = TclStreamEvent_Twitch_BitsUse_Message.parse(TclJson.read_value(object, "message"))
 	return out
 
@@ -98,5 +102,7 @@ func to_dictionary() -> Dictionary:
 	out["bits"] = bits
 	out["type"] = native_type
 	out["power_up"] = TclJson.class_to_dictionary(power_up)
+	if custom_power_up != null:
+		out["custom_power_up"] = TclJson.class_to_dictionary(custom_power_up)
 	out["message"] = TclJson.class_to_dictionary(message)
 	return out

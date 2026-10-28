@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_CharityDonation
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch charity donation event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_CharityDonation[/code].
 
 
 ## JSON key [code]campaign_id[/code].

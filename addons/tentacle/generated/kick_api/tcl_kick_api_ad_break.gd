@@ -7,9 +7,7 @@ extends RefCounted
 
 ## Kick's own API requests: one call per endpoint in Kick's API
 ## reference, named after its title there and shaped exactly as Kick
-## shapes it, and the types each takes and answers with.
-##
-## Generated from the tentacle-web type [code]KickApiAdBreak[/code].
+## shapes it, and the types each takes and responds with.
 
 
 ## The ad break's id.

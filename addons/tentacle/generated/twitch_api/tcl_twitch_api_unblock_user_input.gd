@@ -6,8 +6,6 @@ class_name TclTwitchApiUnblockUserInput
 extends RefCounted
 
 ## What Twitch's Unblock User takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiUnblockUserInput[/code].
 
 
 ## The user to unblock.

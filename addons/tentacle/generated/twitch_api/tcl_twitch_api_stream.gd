@@ -6,8 +6,6 @@ class_name TclTwitchApiStream
 extends RefCounted
 
 ## One live stream, as Get Streams returns it.
-##
-## Generated from the tentacle-web type [code]TwitchApiStream[/code].
 
 
 ## The stream's id.

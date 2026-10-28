@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetGlobalEmotesOutput
 extends RefCounted
 
-## What Twitch's Get Global Emotes answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetGlobalEmotesOutput[/code].
+## What Twitch's Get Global Emotes responds with.
 
 
 ## The global emotes.

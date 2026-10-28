@@ -70,9 +70,10 @@ static func default_data_directory() -> String:
 				return ""
 			return home.path_join("Library/Application Support").path_join(DATA_FOLDER_NAME)
 		_:
-			# Linux and the BSDs, following the XDG base-directory spec.
+			# Linux and the BSDs, following the XDG base-directory spec, which
+			# ignores a relative XDG_DATA_HOME, as the app does.
 			var xdg := OS.get_environment("XDG_DATA_HOME")
-			if not xdg.is_empty():
+			if xdg.begins_with("/"):
 				return xdg.path_join(DATA_FOLDER_NAME)
 			var unix_home := OS.get_environment("HOME")
 			if unix_home.is_empty():

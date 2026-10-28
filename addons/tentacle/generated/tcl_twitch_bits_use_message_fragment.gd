@@ -8,8 +8,6 @@ extends RefCounted
 ## A single fragment of a Twitch bits-use message body. Mirrors the wire shape
 ## (like TwitchChatMessageFragment): subfields for the non-matching fragment
 ## types are null.
-##
-## Generated from the tentacle-web type [code]TwitchBitsUseMessageFragment[/code].
 
 
 ## JSON key [code]type[/code].

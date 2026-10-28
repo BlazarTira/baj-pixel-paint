@@ -6,8 +6,6 @@ class_name TclTwitchApiGetChannelChatBadgesInput
 extends RefCounted
 
 ## What Twitch's Get Channel Chat Badges takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChannelChatBadgesInput[/code].
 
 
 ## The broadcaster whose badges to read; omit for the connected broadcaster's.

@@ -6,8 +6,6 @@ class_name TclTwitchApiMarkedVideo
 extends RefCounted
 
 ## A video and the markers in it.
-##
-## Generated from the tentacle-web type [code]TwitchApiMarkedVideo[/code].
 
 
 ## The video's id.

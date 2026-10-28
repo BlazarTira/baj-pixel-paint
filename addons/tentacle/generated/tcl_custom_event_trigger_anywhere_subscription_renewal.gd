@@ -6,8 +6,6 @@ class_name TclCustomEventTrigger_Anywhere_SubscriptionRenewal
 extends RefCounted
 
 ## Anywhere subscription renewal trigger.
-##
-## Generated from the tentacle-web type [code]CustomEventTrigger_Anywhere_SubscriptionRenewal[/code].
 
 
 ## JSON key [code]platform[/code]. Optional on the wire. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

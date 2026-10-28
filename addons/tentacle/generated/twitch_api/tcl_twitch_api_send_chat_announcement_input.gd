@@ -6,8 +6,6 @@ class_name TclTwitchApiSendChatAnnouncementInput
 extends RefCounted
 
 ## What Twitch's Send Chat Announcement takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiSendChatAnnouncementInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

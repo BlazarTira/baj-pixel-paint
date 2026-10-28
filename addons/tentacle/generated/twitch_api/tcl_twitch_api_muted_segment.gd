@@ -6,8 +6,6 @@ class_name TclTwitchApiMutedSegment
 extends RefCounted
 
 ## A stretch of a video Twitch muted for its audio.
-##
-## Generated from the tentacle-web type [code]TwitchApiMutedSegment[/code].
 
 
 ## How long it is, in seconds.

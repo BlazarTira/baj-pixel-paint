@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetGlobalChatBadgesOutput
 extends RefCounted
 
-## What Twitch's Get Global Chat Badges answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetGlobalChatBadgesOutput[/code].
+## What Twitch's Get Global Chat Badges responds with.
 
 
 ## The badge sets.

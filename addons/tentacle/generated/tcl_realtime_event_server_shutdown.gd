@@ -7,12 +7,9 @@ extends TclRealtimeEvent
 
 ## Realtime server shutdown notification.
 ## Emitted when the Tentacle server is performing a graceful shutdown (e.g.
-## during a deployment). [code]client.realtime[/code] acts on it: once the connection
-## closes it comes straight back when [code]reconnectImmediately[/code] is true, and waits
-## out the usual backoff when it is false. The event still reaches [code]onEvent[/code], so
-## a consumer can show that Tentacle is restarting.
-##
-## Generated from the tentacle-web type [code]RealtimeEvent_ServerShutdown[/code].
+## during a deployment). Once the connection closes, a client reconnects
+## straight away when [code]reconnectImmediately[/code] is true, and waits out its usual
+## backoff when it is false.
 
 
 ## JSON key [code]payload[/code].

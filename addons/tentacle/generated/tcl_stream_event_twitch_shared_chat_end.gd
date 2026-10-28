@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_SharedChatEnd
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch shared chat end event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_SharedChatEnd[/code].
 
 
 ## JSON key [code]session_id[/code].

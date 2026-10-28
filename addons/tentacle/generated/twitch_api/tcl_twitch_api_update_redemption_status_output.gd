@@ -5,9 +5,7 @@
 class_name TclTwitchApiUpdateRedemptionStatusOutput
 extends RefCounted
 
-## What Twitch's Update Redemption Status answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiUpdateRedemptionStatusOutput[/code].
+## What Twitch's Update Redemption Status responds with.
 
 
 ## The redemptions as they now are.

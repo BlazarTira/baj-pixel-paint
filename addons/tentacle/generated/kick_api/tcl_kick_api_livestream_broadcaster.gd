@@ -6,8 +6,6 @@ class_name TclKickApiLivestreamBroadcaster
 extends RefCounted
 
 ## The broadcaster of a livestream.
-##
-## Generated from the tentacle-web type [code]KickApiLivestreamBroadcaster[/code].
 
 
 ## The broadcaster's user id.

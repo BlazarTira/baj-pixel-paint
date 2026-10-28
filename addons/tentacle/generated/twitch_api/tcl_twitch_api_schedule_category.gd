@@ -6,8 +6,6 @@ class_name TclTwitchApiScheduleCategory
 extends RefCounted
 
 ## The category a scheduled broadcast is planned in.
-##
-## Generated from the tentacle-web type [code]TwitchApiScheduleCategory[/code].
 
 
 ## The category's id.

@@ -6,8 +6,6 @@ class_name TclKickEmote
 extends RefCounted
 
 ## Kick emote (from chat messages).
-##
-## Generated from the tentacle-web type [code]KickEmote[/code].
 
 
 ## JSON key [code]emote_id[/code].

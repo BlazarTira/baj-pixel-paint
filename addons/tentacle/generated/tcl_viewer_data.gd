@@ -11,8 +11,6 @@ extends TclViewerMinimal
 ## properties with no explicit override carry their default value
 ## ([code]isDefault: true[/code]). Each value is slim (value + isDefault); resolve a
 ## definition's name/type/default from [code]api.viewerProperty.getRegistry[/code].
-##
-## Generated from the tentacle-web type [code]ViewerJson[/code].
 
 
 ## JSON key [code]isMock[/code]. Optional on the wire. Either [code]null[/code] or a boolean; GDScript has no nullable form for that type.

@@ -17,7 +17,7 @@ class_name TentacleVersion
 # pluginVersion, and `just godot::package` names the archive after it.
 
 ## The addon's version, matching the Tentacle app's.
-const PLUGIN: String = "1.2.0-alpha.2"
+const PLUGIN: String = "1.2.0-alpha.6"
 
 # The floor is set by typed dictionaries, which are load-bearing for the generated types'
 # typing policy. Deliberately not 4.5, which would add @abstract: that is a convenience

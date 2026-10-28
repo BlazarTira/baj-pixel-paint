@@ -5,7 +5,7 @@
 class_name TclSubathonStats_Donations_NextUnlock
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclSubathonStats_Donations_NextUnlock[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]dollars[/code].

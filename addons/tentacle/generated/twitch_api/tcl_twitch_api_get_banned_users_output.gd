@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetBannedUsersOutput
 extends RefCounted
 
-## What Twitch's Get Banned Users answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetBannedUsersOutput[/code].
+## What Twitch's Get Banned Users responds with.
 
 
 ## The banned and timed out viewers.

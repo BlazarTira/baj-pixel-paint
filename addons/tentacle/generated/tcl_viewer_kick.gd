@@ -6,8 +6,6 @@ class_name TclViewerKick
 extends RefCounted
 
 ## Viewer Kick profile data (as embedded in ViewerMinimalJson).
-##
-## Generated from the tentacle-web type [code]ViewerKickJson[/code].
 
 
 ## JSON key [code]badges[/code]. Optional on the wire. Either [code]null[/code] or a array; GDScript has no nullable form for that type.

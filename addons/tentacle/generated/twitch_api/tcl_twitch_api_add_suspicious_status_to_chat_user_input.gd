@@ -6,8 +6,6 @@ class_name TclTwitchApiAddSuspiciousStatusToChatUserInput
 extends RefCounted
 
 ## What Twitch's Add Suspicious Status to Chat User takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiAddSuspiciousStatusToChatUserInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

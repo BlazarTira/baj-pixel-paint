@@ -6,8 +6,6 @@ class_name TclTwitchApiGetVipsInput
 extends RefCounted
 
 ## What Twitch's Get VIPs takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetVipsInput[/code].
 
 
 ## The viewers to check, up to 100; omit for all VIPs.

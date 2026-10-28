@@ -6,8 +6,6 @@ class_name TclTwitchApiGetBannedUsersInput
 extends RefCounted
 
 ## What Twitch's Get Banned Users takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetBannedUsersInput[/code].
 
 
 ## The viewers to check, up to 100; omit for all of them.

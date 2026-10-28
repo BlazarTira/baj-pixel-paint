@@ -6,8 +6,6 @@ class_name TclTwitchApiCreatePredictionInput
 extends RefCounted
 
 ## What Twitch's Create Prediction takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreatePredictionInput[/code].
 
 
 ## The question, up to 45 characters.

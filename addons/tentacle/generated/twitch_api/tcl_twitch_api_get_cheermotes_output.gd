@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetCheermotesOutput
 extends RefCounted
 
-## What Twitch's Get Cheermotes answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetCheermotesOutput[/code].
+## What Twitch's Get Cheermotes responds with.
 
 
 ## The Cheermotes, in Bits card order.

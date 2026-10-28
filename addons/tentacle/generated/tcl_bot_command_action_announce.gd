@@ -6,8 +6,6 @@ class_name TclBotCommandAction_Announce
 extends TclBotCommandAction
 
 ## Posts an announcement in chat.
-##
-## Generated from the tentacle-web type [code]BotCommandAction_Announce[/code].
 
 
 ## JSON key [code]message[/code].

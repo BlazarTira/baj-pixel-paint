@@ -6,8 +6,6 @@ class_name TclTwitchApiGetChannelGuestStarSettingsInput
 extends RefCounted
 
 ## What Twitch's Get Channel Guest Star Settings takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChannelGuestStarSettingsInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

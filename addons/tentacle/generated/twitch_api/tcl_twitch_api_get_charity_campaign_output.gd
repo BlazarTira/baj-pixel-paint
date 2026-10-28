@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetCharityCampaignOutput
 extends RefCounted
 
-## What Twitch's Get Charity Campaign answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetCharityCampaignOutput[/code].
+## What Twitch's Get Charity Campaign responds with.
 
 
 ## The campaign; empty when none is running.

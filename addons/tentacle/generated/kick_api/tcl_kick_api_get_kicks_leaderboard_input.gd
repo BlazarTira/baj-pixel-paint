@@ -6,8 +6,6 @@ class_name TclKickApiGetKicksLeaderboardInput
 extends RefCounted
 
 ## What Kick's Get KICKs Leaderboard takes.
-##
-## Generated from the tentacle-web type [code]KickApiGetKicksLeaderboardInput[/code].
 
 
 ## How many places to return, 1-100; Kick's default is 10.

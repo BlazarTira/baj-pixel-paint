@@ -6,8 +6,6 @@ class_name TclKickApiAdBreakStatus
 extends RefCounted
 
 ## The channel's ads: whether it can run them, and its breaks.
-##
-## Generated from the tentacle-web type [code]KickApiAdBreakStatus[/code].
 
 
 ## Whether the channel is enrolled in ads.

@@ -5,9 +5,7 @@
 class_name TclTwitchApiAddSuspiciousStatusToChatUserOutput
 extends RefCounted
 
-## What Twitch's Add Suspicious Status to Chat User answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiAddSuspiciousStatusToChatUserOutput[/code].
+## What Twitch's Add Suspicious Status to Chat User responds with.
 
 
 ## The viewer's status.

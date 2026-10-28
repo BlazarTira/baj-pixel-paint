@@ -6,8 +6,6 @@ class_name TclTwitchApiUserChatColor
 extends RefCounted
 
 ## The color a viewer's name has in chat.
-##
-## Generated from the tentacle-web type [code]TwitchApiUserChatColor[/code].
 
 
 ## The viewer's user id.

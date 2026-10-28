@@ -5,15 +5,14 @@
 class_name TclViewerPropertyType
 
 ## Viewer property value type.
-## [code]float[/code] and [code]int[/code] are both numeric (carried as a JS [code]number[/code] over the wire);
+## [code]float[/code] and [code]int[/code] are both numeric (carried as a JSON number over the wire);
 ## [code]int[/code] values are whole numbers - the server truncates any fractional part
 ## toward zero on write.
-## Note: [code]int[/code] values are limited to JavaScript's safe-integer range
-## (+/-2^53, i.e. +/-9,007,199,254,740,991), not the full 64-bit range, because
-## they cross the wire as JSON numbers. The Unreal plugin exposes [code]int[/code] properties
-## as Integer64, but the same 2^53 ceiling applies end-to-end.
+## Note: [code]int[/code] values are limited to +/-2^53 (+/-9,007,199,254,740,991), not the
+## full 64-bit range, because they cross the wire as JSON numbers. The limit
+## holds even where an [code]int[/code] property is read as a 64-bit integer.
 ##
-## Generated from the tentacle-web type [code]ViewerPropertyType[/code]. Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
+## Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
 
 
 ## The wire values, as an enum.
@@ -45,6 +44,22 @@ static func from_wire(wire: String) -> Value:
 		"int":
 			return Value.INT
 	return Value.STRING
+
+
+## Whether [param wire] is one of the wire values this version knows. A newer
+## Tentacle can send one it predates, which an array or a dictionary leaves out
+## rather than reading as [constant Value.STRING].
+static func is_known(wire: String) -> bool:
+	match wire:
+		"string":
+			return true
+		"bool":
+			return true
+		"float":
+			return true
+		"int":
+			return true
+	return false
 
 
 ## The wire string for an enum member.

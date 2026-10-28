@@ -5,7 +5,7 @@
 class_name TclTwitchChatMessageFragment_Cheermote
 extends RefCounted
 
-## Generated from the tentacle-web type [code]TclTwitchChatMessageFragment_Cheermote[/code].
+## An object nested in a field of another type.
 
 
 ## JSON key [code]prefix[/code].

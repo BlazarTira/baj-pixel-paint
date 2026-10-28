@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetVipsOutput
 extends RefCounted
 
-## What Twitch's Get VIPs answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetVipsOutput[/code].
+## What Twitch's Get VIPs responds with.
 
 
 ## The VIPs; empty when there are none.

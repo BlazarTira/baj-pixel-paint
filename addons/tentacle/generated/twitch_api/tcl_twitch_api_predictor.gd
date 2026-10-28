@@ -6,8 +6,6 @@ class_name TclTwitchApiPredictor
 extends RefCounted
 
 ## One of the viewers who put the most Channel Points on an outcome.
-##
-## Generated from the tentacle-web type [code]TwitchApiPredictor[/code].
 
 
 ## The viewer's user id.

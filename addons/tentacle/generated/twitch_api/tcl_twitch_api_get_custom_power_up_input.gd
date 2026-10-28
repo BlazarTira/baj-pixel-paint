@@ -6,8 +6,6 @@ class_name TclTwitchApiGetCustomPowerUpInput
 extends RefCounted
 
 ## What Twitch's Get Custom Power-up takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetCustomPowerUpInput[/code].
 
 
 ## The Power-ups to read, up to 50; omit for all of them.

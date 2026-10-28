@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_ShoutoutCreate
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch shoutout create event (this channel shouted out another).
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_ShoutoutCreate[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

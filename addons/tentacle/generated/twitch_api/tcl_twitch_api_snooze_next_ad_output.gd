@@ -5,9 +5,7 @@
 class_name TclTwitchApiSnoozeNextAdOutput
 extends RefCounted
 
-## What Twitch's Snooze Next Ad answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiSnoozeNextAdOutput[/code].
+## What Twitch's Snooze Next Ad responds with.
 
 
 ## The schedule after the snooze.

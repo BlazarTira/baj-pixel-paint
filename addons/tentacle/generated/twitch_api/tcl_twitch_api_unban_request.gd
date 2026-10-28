@@ -6,8 +6,6 @@ class_name TclTwitchApiUnbanRequest
 extends RefCounted
 
 ## One banned viewer's request to be unbanned.
-##
-## Generated from the tentacle-web type [code]TwitchApiUnbanRequest[/code].
 
 
 ## The request's id.

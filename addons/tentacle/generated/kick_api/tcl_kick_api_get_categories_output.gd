@@ -5,9 +5,7 @@
 class_name TclKickApiGetCategoriesOutput
 extends RefCounted
 
-## What Kick's Get Categories answers with.
-##
-## Generated from the tentacle-web type [code]KickApiGetCategoriesOutput[/code].
+## What Kick's Get Categories responds with.
 
 
 ## The categories found.

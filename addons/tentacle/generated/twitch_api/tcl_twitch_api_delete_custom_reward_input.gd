@@ -6,8 +6,6 @@ class_name TclTwitchApiDeleteCustomRewardInput
 extends RefCounted
 
 ## What Twitch's Delete Custom Reward takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiDeleteCustomRewardInput[/code].
 
 
 ## The reward's id.

@@ -6,8 +6,6 @@ class_name TclTwitchPollBeginChoice
 extends RefCounted
 
 ## A Twitch poll choice as carried on channel.poll.begin (no tallies yet).
-##
-## Generated from the tentacle-web type [code]TwitchPollBeginChoice[/code].
 
 
 ## JSON key [code]id[/code].

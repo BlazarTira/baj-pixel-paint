@@ -6,8 +6,6 @@ class_name TclTwitchApiSchedule
 extends RefCounted
 
 ## A channel's stream schedule.
-##
-## Generated from the tentacle-web type [code]TwitchApiSchedule[/code].
 
 
 ## The scheduled broadcasts; null when there are none.

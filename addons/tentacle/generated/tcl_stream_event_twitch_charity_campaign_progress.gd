@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_CharityCampaignProgress
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch charity campaign progress event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_CharityCampaignProgress[/code].
 
 
 ## JSON key [code]broadcaster_id[/code].

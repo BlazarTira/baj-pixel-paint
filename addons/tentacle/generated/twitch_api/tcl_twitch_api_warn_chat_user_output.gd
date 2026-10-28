@@ -5,9 +5,7 @@
 class_name TclTwitchApiWarnChatUserOutput
 extends RefCounted
 
-## What Twitch's Warn Chat User answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiWarnChatUserOutput[/code].
+## What Twitch's Warn Chat User responds with.
 
 
 ## The warning.

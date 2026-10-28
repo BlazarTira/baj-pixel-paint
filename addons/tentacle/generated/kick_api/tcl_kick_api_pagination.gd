@@ -6,8 +6,6 @@ class_name TclKickApiPagination
 extends RefCounted
 
 ## Kick's page cursor; empty or absent on the last page.
-##
-## Generated from the tentacle-web type [code]KickApiPagination[/code].
 
 
 ## The cursor for the next page, as [code]cursor[/code]; empty or absent on the last page.

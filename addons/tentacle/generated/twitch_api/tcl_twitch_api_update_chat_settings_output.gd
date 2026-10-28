@@ -5,9 +5,7 @@
 class_name TclTwitchApiUpdateChatSettingsOutput
 extends RefCounted
 
-## What Twitch's Update Chat Settings answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiUpdateChatSettingsOutput[/code].
+## What Twitch's Update Chat Settings responds with.
 
 
 ## The settings as they now are.

@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetPinnedChatMessageOutput
 extends RefCounted
 
-## What Twitch's Get Pinned Chat Message answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetPinnedChatMessageOutput[/code].
+## What Twitch's Get Pinned Chat Message responds with.
 
 
 ## The pinned message; empty when none is.

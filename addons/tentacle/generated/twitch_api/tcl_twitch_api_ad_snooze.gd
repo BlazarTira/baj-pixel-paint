@@ -6,8 +6,6 @@ class_name TclTwitchApiAdSnooze
 extends RefCounted
 
 ## The ad schedule after a snooze, as Snooze Next Ad returns it.
-##
-## Generated from the tentacle-web type [code]TwitchApiAdSnooze[/code].
 
 
 ## How many snoozes the broadcaster has left.

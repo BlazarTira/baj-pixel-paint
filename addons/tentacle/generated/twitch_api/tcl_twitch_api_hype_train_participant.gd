@@ -6,8 +6,6 @@ class_name TclTwitchApiHypeTrainParticipant
 extends RefCounted
 
 ## One channel sharing a Hype Train.
-##
-## Generated from the tentacle-web type [code]TwitchApiHypeTrainParticipant[/code].
 
 
 ## The broadcaster's user id.

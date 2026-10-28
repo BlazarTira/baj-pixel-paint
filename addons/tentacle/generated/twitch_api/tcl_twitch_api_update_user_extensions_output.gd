@@ -5,9 +5,7 @@
 class_name TclTwitchApiUpdateUserExtensionsOutput
 extends RefCounted
 
-## What Twitch's Update User Extensions answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiUpdateUserExtensionsOutput[/code].
+## What Twitch's Update User Extensions responds with.
 
 
 ## The slots as they now are.

@@ -6,8 +6,6 @@ class_name TclTwitchApiGlobalCooldownSetting
 extends RefCounted
 
 ## Whether a reward has a cooldown between redemptions, and how long.
-##
-## Generated from the tentacle-web type [code]TwitchApiGlobalCooldownSetting[/code].
 
 
 ## Whether the cooldown applies.

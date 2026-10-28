@@ -42,7 +42,7 @@ The connection settings (Auto Connect, Session Label and the rest) are under **P
 
 Tentacle does not have to be running when your game starts. The addon keeps looking for it and connects whenever it appears, backing off from one second to thirty between attempts, so a closed Tentacle costs your game nothing, and no call here will throw into your game loop because Tentacle is closed.
 
-Full documentation: <https://www.tentacle.live/docs/Godot/Setup/>
+Full documentation: <https://www.tentacle.live/docs/godot/setup/>
 
 ## Licence
 

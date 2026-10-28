@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_RedemptionUpdate
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch channel point redemption update event (fired when status changes to fulfilled or canceled).
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_RedemptionUpdate[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

@@ -6,8 +6,6 @@ class_name TclTwitchApiUnpinChatMessageInput
 extends RefCounted
 
 ## What Twitch's Unpin Chat Message takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiUnpinChatMessageInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

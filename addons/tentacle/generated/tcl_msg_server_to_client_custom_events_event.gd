@@ -5,7 +5,7 @@
 class_name TclMsg_ServerToClient_CustomEventsEvent
 extends TclMsg_ServerToClient
 
-## Generated from the tentacle-web type [code]TentacleMsg_ServerToClient_CustomEventsEvent[/code].
+## A message Tentacle sends to the game.
 
 
 ## JSON key [code]data[/code].

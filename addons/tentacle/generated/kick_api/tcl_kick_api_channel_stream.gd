@@ -6,8 +6,6 @@ class_name TclKickApiChannelStream
 extends RefCounted
 
 ## A channel's stream, as Get Channels returns it, minus the stream key.
-##
-## Generated from the tentacle-web type [code]KickApiChannelStream[/code].
 
 
 ## Whether the channel is live.

@@ -6,8 +6,6 @@ class_name TclStreamEvent_Anywhere_SubscriptionGift
 extends TclStreamEventAnywhereBase
 
 ## Cross-platform "Anywhere" view of SubscriptionGift events. Carries the $-prefixed normalized fields shared between Twitch and Kick variants.
-##
-## Generated from the tentacle-web type [code]StreamEvent_Anywhere_SubscriptionGift[/code].
 
 
 ## JSON key [code]$gifterUserId[/code]. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

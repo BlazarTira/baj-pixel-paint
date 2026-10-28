@@ -6,8 +6,6 @@ class_name TclKickApiGetCategoriesInput
 extends RefCounted
 
 ## What Kick's Get Categories takes.
-##
-## Generated from the tentacle-web type [code]KickApiGetCategoriesInput[/code].
 
 
 ## Category names to match, each at least 3 characters.

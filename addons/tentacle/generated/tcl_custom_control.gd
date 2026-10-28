@@ -6,8 +6,6 @@ class_name TclCustomControl
 extends RefCounted
 
 ## Union of all custom control types (discriminated on type).
-##
-## Generated from the tentacle-web type [code]CustomControlJson[/code].
 
 
 ## JSON key [code]id[/code].

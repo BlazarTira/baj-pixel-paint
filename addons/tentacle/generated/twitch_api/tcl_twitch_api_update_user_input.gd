@@ -6,8 +6,6 @@ class_name TclTwitchApiUpdateUserInput
 extends RefCounted
 
 ## What Twitch's Update User takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiUpdateUserInput[/code].
 
 
 ## The channel's description, up to 300 characters.

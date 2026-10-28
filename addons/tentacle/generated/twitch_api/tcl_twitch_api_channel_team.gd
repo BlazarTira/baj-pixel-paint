@@ -6,8 +6,6 @@ class_name TclTwitchApiChannelTeam
 extends RefCounted
 
 ## A Twitch team a channel belongs to.
-##
-## Generated from the tentacle-web type [code]TwitchApiChannelTeam[/code].
 
 
 ## The broadcaster's user id.

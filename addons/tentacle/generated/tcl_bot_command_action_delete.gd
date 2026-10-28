@@ -6,8 +6,6 @@ class_name TclBotCommandAction_Delete
 extends TclBotCommandAction
 
 ## Deletes the chat message that used the command.
-##
-## Generated from the tentacle-web type [code]BotCommandAction_Delete[/code].
 
 
 

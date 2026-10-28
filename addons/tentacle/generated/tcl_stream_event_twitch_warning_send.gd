@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_WarningSend
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch warning send event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_WarningSend[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

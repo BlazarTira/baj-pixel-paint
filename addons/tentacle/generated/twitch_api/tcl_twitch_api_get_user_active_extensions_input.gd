@@ -6,8 +6,6 @@ class_name TclTwitchApiGetUserActiveExtensionsInput
 extends RefCounted
 
 ## What Twitch's Get User Active Extensions takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetUserActiveExtensionsInput[/code].
 
 
 ## The channel whose extensions to read; the connected broadcaster's when left out.

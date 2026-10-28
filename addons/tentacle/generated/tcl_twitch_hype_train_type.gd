@@ -6,7 +6,7 @@ class_name TclTwitchHypeTrainType
 
 ## Twitch Hype Train kind.
 ##
-## Generated from the tentacle-web type [code]TwitchHypeTrainType[/code]. Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
+## Values cross the wire as strings; use [method from_wire] and [method to_wire] to convert.
 
 
 ## The wire values, as an enum.
@@ -34,6 +34,20 @@ static func from_wire(wire: String) -> Value:
 		"golden_kappa":
 			return Value.GOLDEN_KAPPA
 	return Value.REGULAR
+
+
+## Whether [param wire] is one of the wire values this version knows. A newer
+## Tentacle can send one it predates, which an array or a dictionary leaves out
+## rather than reading as [constant Value.REGULAR].
+static func is_known(wire: String) -> bool:
+	match wire:
+		"regular":
+			return true
+		"treasure":
+			return true
+		"golden_kappa":
+			return true
+	return false
 
 
 ## The wire string for an enum member.

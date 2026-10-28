@@ -6,8 +6,6 @@ class_name TclTwitchApiBlockedUser
 extends RefCounted
 
 ## A user the broadcaster has blocked.
-##
-## Generated from the tentacle-web type [code]TwitchApiBlockedUser[/code].
 
 
 ## The user's id.

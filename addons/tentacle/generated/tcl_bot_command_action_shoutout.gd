@@ -6,8 +6,6 @@ class_name TclBotCommandAction_Shoutout
 extends TclBotCommandAction
 
 ## Shouts out the channel named in the command's first argument.
-##
-## Generated from the tentacle-web type [code]BotCommandAction_Shoutout[/code].
 
 
 

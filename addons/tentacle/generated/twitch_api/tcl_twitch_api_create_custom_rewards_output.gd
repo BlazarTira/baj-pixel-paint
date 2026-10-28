@@ -5,9 +5,7 @@
 class_name TclTwitchApiCreateCustomRewardsOutput
 extends RefCounted
 
-## What Twitch's Create Custom Rewards answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreateCustomRewardsOutput[/code].
+## What Twitch's Create Custom Rewards responds with.
 
 
 ## The reward created.

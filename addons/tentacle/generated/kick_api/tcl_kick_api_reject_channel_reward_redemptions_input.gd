@@ -6,8 +6,6 @@ class_name TclKickApiRejectChannelRewardRedemptionsInput
 extends RefCounted
 
 ## What Kick's Reject Channel Reward Redemptions takes.
-##
-## Generated from the tentacle-web type [code]KickApiRejectChannelRewardRedemptionsInput[/code].
 
 
 ## The redemptions, up to 25, each once.

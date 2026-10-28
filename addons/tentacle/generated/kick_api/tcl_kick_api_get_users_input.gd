@@ -6,8 +6,6 @@ class_name TclKickApiGetUsersInput
 extends RefCounted
 
 ## What Kick's Get Users takes.
-##
-## Generated from the tentacle-web type [code]KickApiGetUsersInput[/code].
 
 
 ## The users' ids.

@@ -6,8 +6,6 @@ class_name TclTwitchApiUnbanUserInput
 extends RefCounted
 
 ## What Twitch's Unban User takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiUnbanUserInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

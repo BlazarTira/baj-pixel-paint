@@ -5,9 +5,7 @@
 class_name TclTwitchApiAddBlockedTermOutput
 extends RefCounted
 
-## What Twitch's Add Blocked Term answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiAddBlockedTermOutput[/code].
+## What Twitch's Add Blocked Term responds with.
 
 
 ## The blocked term.

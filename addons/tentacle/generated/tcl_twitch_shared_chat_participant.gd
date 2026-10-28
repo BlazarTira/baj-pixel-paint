@@ -6,8 +6,6 @@ class_name TclTwitchSharedChatParticipant
 extends RefCounted
 
 ## A broadcaster participating in a Twitch shared chat session.
-##
-## Generated from the tentacle-web type [code]TwitchSharedChatParticipant[/code].
 
 
 ## JSON key [code]broadcaster_user_id[/code].

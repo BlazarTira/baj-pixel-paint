@@ -6,8 +6,6 @@ class_name TclTwitchApiManageHeldAutoModMessagesInput
 extends RefCounted
 
 ## What Twitch's Manage Held AutoMod Messages takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiManageHeldAutoModMessagesInput[/code].
 
 
 ## The held message.

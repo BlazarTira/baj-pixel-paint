@@ -6,8 +6,6 @@ class_name TclTwitchRewardImage
 extends RefCounted
 
 ## Image set of a Twitch custom channel point reward.
-##
-## Generated from the tentacle-web type [code]TwitchRewardImage[/code].
 
 
 ## JSON key [code]url_1x[/code].

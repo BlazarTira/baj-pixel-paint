@@ -6,8 +6,6 @@ class_name TclTwitchApiGetClipsDownloadInput
 extends RefCounted
 
 ## What Twitch's Get Clips Download takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetClipsDownloadInput[/code].
 
 
 ## The channel whose clips to download; omit for the connected broadcaster's, or name one the connected account edits.

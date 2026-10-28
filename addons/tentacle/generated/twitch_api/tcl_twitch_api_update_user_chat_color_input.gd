@@ -6,8 +6,6 @@ class_name TclTwitchApiUpdateUserChatColorInput
 extends RefCounted
 
 ## What Twitch's Update User Chat Color takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiUpdateUserChatColorInput[/code].
 
 
 ## A named color ("blue", "blue_violet", "cadet_blue", "chocolate", "coral", "dodger_blue", "firebrick", "golden_rod", "green", "hot_pink", "orange_red", "red", "sea_green", "spring_green", "yellow_green"), or for Turbo and Prime users a hex code such as #9146FF.

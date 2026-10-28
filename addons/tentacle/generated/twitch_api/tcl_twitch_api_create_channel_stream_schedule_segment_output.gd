@@ -5,9 +5,7 @@
 class_name TclTwitchApiCreateChannelStreamScheduleSegmentOutput
 extends RefCounted
 
-## What Twitch's Create Channel Stream Schedule Segment answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreateChannelStreamScheduleSegmentOutput[/code].
+## What Twitch's Create Channel Stream Schedule Segment responds with.
 
 
 ## The schedule, holding just the broadcast added.

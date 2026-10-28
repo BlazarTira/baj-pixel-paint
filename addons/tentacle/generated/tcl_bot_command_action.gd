@@ -6,8 +6,6 @@ class_name TclBotCommandAction
 extends RefCounted
 
 ## Something a bot command does besides replying (union of every action).
-##
-## Generated from the tentacle-web type [code]BotCommandAction[/code].
 
 
 

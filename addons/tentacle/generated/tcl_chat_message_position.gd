@@ -6,8 +6,6 @@ class_name TclChatMessagePosition
 extends RefCounted
 
 ## Position range within a chat message (for emotes/emojis).
-##
-## Generated from the tentacle-web type [code]ChatMessagePosition[/code].
 
 
 ## JSON key [code]start[/code].

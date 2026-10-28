@@ -6,8 +6,6 @@ class_name TclTwitchApiGetUsersInput
 extends RefCounted
 
 ## What Twitch's Get Users takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetUsersInput[/code].
 
 
 ## The users' ids.

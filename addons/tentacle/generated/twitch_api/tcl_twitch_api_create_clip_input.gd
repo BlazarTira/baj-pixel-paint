@@ -6,8 +6,6 @@ class_name TclTwitchApiCreateClipInput
 extends RefCounted
 
 ## What Twitch's Create Clip takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiCreateClipInput[/code].
 
 
 ## The stream to clip; omit for the connected broadcaster's.

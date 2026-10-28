@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetChannelGuestStarSettingsOutput
 extends RefCounted
 
-## What Twitch's Get Channel Guest Star Settings answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetChannelGuestStarSettingsOutput[/code].
+## What Twitch's Get Channel Guest Star Settings responds with.
 
 
 ## Whether moderators may control whether a guest is live.

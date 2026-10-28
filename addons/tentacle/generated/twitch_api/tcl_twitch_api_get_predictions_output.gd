@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetPredictionsOutput
 extends RefCounted
 
-## What Twitch's Get Predictions answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetPredictionsOutput[/code].
+## What Twitch's Get Predictions responds with.
 
 
 ## The predictions, newest first.

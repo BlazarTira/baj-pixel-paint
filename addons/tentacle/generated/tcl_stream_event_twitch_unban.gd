@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_Unban
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch unban event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_Unban[/code].
 
 
 ## JSON key [code]user_id[/code].

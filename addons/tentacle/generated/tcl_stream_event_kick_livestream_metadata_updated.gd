@@ -6,8 +6,6 @@ class_name TclStreamEvent_Kick_LivestreamMetadataUpdated
 extends TclStreamEvent_Kick_Base
 
 ## Kick livestream metadata updated event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Kick_LivestreamMetadataUpdated[/code].
 
 
 ## JSON key [code]$type[/code].

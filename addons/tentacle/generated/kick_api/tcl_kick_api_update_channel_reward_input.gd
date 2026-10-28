@@ -6,8 +6,6 @@ class_name TclKickApiUpdateChannelRewardInput
 extends RefCounted
 
 ## What Kick's Update Channel Reward takes.
-##
-## Generated from the tentacle-web type [code]KickApiUpdateChannelRewardInput[/code].
 
 
 ## The reward to change.

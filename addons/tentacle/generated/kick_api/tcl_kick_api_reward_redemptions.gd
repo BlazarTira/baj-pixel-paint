@@ -6,8 +6,6 @@ class_name TclKickApiRewardRedemptions
 extends RefCounted
 
 ## One reward and its redemptions.
-##
-## Generated from the tentacle-web type [code]KickApiRewardRedemptions[/code].
 
 
 ## The reward.

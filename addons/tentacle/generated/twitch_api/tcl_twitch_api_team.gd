@@ -6,8 +6,6 @@ class_name TclTwitchApiTeam
 extends RefCounted
 
 ## A Twitch team and its members.
-##
-## Generated from the tentacle-web type [code]TwitchApiTeam[/code].
 
 
 ## The team's members.

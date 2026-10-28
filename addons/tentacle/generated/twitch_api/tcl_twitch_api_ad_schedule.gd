@@ -6,8 +6,6 @@ class_name TclTwitchApiAdSchedule
 extends RefCounted
 
 ## The channel's ad schedule, as Get Ad Schedule returns it.
-##
-## Generated from the tentacle-web type [code]TwitchApiAdSchedule[/code].
 
 
 ## How many snoozes the broadcaster has.

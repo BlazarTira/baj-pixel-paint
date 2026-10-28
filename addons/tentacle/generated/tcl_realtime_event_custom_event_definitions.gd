@@ -7,9 +7,7 @@ extends TclRealtimeEvent
 
 ## Realtime custom event definitions: every custom event the streamer
 ## configured, sent as the connection opens and again whenever one is created,
-## changed or removed. [code]client.customEvents[/code] keeps the latest one.
-##
-## Generated from the tentacle-web type [code]RealtimeEvent_CustomEventDefinitions[/code].
+## changed or removed.
 
 
 ## JSON key [code]payload[/code].

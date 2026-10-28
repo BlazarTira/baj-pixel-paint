@@ -6,8 +6,6 @@ class_name TclStreamEvent_Twitch_Subscription
 extends TclStreamEvent_Twitch_Base
 
 ## Twitch subscription event.
-##
-## Generated from the tentacle-web type [code]StreamEventJson_Twitch_Subscription[/code].
 
 
 ## JSON key [code]user_id[/code].

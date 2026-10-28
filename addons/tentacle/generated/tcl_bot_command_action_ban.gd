@@ -6,8 +6,6 @@ class_name TclBotCommandAction_Ban
 extends TclBotCommandAction
 
 ## Bans the viewer who used the command.
-##
-## Generated from the tentacle-web type [code]BotCommandAction_Ban[/code].
 
 
 ## JSON key [code]reason[/code]. Optional on the wire. Either [code]null[/code] or a string; GDScript has no nullable form for that type.

@@ -6,8 +6,6 @@ class_name TclStreamEvent_Anywhere_Subscription
 extends TclStreamEventAnywhereBase
 
 ## Cross-platform "Anywhere" view of Subscription events. Carries the $-prefixed normalized fields shared between Twitch and Kick variants.
-##
-## Generated from the tentacle-web type [code]StreamEvent_Anywhere_Subscription[/code].
 
 
 ## JSON key [code]$subscriberUserId[/code].

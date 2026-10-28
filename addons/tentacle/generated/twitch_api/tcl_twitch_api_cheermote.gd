@@ -6,8 +6,6 @@ class_name TclTwitchApiCheermote
 extends RefCounted
 
 ## One Cheermote, as Get Cheermotes returns it.
-##
-## Generated from the tentacle-web type [code]TwitchApiCheermote[/code].
 
 
 ## The Cheermote's name, which a cheer follows with a number of Bits ([code]Cheer100[/code]).

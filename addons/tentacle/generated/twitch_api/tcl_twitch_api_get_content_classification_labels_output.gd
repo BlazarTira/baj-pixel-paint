@@ -5,9 +5,7 @@
 class_name TclTwitchApiGetContentClassificationLabelsOutput
 extends RefCounted
 
-## What Twitch's Get Content Classification Labels answers with.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetContentClassificationLabelsOutput[/code].
+## What Twitch's Get Content Classification Labels responds with.
 
 
 ## The labels.

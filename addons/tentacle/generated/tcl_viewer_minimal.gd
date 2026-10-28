@@ -6,8 +6,6 @@ class_name TclViewerMinimal
 extends RefCounted
 
 ## Minimal viewer data (basic fields + platform profiles).
-##
-## Generated from the tentacle-web type [code]ViewerMinimalJson[/code].
 
 
 ## JSON key [code]createdAt[/code].

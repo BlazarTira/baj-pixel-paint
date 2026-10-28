@@ -41,6 +41,7 @@ signal OnStreamEvent(event: TclStreamEventBase, viewer: TclViewer)
 ## A viewer joined chat. Only Twitch reports joins: Tentacle checks who is in the
 ## Twitch chat every 30 seconds, so a join arrives up to 30 seconds after it happens,
 ## and viewers already in chat when Tentacle connects to Twitch raise none.
+## Permission required on Twitch: "Who's in chat"
 signal OnChatJoin(viewer: TclViewer)
 
 ## A chat message that is **not** a command, on either platform.
@@ -65,6 +66,7 @@ signal OnChatMessageWithEmotes(chat_message: TclStreamEvent_Anywhere_ChatMessage
 # --- Cross-platform views ----------------------------------------------------
 
 ## A viewer was banned or timed out, on either platform.
+## Permission required on Twitch: "Bans and timeouts"
 signal OnBan(event: TclStreamEvent_Anywhere_Ban, viewer: TclViewer)
 
 ## The channel's title, category, or similar changed, on either platform.
@@ -73,21 +75,27 @@ signal OnBan(event: TclStreamEvent_Anywhere_Ban, viewer: TclViewer)
 signal OnChannelUpdate(event: TclStreamEvent_Anywhere_ChannelUpdate)
 
 ## A donation, on either platform: a Twitch cheer, for one.
+## Permission required on Twitch: "Bits"
 signal OnDonation(event: TclStreamEvent_Anywhere_Donation, viewer: TclViewer)
 
 ## A new follower, on either platform.
+## Permission required on Twitch: "Follows"
 signal OnFollow(event: TclStreamEvent_Anywhere_Follow, viewer: TclViewer)
 
 ## A channel-points or reward redemption, on either platform.
+## Permissions required on Twitch: "Channel Points redemptions" or "Channel Points rewards"
 signal OnRedemption(event: TclStreamEvent_Anywhere_Redemption, viewer: TclViewer)
 
 ## A new subscription, on either platform.
+## Permission required on Twitch: "Subscriptions"
 signal OnSubscription(event: TclStreamEvent_Anywhere_Subscription, viewer: TclViewer)
 
 ## A gifted subscription, on either platform.
+## Permission required on Twitch: "Subscriptions"
 signal OnSubscriptionGift(event: TclStreamEvent_Anywhere_SubscriptionGift, viewer: TclViewer)
 
 ## A renewed subscription, on either platform.
+## Permission required on Twitch: "Subscriptions"
 signal OnSubscriptionRenewal(event: TclStreamEvent_Anywhere_SubscriptionRenewal, viewer: TclViewer)
 
 ## The longest chat message Tentacle will send.
@@ -146,6 +154,7 @@ var stream_deduplication_window: int = TentacleDeduplicator.DEFAULT_CAPACITY:
 var _dedup: TentacleDeduplicator = TentacleDeduplicator.new()
 var _rpc: TentacleRpc = null
 var _chat: TentacleChatSender = null
+var _quiet_events: TentacleQuietEvents = TentacleQuietEvents.new()
 
 
 func _init(socket: TentacleSocket = null, rpc: TentacleRpc = null) -> void:
@@ -341,12 +350,17 @@ func _on_frame(type: String, data: Dictionary) -> void:
 			# because they follow the app's type surface, and that is all.
 			pass
 		"Connections_Status":
-			# Sent only by a Tentacle that runs inside the game; the app never does.
-			connections.handle_status(data)
+			# Every session hears each platform's connection, the app's too, which is
+			# what lets a game ask what the streamer's account allows, and warns about
+			# a Twitch signal it listens to that the account keeps quiet.
+			var connection := connections.handle_status(data)
+			_quiet_events.check(connection, twitch, TclTwitchPlatformEvents.EVENT_PERMISSIONS, "Tentacle.twitch.", false)
 		"Connections_Prompt":
 			connections.handle_prompt(data)
 		"Connections_Result":
 			connections.handle_result(data)
+		"Connections_PermissionNeeded":
+			connections.handle_permission_needed(data)
 		"Rpc_Response":
 			# An answer to a call made over the session, in Embedded mode.
 			_rpc.handle_response(data)
@@ -403,8 +417,8 @@ func _emit_anywhere(view: TclStreamEventAnywhereBase, viewer: TclViewer) -> void
 		OnSubscription.emit(view as TclStreamEvent_Anywhere_Subscription, viewer)
 
 
-## Raises the command/message split, plus the emoji and emote signals alongside, as
-## Unreal's ATentacle::DispatchChatMessage does.
+# As Unreal's ATentacle::DispatchChatMessage does.
+## Raises the command/message split, plus the emoji and emote signals alongside.
 func _emit_chat(chat_message: TclStreamEvent_Anywhere_ChatMessage, viewer: TclViewer) -> void:
 	if TclJson.as_string(chat_message.command).is_empty():
 		OnChatMessage.emit(chat_message, viewer)

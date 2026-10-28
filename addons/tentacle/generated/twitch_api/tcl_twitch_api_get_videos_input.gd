@@ -6,8 +6,6 @@ class_name TclTwitchApiGetVideosInput
 extends RefCounted
 
 ## What Twitch's Get Videos takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiGetVideosInput[/code].
 
 
 ## The videos to read, up to 100; give these, a user, or a category.

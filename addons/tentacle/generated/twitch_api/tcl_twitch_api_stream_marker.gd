@@ -6,8 +6,6 @@ class_name TclTwitchApiStreamMarker
 extends RefCounted
 
 ## A marker in a live stream, to find the moment again for a highlight.
-##
-## Generated from the tentacle-web type [code]TwitchApiStreamMarker[/code].
 
 
 ## The marker's id.

@@ -6,8 +6,6 @@ class_name TclTwitchApiStartCommercialInput
 extends RefCounted
 
 ## What Twitch's Start Commercial takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiStartCommercialInput[/code].
 
 
 ## The commercial's length in seconds, up to 180.

@@ -6,8 +6,6 @@ class_name TclTwitchApiRemoveSuspiciousStatusFromChatUserInput
 extends RefCounted
 
 ## What Twitch's Remove Suspicious Status From Chat User takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiRemoveSuspiciousStatusFromChatUserInput[/code].
 
 
 ## The channel to act on; omit for the connected broadcaster's own, or name one the connected account moderates.

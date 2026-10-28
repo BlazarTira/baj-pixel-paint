@@ -6,8 +6,6 @@ class_name TclTwitchApiSearchCategoriesInput
 extends RefCounted
 
 ## What Twitch's Search Categories takes.
-##
-## Generated from the tentacle-web type [code]TwitchApiSearchCategoriesInput[/code].
 
 
 ## The text to search for.

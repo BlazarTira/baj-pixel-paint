@@ -6,8 +6,6 @@ class_name TclTwitchApiInstalledExtension
 extends RefCounted
 
 ## An extension the broadcaster has installed.
-##
-## Generated from the tentacle-web type [code]TwitchApiInstalledExtension[/code].
 
 
 ## The extension's id.

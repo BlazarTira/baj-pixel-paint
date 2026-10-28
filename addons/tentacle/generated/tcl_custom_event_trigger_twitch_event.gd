@@ -6,8 +6,6 @@ class_name TclCustomEventTrigger_Twitch_Event
 extends TclCustomEventTriggerBase
 
 ## Twitch event trigger.
-##
-## Generated from the tentacle-web type [code]CustomEventTrigger_Twitch_Event[/code].
 
 
 ## JSON key [code]platform[/code]. Optional on the wire. Either [code]null[/code] or a string; GDScript has no nullable form for that type.
