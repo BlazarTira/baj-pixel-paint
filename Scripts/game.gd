@@ -11,6 +11,7 @@ func _ready():
 	Tentacle.OnChatCommand.connect(_on_chat_command)
 	erase_timer.timeout.connect(_on_timer_timeout)
 	
+	erase_timer.wait_time = GameManager.cooldown_time
 	cooldown_bar.max_value = erase_timer.wait_time
 	cooldown_bar.value = erase_timer.wait_time
 

@@ -1,0 +1,34 @@
+[gd_resource type="Theme" format=3 uid="uid://bdd5v53s77ed4"]
+
+[ext_resource type="Texture2D" uid="uid://buyx3qyqj48y0" path="res://Assets/Sprites/Slider_Handle.png" id="1_4j4xn"]
+[ext_resource type="StyleBox" uid="uid://duq0vq7fs7ij5" path="res://Assets/StyleBoxes/ButtonPressed_Stylebox.tres" id="1_66x42"]
+[ext_resource type="FontFile" uid="uid://b64grqcnskupa" path="res://Assets/PublicPixel.ttf" id="1_t7ifg"]
+[ext_resource type="Texture2D" uid="uid://dyhwm7tn662ax" path="res://Assets/Sprites/Slider.png" id="2_1cp78"]
+[ext_resource type="Texture2D" uid="uid://f8d04nehj7tw" path="res://Assets/Sprites/Slider_Handle_Highlight.png" id="2_as5wk"]
+[ext_resource type="StyleBox" uid="uid://cyb8b5bxh6ocw" path="res://Assets/StyleBoxes/ButtonHighlight_Stylebox.tres" id="2_t7cow"]
+[ext_resource type="StyleBox" uid="uid://bwnb6w5io5y13" path="res://Assets/StyleBoxes/Button_StyleBox.tres" id="3_ev5ay"]
+[ext_resource type="Texture2D" uid="uid://66aftm0a1hjx" path="res://Assets/Sprites/Popup_Panel.png" id="8_t7cow"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_66x42"]
+texture = ExtResource("2_1cp78")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mkpwh"]
+texture = ExtResource("8_t7cow")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[resource]
+Button/constants/outline_size = 8
+Button/fonts/font = ExtResource("1_t7ifg")
+Button/styles/disabled = ExtResource("1_66x42")
+Button/styles/hover = ExtResource("2_t7cow")
+Button/styles/normal = ExtResource("3_ev5ay")
+Button/styles/pressed = ExtResource("1_66x42")
+HSlider/icons/grabber = ExtResource("1_4j4xn")
+HSlider/icons/grabber_highlight = ExtResource("2_as5wk")
+HSlider/styles/slider = SubResource("StyleBoxTexture_66x42")
+Label/constants/outline_size = 8
+Label/fonts/font = ExtResource("1_t7ifg")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_mkpwh")

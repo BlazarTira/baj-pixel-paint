@@ -3,8 +3,17 @@ extends Control
 @onready var sign_in_button = $SignInButton
 @onready var sign_out_button = $SignOutButton
 @onready var sign_in_panel = $SignInPanel
-@onready var twitch_code_label = $SignInPanel/VBoxContainer/TwitchCodeLabel
+@onready var twitch_code_button = $SignInPanel/VBoxContainer/TwitchCodeButton
+@onready var clipboard_notice = $SignInPanel/VBoxContainer/ClipboardNotice
 @onready var connection_status = $ConnectionStatus
+@onready var user_label = $UserLabel
+
+@onready var play_button = $PlayButton
+@onready var settings_button = $SettingsButton
+@onready var how_to_play_button = $HowToPlayButton
+
+@onready var settings_menu = $SettingsMenu
+@onready var HTP_menu = $HowToPlay
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,9 +21,13 @@ func _ready():
 	Tentacle.connections.OnConnectPrompt.connect(_on_connect_prompt)
 	Tentacle.connections.OnConnectResult.connect(_on_connect_result)
 	Tentacle.connections.OnConnectionChanged.connect(_on_connection_changed)
-	
 	var connection = Tentacle.connections.get_connection(TclStreamPlatform.Value.TWITCH)
 	update_button(connection)
+	
+	sign_in_panel.hide()
+	clipboard_notice.text = ""
+	settings_menu.hide()
+	HTP_menu.hide()
 
 func _on_sign_in_button_pressed():
 	sign_in_to_twitch()
@@ -31,7 +44,7 @@ func _on_connect_prompt(prompt: TclPlatformConnectionPrompt) -> void:
 	if prompt.user_code != null:
 		# Show this on screen in your menu, so the player can type it.
 		sign_in_panel.show()
-		twitch_code_label.text = prompt.user_code
+		twitch_code_button.text = prompt.user_code
 		print("Enter %s if the page asks for a code" % prompt.user_code)
 
 func _on_connect_result(result: TclPlatformConnectionResult) -> void:
@@ -63,6 +76,11 @@ func update_button(connection: TclPlatformConnection):
 	if connection != null:
 		status = connection.status
 	
+	if status == TclPlatformConnectionStatus.Value.CONNECTED and connection.account != null:
+		user_label.text = "Welcome\n%s" % connection.account.display_name
+	else:
+		user_label.text = ""
+	
 	match status:
 		TclPlatformConnectionStatus.Value.DISCONNECTED:
 			sign_in_button.show()
@@ -78,3 +96,40 @@ func update_button(connection: TclPlatformConnection):
 			sign_in_button.hide()
 			sign_out_button.show()
 			connection_status.play("Connected")
+
+
+func _on_settings_button_pressed():
+	settings_menu.show()
+	play_button.disabled = true
+	settings_button.disabled = true
+	how_to_play_button.disabled = true
+
+func _on_how_to_play_button_pressed():
+	HTP_menu.show()
+	play_button.disabled = true
+	settings_button.disabled = true
+	how_to_play_button.disabled = true
+
+
+func _on_close_settings_button_pressed():
+	settings_menu.hide()
+	play_button.disabled = false
+	settings_button.disabled = false
+	how_to_play_button.disabled = false
+
+func _on_close_htp_button_pressed():
+	HTP_menu.hide()
+	play_button.disabled = false
+	settings_button.disabled = false
+	how_to_play_button.disabled = false
+
+
+func _on_tentacle_button_pressed():
+	OS.shell_open("https://tentacle.live")
+
+
+func _on_twitch_code_button_pressed():
+	DisplayServer.clipboard_set(twitch_code_button.text)
+	clipboard_notice.text = "Copied to Clipboard!"
+	await get_tree().create_timer(3.0).timeout
+	clipboard_notice.text = ""

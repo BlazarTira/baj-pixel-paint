@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://vwiqyrbl2cri"]
+
+[ext_resource type="Texture2D" uid="uid://66aftm0a1hjx" path="res://Assets/Sprites/Popup_Panel.png" id="1_n3kw2"]
+
+[resource]
+texture = ExtResource("1_n3kw2")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0

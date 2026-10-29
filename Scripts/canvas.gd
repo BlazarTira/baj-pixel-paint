@@ -3,7 +3,6 @@ extends Control
 
 enum State {WAITING, DRAWING, RESULTS}
 var state = State.WAITING
-@export var ROUND_TIME = 100
 
 const GRID_SIZE = 26
 const MAX_LOG_ENTRIES = 50
@@ -77,7 +76,7 @@ func start_round(template_tex: Texture2D):
 	build_preview()
 	build_guide()
 	state = State.DRAWING
-	round_timer.start(ROUND_TIME)
+	round_timer.start(GameManager.round_time)
 
 func start_next_round():
 	if templates.is_empty():

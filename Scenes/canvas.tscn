@@ -14,6 +14,7 @@
 [ext_resource type="StyleBox" uid="uid://cubyrovwmiqh1" path="res://Assets/StyleBoxes/ColorPicker_Stylebox.tres" id="8_dlfda"]
 [ext_resource type="Texture2D" uid="uid://cknceb7x8yeqd" path="res://Assets/Sprites/R_Click.png" id="9_6rlit"]
 [ext_resource type="StyleBox" uid="uid://duq0vq7fs7ij5" path="res://Assets/StyleBoxes/ButtonPressed_Stylebox.tres" id="9_rby16"]
+[ext_resource type="StyleBox" uid="uid://vwiqyrbl2cri" path="res://Assets/StyleBoxes/PopupPanel_Stylebox.tres" id="9_u3ola"]
 [ext_resource type="StyleBox" uid="uid://cyb8b5bxh6ocw" path="res://Assets/StyleBoxes/ButtonHighlight_Stylebox.tres" id="10_dlfda"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgkvf"]
@@ -5783,7 +5784,7 @@ offset_right = 202.0
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_iajes")
+theme_override_styles/panel = ExtResource("9_u3ola")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ResultPanel" unique_id=1169235370]
 layout_mode = 2
