@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://bjsp40jwmmfm"]
 
 [ext_resource type="Script" uid="uid://cctxnl0n08g58" path="res://Scripts/canvas.gd" id="1_omcc7"]
-[ext_resource type="Texture2D" uid="uid://chvy3ic5c7r17" path="res://Assets/Templates/Hollow_Heart.png" id="2_jhfc7"]
 [ext_resource type="Texture2D" uid="uid://bq8vr625hjr5n" path="res://Assets/Sprites/Canvas.png" id="2_mrfg2"]
-[ext_resource type="Texture2D" uid="uid://qi61r31s5rxc" path="res://Assets/Templates/Sun.png" id="3_oe80x"]
 [ext_resource type="FontFile" uid="uid://b64grqcnskupa" path="res://Assets/PublicPixel.ttf" id="4_5b2e5"]
+[ext_resource type="Texture2D" uid="uid://cr640w3t0umhj" path="res://Assets/Templates/Srd_Smug.png" id="4_5phnc"]
 [ext_resource type="StyleBox" uid="uid://b6a3j06nihv8h" path="res://Assets/StyleBoxes/PanelContainer_StyleBox.tres" id="4_iajes"]
+[ext_resource type="Texture2D" uid="uid://dgheidpvfae1b" path="res://Assets/Templates/BAJ_Logo.png" id="4_ydfpt"]
 [ext_resource type="Texture2D" uid="uid://b11f51qtcbk8u" path="res://Assets/Blank_Canvas.png" id="5_bco6w"]
+[ext_resource type="Texture2D" uid="uid://din8i05327n1g" path="res://Assets/Templates/Magic_Hat.png" id="5_ib6gu"]
+[ext_resource type="Texture2D" uid="uid://bu1kuinbkaa45" path="res://Assets/Templates/Scoilled.png" id="5_xulpc"]
+[ext_resource type="Texture2D" uid="uid://bc6q3ep40qvsa" path="res://Assets/Templates/XP_Background.png" id="6_nkk3y"]
 [ext_resource type="Texture2D" uid="uid://cq4voihx3rmwo" path="res://Assets/Sprites/L_Click.png" id="6_picwg"]
+[ext_resource type="Texture2D" uid="uid://d0c4j484oqmfj" path="res://Assets/Templates/Twitch_Logo.png" id="7_g4gby"]
 [ext_resource type="Texture2D" uid="uid://dikx3jelno26h" path="res://Assets/Sprites/Brush.png" id="7_iajes"]
 [ext_resource type="StyleBox" uid="uid://bwnb6w5io5y13" path="res://Assets/StyleBoxes/Button_StyleBox.tres" id="8_6rlit"]
 [ext_resource type="Texture2D" uid="uid://b5mm6utci0e68" path="res://Assets/Sprites/Eraser.png" id="8_bco6w"]
@@ -132,8 +136,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_omcc7")
-ROUND_TIME = 60
-templates = Array[Texture2D]([ExtResource("2_jhfc7"), ExtResource("3_oe80x")])
+templates = Array[Texture2D]([ExtResource("4_5phnc"), ExtResource("5_xulpc"), ExtResource("4_ydfpt"), ExtResource("5_ib6gu"), ExtResource("6_nkk3y"), ExtResource("7_g4gby")])
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1331878230]
 layout_mode = 1
@@ -5770,6 +5773,7 @@ expand_mode = 1
 
 [node name="ResultPanel" type="PanelContainer" parent="." unique_id=251434611]
 unique_name_in_owner = true
+visible = false
 top_level = true
 custom_minimum_size = Vector2(500, 250)
 layout_mode = 1

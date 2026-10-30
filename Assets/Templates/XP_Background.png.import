@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chvy3ic5c7r17"
-path="res://.godot/imported/Hollow_Heart.png-63080f59f2150e17f30340645b527d65.ctex"
+uid="uid://bc6q3ep40qvsa"
+path="res://.godot/imported/XP_Background.png-92418d0f4e1365155bc0e09246244f6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Templates/Hollow_Heart.png"
-dest_files=["res://.godot/imported/Hollow_Heart.png-63080f59f2150e17f30340645b527d65.ctex"]
+source_file="res://Assets/Templates/XP_Background.png"
+dest_files=["res://.godot/imported/XP_Background.png-92418d0f4e1365155bc0e09246244f6a.ctex"]
 
 [params]
 

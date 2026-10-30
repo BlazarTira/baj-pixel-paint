@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dlxxnbii8i0yp" path="res://Assets/Sprites/Close_Button_Highlight.png" id="18_6m47u"]
 [ext_resource type="Texture2D" uid="uid://dc81qbh1r3vmc" path="res://Assets/Sprites/Tentacle_Logo.png" id="19_mkpwh"]
 [ext_resource type="Texture2D" uid="uid://cq4voihx3rmwo" path="res://Assets/Sprites/L_Click.png" id="20_4nkqq"]
+[ext_resource type="Texture2D" uid="uid://dp8ob3rallagm" path="res://Assets/Sprites/BAJ_Logo.png" id="21_ehtkc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmc4e"]
 
@@ -86,6 +87,8 @@ expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oib3e"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehtkc"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_iajes"]
 atlas = ExtResource("20_4nkqq")
 region = Rect2(0, 0, 12, 18)
@@ -150,10 +153,12 @@ scale = Vector2(2.585, 2.585)
 texture_normal = ExtResource("5_vr1f0")
 texture_pressed = ExtResource("6_t1dhk")
 texture_hover = ExtResource("7_5egv6")
+texture_disabled = ExtResource("6_t1dhk")
 stretch_mode = 0
 
 [node name="SignInPanel" type="PanelContainer" parent="." unique_id=977613180]
 visible = false
+z_index = 2
 custom_minimum_size = Vector2(370, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -251,7 +256,7 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("9_t1dhk")
 theme_override_font_sizes/font_size = 16
 text = "Welcome
-TiraBlazar"
+TiraBlazar!"
 horizontal_alignment = 2
 
 [node name="ConnectionStatus" type="AnimatedSprite2D" parent="." unique_id=375325554]
@@ -262,6 +267,7 @@ animation = &"Disconnected"
 
 [node name="SettingsMenu" type="PanelContainer" parent="." unique_id=1636404718]
 visible = false
+z_index = 2
 custom_minimum_size = Vector2(450, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -312,10 +318,10 @@ layout_mode = 2
 theme_override_icons/grabber = ExtResource("16_ujyyl")
 theme_override_icons/grabber_highlight = ExtResource("17_mkpwh")
 theme_override_styles/slider = SubResource("StyleBoxTexture_66x42")
-min_value = 30.0
-max_value = 180.0
+min_value = 60.0
+max_value = 300.0
 step = 5.0
-value = 30.0
+value = 60.0
 rounded = true
 
 [node name="CooldownTime" type="VBoxContainer" parent="SettingsMenu/Settings/RoundTime" unique_id=944980785]
@@ -338,6 +344,7 @@ rounded = true
 
 [node name="HowToPlay" type="PanelContainer" parent="." unique_id=1121141108]
 visible = false
+z_index = 2
 custom_minimum_size = Vector2(750, 375)
 layout_mode = 1
 anchors_preset = 8
@@ -398,9 +405,12 @@ right. Don't take too long, you are timed!
 
 And you, the Viewers, have one goal...
 don't let them.
-You are given coordinates on the grid
+You are given coordinates on the grid, and
 You may use commands to pick a cell to
 erase.
+There is a cooldown on how often
+cells can be erased. So pay attention to
+the little clock in the top left!
 
 EXAMPLE: Streamer draws a pixel on A1, you
 type \"!A1\" and it will erase that cell
@@ -423,12 +433,14 @@ offset_bottom = 618.0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_pressed_color = Color(0.44859254, 0.094621874, 0.57936573, 1)
 theme_override_colors/font_hover_color = Color(0.5411765, 0.13333334, 0.69411767, 1)
+theme_override_colors/font_disabled_color = Color(0.52, 0.52, 0.52, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("9_t1dhk")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hgkvf")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_hhpci")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_oib3e")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ehtkc")
 text = "POWERED BY TENTACLE"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=38025269]
@@ -444,6 +456,24 @@ position = Vector2(832, 606.00006)
 scale = Vector2(1.3966486, 1.3966486)
 sprite_frames = SubResource("SpriteFrames_ehtkc")
 autoplay = "default"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1969763016]
+layout_mode = 0
+offset_left = 826.0
+offset_top = 389.0
+offset_right = 1122.2144
+offset_bottom = 563.0
+texture = ExtResource("21_ehtkc")
+
+[node name="BAJ_Text" type="Label" parent="." unique_id=1542630377]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 359.0
+offset_right = 1110.0
+offset_bottom = 383.0
+theme = ExtResource("15_8dnnj")
+theme_override_font_sizes/font_size = 24
+text = "MADE FOR THE"
 
 [connection signal="pressed" from="SignInButton" to="." method="_on_sign_in_button_pressed"]
 [connection signal="pressed" from="SignOutButton" to="." method="_on_sign_out_button_pressed"]

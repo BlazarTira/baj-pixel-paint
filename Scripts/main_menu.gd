@@ -11,6 +11,7 @@ extends Control
 @onready var play_button = $PlayButton
 @onready var settings_button = $SettingsButton
 @onready var how_to_play_button = $HowToPlayButton
+@onready var tentacle_button = $TentacleButton
 
 @onready var settings_menu = $SettingsMenu
 @onready var HTP_menu = $HowToPlay
@@ -69,7 +70,9 @@ func sign_out_of_twitch() -> void:
 	Tentacle.connections.disconnect_platform(TclStreamPlatform.Value.TWITCH)
 
 func _on_play_button_pressed():
+	await Fade.fade(1.0, 0.5).finished
 	get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	Fade.fade(0.0, 0.5)
 
 func update_button(connection: TclPlatformConnection):
 	var status = TclPlatformConnectionStatus.Value.DISCONNECTED
@@ -77,7 +80,7 @@ func update_button(connection: TclPlatformConnection):
 		status = connection.status
 	
 	if status == TclPlatformConnectionStatus.Value.CONNECTED and connection.account != null:
-		user_label.text = "Welcome\n%s" % connection.account.display_name
+		user_label.text = "Welcome\n%s!" % connection.account.display_name
 	else:
 		user_label.text = ""
 	
@@ -103,12 +106,19 @@ func _on_settings_button_pressed():
 	play_button.disabled = true
 	settings_button.disabled = true
 	how_to_play_button.disabled = true
+	sign_in_button.disabled = true
+	sign_out_button.disabled = true
+	tentacle_button.disabled = true
+	
 
 func _on_how_to_play_button_pressed():
 	HTP_menu.show()
 	play_button.disabled = true
 	settings_button.disabled = true
 	how_to_play_button.disabled = true
+	sign_in_button.disabled = true
+	sign_out_button.disabled = true
+	tentacle_button.disabled = true
 
 
 func _on_close_settings_button_pressed():
@@ -116,12 +126,18 @@ func _on_close_settings_button_pressed():
 	play_button.disabled = false
 	settings_button.disabled = false
 	how_to_play_button.disabled = false
+	sign_in_button.disabled = false
+	sign_out_button.disabled = false
+	tentacle_button.disabled = false
 
 func _on_close_htp_button_pressed():
 	HTP_menu.hide()
 	play_button.disabled = false
 	settings_button.disabled = false
 	how_to_play_button.disabled = false
+	sign_in_button.disabled = false
+	sign_out_button.disabled = false
+	tentacle_button.disabled = false
 
 
 func _on_tentacle_button_pressed():

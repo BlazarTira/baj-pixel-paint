@@ -168,7 +168,7 @@ func set_cell_color(cell: Control, color: Color):
 		preview_texture.update(preview_image)
 
 func erase_cell(coord: String, viewer: String = "") -> bool:
-	if state != State.DRAWING:
+	if state != State.DRAWING or get_tree().paused:
 		return false
 	coord = coord.strip_edges().to_upper()
 	if !cells.has(coord):
@@ -268,4 +268,6 @@ func _on_countdown_timer_timeout():
 
 
 func _on_main_menu_button_pressed():
+	await Fade.fade(1.0, 0.5).finished
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	Fade.fade(0.0, 0.5)

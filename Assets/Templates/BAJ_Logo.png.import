@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qi61r31s5rxc"
-path="res://.godot/imported/Sun.png-1592dc51e3c79be09538074cbc53d5d5.ctex"
+uid="uid://dgheidpvfae1b"
+path="res://.godot/imported/BAJ_Logo.png-d429027c2477ae62f835550c039abd9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Templates/Sun.png"
-dest_files=["res://.godot/imported/Sun.png-1592dc51e3c79be09538074cbc53d5d5.ctex"]
+source_file="res://Assets/Templates/BAJ_Logo.png"
+dest_files=["res://.godot/imported/BAJ_Logo.png-d429027c2477ae62f835550c039abd9e.ctex"]
 
 [params]
 
