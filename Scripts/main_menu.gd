@@ -142,6 +142,7 @@ func _on_close_settings_button_pressed():
 	play_button.disabled = false
 	settings_button.disabled = false
 	how_to_play_button.disabled = false
+	credits_button.disabled = false
 	sign_in_button.disabled = false
 	sign_out_button.disabled = false
 	tentacle_button.disabled = false
@@ -151,6 +152,7 @@ func _on_close_htp_button_pressed():
 	play_button.disabled = false
 	settings_button.disabled = false
 	how_to_play_button.disabled = false
+	credits_button.disabled = false
 	sign_in_button.disabled = false
 	sign_out_button.disabled = false
 	tentacle_button.disabled = false

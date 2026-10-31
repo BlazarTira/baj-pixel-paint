@@ -508,6 +508,7 @@ cooldown timer for the viewers commands.
 Adjust these as you wish."
 
 [node name="Credits" type="PanelContainer" parent="." unique_id=1921605828]
+visible = false
 z_index = 2
 custom_minimum_size = Vector2(750, 468.925)
 layout_mode = 1
