@@ -32,3 +32,5 @@ HSlider/styles/slider = SubResource("StyleBoxTexture_66x42")
 Label/constants/outline_size = 8
 Label/fonts/font = ExtResource("1_t7ifg")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_mkpwh")
+RichTextLabel/constants/outline_size = 8
+RichTextLabel/fonts/normal_font = ExtResource("1_t7ifg")

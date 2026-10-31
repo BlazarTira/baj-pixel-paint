@@ -12,9 +12,11 @@ extends Control
 @onready var settings_button = $SettingsButton
 @onready var how_to_play_button = $HowToPlayButton
 @onready var tentacle_button = $TentacleButton
+@onready var credits_button = $CreditsButton
 
 @onready var settings_menu = $SettingsMenu
 @onready var HTP_menu = $HowToPlay
+@onready var credits_menu = $Credits
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,6 +31,9 @@ func _ready():
 	clipboard_notice.text = ""
 	settings_menu.hide()
 	HTP_menu.hide()
+	credits_menu.hide()
+	
+	Music.play_main_theme()
 
 func _on_sign_in_button_pressed():
 	sign_in_to_twitch()
@@ -106,6 +111,7 @@ func _on_settings_button_pressed():
 	play_button.disabled = true
 	settings_button.disabled = true
 	how_to_play_button.disabled = true
+	credits_button.disabled = true
 	sign_in_button.disabled = true
 	sign_out_button.disabled = true
 	tentacle_button.disabled = true
@@ -116,10 +122,20 @@ func _on_how_to_play_button_pressed():
 	play_button.disabled = true
 	settings_button.disabled = true
 	how_to_play_button.disabled = true
+	credits_button.disabled = true
 	sign_in_button.disabled = true
 	sign_out_button.disabled = true
 	tentacle_button.disabled = true
 
+func _on_credits_button_pressed():
+	credits_menu.show()
+	play_button.disabled = true
+	settings_button.disabled = true
+	how_to_play_button.disabled = true
+	credits_button.disabled = true
+	sign_in_button.disabled = true
+	sign_out_button.disabled = true
+	tentacle_button.disabled = true
 
 func _on_close_settings_button_pressed():
 	settings_menu.hide()
@@ -139,6 +155,16 @@ func _on_close_htp_button_pressed():
 	sign_out_button.disabled = false
 	tentacle_button.disabled = false
 
+func _on_close_credits_pressed():
+	credits_menu.hide()
+	play_button.disabled = false
+	settings_button.disabled = false
+	how_to_play_button.disabled = false
+	credits_button.disabled = false
+	sign_in_button.disabled = false
+	sign_out_button.disabled = false
+	tentacle_button.disabled = false
+
 
 func _on_tentacle_button_pressed():
 	OS.shell_open("https://tentacle.live")
@@ -149,3 +175,11 @@ func _on_twitch_code_button_pressed():
 	clipboard_notice.text = "Copied to Clipboard!"
 	await get_tree().create_timer(3.0).timeout
 	clipboard_notice.text = ""
+
+
+func _on_tira_pressed():
+	OS.shell_open("https://bsky.app/profile/tirablazar.bsky.social")
+
+
+func _on_fantym_pressed():
+	OS.shell_open("https://thesyreuthorder.bandcamp.com/track/rosa-orchid-demo")

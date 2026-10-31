@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://eoeh2v6c400k" path="res://Assets/Sprites/DisconnectButton_Pressed.png" id="6_t1dhk"]
 [ext_resource type="Texture2D" uid="uid://b0m2fh3xjxkfr" path="res://Assets/Sprites/DisconnectButton_Hover.png" id="7_5egv6"]
 [ext_resource type="FontFile" uid="uid://b64grqcnskupa" path="res://Assets/PublicPixel.ttf" id="9_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://ds6ov42o7luhr" path="res://Assets/Sprites/Button_Thin.png" id="10_6m47u"]
+[ext_resource type="Texture2D" uid="uid://cpcebn5q4jdd2" path="res://Assets/Sprites/Button_Thin_Pressed.png" id="11_84iac"]
+[ext_resource type="Texture2D" uid="uid://jhe65g2d7hdd" path="res://Assets/Sprites/Button_Thin_Highlight.png" id="12_5n0dv"]
 [ext_resource type="Texture2D" uid="uid://duwrps3nru07x" path="res://Assets/Sprites/ConnectionStatus_Sheet.png" id="12_t1dhk"]
 [ext_resource type="Theme" uid="uid://bdd5v53s77ed4" path="res://Assets/StyleBoxes/Default_Theme.tres" id="15_8dnnj"]
 [ext_resource type="Script" uid="uid://c3no1q81bdb8t" path="res://Scripts/settings_menu.gd" id="15_mkpwh"]
@@ -27,6 +30,34 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxfy3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ep4jl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ehtkc"]
+texture = ExtResource("10_6m47u")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 18.0
+texture_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6dk6o"]
+texture = ExtResource("11_84iac")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 18.0
+texture_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jr6u5"]
+texture = ExtResource("12_5n0dv")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 18.0
+texture_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6m47u"]
+texture = ExtResource("11_84iac")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 18.0
+texture_margin_bottom = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5egv6"]
 atlas = ExtResource("12_t1dhk")
@@ -80,6 +111,22 @@ texture_margin_left = 4.0
 texture_margin_right = 4.0
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q1loa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhw33"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_blm5r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbe3q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3uhu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l1ke3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jgwo2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wmnv6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgkvf"]
 
@@ -233,6 +280,20 @@ theme = ExtResource("15_8dnnj")
 theme_override_font_sizes/font_size = 32
 text = "HOW TO PLAY"
 
+[node name="CreditsButton" type="Button" parent="." unique_id=1344674594]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 536.0
+offset_right = 655.0
+offset_bottom = 601.0
+theme = ExtResource("15_8dnnj")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_ehtkc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6dk6o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jr6u5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6m47u")
+text = "CREDITS"
+
 [node name="Title" type="Label" parent="." unique_id=779324884]
 layout_mode = 0
 offset_left = 51.0
@@ -286,34 +347,56 @@ script = ExtResource("15_mkpwh")
 
 [node name="Settings" type="VBoxContainer" parent="SettingsMenu" unique_id=1167762565]
 layout_mode = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 47
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/Settings" unique_id=173250710]
+[node name="Header" type="HBoxContainer" parent="SettingsMenu/Settings" unique_id=173250710]
 layout_mode = 2
 theme_override_constants/separation = 115
 alignment = 1
 
-[node name="Header" type="Label" parent="SettingsMenu/Settings/HBoxContainer" unique_id=201778837]
+[node name="Header" type="Label" parent="SettingsMenu/Settings/Header" unique_id=201778837]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "SETTINGS"
 
-[node name="CloseSettingsButton" type="TextureButton" parent="SettingsMenu/Settings/HBoxContainer" unique_id=530246497]
+[node name="CloseSettingsButton" type="TextureButton" parent="SettingsMenu/Settings/Header" unique_id=530246497]
 layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("16_6dk6o")
 texture_pressed = ExtResource("17_jr6u5")
 texture_hover = ExtResource("18_6m47u")
 
-[node name="RoundTime" type="VBoxContainer" parent="SettingsMenu/Settings" unique_id=475200024]
+[node name="ActualSettings" type="VBoxContainer" parent="SettingsMenu/Settings" unique_id=421887433]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="MusicVolume" type="VBoxContainer" parent="SettingsMenu/Settings/ActualSettings" unique_id=486471305]
 layout_mode = 2
 
-[node name="RoundTimeLabel" type="Label" parent="SettingsMenu/Settings/RoundTime" unique_id=452781921]
+[node name="MusicVolumeLabel" type="Label" parent="SettingsMenu/Settings/ActualSettings/MusicVolume" unique_id=1967328017]
+layout_mode = 2
+theme = ExtResource("15_8dnnj")
+text = "MUSIC VOLUME"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingsMenu/Settings/ActualSettings/MusicVolume" unique_id=1757775765]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("16_ujyyl")
+theme_override_icons/grabber_highlight = ExtResource("17_mkpwh")
+theme_override_styles/slider = SubResource("StyleBoxTexture_66x42")
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="RoundTime" type="VBoxContainer" parent="SettingsMenu/Settings/ActualSettings" unique_id=475200024]
+layout_mode = 2
+
+[node name="RoundTimeLabel" type="Label" parent="SettingsMenu/Settings/ActualSettings/RoundTime" unique_id=452781921]
 layout_mode = 2
 theme = ExtResource("15_8dnnj")
 text = "ROUND TIME: 180 SECONDS"
 
-[node name="RoundTimeSlider" type="HSlider" parent="SettingsMenu/Settings/RoundTime" unique_id=16132088]
+[node name="RoundTimeSlider" type="HSlider" parent="SettingsMenu/Settings/ActualSettings/RoundTime" unique_id=16132088]
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("16_ujyyl")
 theme_override_icons/grabber_highlight = ExtResource("17_mkpwh")
@@ -324,15 +407,15 @@ step = 5.0
 value = 60.0
 rounded = true
 
-[node name="CooldownTime" type="VBoxContainer" parent="SettingsMenu/Settings/RoundTime" unique_id=944980785]
+[node name="CooldownTime" type="VBoxContainer" parent="SettingsMenu/Settings/ActualSettings" unique_id=944980785]
 layout_mode = 2
 
-[node name="CooldownTimeLabel" type="Label" parent="SettingsMenu/Settings/RoundTime/CooldownTime" unique_id=2081902494]
+[node name="CooldownTimeLabel" type="Label" parent="SettingsMenu/Settings/ActualSettings/CooldownTime" unique_id=2081902494]
 layout_mode = 2
 theme = ExtResource("15_8dnnj")
 text = "COOLDOWN TIME: 5 SECONDS"
 
-[node name="CooldownTimeSlider" type="HSlider" parent="SettingsMenu/Settings/RoundTime/CooldownTime" unique_id=247226204]
+[node name="CooldownTimeSlider" type="HSlider" parent="SettingsMenu/Settings/ActualSettings/CooldownTime" unique_id=247226204]
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("16_ujyyl")
 theme_override_icons/grabber_highlight = ExtResource("17_mkpwh")
@@ -424,6 +507,112 @@ sliders to control the game timer, and the
 cooldown timer for the viewers commands.
 Adjust these as you wish."
 
+[node name="Credits" type="PanelContainer" parent="." unique_id=1921605828]
+z_index = 2
+custom_minimum_size = Vector2(750, 468.925)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("15_8dnnj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits" unique_id=1123316384]
+layout_mode = 2
+
+[node name="CloseCredits" type="TextureButton" parent="Credits/VBoxContainer" unique_id=2085685954]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("16_6dk6o")
+texture_pressed = ExtResource("17_jr6u5")
+texture_hover = ExtResource("18_6m47u")
+
+[node name="ArtProg" type="RichTextLabel" parent="Credits/VBoxContainer" unique_id=1924907953]
+custom_minimum_size = Vector2(0, 58.34)
+layout_mode = 2
+theme = ExtResource("15_8dnnj")
+theme_override_constants/outline_size = 8
+theme_override_constants/underline_alpha = 100
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[u]ART, PROGRAMMER[/u]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Tira" type="Button" parent="Credits/VBoxContainer" unique_id=2144244190]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.5363167, 0.27299997, 0.7, 1)
+theme_override_colors/font_hover_color = Color(0.7419043, 0.467305, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q1loa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mhw33")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_blm5r")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pbe3q")
+text = "TIRABLAZAR"
+
+[node name="Tira2" type="Label" parent="Credits/VBoxContainer" unique_id=1124550079]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "exhausted"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Label" parent="Credits/VBoxContainer" unique_id=925989486]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = " 
+"
+horizontal_alignment = 1
+
+[node name="Music" type="RichTextLabel" parent="Credits/VBoxContainer" unique_id=2053167242]
+custom_minimum_size = Vector2(0, 58.34)
+layout_mode = 2
+theme = ExtResource("15_8dnnj")
+theme_override_constants/outline_size = 8
+theme_override_constants/underline_alpha = 100
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[u]MUSIC[/u]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Fantym" type="Button" parent="Credits/VBoxContainer" unique_id=812438595]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.5372549, 0.27450982, 0.7019608, 1)
+theme_override_colors/font_hover_color = Color(0.7411765, 0.46666667, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p3uhu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l1ke3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jgwo2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wmnv6")
+text = "FANTYM SYREUTH"
+
+[node name="Fantym2" type="Label" parent="Credits/VBoxContainer" unique_id=1821137393]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "the goat"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Label" parent="Credits/VBoxContainer" unique_id=1749404093]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = " "
+horizontal_alignment = 1
+
+[node name="RedirectWarning" type="Label" parent="Credits/VBoxContainer" unique_id=920113287]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Clicking either name will redirect you"
+horizontal_alignment = 1
+
 [node name="TentacleButton" type="Button" parent="." unique_id=1450489123]
 layout_mode = 0
 offset_left = 844.0
@@ -481,6 +670,10 @@ text = "MADE FOR THE"
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
-[connection signal="pressed" from="SettingsMenu/Settings/HBoxContainer/CloseSettingsButton" to="." method="_on_close_settings_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="SettingsMenu/Settings/Header/CloseSettingsButton" to="." method="_on_close_settings_button_pressed"]
 [connection signal="pressed" from="HowToPlay/VBoxContainer/CloseHTPButton" to="." method="_on_close_htp_button_pressed"]
+[connection signal="pressed" from="Credits/VBoxContainer/CloseCredits" to="." method="_on_close_credits_pressed"]
+[connection signal="pressed" from="Credits/VBoxContainer/Tira" to="." method="_on_tira_pressed"]
+[connection signal="pressed" from="Credits/VBoxContainer/Fantym" to="." method="_on_fantym_pressed"]
 [connection signal="pressed" from="TentacleButton" to="." method="_on_tentacle_button_pressed"]
