@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://din8i05327n1g"
-path="res://.godot/imported/Magic_Hat.png-4d7566d0e8ec53dca487babcebe3d4c3.ctex"
+uid="uid://bkws3y1jqypkj"
+path="res://.godot/imported/HideGuide_Under.png-701ba3a6ccd32468ffbe661f468a02f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Templates/Magic_Hat.png"
-dest_files=["res://.godot/imported/Magic_Hat.png-4d7566d0e8ec53dca487babcebe3d4c3.ctex"]
+source_file="res://Assets/Sprites/HideGuide_Under.png"
+dest_files=["res://.godot/imported/HideGuide_Under.png-701ba3a6ccd32468ffbe661f468a02f5.ctex"]
 
 [params]
 

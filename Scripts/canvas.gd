@@ -1,5 +1,6 @@
 extends Control
 
+signal guide_return
 
 enum State {WAITING, DRAWING, RESULTS}
 var state = State.WAITING
@@ -10,6 +11,7 @@ const MAX_LOG_ENTRIES = 50
 var active_color: Color = Color(1, 0, 0)
 var is_painting = false
 var is_erasing = false
+var guide_timer = Timer.new()
 
 var cells: Dictionary = {}
 
@@ -29,7 +31,7 @@ var preview_texture: ImageTexture
 var guide_image: Image
 var guide_texture: ImageTexture
 
-#any of the @onready vars that I don't feel like grouping
+#any of the vars that I don't feel like grouping
 @onready var grid = %DrawingGrid
 #@onready var painting: Node2D = $"../../Painting"
 @onready var log_scroll = %LogScroll
@@ -41,10 +43,15 @@ var guide_texture: ImageTexture
 @onready var countdown_timer = $CountdownTimer
 @onready var count_down_label = $CountDownLabel
 
+var bomb_radius = GameManager.bomb_radius
 
 func _ready():
 	build_cell_lookup()
 	start_countdown()
+	
+	add_child(guide_timer)
+	guide_timer.one_shot = true
+	guide_timer.timeout.connect(guide_timer_timeout)
 
 func build_cell_lookup():
 	cells.clear()
@@ -56,6 +63,8 @@ func build_cell_lookup():
 
 func start_countdown():
 	state = State.WAITING
+	guide_timer.stop()
+	guide_overlay.show()
 	result_panel.hide()
 	reset_board()
 	guide_overlay.texture = null
@@ -180,7 +189,61 @@ func erase_cell(coord: String, viewer: String = "") -> bool:
 		add_log_entry(viewer, coord)
 	return true
 
-func add_log_entry(viewer: String, coord: String):
+func bomb_cell(coord: String, viewer: String = "") -> bool:
+	if state != State.DRAWING or get_tree().paused:
+		return false
+	coord = coord.strip_edges().to_upper()
+	if !cells.has(coord):
+		return false
+	
+	var row = coord.unicode_at(0) - 65
+	var col = int(coord.substr(1)) - 1
+	var cleared = 0
+	
+	for dr in range(-bomb_radius, bomb_radius + 1):
+		for dc in range(-bomb_radius, bomb_radius + 1):
+			var r = row + dr
+			var c = col + dc
+			if r < 0 or r >= GRID_SIZE or c < 0 or c >= GRID_SIZE:
+				continue
+			var cell = cells[char(65 + r) + str(c + 1)]
+			if !colors_match(cell.modulate, Color.WHITE):
+				set_cell_color(cell, Color.WHITE)
+				cleared += 1
+	
+	if cleared == 0:
+		return false
+	
+	add_log_entry(viewer, coord, "bombed")
+	return true
+
+func get_neighbors(coord: String) -> Array[String]:
+	var row := coord.unicode_at(0) - 65
+	var col := int(coord.substr(1)) - 1
+	var result: Array[String] = []
+	for d in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+		var r: int = row + d.x
+		var c: int = col + d.y
+		if r >= 0 and r < GRID_SIZE and c >= 0 and c < GRID_SIZE:
+			result.append(char(65 + r) + str(c + 1))
+	return result
+
+func hide_guide(duration: float, viewer: String = "") -> bool:
+	if state != State.DRAWING or get_tree().paused:
+		return false
+	if !guide_overlay.visible:
+		return false
+	
+	guide_overlay.hide()
+	guide_timer.start(duration)
+	add_log_entry(viewer, "%ds" % duration, "hid the guide for")
+	return true
+
+func guide_timer_timeout():
+	guide_overlay.show()
+	guide_return.emit()
+
+func add_log_entry(viewer: String, coord: String, verb: String = "erased"):
 	var entry = RichTextLabel.new()
 	entry.bbcode_enabled = true
 	entry.fit_content = true
@@ -188,7 +251,7 @@ func add_log_entry(viewer: String, coord: String):
 	entry.add_theme_color_override("default_color", Color.WHITE)
 	entry.add_theme_color_override("font_outline_color", Color.BLACK)
 	entry.add_theme_constant_override("outline_size", 6)
-	entry.text = "[right][b]%s[/b] erased %s[/right]" % [viewer.replace("[", "[lb]"), coord]
+	entry.text = "[right][b]%s[/b] %s %s[/right]" % [viewer.replace("[", "[lb]"), verb, coord]
 	log_list.add_child(entry)
 	
 	if log_list.get_child_count() > MAX_LOG_ENTRIES:
@@ -252,6 +315,8 @@ func _on_black_pressed():
 
 func _on_round_timer_timeout():
 	state = State.RESULTS
+	guide_timer.stop()
+	guide_overlay.show()
 	is_painting = false
 	is_erasing = false
 	time_label.text = "0"

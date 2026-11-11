@@ -1,5 +1,8 @@
 extends Control
 
+@onready var title: Label = $Title
+
+
 @onready var sign_in_button = $SignInButton
 @onready var sign_out_button = $SignOutButton
 @onready var sign_in_panel = $SignInPanel
@@ -13,10 +16,12 @@ extends Control
 @onready var how_to_play_button = $HowToPlayButton
 @onready var tentacle_button = $TentacleButton
 @onready var credits_button = $CreditsButton
+@onready var changelog_button = $ChangelogButton
 
 @onready var settings_menu = $SettingsMenu
 @onready var HTP_menu = $HowToPlay
 @onready var credits_menu = $Credits
+@onready var changelog_menu = $Changelog
 
 
 # Called when the node enters the scene tree for the first time.
@@ -34,6 +39,10 @@ func _ready():
 	credits_menu.hide()
 	
 	Music.play_main_theme()
+	
+	var tween = create_tween().set_loops()
+	tween.tween_property(title, "scale", Vector2(1.1, 1.1), 1.0).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(title, "scale", Vector2(1.0, 1.0), 1.0).set_trans(Tween.TRANS_SINE)
 
 func _on_sign_in_button_pressed():
 	sign_in_to_twitch()
@@ -112,6 +121,7 @@ func _on_settings_button_pressed():
 	settings_button.disabled = true
 	how_to_play_button.disabled = true
 	credits_button.disabled = true
+	changelog_button.disabled = true
 	sign_in_button.disabled = true
 	sign_out_button.disabled = true
 	tentacle_button.disabled = true
@@ -123,6 +133,7 @@ func _on_how_to_play_button_pressed():
 	settings_button.disabled = true
 	how_to_play_button.disabled = true
 	credits_button.disabled = true
+	changelog_button.disabled = true
 	sign_in_button.disabled = true
 	sign_out_button.disabled = true
 	tentacle_button.disabled = true
@@ -133,6 +144,18 @@ func _on_credits_button_pressed():
 	settings_button.disabled = true
 	how_to_play_button.disabled = true
 	credits_button.disabled = true
+	changelog_button.disabled = true
+	sign_in_button.disabled = true
+	sign_out_button.disabled = true
+	tentacle_button.disabled = true
+
+func _on_changelog_button_pressed():
+	changelog_menu.show()
+	play_button.disabled = true
+	settings_button.disabled = true
+	how_to_play_button.disabled = true
+	credits_button.disabled = true
+	changelog_button.disabled = true
 	sign_in_button.disabled = true
 	sign_out_button.disabled = true
 	tentacle_button.disabled = true
@@ -143,6 +166,7 @@ func _on_close_settings_button_pressed():
 	settings_button.disabled = false
 	how_to_play_button.disabled = false
 	credits_button.disabled = false
+	changelog_button.disabled = false
 	sign_in_button.disabled = false
 	sign_out_button.disabled = false
 	tentacle_button.disabled = false
@@ -153,6 +177,7 @@ func _on_close_htp_button_pressed():
 	settings_button.disabled = false
 	how_to_play_button.disabled = false
 	credits_button.disabled = false
+	changelog_button.disabled = false
 	sign_in_button.disabled = false
 	sign_out_button.disabled = false
 	tentacle_button.disabled = false
@@ -163,10 +188,21 @@ func _on_close_credits_pressed():
 	settings_button.disabled = false
 	how_to_play_button.disabled = false
 	credits_button.disabled = false
+	changelog_button.disabled = false
 	sign_in_button.disabled = false
 	sign_out_button.disabled = false
 	tentacle_button.disabled = false
 
+func _on_close_changelog_button_pressed():
+	changelog_menu.hide()
+	play_button.disabled = false
+	settings_button.disabled = false
+	how_to_play_button.disabled = false
+	credits_button.disabled = false
+	changelog_button.disabled = false
+	sign_in_button.disabled = false
+	sign_out_button.disabled = false
+	tentacle_button.disabled = false
 
 func _on_tentacle_button_pressed():
 	OS.shell_open("https://tentacle.live")
@@ -181,7 +217,6 @@ func _on_twitch_code_button_pressed():
 
 func _on_tira_pressed():
 	OS.shell_open("https://bsky.app/profile/tirablazar.bsky.social")
-
 
 func _on_fantym_pressed():
 	OS.shell_open("https://thesyreuthorder.bandcamp.com/track/rosa-orchid-demo")

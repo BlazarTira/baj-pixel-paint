@@ -5,8 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://bwgc67mla4h74" path="res://Assets/Sprites/Cooldown_Under.png" id="3_3dryh"]
 [ext_resource type="Texture2D" uid="uid://cdyoi481loxe" path="res://Assets/Sprites/Cooldown_Progress.png" id="4_wowpa"]
 [ext_resource type="StyleBox" uid="uid://vwiqyrbl2cri" path="res://Assets/StyleBoxes/PopupPanel_Stylebox.tres" id="5_ldgsr"]
+[ext_resource type="Texture2D" uid="uid://kftoqtsyek0l" path="res://Assets/Sprites/BombCooldown_Under.png" id="5_rku1e"]
 [ext_resource type="Script" uid="uid://8iinyitc31vw" path="res://Scripts/pause_menu.gd" id="6_o5yvi"]
+[ext_resource type="Texture2D" uid="uid://cdwwa3nkwnbc2" path="res://Assets/Sprites/BombCooldown_Progress.png" id="6_rfjv2"]
+[ext_resource type="Texture2D" uid="uid://bkws3y1jqypkj" path="res://Assets/Sprites/HideGuide_Under.png" id="7_1phco"]
 [ext_resource type="FontFile" uid="uid://b64grqcnskupa" path="res://Assets/PublicPixel.ttf" id="7_rku1e"]
+[ext_resource type="Texture2D" uid="uid://dgo3dos7ltkqm" path="res://Assets/Sprites/HideGuide_Progress.png" id="8_nb51f"]
 [ext_resource type="StyleBox" uid="uid://bwnb6w5io5y13" path="res://Assets/StyleBoxes/Button_StyleBox.tres" id="8_rfjv2"]
 [ext_resource type="StyleBox" uid="uid://duq0vq7fs7ij5" path="res://Assets/StyleBoxes/ButtonPressed_Stylebox.tres" id="9_1phco"]
 [ext_resource type="StyleBox" uid="uid://cyb8b5bxh6ocw" path="res://Assets/StyleBoxes/ButtonHighlight_Stylebox.tres" id="10_nb51f"]
@@ -18,20 +22,48 @@ script = ExtResource("1_wrm1d")
 wait_time = 5.0
 one_shot = true
 
+[node name="Bomb_Cooldown" type="Timer" parent="." unique_id=1304987687]
+wait_time = 5.0
+one_shot = true
+
+[node name="HideGuide_Cooldown" type="Timer" parent="." unique_id=1642015566]
+wait_time = 5.0
+one_shot = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=804259590]
 
 [node name="Canvas" parent="CanvasLayer" unique_id=139781993 instance=ExtResource("2_qxrlw")]
 unique_name_in_owner = true
 
 [node name="Cooldown_Bar" type="TextureProgressBar" parent="CanvasLayer" unique_id=945132020]
-offset_left = 24.0
-offset_top = 23.0
-offset_right = 88.0
-offset_bottom = 87.0
+offset_left = 1055.0
+offset_top = 326.0
+offset_right = 1119.0
+offset_bottom = 390.0
 step = 0.1
 fill_mode = 5
 texture_under = ExtResource("3_3dryh")
 texture_progress = ExtResource("4_wowpa")
+
+[node name="Bomb_Cooldown_Bar" type="TextureProgressBar" parent="CanvasLayer" unique_id=1330385703]
+offset_left = 1055.0
+offset_top = 394.0
+offset_right = 1119.0
+offset_bottom = 458.0
+step = 0.1
+fill_mode = 5
+texture_under = ExtResource("5_rku1e")
+texture_progress = ExtResource("6_rfjv2")
+
+[node name="HideGuide_Cooldown_Bar" type="TextureProgressBar" parent="CanvasLayer" unique_id=1562211244]
+offset_left = 1055.0
+offset_top = 462.0
+offset_right = 1119.0
+offset_bottom = 526.0
+step = 0.1
+fill_mode = 5
+texture_under = ExtResource("7_1phco")
+texture_progress = ExtResource("8_nb51f")
 
 [node name="PauseMenu" type="PanelContainer" parent="CanvasLayer" unique_id=1544030042]
 unique_name_in_owner = true
@@ -100,5 +132,6 @@ theme_override_styles/hover = ExtResource("10_nb51f")
 text = "Main
 Menu"
 
+[connection signal="timeout" from="HideGuide_Cooldown" to="." method="_on_hide_guide_cooldown_timeout"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/HBoxContainer/ResumeButton" to="CanvasLayer/PauseMenu" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/HBoxContainer/MainMenuButton" to="CanvasLayer/PauseMenu" method="_on_main_menu_button_pressed"]

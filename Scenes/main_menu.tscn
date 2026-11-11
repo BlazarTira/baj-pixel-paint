@@ -282,10 +282,10 @@ text = "HOW TO PLAY"
 
 [node name="CreditsButton" type="Button" parent="." unique_id=1344674594]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 536.0
-offset_right = 655.0
-offset_bottom = 601.0
+offset_left = 962.0
+offset_top = 433.0
+offset_right = 1122.0
+offset_bottom = 498.0
 theme = ExtResource("15_8dnnj")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxTexture_ehtkc")
@@ -294,17 +294,34 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_jr6u5")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_6m47u")
 text = "CREDITS"
 
+[node name="ChangelogButton" type="Button" parent="." unique_id=1042586756]
+layout_mode = 0
+offset_left = 910.0
+offset_top = 504.0
+offset_right = 1122.0
+offset_bottom = 569.0
+theme = ExtResource("15_8dnnj")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_ehtkc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6dk6o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jr6u5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6m47u")
+text = " CHANGELOG "
+
 [node name="Title" type="Label" parent="." unique_id=779324884]
 layout_mode = 0
 offset_left = 51.0
 offset_top = 68.0
 offset_right = 435.0
 offset_bottom = 199.0
+pivot_offset = Vector2(188.67, 70.19)
 theme_override_constants/outline_size = 24
 theme_override_fonts/font = ExtResource("9_t1dhk")
 theme_override_font_sizes/font_size = 64
 text = "CANVAS
 BATTLE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="UserLabel" type="Label" parent="." unique_id=131097671]
 layout_mode = 0
@@ -329,7 +346,7 @@ animation = &"Disconnected"
 [node name="SettingsMenu" type="PanelContainer" parent="." unique_id=1636404718]
 visible = false
 z_index = 2
-custom_minimum_size = Vector2(450, 0)
+custom_minimum_size = Vector2(481.455, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -366,19 +383,30 @@ texture_normal = ExtResource("16_6dk6o")
 texture_pressed = ExtResource("17_jr6u5")
 texture_hover = ExtResource("18_6m47u")
 
-[node name="ActualSettings" type="VBoxContainer" parent="SettingsMenu/Settings" unique_id=421887433]
+[node name="ScrollContainer" type="ScrollContainer" parent="SettingsMenu/Settings" unique_id=264781341]
+custom_minimum_size = Vector2(0, 366.97)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMenu/Settings/ScrollContainer" unique_id=912749680]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="ActualSettings" type="VBoxContainer" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer" unique_id=421887433]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="MusicVolume" type="VBoxContainer" parent="SettingsMenu/Settings/ActualSettings" unique_id=486471305]
+[node name="MusicVolume" type="VBoxContainer" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings" unique_id=486471305]
 layout_mode = 2
 
-[node name="MusicVolumeLabel" type="Label" parent="SettingsMenu/Settings/ActualSettings/MusicVolume" unique_id=1967328017]
+[node name="MusicVolumeLabel" type="Label" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/MusicVolume" unique_id=1967328017]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("15_8dnnj")
 text = "MUSIC VOLUME"
 
-[node name="MusicVolumeSlider" type="HSlider" parent="SettingsMenu/Settings/ActualSettings/MusicVolume" unique_id=1757775765]
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/MusicVolume" unique_id=1757775765]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("16_ujyyl")
 theme_override_icons/grabber_highlight = ExtResource("17_mkpwh")
@@ -387,16 +415,19 @@ min_value = 0.001
 max_value = 1.0
 step = 0.001
 value = 1.0
+scrollable = false
 
-[node name="RoundTime" type="VBoxContainer" parent="SettingsMenu/Settings/ActualSettings" unique_id=475200024]
+[node name="RoundTime" type="VBoxContainer" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings" unique_id=475200024]
 layout_mode = 2
 
-[node name="RoundTimeLabel" type="Label" parent="SettingsMenu/Settings/ActualSettings/RoundTime" unique_id=452781921]
+[node name="RoundTimeLabel" type="Label" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/RoundTime" unique_id=452781921]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("15_8dnnj")
 text = "ROUND TIME: 180 SECONDS"
 
-[node name="RoundTimeSlider" type="HSlider" parent="SettingsMenu/Settings/ActualSettings/RoundTime" unique_id=16132088]
+[node name="RoundTimeSlider" type="HSlider" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/RoundTime" unique_id=16132088]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("16_ujyyl")
 theme_override_icons/grabber_highlight = ExtResource("17_mkpwh")
@@ -406,24 +437,112 @@ max_value = 300.0
 step = 5.0
 value = 60.0
 rounded = true
+scrollable = false
 
-[node name="CooldownTime" type="VBoxContainer" parent="SettingsMenu/Settings/ActualSettings" unique_id=944980785]
+[node name="CooldownTime" type="VBoxContainer" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings" unique_id=944980785]
 layout_mode = 2
 
-[node name="CooldownTimeLabel" type="Label" parent="SettingsMenu/Settings/ActualSettings/CooldownTime" unique_id=2081902494]
+[node name="CooldownTimeLabel" type="Label" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/CooldownTime" unique_id=2081902494]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("15_8dnnj")
-text = "COOLDOWN TIME: 5 SECONDS"
+text = "ERASE COOLDOWN: 5 SECONDS"
 
-[node name="CooldownTimeSlider" type="HSlider" parent="SettingsMenu/Settings/ActualSettings/CooldownTime" unique_id=247226204]
+[node name="CooldownTimeSlider" type="HSlider" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/CooldownTime" unique_id=247226204]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("16_ujyyl")
+theme_override_icons/grabber_highlight = ExtResource("17_mkpwh")
+theme_override_styles/slider = SubResource("StyleBoxTexture_66x42")
+max_value = 5.0
+value = 5.0
+rounded = true
+scrollable = false
+
+[node name="BombCooldownTime" type="VBoxContainer" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings" unique_id=457246320]
+layout_mode = 2
+
+[node name="BombCooldownTimeLabel" type="Label" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/BombCooldownTime" unique_id=292392536]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("15_8dnnj")
+text = "BOMB COOLDOWN: 5 SECONDS"
+
+[node name="BombCooldownTimeSlider" type="HSlider" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/BombCooldownTime" unique_id=1458034264]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("16_ujyyl")
+theme_override_icons/grabber_highlight = ExtResource("17_mkpwh")
+theme_override_styles/slider = SubResource("StyleBoxTexture_66x42")
+max_value = 5.0
+value = 5.0
+rounded = true
+scrollable = false
+
+[node name="BombRadius" type="VBoxContainer" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings" unique_id=572924279]
+layout_mode = 2
+
+[node name="BombRadiusLabel" type="Label" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/BombRadius" unique_id=166392398]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("15_8dnnj")
+text = "BOMB RADIUS: 3 X 3"
+
+[node name="BombRadiusSlider" type="HSlider" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/BombRadius" unique_id=1591865298]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("16_ujyyl")
 theme_override_icons/grabber_highlight = ExtResource("17_mkpwh")
 theme_override_styles/slider = SubResource("StyleBoxTexture_66x42")
 min_value = 1.0
-max_value = 20.0
-value = 5.0
+max_value = 4.0
+value = 4.0
 rounded = true
+scrollable = false
+
+[node name="HideGuideTime" type="VBoxContainer" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings" unique_id=1549658356]
+layout_mode = 2
+
+[node name="GuideHideTimeLabel" type="Label" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/HideGuideTime" unique_id=1937392188]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("15_8dnnj")
+text = "HIDE GUIDE TIME:
+10 SECONDS"
+
+[node name="GuideHideTimeSlider" type="HSlider" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/HideGuideTime" unique_id=1670346037]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("16_ujyyl")
+theme_override_icons/grabber_highlight = ExtResource("17_mkpwh")
+theme_override_styles/slider = SubResource("StyleBoxTexture_66x42")
+min_value = 10.0
+max_value = 40.0
+value = 10.0
+rounded = true
+scrollable = false
+
+[node name="HideGuideCooldown" type="VBoxContainer" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings" unique_id=100482760]
+layout_mode = 2
+
+[node name="GuideHideCooldownLabel" type="Label" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/HideGuideCooldown" unique_id=1535610099]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("15_8dnnj")
+text = "HIDE GUIDE COOLDOWN:
+20 SECONDS"
+
+[node name="GuideHideCooldownSlider" type="HSlider" parent="SettingsMenu/Settings/ScrollContainer/MarginContainer/ActualSettings/HideGuideCooldown" unique_id=1293556073]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("16_ujyyl")
+theme_override_icons/grabber_highlight = ExtResource("17_mkpwh")
+theme_override_styles/slider = SubResource("StyleBoxTexture_66x42")
+min_value = 20.0
+max_value = 60.0
+value = 20.0
+rounded = true
+scrollable = false
 
 [node name="HowToPlay" type="PanelContainer" parent="." unique_id=1121141108]
 visible = false
@@ -478,7 +597,7 @@ layout_mode = 2
 theme = ExtResource("15_8dnnj")
 theme_override_constants/line_spacing = 9
 text = "The goal is simple.
-You, the streamer, are given an image you
+You, the Streamer, are given an image you
 must draw within the time limit.
 
 You use Left Click to draw, Right click to
@@ -487,25 +606,47 @@ right. Don't take too long, you are timed!
 
 
 And you, the Viewers, have one goal...
-don't let them.
-You are given coordinates on the grid, and
-You may use commands to pick a cell to
-erase.
-There is a cooldown on how often
-cells can be erased. So pay attention to
-the little clock in the top left!
+DON'T LET THEM!!!
 
-EXAMPLE: Streamer draws a pixel on A1, you
-type \"!A1\" and it will erase that cell
+You are given coordinates on the grid, and
+You may use the chat to affect the canvas
+in a number of ways.
+
+Your abilities are as follows:
+
+ ERASE: (A1, A2, etc...)
+Simply type the coordinate and it
+will erase it.
+
+ BOMB: (\"!bomb A1\")
+use this command to wipe out a cell
+along with all nearby cells!
+
+ GUIDE: (\"!guide\")
+Your most powerful ability!
+This will hide the image guide!
+This is useful for throwing off the
+streamer. However, it has a long cooldown.
+
+EXAMPLES
+ -Streamer draws a pixel on A1, you
+type \"A1\" and it will erase that cell.
+ -Type \"!bomb A1\" and it will blow
+up at that cell.
+ -Type \"!guide\" and the guide will
+disappear.
+
 
 Once the timer runs out, you will be
 scored on how much of the image you were
 able to re-create.
 
-Within the settings menu there will be
-sliders to control the game timer, and the
-cooldown timer for the viewers commands.
-Adjust these as you wish."
+Within the settings menu you can customize
+how you want the game to go.
+Including round time, as well as the
+properties of viewer abilities.
+
+Good luck! And have fun!"
 
 [node name="Credits" type="PanelContainer" parent="." unique_id=1921605828]
 visible = false
@@ -614,6 +755,85 @@ theme_override_font_sizes/font_size = 16
 text = "Clicking either name will redirect you"
 horizontal_alignment = 1
 
+[node name="Changelog" type="PanelContainer" parent="." unique_id=101708873]
+visible = false
+z_index = 2
+custom_minimum_size = Vector2(750, 468.925)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("15_8dnnj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Changelog" unique_id=1748058072]
+layout_mode = 2
+
+[node name="CloseChangelogButton" type="TextureButton" parent="Changelog/VBoxContainer" unique_id=806052587]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("16_6dk6o")
+texture_pressed = ExtResource("17_jr6u5")
+texture_hover = ExtResource("18_6m47u")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Changelog/VBoxContainer" unique_id=1965098199]
+custom_minimum_size = Vector2(717, 330)
+layout_mode = 2
+
+[node name="Content" type="MarginContainer" parent="Changelog/VBoxContainer/ScrollContainer" unique_id=131167572]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Changelog/VBoxContainer/ScrollContainer/Content" unique_id=2020197495]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Header" type="Label" parent="Changelog/VBoxContainer/ScrollContainer/Content/VBoxContainer" unique_id=1601845590]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "CHANGELOG"
+
+[node name="Content" type="Label" parent="Changelog/VBoxContainer/ScrollContainer/Content/VBoxContainer" unique_id=633672775]
+layout_mode = 2
+theme = ExtResource("15_8dnnj")
+theme_override_constants/line_spacing = 9
+text = "
+Version 1.1 or something idk I'm tired:
+
+-Changed the way that erasing works for
+viewers. Did away with the \"!\" part.
+
+-Added the !bomb command. Now viewers are
+able to remove a larger area of the canvas.
+
+-Added the !guide command. Allowing
+viewers to hide the guide image.
+
+-Added settings for the new abilities.
+
+-Added some template images.
+-Removed some template images.
+
+-Adjusted the cooldown time of the
+erase command. Now goes from
+0 seconds to 5 seconds.
+
+-Made some changes to the
+title screen.
+
+-Updated the How to Play Section to reflect
+changes."
+
 [node name="TentacleButton" type="Button" parent="." unique_id=1450489123]
 layout_mode = 0
 offset_left = 844.0
@@ -649,18 +869,20 @@ autoplay = "default"
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1969763016]
 layout_mode = 0
-offset_left = 826.0
-offset_top = 389.0
-offset_right = 1122.2144
-offset_bottom = 563.0
+offset_left = 553.0
+offset_top = 514.0
+offset_right = 849.21436
+offset_bottom = 688.0
+scale = Vector2(0.625, 0.625)
 texture = ExtResource("21_ehtkc")
 
 [node name="BAJ_Text" type="Label" parent="." unique_id=1542630377]
 layout_mode = 0
-offset_left = 822.0
-offset_top = 359.0
-offset_right = 1110.0
-offset_bottom = 383.0
+offset_left = 552.00006
+offset_top = 496.0
+offset_right = 840.00006
+offset_bottom = 520.0
+scale = Vector2(0.625, 0.625)
 theme = ExtResource("15_8dnnj")
 theme_override_font_sizes/font_size = 24
 text = "MADE FOR THE"
@@ -672,9 +894,11 @@ text = "MADE FOR THE"
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="ChangelogButton" to="." method="_on_changelog_button_pressed"]
 [connection signal="pressed" from="SettingsMenu/Settings/Header/CloseSettingsButton" to="." method="_on_close_settings_button_pressed"]
 [connection signal="pressed" from="HowToPlay/VBoxContainer/CloseHTPButton" to="." method="_on_close_htp_button_pressed"]
 [connection signal="pressed" from="Credits/VBoxContainer/CloseCredits" to="." method="_on_close_credits_pressed"]
 [connection signal="pressed" from="Credits/VBoxContainer/Tira" to="." method="_on_tira_pressed"]
 [connection signal="pressed" from="Credits/VBoxContainer/Fantym" to="." method="_on_fantym_pressed"]
+[connection signal="pressed" from="Changelog/VBoxContainer/CloseChangelogButton" to="." method="_on_close_changelog_button_pressed"]
 [connection signal="pressed" from="TentacleButton" to="." method="_on_tentacle_button_pressed"]
